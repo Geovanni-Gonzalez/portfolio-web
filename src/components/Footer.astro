@@ -1,0 +1,17 @@
+---
+const year = new Date().getFullYear();
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="bg-gray-900 text-white py-6 mt-12">
+  <div class="container mx-auto px-4 text-center space-y-4">
+    <p class="text-sm">&copy; {year} {t('footer.copyright')}</p>
+    <nav class="space-x-4 text-sm">
+      <a href="#about" class="hover:underline">{t('footer.about')}</a>
+      <a href="#projects" class="hover:underline">{t('footer.projects')}</a>
+      <a href="#contact" class="hover:underline">{t('footer.contact')}</a>
+    </nav>
+  </div>
+</footer>

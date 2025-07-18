@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+import { Font } from "astro:assets";
+import { ClientRouter } from 'astro:transitions';
+import "../styles/global.css";
+import LoadingIndicator from "astro-loading-indicator/component";
+
+const { title, description } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const defaultTitle = "Geovanni Gonzalez";
+const defaultDescription = "Portfolio of Geovanni Gonzalez, computer engineering student at TEC, Costa Rica.";
+---
+<!DOCTYPE html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+		<meta name="title" content={title || defaultTitle} />
+		<meta name="description" content={description || defaultDescription} />
+		<meta name="generator" content={Astro.generator} />
+
+		<Font cssVariable="--font-geist" preload />
+		<ClientRouter />		
+		<LoadingIndicator color="#f4f4f5" height="2px" />
+	</head>
+
+	<body class="font-sans min-h-screen bg-zinc-900">
+		<slot />
+	</body>
+
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
