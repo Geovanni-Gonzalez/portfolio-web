@@ -1,0 +1,26 @@
+---
+// components/SocialButtons.astro
+import { Icon } from 'astro-iconify';
+
+const links = [
+  { name: "GitHub", url: "https://github.com/Geovanni-Gonzalez", icon: "mdi:github" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/geovanni-gonzález-aguilar", icon: "mdi:linkedin" },
+  { name: "Instagram", url: "https://www.instagram.com/_geovannigonzalez", icon: "mdi:instagram" },
+  { name: "YouTube", url: "https://www.youtube.com/@GeovanniGonzalezOficial", icon: "mdi:youtube" },
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100007146796600", icon: "mdi:facebook" }
+];
+---
+
+<div class="flex gap-4 mt-6 justify-center">
+  {links.map(link => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2 px-4 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition-colors"
+    >
+      <Icon name={link.icon} class="w-5 h-5" />
+      <span>{link.name}</span>
+    </a>
+  ))}
+</div>
