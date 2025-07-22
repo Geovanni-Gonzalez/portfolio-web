@@ -1,0 +1,36 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const languages = ['JavaScript', 'TypeScript', 'C', 'C++', 'Prolog', 'Python'];
+const technologies = ['React', 'Node.js', 'MySQL', 'WebSockets', 'Astro'];
+const tools = ['Git', 'VS Code', 'Figma', 'JPL', 'Vite', 'Agile'];
+---
+
+<section id="skills" class="max-w-5xl mx-auto py-20 px-6 text-white scroll-mt-20">
+  <h2 class="text-4xl font-bold text-center mb-12">{t('skills.title')}</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+    <div class="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+      <h3 class="text-xl font-semibold mb-4">{t('skills.languages')}</h3>
+      <ul class="space-y-2 text-zinc-300">
+        {languages.map(lang => <li>📝 {lang}</li>)}
+      </ul>
+    </div>
+
+    <div class="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+      <h3 class="text-xl font-semibold mb-4">{t('skills.technologies')}</h3>
+      <ul class="space-y-2 text-zinc-300">
+        {technologies.map(tech => <li>⚙️ {tech}</li>)}
+      </ul>
+    </div>
+
+    <div class="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+      <h3 class="text-xl font-semibold mb-4">{t('skills.tools')}</h3>
+      <ul class="space-y-2 text-zinc-300">
+        {tools.map(tool => <li>🛠️ {tool}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import ProjectCard from './ProjectCard.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const username= "Geovanni-Gonzalez";
+const repos= [
+  "TicTacToe-x86-ASM",
+  "BattleshipARM ",
+  "RISCMatrixApp ",
+  "CalculadoraMultibase-DesktopApp"
+];
+
+const headers = {
+  Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`
+};
+
+const projects = await Promise.all(
+  repos.map(async (repo) => {
+    const res = await fetch(`https://api.github.com/repos/${username}/${repo}`, { headers });
+    if (!res.ok) {
+      console.error(`Error al obtener repo ${repo}:`, res.status);
+      return null;
+    }
+    const data = await res.json();
+    return {
+      title: data.name,
+      description: data.description,
+      repo: data.html_url,
+      // Puedes agregar más campos si quieres
+    };
+  })
+);
+
+---
+
+
+<section id="projects" class="relative px-6 py-16 mx-auto max-w-7xl animate-fade-in">
+  <div class="bg-zinc-900/70 backdrop-blur-md rounded-2xl p-8 shadow-lg text-white">
+    <SectionTitle title={t('projects.title')} />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {projects.filter(Boolean).map((project) => (
+        <ProjectCard 
+          title={project!.title} 
+          description={project!.description || "Descripción no disponible"} 
+          tech={["JavaScript", "HTML", "CSS"]} // Puedes ajustar las tecnologías
+          repo={project!.repo} 
+        />
+      ))}
+    </div>
+  </div>
+</section>

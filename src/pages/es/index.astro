@@ -2,15 +2,25 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
+import Projects from '../../components/Projects.astro';
+import Skills from '../../components/Skills.astro';
+import Education from '../../components/Education.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<BaseLayout title="Geovanni Gonzalez" >
+<BaseLayout title="Geovanni Gonzalez">
   <main>
     <Hero />
     <About />
+    <Skills />
+    <Education />
+    <Projects />
+    <Contact />
   </main>
+  <Footer />
 </BaseLayout>

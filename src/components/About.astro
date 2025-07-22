@@ -1,11 +1,15 @@
 ---
 // components/About.astro
 import SectionTitle from './SectionTitle.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const profileImage = "/images/profile.jpg";
 const cvFile = "/documents/CV.pdf";
+
 ---
 
-<section class="relative px-6 py-16 mx-auto max-w-7xl animate-fade-in">
+<section id="about" class="relative px-6 py-16 mx-auto max-w-7xl animate-fade-in">
   <div class="bg-zinc-900/70 backdrop-blur-md rounded-2xl p-8 shadow-lg text-white grid grid-cols-1 md:grid-cols-3 gap-8 items-center transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]">
     
     <!-- Imagen de perfil -->
@@ -21,14 +25,14 @@ const cvFile = "/documents/CV.pdf";
 
     <!-- Texto descriptivo -->
     <div class="md:col-span-2">
-      <SectionTitle title="Sobre mí" />
+      <SectionTitle title={t('about.title')} />
 
       <p class="text-lg leading-relaxed mt-6">
-        Soy estudiante de <strong>Ingeniería en Computación</strong> en el <strong>Tecnológico de Costa Rica</strong>, con enfoque en el desarrollo de software y la resolución de problemas. Me apasiona la investigación y el aprendizaje continuo, entender cómo funcionan las tecnologías y cómo aplicarlas para crear soluciones innovadoras.
+        {t('about.description-1')}
       </p>
 
       <p class="text-lg leading-relaxed mt-4">
-        He participado en el desarrollo de proyectos que van desde aplicaciones web interactivas hasta sistemas de gestión de datos distribuidos. Mi objetivo es combinar buenas prácticas de desarrollo con un diseño centrado en el usuario para construir software de calidad.
+        {t('about.description-2')}  
       </p>
 
 
@@ -39,7 +43,10 @@ const cvFile = "/documents/CV.pdf";
           download 
           class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-2 px-4 rounded-lg shadow transition-all duration-300"
         >
-          📄 Descargar CV
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v12m0 0l-4-4m4 4l4-4m-8 8h8" />
+            </svg>
+            {t('about.cvDownload')}
         </a>
       </div>
     </div>

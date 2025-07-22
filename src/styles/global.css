@@ -1,6 +1,11 @@
 @import "tailwindcss";
+@import 'aos/dist/aos.css';
 @plugin '@tailwindcss/typography';
 
 @theme inline {
     --font-sans: var(--font-geist);
+}
+
+html {
+    @apply scroll-smooth;
 }

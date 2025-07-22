@@ -1,19 +1,34 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import LangPicker from './LangPicker.astro';
+import LangPicker from './LangPicker.jsx';
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-auto max-w-4xl px-8 py-3 flex items-center justify-center gap-10 shadow-none z-50">
-  <ul class="flex gap-10 text-white font-semibold text-lg">
-    <li><a href={`/${lang}/`} class="hover:text-indigo-400 transition">{t('nav.home')}</a></li>
-    <li><a href={`/${lang}/projects/`} class="hover:text-indigo-400 transition">{t('nav.projects')}</a></li>
-    <li><a href={`/${lang}/contact/`} class="hover:text-indigo-400 transition">{t('nav.contact')}</a></li>
-    <li><a href={`/${lang}/about/`} class="hover:text-indigo-400 transition">{t('nav.aboutMe')}</a></li>
-  </ul>
+<nav 
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3 rounded-xl backdrop-blur-md bg-white/5 shadow-lg z-50 scroll-smooth transition-all duration-300"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <div class="flex items-center justify-between">
+    <!-- Logo o Nombre -->
+    <a href="#home" class="text-white font-bold text-xl tracking-wide hover:text-indigo-400 transition">
+      Geovanni
+    </a>
 
-  <div class="ml-8">
-    <LangPicker />
+    <!-- Menú principal -->
+    <ul class="hidden md:flex gap-8 text-white font-medium text-base">
+      <li><a href="#home" class="hover:text-indigo-400 transition">{t('nav.home')}</a></li>
+      <li><a href="#skills" class="hover:text-indigo-400 transition">{t('nav.skills')}</a></li>
+      <li><a href="#projects" class="hover:text-indigo-400 transition">{t('nav.projects')}</a></li>
+      <li><a href="#contact" class="hover:text-indigo-400 transition">{t('nav.contact')}</a></li>
+      <li><a href="#about" class="hover:text-indigo-400 transition">{t('nav.aboutMe')}</a></li>
+    </ul>
+
+    <!-- Selector de idioma -->
+    <div class="ml-4">
+      <LangPicker currentLang={lang} client:load />
+    </div>
   </div>
 </nav>
