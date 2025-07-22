@@ -1,87 +1,94 @@
 ---
 import SectionTitle from './SectionTitle.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+import SocialButtonsContact from './SocialButtonsContact.astro';
 
-// Opcional: datos de contacto para mostrar
+
+
 const contactInfo = {
-  email: 'geovanni@example.com',
-  phone: '+506 1234 5678',
-  linkedin: 'https://linkedin.com/in/geovanni',
-  github: 'https://github.com/geovanni',
+    email: 'geovanniga32@gmail.com',
+    phone: '+506 62180026',
+    linkedin: 'https://www.linkedin.com/in/geovanni-gonzález-aguilar',
+    github: 'https://github.com/Geovanni-Gonzalez',
+    location: t('contact.location'),
 };
 ---
+<section
+  id="contact"
+  class="w-full min-h-screen flex flex-col justify-center items-center py-16 px-4 md:px-8 bg-transparent text-zinc-200"
+>
+  <div class="w-full max-w-7xl flex items-start mb-8">
+    <div class="flex-1">
+      <SectionTitle
+        title={t('contact.title')}
+        icon="mdi:email-outline"
+        color="black-500"
+        underline={true}
+        underlineFullWidth={true}
+        
+      />
+    </div>
+  </div>
 
-<section id="contact" class="max-w-4xl mx-auto py-20 px-6 scroll-mt-20">
-  <SectionTitle title="Contacto" />
+  <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl">
+    <!-- Información de contacto con fondo blur oscuro -->
+    <div
+      class="relative p-8 rounded-2xl shadow-lg border border-orange-600/30 bg-zinc-900/80 backdrop-blur-md flex flex-col justify-center space-y-8"
+    >
+      <p class="text-lg leading-relaxed text-orange-400 font-light tracking-wide">
+        {t('contact.description')}
+      </p>
 
-  <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-12">
-
-    <!-- Información de contacto -->
-    <div class="text-white space-y-6">
-      <p class="text-lg">¡Estoy abierto a nuevas oportunidades! Puedes contactarme a través de cualquiera de los siguientes medios o enviarme un mensaje directo usando el formulario.</p>
-
-      <ul class="space-y-4 text-zinc-300">
-        <li>
-          <strong>Email:</strong> <a href={`mailto:${contactInfo.email}`} class="text-cyan-400 hover:underline">{contactInfo.email}</a>
-        </li>
-        <li>
-          <strong>Teléfono:</strong> <a href={`tel:${contactInfo.phone}`} class="text-cyan-400 hover:underline">{contactInfo.phone}</a>
-        </li>
-        <li>
-          <strong>LinkedIn:</strong> <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">Perfil LinkedIn</a>
-        </li>
-        <li>
-          <strong>GitHub:</strong> <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">Perfil GitHub</a>
-        </li>
-      </ul>
+      <SocialButtonsContact contactInfo={contactInfo} />
     </div>
 
-    <!-- Formulario de contacto -->
-    <!-- Cambia esta URL a tu endpoint de Formspree o backend -->
+    <!-- Formulario con fondo blur oscuro -->
     <form
       action="https://formspree.io/f/yourformid"
       method="POST"
-      class="bg-zinc-900/70 p-6 rounded-lg shadow-lg text-white flex flex-col gap-6"
+      class="p-8 rounded-2xl border border-orange-600/30 bg-zinc-900/80 backdrop-blur-md shadow-lg flex flex-col gap-6 justify-center"
     >
       <label class="flex flex-col">
-        <span class="mb-2 font-semibold">Nombre</span>
+        <span class="mb-2 font-semibold text-orange-400">{t('contact.name')}</span>
         <input
           type="text"
           name="name"
           required
-          placeholder="Tu nombre"
-          class="rounded-md bg-zinc-800 border border-zinc-700 p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          placeholder={t('contact.name.placeholder')}
+          class="rounded-md border border-orange-500 bg-zinc-800/70 p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition duration-200"
         />
       </label>
 
       <label class="flex flex-col">
-        <span class="mb-2 font-semibold">Email</span>
+        <span class="mb-2 font-semibold text-orange-400">{t('contact.email')}</span>
         <input
           type="email"
           name="email"
           required
-          placeholder="tu@email.com"
-          class="rounded-md bg-zinc-800 border border-zinc-700 p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          placeholder={t('contact.email.placeholder')}
+          class="rounded-md border border-orange-500 bg-zinc-800/70 p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition duration-200"
         />
       </label>
 
       <label class="flex flex-col">
-        <span class="mb-2 font-semibold">Mensaje</span>
+        <span class="mb-2 font-semibold text-orange-400">{t('contact.message')}</span>
         <textarea
           name="message"
           rows="5"
           required
-          placeholder="Escribe tu mensaje aquí..."
-          class="rounded-md bg-zinc-800 border border-zinc-700 p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-y"
+          placeholder={t('contact.message.placeholder')}
+          class="rounded-md border border-orange-500 bg-zinc-800/70 p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-y transition duration-200"
         ></textarea>
       </label>
 
       <button
         type="submit"
-        class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-3 rounded-md transition-colors"
+        class="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-semibold py-3 rounded-lg shadow-md transition-all duration-300 hover:scale-105"
       >
-        Enviar Mensaje
+        {t('contact.send')}
       </button>
     </form>
-
   </div>
 </section>

@@ -54,22 +54,22 @@ export default function LangPicker({ currentLang }) {
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-36 rounded-md shadow-lg bg-indigo-900 bg-opacity-90 ring-1 ring-indigo-700 ring-opacity-80 z-50">
-          <ul className="py-1 text-sm text-indigo-200">
+        <div className="absolute right-0 mt-2 w-36 rounded-md shadow bg-zinc-900/70 bg-opacity-75 ring-1 ring-gray-600 ring-opacity-80 backdrop-blur-sm z-50">
+            <ul className="py-1 text-sm text-gray-100">
             {Object.entries(languages).map(([lang, label]) => (
-              <li key={lang}>
+                <li key={lang}>
                 <button
-                  onClick={() => changeLanguage(lang)}
-                  className="w-full text-left block px-4 py-2 hover:bg-indigo-700 hover:text-white transition"
-                  type="button"
+                    onClick={() => changeLanguage(lang)}
+                    className="w-full text-left block px-4 py-2 hover:bg-orange-700 hover:text-white transition"
+                    type="button"
                 >
-                  {label}
+                    {label}
                 </button>
-              </li>
+                </li>
             ))}
-          </ul>
+            </ul>
         </div>
-      )}
+            )}
     </div>
   );
 }

@@ -1,37 +1,41 @@
 ---
+import Icon from 'astro-iconify';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-zinc-900 text-zinc-300 py-8 mt-20">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-    
+<footer class="bg-gradient-to-t from-zinc-900 via-zinc-800 to-zinc-900 text-zinc-300 py-12 mt-24 shadow-inner">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+    <!-- Logo y nombre -->
+    <div class="flex items-center gap-3 mb-6 md:mb-0">
+      <Icon name="mdi:star-four-points" class="w-8 h-8 text-cyan-400 drop-shadow" />
+      <span class="text-2xl font-extrabold tracking-wider text-white">Geovanni</span>
+    </div>
+
     <!-- Enlaces rápidos -->
-    <nav class="flex gap-6 text-sm font-semibold text-white">
-      <a href="#home" class="hover:text-cyan-400 transition">{t('nav.home')}</a>
-      <a href="#about" class="hover:text-cyan-400 transition">{t('nav.aboutMe')}</a>
-      <a href="#skills" class="hover:text-cyan-400 transition">{t('nav.skills')}</a>
-      <a href="#projects" class="hover:text-cyan-400 transition">{t('nav.projects')}</a>
-      <a href="#contact" class="hover:text-cyan-400 transition">{t('nav.contact')}</a>
+    <nav class="flex flex-wrap gap-8 text-base font-medium">
+      <a href="#home" class="hover:text-cyan-400 transition-colors duration-200">{t('nav.home')}</a>
+      <a href="#about" class="hover:text-cyan-400 transition-colors duration-200">{t('nav.aboutMe')}</a>
+      <a href="#skills" class="hover:text-cyan-400 transition-colors duration-200">{t('nav.skills')}</a>
+      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-200">{t('nav.projects')}</a>
+      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-200">{t('nav.contact')}</a>
     </nav>
 
     <!-- Redes sociales -->
-    <div class="flex gap-6 text-xl text-white">
-      <a href="https://github.com/geovanni" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-cyan-400 transition">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.865 8.166 6.839 9.489.5.09.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.528 2.341 1.087 2.91.832.09-.647.35-1.087.636-1.337-2.22-.252-4.555-1.11-4.555-4.942 0-1.09.39-1.98 1.029-2.678-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.91-1.294 2.75-1.025 2.75-1.025.546 1.377.203 2.394.1 2.647.64.698 1.028 1.588 1.028 2.678 0 3.842-2.337 4.687-4.566 4.934.359.31.679.92.679 1.855 0 1.338-.012 2.419-.012 2.75 0 .268.18.577.688.479C19.138 20.162 22 16.42 22 12c0-5.52-4.48-10-10-10z" clip-rule="evenodd"/>
-        </svg>
+    <div class="flex gap-5">
+      <a href="https://github.com/Geovanni-Gonzalez" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="rounded-full bg-zinc-800 hover:bg-cyan-400 hover:text-white transition-colors duration-200 p-2 shadow-lg border border-zinc-700 hover:border-cyan-400">
+        <Icon name="mdi:github" class="w-6 h-6" />
       </a>
-      <a href="https://linkedin.com/in/geovanni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-cyan-400 transition">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.967 0-1.75-.784-1.75-1.75 0-.967.783-1.75 1.75-1.75s1.75.783 1.75 1.75c0 .966-.783 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.338-.027-3.063-1.866-3.063-1.868 0-2.154 1.459-2.154 2.965v5.702h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.838-1.562 3.034 0 3.595 1.996 3.595 4.59v5.605z"/>
-        </svg>
+      <a href="https://www.linkedin.com/in/geovanni-gonzález-aguilar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="rounded-full bg-zinc-800 hover:bg-cyan-400 hover:text-white transition-colors duration-200 p-2 shadow-lg border border-zinc-700 hover:border-cyan-400">
+        <Icon name="mdi:linkedin" class="w-6 h-6" />
       </a>
     </div>
   </div>
 
-  <p class="text-center text-zinc-500 text-sm mt-8 select-none">
-    © {new Date().getFullYear()} Geovanni Portafolio, Todos los Derechos Reservados
-  </p>
+  <div class="border-t border-zinc-700 mt-10 pt-6">
+    <p class="text-center text-zinc-500 text-xs select-none tracking-wide">
+      © {new Date().getFullYear()} <span class="font-semibold text-zinc-400"> &mdash; {t('footer.copyright')}
+    </p>
+  </div>
 </footer>

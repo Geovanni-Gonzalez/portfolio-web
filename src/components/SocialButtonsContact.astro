@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-iconify';
+const { contactInfo } = Astro.props;
+
+const items = [
+    { icon: 'mdi:email', label: contactInfo.email, copy: contactInfo.email },
+    { icon: 'mdi:whatsapp', label: contactInfo.phone, copy: contactInfo.phone },
+    { icon: 'mdi:linkedin', label: 'LinkedIn', copy: contactInfo.linkedin },
+    { icon: 'mdi:github', label: 'GitHub', copy: contactInfo.github },
+    { icon: 'mdi:map-marker', label: contactInfo.location, copy: contactInfo.location }
+];
+---
+
+<ul class="flex flex-col gap-4 w-full text-base relative">
+    {items.map((item, i) => (
+        <li class="w-full relative">
+            <div
+                data-copy={item.copy}
+                class="copy-link group w-full flex items-center gap-4 p-4 rounded-xl border border-zinc-700 bg-zinc-800/60 backdrop-blur-sm text-zinc-200 hover:border-orange-500 hover:text-orange-400 transition-all duration-300 cursor-pointer relative"
+                tabindex="0"
+            >
+                <Icon name={item.icon} class="w-6 h-6 text-orange-400 group-hover:scale-125 transition-transform duration-300" />
+                <span class="flex-1 truncate font-medium">{item.label}</span>
+                <span
+                    class="copy-tooltip absolute right-12 text-sm text-green-400 bg-zinc-900 px-2 py-1 rounded-md shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none"
+                >
+                    ¡Copiado!
+                </span>
+                <span class="absolute right-4 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Icon name="mdi:content-copy" class="w-5 h-5 text-zinc-400 group-hover:text-orange-400" />
+                </span>
+            </div>
+        </li>
+    ))}
+</ul>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const items = document.querySelectorAll('.copy-link');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const textToCopy = item.getAttribute('data-copy');
+                const tooltip = item.querySelector('.copy-tooltip');
+
+                if (textToCopy) {
+                    navigator.clipboard.writeText(textToCopy)
+                        .then(() => {
+                            if (tooltip) {
+                                tooltip.classList.remove('opacity-0');
+                                tooltip.classList.add('opacity-100');
+                                setTimeout(() => {
+                                    tooltip.classList.add('opacity-0');
+                                    tooltip.classList.remove('opacity-100');
+                                }, 1500);
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Error al copiar al portapapeles:', err);
+                        });
+                }
+            });
+            // Optional: allow keyboard copy with Enter/Space
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    item.click();
+                }
+            });
+        });
+    });
+</script>

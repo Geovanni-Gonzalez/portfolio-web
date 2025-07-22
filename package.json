@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/react": "^4.3.0",
     "@astrojs/vercel": "^8.2.2",
+    "@iconify/react": "^6.0.0",
     "@paper-design/shaders-react": "^0.0.43",
     "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
@@ -29,6 +30,7 @@
     "sharp": "^0.34.3"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",

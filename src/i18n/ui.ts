@@ -38,7 +38,37 @@ export const ui = {
     'skills.languages': 'Languages',
     'skills.technologies': 'Technologies',
     'skills.tools': 'Tools & Methodologies',
-  },
+
+    'education.title': 'Education & Certifications',
+    'education.subtitle': 'Academic Background',
+    'education.degree': 'Bachelor of Computer Engineering',
+    'education.institution': 'Costa Rica Institute of Technology (ITCR)',
+    'education.description':
+      'Comprehensive training in software development, digital systems, networks, and algorithms, with an emphasis on technological innovation and practical projects.',
+    'education.endDate': 'Present',
+
+    'certifications.title': 'Certifications',
+    'certifications.subtitle': 'Certifications',
+    'certifications.viewOnline': 'View Certificate',
+
+    'certifications.pythonCertification.description': 'Certification validating fundamental programming knowledge in Python, data structures, control flow, functions, and basic OOP principles.',
+
+
+    'contact.title': 'Contact',
+    'contact.email': 'Email',
+    'contact.phone': 'Phone',
+    'contact.name': 'Name',
+    'contact.message': 'Message',
+    'contact.send': 'Send Message',
+    'contact.success': 'Message sent successfully. I will get back to you soon.',
+    'contact.description': 'I am open to new opportunities. You can reach out to me through any of the following means or send me a message using the form below.',
+
+    'contact.name.placeholder': 'Your Name',
+    'contact.email.placeholder': 'youremail@example.com',
+    'contact.phone.placeholder': 'Your Phone',
+    'contact.message.placeholder': 'Type your message here...',
+    'contact.location': 'Limón, Limón, Costa Rica',
+},
 
   es: {
     'app.title': 'Portafolio',
@@ -72,5 +102,38 @@ export const ui = {
     'skills.languages': 'Lenguajes',
     'skills.technologies': 'Tecnologías',
     'skills.tools': 'Herramientas y Metodologías',
-  },
+
+    'education.title': 'Educación & Certificaciones',
+    'education.subtitle': 'Formación Académica',
+    'education.degree': 'Ingeniería en Computación',
+    'education.institution': 'Instituto Tecnológico de Costa Rica (ITCR)',
+    'education.description':
+      'Formación integral en desarrollo de software, sistemas digitales, redes, y algoritmos, con énfasis en innovación tecnológica y proyectos prácticos.',
+    'education.endDate': 'Actualidad',
+
+
+    'certifications.title': 'Certificaciones',
+    'certifications.subtitle': 'Certificaciones y Cursos',
+    'certifications.viewOnline': 'Ver certificado',
+
+    'certifications.pythonCertification.description': 'Certificación que valida conocimientos fundamentales de programación en Python, manejo de estructuras de datos, control de flujo, funciones y principios básicos de POO.',
+    
+    'contact.title': 'Contacto',
+    'contact.email': 'Correo Electrónico',
+    'contact.phone': 'Teléfono',
+    'contact.name': 'Nombre',
+    'contact.message': 'Mensaje',
+    'contact.send': 'Enviar mensaje',
+    'contact.success': 'Mensaje enviado con éxito. Me pondré en contacto contigo pronto.',
+    'contact.description': 'Estoy abierto a nuevas oportunidades. Puedes contactarme a través de cualquiera de los siguientes medios o enviarme un mensaje usando el formulario a continuación.',
+
+    'contact.name.placeholder': 'Tu nombre',
+    'contact.email.placeholder': 'tucorreo@ejemplo.com',
+    'contact.phone.placeholder': 'Tu teléfono',
+    'contact.message.placeholder': 'Escribe tu mensaje aquí...',
+    'contact.location': 'Limón, Limón, Costa Rica',
+    
+    
+
+},
 } as const;
