@@ -5,8 +5,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 import SocialButtonsContact from './SocialButtonsContact.astro';
 
-
-
 const contactInfo = {
     email: 'geovanniga32@gmail.com',
     phone: '+506 62180026',
@@ -17,9 +15,9 @@ const contactInfo = {
 ---
 <section
   id="contact"
-  class="w-full min-h-screen flex flex-col justify-center items-center py-16 px-4 md:px-8 bg-transparent text-zinc-200"
+  class="w-full min-h-screen flex flex-col justify-center items-center py-10 px-2 sm:px-4 md:px-8 bg-transparent text-zinc-200"
 >
-  <div class="w-full max-w-7xl flex items-start mb-8">
+  <div class="w-full max-w-7xl flex flex-col sm:flex-row items-start mb-6 sm:mb-8">
     <div class="flex-1">
       <SectionTitle
         title={t('contact.title')}
@@ -27,28 +25,26 @@ const contactInfo = {
         color="black-500"
         underline={true}
         underlineFullWidth={true}
-        
       />
     </div>
   </div>
 
-  <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl">
-    <!-- Información de contacto con fondo blur oscuro -->
+  <div class="mt-4 w-full grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 max-w-7xl">
+    <!-- Información de contacto -->
     <div
-      class="relative p-8 rounded-2xl shadow-lg border border-orange-600/30 bg-zinc-900/80 backdrop-blur-md flex flex-col justify-center space-y-8"
+      class="relative p-5 sm:p-8 rounded-2xl shadow-lg border border-orange-600/30 bg-zinc-900/80 backdrop-blur-md flex flex-col justify-center space-y-6 sm:space-y-8"
     >
-      <p class="text-lg leading-relaxed text-orange-400 font-light tracking-wide">
+      <p class="text-base sm:text-lg leading-relaxed text-orange-400 font-light tracking-wide">
         {t('contact.description')}
       </p>
-
       <SocialButtonsContact contactInfo={contactInfo} />
     </div>
 
-    <!-- Formulario con fondo blur oscuro -->
+    <!-- Formulario -->
     <form
       action="https://formspree.io/f/yourformid"
       method="POST"
-      class="p-8 rounded-2xl border border-orange-600/30 bg-zinc-900/80 backdrop-blur-md shadow-lg flex flex-col gap-6 justify-center"
+      class="p-5 sm:p-8 rounded-2xl border border-orange-600/30 bg-zinc-900/80 backdrop-blur-md shadow-lg flex flex-col gap-4 sm:gap-6 justify-center"
     >
       <label class="flex flex-col">
         <span class="mb-2 font-semibold text-orange-400">{t('contact.name')}</span>
@@ -57,7 +53,7 @@ const contactInfo = {
           name="name"
           required
           placeholder={t('contact.name.placeholder')}
-          class="rounded-md border border-orange-500 bg-zinc-800/70 p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition duration-200"
+          class="rounded-md border border-orange-500 bg-zinc-800/70 p-3 sm:p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition duration-200"
         />
       </label>
 
@@ -68,7 +64,7 @@ const contactInfo = {
           name="email"
           required
           placeholder={t('contact.email.placeholder')}
-          class="rounded-md border border-orange-500 bg-zinc-800/70 p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition duration-200"
+          class="rounded-md border border-orange-500 bg-zinc-800/70 p-3 sm:p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition duration-200"
         />
       </label>
 
@@ -76,10 +72,10 @@ const contactInfo = {
         <span class="mb-2 font-semibold text-orange-400">{t('contact.message')}</span>
         <textarea
           name="message"
-          rows="5"
+          rows="4"
           required
           placeholder={t('contact.message.placeholder')}
-          class="rounded-md border border-orange-500 bg-zinc-800/70 p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-y transition duration-200"
+          class="rounded-md border border-orange-500 bg-zinc-800/70 p-3 sm:p-4 text-orange-300 placeholder-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-y transition duration-200"
         ></textarea>
       </label>
 

@@ -33,6 +33,7 @@ export const ui = {
     'about.cvDownload': 'Download CV',
 
     'projects.title': 'Projects',
+    'projects.viewOnGitHub': 'View on GitHub',
 
     'skills.title': 'Technical Skills',
     'skills.languages': 'Languages',
@@ -97,6 +98,7 @@ export const ui = {
     'about.cvDownload': 'Descargar CV',
 
     'projects.title': 'Proyectos',
+    'projects.viewOnGitHub': 'Ver en GitHub',
 
     'skills.title': 'Habilidades Técnicas',
     'skills.languages': 'Lenguajes',
@@ -133,7 +135,7 @@ export const ui = {
     'contact.message.placeholder': 'Escribe tu mensaje aquí...',
     'contact.location': 'Limón, Limón, Costa Rica',
     
-    
+
 
 },
 } as const;

@@ -5,13 +5,14 @@ import { Icon } from 'astro-iconify';
 const {
   title,
   icon = null,
-  color = 'orange-500',
+  color1 = null,
+  color2 = null,
   centered = false,
   underline = true,
 } = Astro.props;
 
-const baseColor = `text-${color}`;
-const underlineColor = `bg-${color}`;
+const baseColor = `text-${color1 || 'white'}`;
+const underlineColor = `bg-${color2 || 'white'}-500`;
 const alignment = centered ? 'text-center mx-auto justify-center' : 'text-left';
 ---
 
