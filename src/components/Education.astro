@@ -16,24 +16,27 @@ const educations = [
 ];
 ---
 
-<section id="education" class="max-w-5xl mx-auto py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
+<section id="education" class="max-w-5xl mx-auto py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 rounded-xl">
     <SectionTitle title={t('education.title')} />
 
-    <!-- Educación -->
-    <div class="mt-8 space-y-10">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-6 border-b border-gray-600 pb-2">{t('education.subtitle')}</h2>
+    <div class="mt-8 space-y-6 sm:space-y-8 md:space-y-10 w-full">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white text-left mb-4">
+            {t('education.subtitle')}
+        </h2>
+        
         {educations.map(({ degree, institution, startDate, endDate, description }) => (
-            <article class="bg-zinc-900/70 p-4 sm:p-6 rounded-lg shadow-lg text-white hover:shadow-red-500 transition-shadow duration-300">
+            <article class="bg-zinc-900/70 p-4 sm:p-6 rounded-lg shadow-lg text-white transition-all duration-300 transform hover:scale-[1.01] hover:shadow-orange-400/30">
                 <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                    <h3 class="text-lg sm:text-xl font-semibold">{degree}</h3>
+                    <h3 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600 bg-clip-text text-transparent drop-shadow-lg break-words">{degree}</h3>
                     <time class="text-sm text-zinc-400">{startDate} - {endDate}</time>
                 </header>
-                <p class="text-zinc-300 italic mt-1">{institution}</p>
-                <p class="mt-4 text-zinc-200 leading-relaxed">{description}</p>
+                <p class="text-xs sm:text-sm text-zinc-400 mt-1 italic font-medium break-words">{institution}</p>
+                <p class="mt-4 text-zinc-300 text-sm sm:text-base leading-relaxed font-light tracking-wide break-words">
+                    {description}
+                </p>
             </article>
         ))}
     </div>
 
-    <!-- Insertar componente Certifications -->
     <Certifications />
 </section>
