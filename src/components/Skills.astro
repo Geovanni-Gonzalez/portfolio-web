@@ -1,85 +1,99 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl } from '../i18n/utils';
 import { Icon } from 'astro-iconify';
+import skillsData from '../data/skills.json';
+import AOSWrapper from '../components/AOSWrapper.jsx';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
-const languages = [
-  
-  { name: 'JavaScript', icon: 'logos:javascript', level: 'Avanzado' },
-  { name: 'TypeScript', icon: 'logos:typescript-icon', level: 'Avanzado' },
-  { name: 'C', icon: 'devicon:c', level: 'Intermedio' },
-  { name: 'C++', icon: 'devicon:cplusplus', level: 'Intermedio' },
-  { name: 'Haskell', icon: 'mdi:language-haskell', level: 'Intermedio' },
-  { name: 'Python', icon: 'logos:python', level: 'Avanzado' }
-];
-
-const technologies = [
-  { name: 'React', icon: 'logos:react', level: 'Avanzado' },
-  { name: 'Node.js', icon: 'logos:nodejs-icon', level: 'Avanzado' },
-  { name: 'MySQL', icon: 'logos:mysql', level: 'Intermedio' },
-  { name: 'WebSockets', icon: 'mdi:lan-connect', level: 'Intermedio' },
-  { name: 'Astro', icon: 'logos:astro-icon', level: 'Avanzado' }
-];
-
-const tools = [
-  { name: 'Git', icon: 'logos:git-icon', level: 'Avanzado' },
-  { name: 'VS Code', icon: 'vscode-icons:file-type-vscode', level: 'Avanzado' },
-  { name: 'Figma', icon: 'logos:figma', level: 'Intermedio' },
-  { name: 'JPL', icon: 'mdi:robot', level: 'Intermedio' },
-  { name: 'Vite', icon: 'logos:vitejs', level: 'Avanzado' },
-  { name: 'Agile', icon: 'mdi:account-group', level: 'Avanzado' }
-];
+const skills = skillsData.skills[lang] || skillsData.skills['en'];
 ---
 
-<section id="skills" class="max-w-6xl mx-auto py-20 px-6 text-white scroll-mt-20">
-  <h2 class="text-4xl font-bold text-center mb-12">{t('skills.title')}</h2>
+<section 
+  id="skills" 
+  class="max-w-6xl mx-auto py-20 px-6 text-white scroll-mt-20"
+>
+  {/* Inicializa AOS para animaciones on scroll */}
+  <AOSWrapper client:load />
+  <h2
+    class="text-5xl md:text-6xl font-black text-center mb-16 tracking-tight select-none
+      bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent
+      relative flex flex-col items-center"
+    style="text-shadow: 0 4px 24px #fff, 0 0 24px #FFA500, 0 0 32px #FF4500, 0 0 40px #FFD700;"
+  >
+    <span class="text-orange-100" style="text-shadow: 0 0 10px #ff6200, 0 2px 16px #ff0000;">
+      {lang === 'es' ? 'Habilidades' : 'Skills'}
+    </span>
+    <span
+      class="block w-3/3 h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 shadow-lg animate-pulse"
+      style="box-shadow: 0 0 16px #FFA500, 0 0 32px #FFD700;"
+      aria-hidden="true"
+      data-aos="fade-in"
+      data-aos-duration="1200"
+    ></span>  
+  </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-    <!-- Lenguajes -->
-    <div class="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/10 
-                transition-transform duration-500 hover:scale-105 hover:shadow-orange-500/30">
-      <h3 class="text-xl font-semibold mb-6 text-center">{t('skills.languages')}</h3>
-      <ul class="grid grid-cols-2 gap-4">
-        {languages.map(lang => (
-          <li class="flex flex-col items-center bg-white/5 p-3 rounded-xl hover:bg-white/10 transition">
-            <Icon name={lang.icon} class="w-10 h-10 mb-2" />
-            <span class="text-sm">{lang.name}</span>
-            <span class="text-xs text-white">{lang.level}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    {skills.map((category, index) => (
+      <div
+        class="
+          scrollbar-hide overflow-y-auto bg-gradient-to-br
+          from-black/60 via-gray-900/60 to-black/80 backdrop-blur-xl
+          p-0 rounded-3xl shadow-2xl border border-white/10
+          transition-transform duration-400 hover:scale-[1.04] hover:shadow-orange-400/30
+          max-h-96 flex flex-col
+        "
+        aria-label={category.category}
+        data-aos={
+          index % 3 === 0
+            ? 'fade-right'
+            : index % 3 === 1
+            ? 'fade-up'
+            : 'fade-left'
+        }
+        data-aos-duration="800"
+        data-aos-delay={index * 150}
+      >
+        <h3
+          class="
+            sticky top-0 text-center text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
+            bg-clip-text text-transparent drop-shadow-lg break-words
+            tracking-wide py-4 bg-zinc-800/80 backdrop-blur-lg
+            border-b border-orange-400/20 rounded-t-3xl z-10
+          "
+        >
+          {category.category}
+        </h3>
 
-    <!-- Tecnologías -->
-    <div class="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/10 
-                transition-transform duration-500 hover:scale-105 hover:shadow-blue-500/30">
-      <h3 class="text-xl font-semibold mb-6 text-center">{t('skills.technologies')}</h3>
-      <ul class="grid grid-cols-2 gap-4">
-        {technologies.map(tech => (
-          <li class="flex flex-col items-center bg-white/5 p-3 rounded-xl hover:bg-white/10 transition">
-            <Icon name={tech.icon} class="w-10 h-10 mb-2" />
-            <span class="text-sm">{tech.name}</span>
-            <span class="text-xs text-white">{tech.level}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <!-- Herramientas -->
-    <div class="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/10 
-                transition-transform duration-500 hover:scale-105 hover:shadow-green-500/30">
-      <h3 class="text-xl font-semibold mb-6 text-center">{t('skills.tools')}</h3>
-      <ul class="grid grid-cols-2 gap-4">
-        {tools.map(tool => (
-          <li class="flex flex-col items-center bg-white/5 p-3 rounded-xl hover:bg-white/10 transition">
-            <Icon name={tool.icon} class="w-10 h-10 mb-2" />
-            <span class="text-sm">{tool.name}</span>
-            <span class="text-xs text-white">{tool.level}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <ul class="grid grid-cols-2 gap-7 px-2">
+          {category.items.map((skill, i) => (
+            <li
+              class="
+                flex flex-col items-center bg-zinc-900/90 p-6 rounded-xl
+                border border-orange-500/50 shadow-lg shadow-orange-600/40
+                cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl
+              "
+              title={`${skill.name} - ${skill.level}`}
+              data-aos="zoom-in"
+              data-aos-duration="600"
+              data-aos-delay={i * 50}
+            >
+              <div class="flex justify-center items-center w-14 h-14 mb-4">
+                <Icon
+                  name={skill.icon}
+                  class="w-full h-full text-white transition-transform duration-300 hover:text-orange-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <span class="text-lg font-medium text-white text-center tracking-wide">
+                {skill.name}
+              </span>
+              <span class="text-sm text-zinc-300 mt-1 text-center">
+                {skill.level}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 </section>

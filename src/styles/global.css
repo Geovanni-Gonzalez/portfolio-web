@@ -4,26 +4,27 @@
 @plugin '@tailwindcss/forms';
 @import 'keen-slider/keen-slider.min.css';
 
-
-
 @theme inline {
-    --font-sans: var(--font-geist);
+  --font-sans: var(--font-geist);
 }
 
 html {
-    @apply scroll-smooth;
+  @apply scroll-smooth;
 }
 
-/* Ocultar scrollbar si es necesario */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Scrollbar completamente oculta pero funcional (compatible con todos los navegadores modernos) */
+.scrollbar-hide,
+.scrollbar-custom {
+  -ms-overflow-style: none;     /* IE 10+ */
+  scrollbar-width: none;        /* Firefox */
 }
 
+.scrollbar-hide::-webkit-scrollbar,
+.scrollbar-custom::-webkit-scrollbar {
+  display: none;                /* Safari, Chrome */
+}
 
+/* Variables de tema */
 :root {
   --color-bg: #0f0f0f;
   --color-text: #ffffff;
@@ -39,4 +40,3 @@ html {
   --color-accent-light: #ff7b00;
   --color-muted: #52525b;
 }
-

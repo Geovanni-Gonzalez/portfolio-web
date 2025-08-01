@@ -6,12 +6,12 @@ import "../styles/global.css";
 import LoadingIndicator from "astro-loading-indicator/component";
 import Navbar from '../components/Navbar.astro';
 import WarpBackground from '../components/WarpBackground';
+import AOSWrapper from '../components/AOSWrapper.jsx';
 
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const defaultTitle = "Geovanni Gonzalez";
 const defaultDescription = "Portfolio of Geovanni Gonzalez, computer engineering student at TEC, Costa Rica.";
-
 ---
 
 <!DOCTYPE html>
@@ -26,22 +26,23 @@ const defaultDescription = "Portfolio of Geovanni Gonzalez, computer engineering
     <Font cssVariable="--font-geist" preload />
     <ClientRouter />
     <LoadingIndicator color="#f4f4f5" height="2px" />
-  	</head>
 
-	<body class="font-sans min-h-screen bg-zinc-900">
-		<WarpBackground
-			colors={["#ffa500", "#ff4500", "#ff6347"]}
-			speed={0.8}
-			swirl={0.9}
-			swirlIterations={10}
-			shapeScale={0.35}
-			client:load
-			className="fixed inset-0 -z-10"
-		/>
-		<Navbar lang={lang} />
-		<slot />
-	</body>
+  </head>
 
+  <body class="font-sans min-h-screen bg-zinc-900">
+    <WarpBackground
+      colors={["#ffa500", "#ff4500", "#ff6347"]}
+      speed={0.8}
+      swirl={0.9}
+      swirlIterations={10}
+      shapeScale={0.35}
+      client:load
+      className="fixed inset-0 -z-10"
+    />
+    <Navbar lang={lang} />
+
+    <slot />
+  </body>
 </html>
 
 <style>
@@ -51,4 +52,3 @@ const defaultDescription = "Portfolio of Geovanni Gonzalez, computer engineering
     height: 100%;
   }
 </style>
-

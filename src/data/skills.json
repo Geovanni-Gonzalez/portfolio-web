@@ -1,0 +1,100 @@
+{
+  "skills": {
+    "es": [
+      {
+        "category": "Lenguajes de Programación",
+        "items": [
+          { "name": "Python", "level": "Avanzado", "icon": "logos:python" },
+          { "name": "C++", "level": "Intermedio", "icon": "logos:c-plusplus" },
+          { "name": "JavaScript", "level": "Avanzado", "icon": "logos:javascript" },
+          { "name": "Java", "level": "Intermedio", "icon": "logos:java" },
+          { "name": "PHP", "level": "Intermedio", "icon": "logos:php" },
+          { "name": "TypeScript", "level": "Intermedio", "icon": "logos:typescript-icon" },
+          { "name": "HTML", "level": "Avanzado", "icon": "logos:html-5" },
+          { "name": "CSS", "level": "Avanzado", "icon": "logos:css-3" },
+          { "name": "SQL", "level": "Intermedio", "icon": "logos:mysql" },
+          { "name": "C#", "level": "Básico", "icon": "logos:c-sharp" }
+        ]
+      },
+      {
+        "category": "Frameworks y Librerías",
+        "items": [
+          { "name": "React", "level": "Avanzado", "icon": "logos:react" },
+          { "name": "Node.js", "level": "Intermedio", "icon": "logos:nodejs-icon" }
+        ]
+      },
+      {
+        "category": "Bases de Datos",
+        "items": [
+          { "name": "MySQL", "level": "Intermedio", "icon": "logos:mysql" },
+          { "name": "MongoDB", "level": "Intermedio", "icon": "logos:mongodb-icon" },
+          { "name": "PostgreSQL", "level": "Básico", "icon": "logos:postgresql" }
+        ]
+      },
+      {
+        "category": "DevOps y Herramientas",
+        "items": [
+          { "name": "Git", "level": "Avanzado", "icon": "logos:git-icon" },
+          { "name": "Docker", "level": "Intermedio", "icon": "logos:docker-icon" },
+          { "name": "Linux", "level": "Intermedio", "icon": "logos:linux-tux" }
+        ]
+      },
+      {
+        "category": "Otras habilidades",
+        "items": [
+          { "name": "Resolución de problemas", "level": "Alta", "icon": "mdi:brain" },
+          { "name": "Comunicación técnica", "level": "Alta", "icon": "mdi:chat" },
+          { "name": "Trabajo en equipo", "level": "Alta", "icon": "mdi:account-group" }
+        ]
+      }
+    ],
+    "en": [
+      {
+        "category": "Programming Languages",
+        "items": [
+          { "name": "Python", "level": "Advanced", "icon": "logos:python" },
+          { "name": "C++", "level": "Intermediate", "icon": "logos:c-plusplus" },
+          { "name": "JavaScript", "level": "Advanced", "icon": "logos:javascript" },
+          { "name": "Java", "level": "Intermediate", "icon": "logos:java" },
+          { "name": "PHP", "level": "Intermediate", "icon": "logos:php" },
+          { "name": "TypeScript", "level": "Intermediate", "icon": "logos:typescript-icon" },
+          { "name": "HTML", "level": "Advanced", "icon": "logos:html-5" },
+          { "name": "CSS", "level": "Advanced", "icon": "logos:css-3" },
+          { "name": "SQL", "level": "Intermediate", "icon": "logos:mysql" },
+          { "name": "C#", "level": "Basic", "icon": "logos:c-sharp" }
+        ]
+      },
+      {
+        "category": "Frameworks and Libraries",
+        "items": [
+          { "name": "React", "level": "Advanced", "icon": "logos:react" },
+          { "name": "Node.js", "level": "Intermediate", "icon": "logos:nodejs-icon" }
+        ]
+      },
+      {
+        "category": "Databases",
+        "items": [
+          { "name": "MySQL", "level": "Intermediate", "icon": "logos:mysql" },
+          { "name": "MongoDB", "level": "Intermediate", "icon": "logos:mongodb-icon" },
+          { "name": "PostgreSQL", "level": "Basic", "icon": "logos:postgresql" }
+        ]
+      },
+      {
+        "category": "DevOps and Tools",
+        "items": [
+          { "name": "Git", "level": "Advanced", "icon": "logos:git-icon" },
+          { "name": "Docker", "level": "Intermediate", "icon": "logos:docker-icon" },
+          { "name": "Linux", "level": "Intermediate", "icon": "logos:linux-tux" }
+        ]
+      },
+      {
+        "category": "Other Skills",
+        "items": [
+          { "name": "Problem Solving", "level": "High", "icon": "mdi:brain" },
+          { "name": "Technical Communication", "level": "High", "icon": "mdi:chat" },
+          { "name": "Teamwork", "level": "High", "icon": "mdi:account-group" }
+        ]
+      }
+    ]
+  }
+}
