@@ -13,15 +13,18 @@ html {
 }
 
 /* Scrollbar completamente oculta pero funcional (compatible con todos los navegadores modernos) */
-.scrollbar-hide,
-.scrollbar-custom {
-  -ms-overflow-style: none;     /* IE 10+ */
-  scrollbar-width: none;        /* Firefox */
+/* tailwind.config.js -> safelist or custom plugin */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
 
-.scrollbar-hide::-webkit-scrollbar,
-.scrollbar-custom::-webkit-scrollbar {
-  display: none;                /* Safari, Chrome */
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 /* Variables de tema */

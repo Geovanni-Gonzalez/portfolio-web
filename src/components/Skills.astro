@@ -8,88 +8,75 @@ const lang = getLangFromUrl(Astro.url);
 const skills = skillsData.skills[lang] || skillsData.skills['en'];
 ---
 
-<section 
-  id="skills" 
-  class="max-w-6xl mx-auto py-20 px-6 text-white scroll-mt-20"
+<section
+  id="skills"
+  class="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-white scroll-mt-20"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  data-aos-delay="100"
+  data-aos-once="true"
 >
-  {/* Inicializa AOS para animaciones on scroll */}
   <AOSWrapper client:load />
+
   <h2
-    class="text-5xl md:text-6xl font-black text-center mb-16 tracking-tight select-none
-      bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent
-      relative flex flex-col items-center"
+    class="text-4xl sm:text-5xl md:text-6xl font-black text-center mb-16 tracking-tight select-none
+           bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent
+           relative flex flex-col items-center"
     style="text-shadow: 0 4px 24px #fff, 0 0 24px #FFA500, 0 0 32px #FF4500, 0 0 40px #FFD700;"
   >
     <span class="text-orange-100" style="text-shadow: 0 0 10px #ff6200, 0 2px 16px #ff0000;">
       {lang === 'es' ? 'Habilidades' : 'Skills'}
     </span>
     <span
-      class="block w-3/3 h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 shadow-lg animate-pulse"
-      style="box-shadow: 0 0 16px #FFA500, 0 0 32px #FFD700;"
+      class="block w-32 h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 shadow-lg animate-pulse"
       aria-hidden="true"
-      data-aos="fade-in"
-      data-aos-duration="1200"
     ></span>  
   </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {skills.map((category, index) => (
       <div
-        class="
-          scrollbar-hide overflow-y-auto bg-gradient-to-br
-          from-black/60 via-gray-900/60 to-black/80 backdrop-blur-xl
-          p-0 rounded-3xl shadow-2xl border border-white/10
-          transition-transform duration-400 hover:scale-[1.04] hover:shadow-orange-400/30
-          max-h-96 flex flex-col
-        "
+        class="bg-gradient-to-br from-black/60 via-gray-900/60 to-black/80 backdrop-blur-xl
+               rounded-3xl border border-white/10 shadow-2xl hover:shadow-orange-400/30
+               transition-transform duration-400 hover:scale-[1.03]
+               flex flex-col
+               h-auto sm:h-[520px] overflow-y-scroll
+               scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent"
         aria-label={category.category}
-        data-aos={
-          index % 3 === 0
-            ? 'fade-right'
-            : index % 3 === 1
-            ? 'fade-up'
-            : 'fade-left'
-        }
-        data-aos-duration="800"
-        data-aos-delay={index * 150}
+        data-aos="zoom-in-up"
+        data-aos-delay={index * 100}
+        data-aos-once="true"
       >
         <h3
-          class="
-            sticky top-0 text-center text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
-            bg-clip-text text-transparent drop-shadow-lg break-words
-            tracking-wide py-4 bg-zinc-800/80 backdrop-blur-lg
-            border-b border-orange-400/20 rounded-t-3xl z-10
-          "
+          class="sticky top-0 text-center text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
+                 bg-clip-text text-transparent py-4 bg-zinc-800/80 backdrop-blur-md
+                 border-b border-orange-400/20 z-10 rounded-t-3xl"
         >
           {category.category}
         </h3>
 
-        <ul class="grid grid-cols-2 gap-7 px-2">
+        <ul
+          class="px-3 py-4 grid grid-cols-2 gap-4 flex-1"
+        >
           {category.items.map((skill, i) => (
             <li
-              class="
-                flex flex-col items-center bg-zinc-900/90 p-6 rounded-xl
-                border border-orange-500/50 shadow-lg shadow-orange-600/40
-                cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl
-              "
+              class="flex flex-col items-center text-center bg-zinc-900/90 p-4 rounded-xl
+                     border border-orange-500/50 shadow-md hover:shadow-orange-400/40
+                     transition-transform duration-300 hover:scale-105 cursor-default"
               title={`${skill.name} - ${skill.level}`}
               data-aos="zoom-in"
               data-aos-duration="600"
               data-aos-delay={i * 50}
             >
-              <div class="flex justify-center items-center w-14 h-14 mb-4">
+              <div class="w-14 h-14 mb-4 flex items-center justify-center">
                 <Icon
                   name={skill.icon}
-                  class="w-full h-full text-white transition-transform duration-300 hover:text-orange-400"
+                  class="w-10 h-10 transition duration-300 hover:brightness-110"
                   aria-hidden="true"
                 />
               </div>
-              <span class="text-lg font-medium text-white text-center tracking-wide">
-                {skill.name}
-              </span>
-              <span class="text-sm text-zinc-300 mt-1 text-center">
-                {skill.level}
-              </span>
+              <span class="text-base sm:text-lg font-medium">{skill.name}</span>
+              <span class="text-sm text-zinc-300">{skill.level}</span>
             </li>
           ))}
         </ul>

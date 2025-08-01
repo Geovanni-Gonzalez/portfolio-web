@@ -6,9 +6,10 @@ export default function AOSWrapper() {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      mirror: true,
-      once: false,
+      once: true,
       easing: 'ease-out-cubic',
+        offset: 100,
+        delay: 100,
     });
   }, []);
 
