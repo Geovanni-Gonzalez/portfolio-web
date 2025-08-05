@@ -15,17 +15,17 @@ const t = useTranslations(lang);
 >
   <div class="flex items-center justify-between">
     <!-- Logo o Nombre -->
-    <a href="#home" class="text-white font-bold text-xl tracking-wide hover:text-yellow-400 transition">
+    <a href="#home" class="text-white font-bold text-xl tracking-wide hover:text-orange-300 transition">
       Geovanni
     </a>
 
     <!-- Menú principal (desktop) -->
     <ul class="hidden md:flex gap-8 text-white font-medium text-base">
-      <li><a href="#home" class="hover:text-yellow-400 transition">{t('nav.home')}</a></li>
-      <li><a href="#skills" class="hover:text-yellow-400 transition">{t('nav.skills')}</a></li>
-      <li><a href="#projects" class="hover:text-yellow-400 transition">{t('nav.projects')}</a></li>
-      <li><a href="#about" class="hover:text-yellow-400 transition">{t('nav.aboutMe')}</a></li>
-      <li><a href="#contact" class="hover:text-yellow-400 transition">{t('nav.contact')}</a></li>
+      <li><a href="#home" class="hover:text-orange-300 transition">{t('nav.home')}</a></li>
+      <li><a href="#skills" class="hover:text-orange-300 transition">{t('nav.skills')}</a></li>
+      <li><a href="#projects" class="hover:text-orange-300 transition">{t('nav.projects')}</a></li>
+      <li><a href="#about" class="hover:text-orange-300 transition">{t('nav.aboutMe')}</a></li>
+      <li><a href="#contact" class="hover:text-orange-300 transition">{t('nav.contact')}</a></li>
     </ul>
 
     <HamburgerMenu t={t} client:load />
