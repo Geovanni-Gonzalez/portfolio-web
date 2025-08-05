@@ -8,8 +8,6 @@ const t = useTranslations(lang);
 const username = "Geovanni-Gonzalez";
 const repos = [
   "TicTacToe-x86-ASM",
-  "BattleshipARM",
-  "RISCMatrixApp",
   "CalculadoraMultibase-DesktopApp"
 ];
 
@@ -63,8 +61,19 @@ const projects = await Promise.all(
 ---
 
 <section id="projects" class="relative px-6 py-20 max-w-5xl mx-auto">
-  <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8">
-    {t("projects.title")}
+  <h2
+    class="text-4xl sm:text-5xl md:text-6xl font-black text-center mb-16 tracking-tight select-none
+           bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent
+           relative flex flex-col items-center"
+    style="text-shadow: 0 4px 24px #fff, 0 0 24px #FFA500, 0 0 32px #FF4500, 0 0 40px #FFD700;"
+  >
+    <span class="text-orange-100" style="text-shadow: 0 0 10px #ff6200, 0 2px 16px #ff0000;">
+      {t("projects.title")}
+    </span>
+    <span
+      class="block w-[22rem] sm:w-[28rem] h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-700 via-yellow-500 to-red-700 shadow-lg animate-pulse"
+      aria-hidden="true"
+    ></span>  
   </h2>
   <ProjectCarousel client:load projects={projects.filter(Boolean)} />
 </section>

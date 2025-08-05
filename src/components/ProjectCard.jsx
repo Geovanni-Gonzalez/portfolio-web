@@ -8,14 +8,13 @@ export default function ProjectCard({ title, description, tech, repo, image }) {
           <img
             src={image}
             alt={`Captura de ${title}`}
-            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110"
+            className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 hover:scale-105 bg-black"
             loading="lazy"
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
         </div>
       )}
-      
       {/* Contenido */}
       <div className="flex flex-col flex-grow p-5 sm:p-6">
         {/* Título */}
