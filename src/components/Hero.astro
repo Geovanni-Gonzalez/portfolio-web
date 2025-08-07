@@ -6,11 +6,11 @@ import SocialButtons from './SocialButtons.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<div id="home" class="p-4 sm:p-8 w-full min-h-screen flex flex-col justify-between">
-  <div class="mt-16 sm:mt-32 max-w-2xl w-full">
-    <H1 size="large" className="text-3xl sm:text-5xl">{t('hero.name')} <br /> {t('hero.lastname')}</H1>
+<div id="home" class="p-4 sm:p-8 w-full min-h-screen flex flex-col justify-center items-center">
+  <div class="mt-12 sm:mt-24 md:mt-32 max-w-2xl w-full">
+    <H1 size="large" className="text-2xl sm:text-4xl md:text-5xl">{t('hero.name')} <br /> {t('hero.lastname')}</H1>
     <section class="mt-4 sm:mt-6">
-      <H1 size="default" className="text-xl sm:text-2xl">{t('hero.title')}</H1>
+      <H1 size="default" className="text-lg sm:text-xl md:text-2xl">{t('hero.title')}</H1>
       <div class="mt-4 flex flex-wrap gap-2">
         <SocialButtons />
       </div>
