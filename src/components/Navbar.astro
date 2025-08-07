@@ -1,24 +1,17 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import LangPicker from './LangPicker.jsx';
 import HamburgerMenu from './HamburgerMenu.jsx';
+import LangPicker from './LangPicker.jsx';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<nav 
-  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3 rounded-xl backdrop-blur-md bg-white/5 shadow-lg z-50 scroll-smooth transition-all duration-300"
-  role="navigation"
-  aria-label="Main navigation"
->
+<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3 rounded-xl backdrop-blur-md bg-white/5 shadow-lg z-50">
   <div class="flex items-center justify-between">
-    <!-- Logo o Nombre -->
-    <a href="#home" class="text-white font-bold text-xl tracking-wide hover:text-orange-300 transition">
-      Geovanni
-    </a>
+    <a href="#home" class="text-white font-bold text-xl">Geovanni</a>
 
-    <!-- Menú principal (desktop) -->
+    <!-- Menú desktop -->
     <ul class="hidden md:flex gap-8 text-white font-medium text-base">
       <li><a href="#home" class="hover:text-orange-300 transition">{t('nav.home')}</a></li>
       <li><a href="#skills" class="hover:text-orange-300 transition">{t('nav.skills')}</a></li>
@@ -27,13 +20,14 @@ const t = useTranslations(lang);
       <li><a href="#contact" class="hover:text-orange-300 transition">{t('nav.contact')}</a></li>
     </ul>
 
-    <!-- Menú hamburguesa (mobile) -->
-    <div class="md:hidden">
+    <!-- Menú mobile + idioma -->
+    <div class="md:hidden flex items-center gap-4">
       <HamburgerMenu t={t} client:load />
+      <LangPicker currentLang={lang} client:load />
     </div>
 
-    <!-- Selector de idioma -->
-    <div class="ml-4">
+    <!-- Idioma desktop -->
+    <div class="hidden md:block">
       <LangPicker currentLang={lang} client:load />
     </div>
   </div>
