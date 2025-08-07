@@ -99,7 +99,9 @@
         "category": "DevOps and Tools",
         "items": [
           { "name": "Git", "level": "Intermediate", "icon": "logos:git-icon" },
-          { "name": "Linux", "level": "Intermediate", "icon": "logos:linux-tux" }
+          { "name": "Linux", "level": "Intermediate", "icon": "logos:linux-tux" },
+          { "name": "Vercel", "level": "Intermediate", "icon": "vscode-icons:file-type-vercel" },
+          { "name": "GitHub", "level": "Intermediate", "icon": "line-md:github-loop" }
         ]
       },
       {
