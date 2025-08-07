@@ -2,7 +2,6 @@
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import LangPicker from './LangPicker.jsx';
 import HamburgerMenu from './HamburgerMenu.jsx';
-import { useState } from 'react';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,8 +27,10 @@ const t = useTranslations(lang);
       <li><a href="#contact" class="hover:text-orange-300 transition">{t('nav.contact')}</a></li>
     </ul>
 
-    <HamburgerMenu t={t} client:load />
-    <HamburgerMenu t={t} />
+    <!-- Menú hamburguesa (mobile) -->
+    <div class="md:hidden">
+      <HamburgerMenu t={t} client:load />
+    </div>
 
     <!-- Selector de idioma -->
     <div class="ml-4">
