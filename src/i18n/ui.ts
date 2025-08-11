@@ -27,7 +27,7 @@ export const ui = {
 
     'about.title': 'About Me',
     'about.description-1':
-      'I am a Computer Engineering student at the Costa Rica Institute of Technology, focusing on software development and problem-solving. I am passionate about research and continuous learning, understanding how technologies work and how to apply them to create innovative solutions.',
+      'Computer Engineering student at the Costa Rica Institute of Technology, focusing on software development and problem-solving. I am passionate about research and continuous learning, understanding how technologies work and how to apply them to create innovative solutions.',
     'about.description-2':
       'I have participated in the development of projects ranging from interactive web applications to distributed data management systems. My goal is to combine good development practices with user-centered design to build quality software.',
     'about.cvDownload': 'Download CV',
@@ -49,11 +49,12 @@ export const ui = {
     'education.endDate': 'Present',
 
     'certifications.title': 'Certifications',
-    'certifications.subtitle': 'Certifications',
     'certifications.viewOnline': 'View Certificate',
 
     'certifications.pythonCertification.description': 'Certification validating fundamental programming knowledge in Python, data structures, control flow, functions, and basic OOP principles.',
-
+    'certifications.awsCertification.description': 'Certification AWS Compute Services Overview (LATAM Spanish)',
+    'certifications.efset.description': 'Certification validating English language proficiency through the EF SET exam.',
+    'certifications.ia.description': 'Certification validating knowledge in Artificial Intelligence concepts and applications.',
 
     'contact.title': 'Contact',
     'contact.email': 'Email',
@@ -92,7 +93,7 @@ export const ui = {
 
     'about.title': 'Sobre mí',
     'about.description-1':
-      'Soy estudiante de Ingeniería en Computación en el Tecnológico de Costa Rica, con enfoque en el desarrollo de software y la resolución de problemas. Me apasiona la investigación y el aprendizaje continuo, entender cómo funcionan las tecnologías y cómo aplicarlas para crear soluciones innovadoras.',
+      'Estudiante de Ingeniería en Computación en el Tecnológico de Costa Rica, con enfoque en el desarrollo de software y la resolución de problemas. Me apasiona la investigación y el aprendizaje continuo, entender cómo funcionan las tecnologías y cómo aplicarlas para crear soluciones innovadoras.',
     'about.description-2':
       'He participado en el desarrollo de proyectos que van desde aplicaciones web interactivas hasta sistemas de gestión de datos distribuidos. Mi objetivo es combinar buenas prácticas de desarrollo con un diseño centrado en el usuario para construir software de calidad.',
     'about.cvDownload': 'Descargar CV',
@@ -119,6 +120,10 @@ export const ui = {
     'certifications.viewOnline': 'Ver certificado',
 
     'certifications.pythonCertification.description': 'Certificación que valida conocimientos fundamentales de programación en Python, manejo de estructuras de datos, control de flujo, funciones y principios básicos de POO.',
+    'certifications.awsCertification.description': 'Certificación AWS Compute Services Overview (LATAM Spanish)',
+    'certifications.efset.description': 'Certificación que valida el dominio del idioma inglés a través del examen EF SET.',
+    'certifications.ia.description': 'Certificación que valida conocimientos en conceptos y aplicaciones de Inteligencia Artificial.',
+
     
     'contact.title': 'Contacto',
     'contact.email': 'Correo Electrónico',
