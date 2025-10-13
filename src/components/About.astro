@@ -7,7 +7,8 @@ import { Icon } from 'astro-iconify';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const profileImage = "/images/profile.jpg";
-const cvFile = "/documents/CV.pdf";
+const cvFileSpanish = "/documents/CurriculumEstudiantil.pdf";
+const cvFileEnglish = "/documents/StudentCurriculum.pdf";
 ---
 
 <section id="about" class="relative px-6 py-16 mx-auto max-w-7xl animate-fade-in">
@@ -51,7 +52,7 @@ const cvFile = "/documents/CV.pdf";
       <!-- Botón elegante -->
       <div class="mt-8 flex justify-center md:justify-start">
         <a
-          href={cvFile}
+          href={lang === 'es' ? cvFileSpanish : cvFileEnglish}
           download
           class="relative inline-flex items-center gap-3 px-7 py-3 rounded-2xl 
                  bg-white/10 backdrop-blur-lg border border-white/20 text-white font-semibold 
