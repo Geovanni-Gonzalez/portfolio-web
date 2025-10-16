@@ -1,34 +1,32 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl } from '../i18n/utils';
 import HamburgerMenu from './HamburgerMenu.jsx';
 import LangPicker from './LangPicker.jsx';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
-<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3 rounded-xl backdrop-blur-md bg-white/5 shadow-lg z-50">
-  <div class="flex items-center justify-between">
-    <a href="#home" class="text-white font-bold text-xl">Geovanni</a>
+<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3 rounded-2xl backdrop-blur-xl bg-white/5 shadow-lg z-50 flex items-center justify-between transition-colors duration-500">
+  {/* Logo */}
+  <a href="#home" class="text-white font-bold text-xl">Geovanni</a>
 
-    <!-- Menú desktop -->
-    <ul class="hidden md:flex gap-8 text-white font-medium text-base">
-      <li><a href="#home" class="hover:text-orange-300 transition">{t('nav.home')}</a></li>
-      <li><a href="#skills" class="hover:text-orange-300 transition">{t('nav.skills')}</a></li>
-      <li><a href="#projects" class="hover:text-orange-300 transition">{t('nav.projects')}</a></li>
-      <li><a href="#about" class="hover:text-orange-300 transition">{t('nav.aboutMe')}</a></li>
-      <li><a href="#contact" class="hover:text-orange-300 transition">{t('nav.contact')}</a></li>
-    </ul>
+  {/* Menú Desktop */}
+  <ul class="hidden md:flex gap-8 text-white font-medium text-base">
+    <li><a href="#home" class="hover:text-orange-300 transition-colors duration-300">Home</a></li>
+    <li><a href="#skills" class="hover:text-orange-300 transition-colors duration-300">Skills</a></li>
+    <li><a href="#projects" class="hover:text-orange-300 transition-colors duration-300">Projects</a></li>
+    <li><a href="#about" class="hover:text-orange-300 transition-colors duration-300">About</a></li>
+    <li><a href="#contact" class="hover:text-orange-300 transition-colors duration-300">Contact</a></li>
+  </ul>
 
-    <!-- Menú mobile + idioma -->
-    <div class="md:hidden flex items-center gap-4">
-      <HamburgerMenu t={t} lang={lang} client:load />
-      <LangPicker currentLang={lang} client:load />
-    </div>
+  {/* Menú Mobile + LangPicker */}
+  <div class="md:hidden flex items-center gap-4 relative">
+    <HamburgerMenu lang={lang} client:load />
+    <LangPicker currentLang={lang} client:load />
+  </div>
 
-    <!-- Idioma desktop -->
-    <div class="hidden md:block">
-      <LangPicker currentLang={lang} client:load />
-    </div>
+  {/* LangPicker Desktop */}
+  <div class="hidden md:block">
+    <LangPicker currentLang={lang} client:load />
   </div>
 </nav>
