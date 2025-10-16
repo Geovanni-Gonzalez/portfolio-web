@@ -22,7 +22,7 @@ const t = useTranslations(lang);
 
     <!-- Menú mobile + idioma -->
     <div class="md:hidden flex items-center gap-4">
-      <HamburgerMenu t={t} client:load />
+      <HamburgerMenu t={t} lang={lang} client:load />
       <LangPicker currentLang={lang} client:load />
     </div>
 

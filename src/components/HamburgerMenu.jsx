@@ -1,70 +1,76 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
-export default function HamburgerMenu({ t }) {
+const MENU_TEXT = {
+  en: {
+    home: 'Home',
+    skills: 'Skills',
+    projects: 'Projects',
+    about: 'About',
+    contact: 'Contact',
+  },
+  es: {
+    home: 'Inicio',
+    skills: 'Habilidades',
+    projects: 'Proyectos',
+    about: 'Sobre mí',
+    contact: 'Contacto',
+  },
+};
+
+export default function HamburgerMenu({ lang = 'en' }) {
   const [open, setOpen] = useState(false);
+  const labels = MENU_TEXT[lang] || MENU_TEXT.en;
 
   return (
-    <div className="relative z-50">
+    <div className="relative flex items-center z-50">
+      {/* Botón hamburguesa con animación a X */}
       <button
         aria-label="Toggle menu"
         onClick={() => setOpen(!open)}
-        className="group text-white focus:outline-none relative z-50 p-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-200"
+        className="flex flex-col justify-center items-center w-10 h-10 gap-1 relative z-50 focus:outline-none"
       >
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d={
-              open
-                ? 'M6 18L18 6M6 6l12 12'
-                : 'M4 6h16M4 12h16M4 18h16'
-            }
-          />
-        </svg>
+        <span
+          className={clsx(
+            'block w-8 h-0.5 bg-white rounded transition-all duration-300',
+            open && 'rotate-45 translate-y-2'
+          )}
+        />
+        <span
+          className={clsx(
+            'block w-8 h-0.5 bg-white rounded transition-all duration-300',
+            open && 'opacity-0'
+          )}
+        />
+        <span
+          className={clsx(
+            'block w-8 h-0.5 bg-white rounded transition-all duration-300',
+            open && '-rotate-45 -translate-y-2'
+          )}
+        />
       </button>
 
-      {/* Overlay con blur y transparencia */}
+      {/* Menú dentro del navbar */}
       <div
         className={clsx(
-          'fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300',
-          {
-            'opacity-100 pointer-events-auto': open,
-            'opacity-0 pointer-events-none': !open,
-          }
+          'absolute top-full right-0 mt-2 w-56 bg-white/10 backdrop-blur-xl rounded-xl shadow-2xl flex flex-col p-4 gap-3 transition-all duration-500 overflow-hidden',
+          open ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         )}
-        onClick={() => setOpen(false)}
-      />
-
-      {/* Menú lateral con fondo blur y letras blancas */}
-      <nav
-  className={clsx(
-    'fixed top-4 right-4 w-72 max-w-xs h-[calc(100vh-2rem)] px-6 py-3 rounded-xl backdrop-blur-md bg-white/5 shadow-lg z-50 flex flex-col gap-8 transition-transform duration-300',
-    {
-      'translate-x-0': open,
-      'translate-x-full': !open,
-    }
-  )}
-  onClick={(e) => e.stopPropagation()}
->
-  {['home', 'skills', 'projects', 'about', 'contact'].map((section) => (
-    <a
-      key={section}
-      href={`#${section}`}
-      onClick={() => setOpen(false)}
-      className="font-mono text-white hover:text-indigo-300 transition-colors duration-150"
-    >
-      {t ? t(`nav.${section}`) : section.charAt(0).toUpperCase() + section.slice(1)}
-    </a>
-  ))}
-</nav>
-
+      >
+        {Object.entries(labels).map(([key, label], index) => (
+          <a
+            key={key}
+            href={`#${key}`}
+            onClick={() => setOpen(false)}
+            style={{ transitionDelay: `${index * 50}ms` }}
+            className={clsx(
+              'text-white font-medium hover:text-orange-400 hover:scale-105 transition-all duration-300'
+            )}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
