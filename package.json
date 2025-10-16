@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
+    "@astrojs/react": "^4.4.0",
     "@astrojs/vercel": "^8.2.5",
     "@iconify/react": "^6.0.0",
     "@paper-design/shaders-react": "^0.0.43",
@@ -26,8 +26,8 @@
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.6",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "sharp": "^0.34.3",
     "swiper": "^11.2.10"
   },
