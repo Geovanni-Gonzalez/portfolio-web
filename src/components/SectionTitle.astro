@@ -11,8 +11,8 @@ const {
   underline = true,
 } = Astro.props;
 
-const baseColor = `text-${color1 || 'white'}`;
-const underlineColor = `bg-${color2 || 'white'}-500`;
+const baseColor = color1 ? `text-${color1}` : 'text-text';
+const underlineColor = color2 ? `bg-${color2}-500` : 'bg-orange-500';
 const alignment = centered ? 'text-center mx-auto justify-center' : 'text-left';
 ---
 

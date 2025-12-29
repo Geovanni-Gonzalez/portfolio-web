@@ -6,7 +6,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-gradient-to-t from-zinc-900 via-zinc-800 to-zinc-900 text-zinc-300 py-8 md:py-12 mt-16 md:mt-24 shadow-inner">
+<footer class="bg-gradient-to-t from-bg via-muted/5 to-bg text-muted py-8 md:py-12 mt-16 md:mt-24 border-t border-text/5">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10">
 
     <!-- Quick Links -->
@@ -18,7 +18,7 @@ const t = useTranslations(lang);
         { href: "#projects", label: t('nav.projects') },
         { href: "#contact", label: t('nav.contact') }
       ].map(link => (
-        <a href={link.href} class="hover:text-orange-400 transition-colors duration-200">{link.label}</a>
+        <a href={link.href} class="hover:text-accent transition-colors duration-200">{link.label}</a>
       ))}
     </nav>
 
@@ -29,7 +29,7 @@ const t = useTranslations(lang);
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        class="rounded-full bg-zinc-800 hover:bg-orange-400 hover:text-white transition-colors duration-200 p-2 shadow-lg border border-zinc-700 hover:border-orange-400"
+        class="rounded-full bg-bg/50 hover:bg-accent hover:text-white text-muted transition-all duration-300 p-2 shadow-lg border border-text/10 hover:border-accent hover:scale-110"
       >
         <Icon name="mdi:github" class="w-6 h-6" />
       </a>
@@ -38,7 +38,7 @@ const t = useTranslations(lang);
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        class="rounded-full bg-zinc-800 hover:bg-orange-400 hover:text-white transition-colors duration-200 p-2 shadow-lg border border-zinc-700 hover:border-orange-400"
+        class="rounded-full bg-bg/50 hover:bg-accent hover:text-white text-muted transition-all duration-300 p-2 shadow-lg border border-text/10 hover:border-accent hover:scale-110"
       >
         <Icon name="mdi:linkedin" class="w-6 h-6" />
       </a>
@@ -46,9 +46,9 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Copyright -->
-  <div class="border-t border-zinc-700 mt-8 md:mt-10 pt-4 md:pt-6">
-    <p class="text-center text-zinc-500 text-xs select-none tracking-wide">
-      © {new Date().getFullYear()} <span class="font-semibold text-zinc-400"> &mdash; {t('footer.copyright')}</span>
+  <div class="border-t border-text/10 mt-8 md:mt-10 pt-4 md:pt-6">
+    <p class="text-center text-muted/60 text-xs select-none tracking-wide">
+      © {new Date().getFullYear()} <span class="font-semibold text-muted"> &mdash; {t('footer.copyright')}</span>
     </p>
   </div>
 </footer>

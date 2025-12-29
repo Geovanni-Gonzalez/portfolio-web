@@ -1,16 +1,18 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { Icon } from 'astro-iconify';
 import skillsData from '../data/skills.json';
 import AOSWrapper from '../components/AOSWrapper.jsx';
+import GradientTitle from './GradientTitle.astro';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const skills = skillsData.skills[lang] || skillsData.skills['en'];
 ---
 
 <section
   id="skills"
-  class="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-white scroll-mt-20"
+  class="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-text scroll-mt-20"
   data-aos="fade-up"
   data-aos-duration="1000"
   data-aos-delay="100"
@@ -18,26 +20,13 @@ const skills = skillsData.skills[lang] || skillsData.skills['en'];
 >
   <AOSWrapper client:load />
 
-  <h2
-    class="text-4xl sm:text-5xl md:text-6xl font-black text-center mb-16 tracking-tight select-none
-           bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent
-           relative flex flex-col items-center"
-    style="text-shadow: 0 4px 24px #fff, 0 0 24px #FFA500, 0 0 32px #FF4500, 0 0 40px #FFD700;"
-  >
-    <span class="text-orange-100" style="text-shadow: 0 0 10px #ff6200, 0 2px 16px #ff0000;">
-      {lang === 'es' ? 'Habilidades' : 'Skills'}
-    </span>
-    <span
-      class="block w-[22rem] sm:w-[28rem] h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-700 via-yellow-500 to-red-700 shadow-lg animate-pulse"
-      aria-hidden="true"
-    ></span>  
-  </h2>
+  <GradientTitle title={t('skills.title')} />
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {skills.map((category, index) => (
       <div
-        class="bg-gradient-to-br from-black/60 via-gray-900/60 to-black/80 backdrop-blur-xl
-               rounded-3xl border border-white/10 shadow-2xl hover:shadow-orange-400/30
+        class="spotlight-card bg-gradient-to-br from-bg/60 via-muted/10 to-bg/80 backdrop-blur-xl
+               rounded-3xl border border-text/10 shadow-2xl hover:shadow-orange-400/30
                transition-transform duration-400 hover:scale-[1.03]
                flex flex-col
                h-auto sm:h-[520px] overflow-y-scroll
@@ -49,7 +38,7 @@ const skills = skillsData.skills[lang] || skillsData.skills['en'];
       >
         <h3
           class="sticky top-0 text-center text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
-                 bg-clip-text text-transparent py-4 bg-zinc-800/80 backdrop-blur-md
+                 bg-clip-text text-transparent py-4 bg-bg/80 backdrop-blur-md
                  border-b border-orange-400/20 z-10 rounded-t-3xl"
         >
           {category.category}
@@ -60,7 +49,7 @@ const skills = skillsData.skills[lang] || skillsData.skills['en'];
         >
           {category.items.map((skill, i) => (
             <li
-              class="flex flex-col items-center text-center bg-zinc-900/90 p-4 rounded-xl
+              class="flex flex-col items-center text-center bg-bg/90 p-4 rounded-xl
                      border border-orange-500/50 shadow-md hover:shadow-orange-400/40
                      transition-transform duration-300 hover:scale-105 cursor-default"
               title={`${skill.name} - ${skill.level}`}

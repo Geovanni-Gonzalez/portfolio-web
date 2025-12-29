@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-iconify';
+
+interface Props {
+  date: string;
+  title: string;
+  subtitle: string;
+  description?: string;
+  icon?: string;
+  link?: string;
+  linkText?: string;
+  isLast?: boolean;
+}
+
+const { date, title, subtitle, description, icon = "mdi:school", link, linkText, isLast = false } = Astro.props;
+---
+
+<div class="relative flex gap-6 pb-12 group">
+  <!-- Línea conectora -->
+  {!isLast && (
+    <div class="absolute left-[26px] top-10 bottom-0 w-0.5 bg-gradient-to-b from-orange-500/50 to-transparent group-hover:from-orange-400 transition-colors duration-300"></div>
+  )}
+
+  <!-- Icono / Punto -->
+  <div class="relative flex-shrink-0">
+    <div class="w-14 h-14 rounded-full bg-bg border-2 border-orange-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(255,165,0,0.15)] group-hover:scale-110 group-hover:border-orange-400 group-hover:shadow-[0_0_25px_rgba(255,165,0,0.3)] transition-all duration-300 z-10">
+      <Icon name={icon} class="w-7 h-7 text-orange-400 group-hover:text-orange-300 transition-colors" />
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="flex-grow pt-1">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+      <h3 class="text-xl font-bold text-text group-hover:text-orange-200 transition-colors">{title}</h3>
+      <span class="text-sm font-mono text-orange-400/80 bg-orange-900/10 px-3 py-1 rounded-full border border-orange-500/20 w-fit">
+        {date}
+      </span>
+    </div>
+    
+    <p class="text-lg text-muted font-medium mb-3">{subtitle}</p>
+    
+    {description && (
+      <p class="text-muted leading-relaxed text-sm sm:text-base max-w-3xl">
+        {description}
+      </p>
+    )}
+
+    {link && (
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-orange-400 hover:text-orange-300 transition-colors group/link"
+      >
+        <Icon name="mdi:link-variant" class="w-4 h-4 group-hover/link:rotate-45 transition-transform" />
+        {linkText || "Ver más"}
+      </a>
+    )}
+  </div>
+</div>

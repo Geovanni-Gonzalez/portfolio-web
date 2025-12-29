@@ -62,6 +62,8 @@ export const ui = {
     'contact.name': 'Name',
     'contact.message': 'Message',
     'contact.send': 'Send Message',
+    'contact.sent': 'Sent',
+    'contact.error': 'Error',
     'contact.success': 'Message sent successfully. I will get back to you soon.',
     'contact.description': 'I am open to new opportunities. You can reach out to me through any of the following means or send me a message using the form below.',
 
@@ -131,6 +133,8 @@ export const ui = {
     'contact.name': 'Nombre',
     'contact.message': 'Mensaje',
     'contact.send': 'Enviar mensaje',
+    'contact.sent': 'Enviado',
+    'contact.error': 'Error',
     'contact.success': 'Mensaje enviado con éxito. Me pondré en contacto contigo pronto.',
     'contact.description': 'Estoy abierto a nuevas oportunidades. Puedes contactarme a través de cualquiera de los siguientes medios o enviarme un mensaje usando el formulario a continuación.',
 

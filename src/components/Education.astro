@@ -2,6 +2,9 @@
 import SectionTitle from './SectionTitle.astro';
 import Certifications from './Certifications.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import GradientTitle from './GradientTitle.astro';
+import TimelineItem from './TimelineItem.astro';
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -18,40 +21,29 @@ const educations = [
 <section id="education" class="max-w-5xl mx-auto py-16 sm:py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 rounded-xl">
 
   <!-- Título -->
-  <h2
-    class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-12 sm:mb-16 tracking-tight select-none
-           bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent
-           relative flex flex-col items-center"
-    style="text-shadow: 0 4px 24px #fff, 0 0 24px #FFA500, 0 0 32px #FF4500, 0 0 40px #FFD700;"
-  >
-    <span class="text-orange-100" style="text-shadow: 0 0 10px #ff6200, 0 2px 16px #ff0000;">
-        {t('education.title')}
-    </span>
-    <span
-      class="block w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-700 via-yellow-500 to-red-700 shadow-lg animate-pulse"
-      aria-hidden="true"
-    ></span>  
-  </h2>
+  <GradientTitle 
+    title={t('education.title')} 
+    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-12 sm:mb-16"
+    underlineClass="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl"
+  />
 
   <!-- Subtítulo -->
   <div class="mt-8 w-full">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left mb-6 sm:mb-8">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left mb-8 sm:mb-12 pl-4 border-l-4 border-orange-500">
           {t('education.subtitle')}
       </h2>
 
-      <!-- Educación -->
-      <div class="flex flex-col gap-6 sm:gap-8 md:gap-10 w-full">
-        {educations.map(({ degree, institution, startDate, endDate, description }) => (
-            <article class="w-full bg-zinc-900/70 p-4 sm:p-6 rounded-lg shadow-lg text-white transition-all duration-300 transform hover:scale-[1.01] hover:shadow-orange-400/30">
-                <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 flex-wrap">
-                    <h3 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600 bg-clip-text text-transparent drop-shadow-lg break-words">{degree}</h3>
-                    <time class="text-sm text-zinc-400">{startDate} - {endDate}</time>
-                </header>
-                <p class="text-xs sm:text-sm text-zinc-400 mt-1 italic font-medium break-words">{institution}</p>
-                <p class="mt-4 text-zinc-300 text-sm sm:text-base leading-relaxed font-light tracking-wide break-words">
-                    {description}
-                </p>
-            </article>
+      <!-- Educación Timeline -->
+      <div class="w-full pl-2 sm:pl-4">
+        {educations.map(({ degree, institution, startDate, endDate, description }, index) => (
+            <TimelineItem 
+              title={degree}
+              subtitle={institution}
+              date={`${startDate} - ${endDate}`}
+              description={description}
+              icon="mdi:school"
+              isLast={index === educations.length - 1}
+            />
         ))}
       </div>
   </div>

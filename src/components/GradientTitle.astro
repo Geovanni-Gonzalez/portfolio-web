@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  className?: string;
+  underlineClass?: string;
+}
+
+const { 
+  title, 
+  className = "text-4xl sm:text-5xl md:text-6xl mb-16",
+  underlineClass = "w-[22rem] sm:w-[28rem]"
+} = Astro.props;
+---
+
+<h2
+  class:list={[
+    "font-black text-center tracking-tight select-none bg-gradient-to-r from-orange-300 via-yellow-300 to-red-400 bg-clip-text text-transparent relative flex flex-col items-center",
+    className
+  ]}
+  style="text-shadow: 0 4px 24px #fff, 0 0 24px #FFA500, 0 0 32px #FF4500, 0 0 40px #FFD700;"
+>
+  <span class="text-orange-100" style="text-shadow: 0 0 10px #ff6200, 0 2px 16px #ff0000;">
+    {title}
+  </span>
+  <span
+    class:list={[
+      "block h-1.5 mt-5 rounded-full bg-gradient-to-r from-red-700 via-yellow-500 to-red-700 shadow-lg animate-pulse",
+      underlineClass
+    ]}
+    aria-hidden="true"
+  ></span>  
+</h2>

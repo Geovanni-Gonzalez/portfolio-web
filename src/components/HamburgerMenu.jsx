@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
-const MENU_TEXT = {
-  en: { home: 'Home', skills: 'Skills', projects: 'Projects', about: 'About', contact: 'Contact' },
-  es: { home: 'Inicio', skills: 'Habilidades', projects: 'Proyectos', about: 'Sobre mí', contact: 'Contacto' },
-};
-
-export default function HamburgerMenu({ lang = 'en' }) {
+export default function HamburgerMenu({ menuItems }) {
   const [open, setOpen] = useState(false);
-  const labels = MENU_TEXT[lang] || MENU_TEXT.en;
 
   return (
     <div className="relative flex items-center">
@@ -33,10 +27,10 @@ export default function HamburgerMenu({ lang = 'en' }) {
       open ? 'max-h-[500px] opacity-100 py-2' : 'max-h-0 opacity-0 py-0'
     )}
   >
-    {Object.entries(labels).map(([key, label], index) => (
+    {menuItems.map(({ href, label }, index) => (
       <a
-        key={key}
-        href={`#${key}`}
+        key={href}
+        href={href}
         onClick={() => setOpen(false)}
         style={{ transitionDelay: `${index * 100}ms` }}
         className="text-white/90 font-medium hover:text-orange-400 hover:translate-x-1 hover:scale-105 transition-all duration-300"
