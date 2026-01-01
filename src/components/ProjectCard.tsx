@@ -37,7 +37,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                         onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.onerror = null;
-                            target.src = '/images/profile.jpg';
+                            target.src = '/images/profile.webp';
                         }}
                     />
                     {/* Overlay */}
