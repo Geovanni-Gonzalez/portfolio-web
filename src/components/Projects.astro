@@ -1,82 +1,111 @@
 ---
-import ProjectCarousel from '../components/ProjectCarousel.jsx';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import GradientTitle from './GradientTitle.astro';
+import ProjectCarousel from "../components/ProjectCarousel";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import GradientTitle from "./GradientTitle.astro";
+import localProjects from "../data/projects.json";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const username = "Geovanni-Gonzalez";
-const repos = [
-  "TicTacToe-x86-ASM",
-  "CalculadoraMultibase-DesktopApp"
-];
+const repos = ["TicTacToe-x86-ASM", "CalculadoraMultibase-DesktopApp"];
 
 const headers = {
-  Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`
+  Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
 };
 
 const projects = await Promise.all(
   repos.map(async (repo) => {
-    const res = await fetch(`https://api.github.com/repos/${username}/${repo}`, { headers });
-    if (!res.ok) return null;
-    const data = await res.json();
-
-    let techStack = [];
-    let projectImage = null;
-    let description = data.description || "";
-
     try {
+      const res = await fetch(
+        `https://api.github.com/repos/${username}/${repo}`,
+        { headers },
+      );
+      if (!res.ok) throw new Error(`Failed to fetch ${repo}`);
+      const data = await res.json();
+
+      let techStack = [];
+      let projectImage = null;
+      let description = data.description || "";
+
       // Leer project-info.json
-      const techFileRes = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/project-info.json`, { headers });
+      const techFileRes = await fetch(
+        `https://api.github.com/repos/${username}/${repo}/contents/project-info.json`,
+        { headers },
+      );
       if (techFileRes.ok) {
         const techData = await techFileRes.json();
-        const decoded = Buffer.from(techData.content, "base64").toString("utf-8");
+        const decoded = Buffer.from(techData.content, "base64").toString(
+          "utf-8",
+        );
         const json = JSON.parse(decoded);
         techStack = json.tech || [];
-        description = json.description?.[lang] || json.description?.default || description;
+        description =
+          json.description?.[lang] || json.description?.default || description;
       }
-
       // Buscar imagen en carpeta screenshots
-      const screenshotRes = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/screenshots`, { headers });
+      const screenshotRes = await fetch(
+        `https://api.github.com/repos/${username}/${repo}/contents/screenshots`,
+        { headers },
+      );
       if (screenshotRes.ok) {
         const screenshotData = await screenshotRes.json();
-        const firstImage = screenshotData.find((file: { type: string; name: string; download_url?: string }) => file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/i));
+        const firstImage = screenshotData.find(
+          (file: { type: string; name: string; download_url: string }) =>
+            file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/i),
+        );
         if (firstImage) projectImage = firstImage.download_url;
       }
+
+      return {
+        title: data.name,
+        description: description,
+        repo: data.html_url,
+        tech: techStack,
+        image: projectImage || "/images/default-project.png",
+      };
     } catch (e) {
-      console.warn(`Error al obtener datos para ${repo}:`, e);
+      console.warn(
+        `Error al obtener datos para ${repo}, usando fallback local:`,
+        e,
+      );
+      const local = localProjects.find((p) => p.repo.endsWith(repo));
+      if (local) {
+        return {
+          ...local,
+          description:
+            local.description[lang] ||
+            local.description.en ||
+            local.description.es,
+        };
+      }
+      return null;
     }
-
-    return {
-      title: data.name,
-      description: description,
-      repo: data.html_url,
-      tech: techStack,
-      image: projectImage || "/images/default-project.png"
-    };
-  })
-);
-
-
+  }),
+).then((results) => results.filter((p) => p !== null));
 ---
 
 <section id="projects" class="relative px-6 py-20 max-w-5xl mx-auto">
   <GradientTitle title={t("projects.title")} />
-  
-  {projects.filter(Boolean).length > 0 ? (
-    <ProjectCarousel client:load projects={projects.filter(Boolean)} />
-  ) : (
-    <div class="text-center text-zinc-400 py-10 bg-zinc-900/50 rounded-xl border border-zinc-800">
-      <p class="text-lg mb-4">{lang === 'es' ? 'No se pudieron cargar los proyectos.' : 'Could not load projects.'}</p>
-      <a 
-        href={`https://github.com/${username}`} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors"
-      >
-        {t('projects.viewOnGitHub')}
-      </a>
-    </div>
-  )}
+  {
+    projects && projects.length > 0 ? (
+      <ProjectCarousel client:load projects={projects} />
+    ) : (
+      <div class="text-center text-zinc-400 py-10 bg-zinc-900/50 rounded-xl border border-zinc-800">
+        <p class="text-lg mb-4">
+          {lang === "es"
+            ? "No se pudieron cargar los proyectos."
+            : "Could not load projects."}
+        </p>
+        <a
+          href={`https://github.com/${username}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors"
+        >
+          {t("projects.viewOnGitHub")}
+        </a>
+      </div>
+    )
+  }
 </section>

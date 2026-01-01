@@ -1,42 +1,50 @@
 ---
-import SectionTitle from './SectionTitle.astro';
-import Certifications from './Certifications.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import GradientTitle from './GradientTitle.astro';
-import TimelineItem from './TimelineItem.astro';
+import SectionTitle from "./SectionTitle.astro";
+import Certifications from "./Certifications.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import GradientTitle from "./GradientTitle.astro";
+import TimelineItem from "./TimelineItem.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const educations = [
-    {
-        degree: t('education.degree'),
-        institution: t('education.institution'),
-        startDate: '2022',
-        endDate: t('education.endDate'), 
-        description: t('education.description'),
-    }
-];
----
-<section id="education" class="max-w-5xl mx-auto py-16 sm:py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 rounded-xl">
+import educationData from "../data/education.json";
 
+const educations = educationData.education.map((edu: any) => ({
+  degree: t(edu.degreeKey as any),
+  institution: t(edu.institutionKey as any),
+  startDate: edu.startDate,
+  endDate: t(edu.endDateKey as any),
+  description: t(edu.descriptionKey as any),
+  icon: edu.icon,
+}));
+---
+
+<section
+  id="education"
+  class="max-w-5xl mx-auto py-16 sm:py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 rounded-xl"
+>
   <!-- Título -->
-  <GradientTitle 
-    title={t('education.title')} 
+  <GradientTitle
+    title={t("education.title")}
     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-12 sm:mb-16"
     underlineClass="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl"
   />
 
   <!-- Subtítulo -->
   <div class="mt-8 w-full">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left mb-8 sm:mb-12 pl-4 border-l-4 border-orange-500">
-          {t('education.subtitle')}
-      </h2>
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left mb-8 sm:mb-12 pl-4 border-l-4 border-orange-500"
+    >
+      {t("education.subtitle")}
+    </h2>
 
-      <!-- Educación Timeline -->
-      <div class="w-full pl-2 sm:pl-4">
-        {educations.map(({ degree, institution, startDate, endDate, description }, index) => (
-            <TimelineItem 
+    <!-- Educación Timeline -->
+    <div class="w-full pl-2 sm:pl-4">
+      {
+        educations.map(
+          ({ degree, institution, startDate, endDate, description }, index) => (
+            <TimelineItem
               title={degree}
               subtitle={institution}
               date={`${startDate} - ${endDate}`}
@@ -44,10 +52,11 @@ const educations = [
               icon="mdi:school"
               isLast={index === educations.length - 1}
             />
-        ))}
-      </div>
+          ),
+        )
+      }
+    </div>
   </div>
 
   <Certifications />
-
 </section>

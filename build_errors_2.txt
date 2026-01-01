@@ -1,0 +1,161 @@
+[2m15:03:31[22m [34m[content][39m Syncing content
+[2m15:03:31[22m [34m[content][39m Synced content
+[2m15:03:31[22m [34m[types][39m Generated [2m600ms[22m
+[2m15:03:31[22m [34m[check][39m Getting diagnostics for Astro files in C:\Users\geova\Ingenieria en Computacion\Proyectos\Portfolio\portfolio-web...
+[96mastro.config.mjs[0m:[93m13[0m:[93m15[0m - [91merror[0m[90m ts(2322): [0mType 'Plugin<any>[]' is not assignable to type 'PluginOption'.
+  Type 'Plugin<any>[]' is not assignable to type 'PluginOption[]'.
+    Type 'Plugin<any>' is not assignable to type 'PluginOption'.
+      Type 'import("C:/Users/geova/Ingenieria en Computacion/Proyectos/Portfolio/portfolio-web/node_modules/vite/dist/node/index").Plugin<any>' is not assignable to type 'import("C:/Users/geova/Ingenieria en Computacion/Proyectos/Portfolio/portfolio-web/node_modules/astro/node_modules/vite/dist/node/index").Plugin<any>'.
+        Types of property 'hotUpdate' are incompatible.
+          Type 'ObjectHook<(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>> | undefined' is not assignable to type 'ObjectHook<(this: HotUpdatePluginContext, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<void | EnvironmentModuleNode[]>> | undefined'.
+            Type '(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>' is not assignable to type 'ObjectHook<(this: HotUpdatePluginContext, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<void | EnvironmentModuleNode[]>> | undefined'.
+              Type '(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>' is not assignable to type '(this: HotUpdatePluginContext, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<void | EnvironmentModuleNode[]>'.
+                The 'this' types of each signature are incompatible.
+                  Type 'HotUpdatePluginContext' is not assignable to type 'MinimalPluginContext & { environment: DevEnvironment; }'.
+                    Type 'HotUpdatePluginContext' is missing the following properties from type 'MinimalPluginContext': debug, error, info, meta, warn
+
+[7m13[0m     plugins: [tailwindcss()]
+[7m  [0m [91m              ~~~~~~~~~~~~~[0m
+
+[96msrc/components/Blog.astro[0m:[93m8[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m't' is declared but its value is never read.
+
+[7m8[0m const t = useTranslations(lang);
+[7m [0m [93m      ~[0m
+
+[96msrc/components/Certifications.astro[0m:[93m13[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 't'.
+
+[7m13[0m const t = useTranslations(lang);
+[7m  [0m [91m      ~[0m
+[96msrc/components/Certifications.astro[0m:[93m12[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 'lang'.
+
+[7m12[0m const lang = getLangFromUrl(Astro.url);
+[7m  [0m [91m      ~~~~[0m
+[96msrc/components/Certifications.astro[0m:[93m8[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 't'.
+
+[7m8[0m const t = useTranslations(lang);
+[7m [0m [91m      ~[0m
+[96msrc/components/Certifications.astro[0m:[93m7[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 'lang'.
+
+[7m7[0m const lang = getLangFromUrl(Astro.url);
+[7m [0m [91m      ~~~~[0m
+[96msrc/components/Certifications.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Icon' is declared but its value is never read.
+
+[7m3[0m import { Icon } from "astro-iconify";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/Certifications.astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SectionTitle' is declared but its value is never read.
+
+[7m2[0m import SectionTitle from "./SectionTitle.astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/ContactInfo.jsx[0m:[93m11[0m:[93m13[0m - [93mwarning[0m[90m ts(6385): [0m'Github' is deprecated.
+
+[7m11[0m     { icon: Github, label: 'GitHub', value: contactInfo.github, type: 'link' },
+[7m  [0m [93m            ~~~~~~[0m
+[96msrc/components/ContactInfo.jsx[0m:[93m10[0m:[93m13[0m - [93mwarning[0m[90m ts(6385): [0m'Linkedin' is deprecated.
+
+[7m10[0m     { icon: Linkedin, label: 'LinkedIn', value: contactInfo.linkedin, type: 'link' },
+[7m  [0m [93m            ~~~~~~~~[0m
+[96msrc/components/ContactInfo.jsx[0m:[93m2[0m:[93m33[0m - [93mwarning[0m[90m ts(6385): [0m'Github' is deprecated.
+
+[7m2[0m import { Mail, Phone, Linkedin, Github, MapPin, Copy, Check } from 'lucide-react';
+[7m [0m [93m                                ~~~~~~[0m
+[96msrc/components/ContactInfo.jsx[0m:[93m2[0m:[93m23[0m - [93mwarning[0m[90m ts(6385): [0m'Linkedin' is deprecated.
+
+[7m2[0m import { Mail, Phone, Linkedin, Github, MapPin, Copy, Check } from 'lucide-react';
+[7m [0m [93m                      ~~~~~~~~[0m
+
+[96msrc/components/Education.astro[0m:[93m14[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 't'.
+
+[7m14[0m const t = useTranslations(lang);
+[7m  [0m [91m      ~[0m
+[96msrc/components/Education.astro[0m:[93m13[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 'lang'.
+
+[7m13[0m const lang = getLangFromUrl(Astro.url);
+[7m  [0m [91m      ~~~~[0m
+[96msrc/components/Education.astro[0m:[93m9[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 't'.
+
+[7m9[0m const t = useTranslations(lang);
+[7m [0m [91m      ~[0m
+[96msrc/components/Education.astro[0m:[93m8[0m:[93m7[0m - [91merror[0m[90m ts(2451): [0mCannot redeclare block-scoped variable 'lang'.
+
+[7m8[0m const lang = getLangFromUrl(Astro.url);
+[7m [0m [91m      ~~~~[0m
+[96msrc/components/Education.astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SectionTitle' is declared but its value is never read.
+
+[7m2[0m import SectionTitle from "./SectionTitle.astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/HamburgerMenu.jsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96msrc/components/LangPicker.jsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState, useEffect, useRef } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96msrc/components/Navbar.astro[0m:[93m45[0m:[93m13[0m - [91merror[0m[90m ts(2322): [0mType '{ children: any[]; href: string; class: string; "data-target": string; role: "menuitem"; tabIndex: number; }' is not assignable to type 'AnchorHTMLAttributes'.
+  Property 'tabIndex' does not exist on type 'AnchorHTMLAttributes'. Did you mean 'tabindex'?
+
+[7m45[0m             tabIndex={0}
+[7m  [0m [91m            ~~~~~~~~[0m
+
+[96msrc/components/ProjectCard.tsx[0m:[93m88[0m:[93m26[0m - [93mwarning[0m[90m ts(6385): [0m'Github' is deprecated.
+
+[7m88[0m                         <Github className="mr-2 w-5 h-5" strokeWidth={1.5} />
+[7m  [0m [93m                         ~~~~~~[0m
+[96msrc/components/ProjectCard.tsx[0m:[93m1[0m:[93m10[0m - [93mwarning[0m[90m ts(6385): [0m'Github' is deprecated.
+
+[7m1[0m import { Github } from 'lucide-react';
+[7m [0m [93m         ~~~~~~[0m
+
+[96msrc/components/ProjectModal.tsx[0m:[93m91[0m:[93m30[0m - [93mwarning[0m[90m ts(6385): [0m'Github' is deprecated.
+
+[7m91[0m                             <Github className="w-5 h-5" />
+[7m  [0m [93m                             ~~~~~~[0m
+[96msrc/components/ProjectModal.tsx[0m:[93m1[0m:[93m13[0m - [93mwarning[0m[90m ts(6385): [0m'Github' is deprecated.
+
+[7m1[0m import { X, Github, ExternalLink } from 'lucide-react';
+[7m [0m [93m            ~~~~~~[0m
+
+[96msrc/components/SocialButtonsContact.astro[0m:[93m15[0m:[93m23[0m - [93mwarning[0m[90m ts(6133): [0m'i' is declared but its value is never read.
+
+[7m15[0m     {items.map((item, i) => (
+[7m  [0m [93m                      ~[0m
+
+[96msrc/i18n/utils.ts[0m:[93m15[0m:[93m22[0m - [91merror[0m[90m ts(2551): [0mProperty 'certifications.subtitle' does not exist on type '{ readonly 'app.title': "Portfolio"; readonly 'app.description': "A portfolio showcasing my work and skills."; readonly 'nav.home': "Home"; readonly 'nav.aboutMe': "About Me"; readonly 'nav.projects': "Projects"; ... 46 more ...; readonly 'contact.location': "Limón, Limón, Costa Rica"; } | { ...; }'. Did you mean 'certifications.title'?
+
+[7m15[0m       return langObj[key];
+[7m  [0m [91m                     ~~~[0m
+
+[96msrc/layouts/BaseLayout.astro[0m:[93m9[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'AOSWrapper' is declared but its value is never read.
+
+[7m9[0m import AOSWrapper from '../components/AOSWrapper.jsx';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/[slug].astro[0m:[93m60[0m:[93m35[0m - [91merror[0m[90m ts(7006): [0mParameter 'e' implicitly has an 'any' type.
+
+[7m60[0m                         onError={(e) =>
+[7m  [0m [91m                                  ~[0m
+[96msrc/pages/blog/[slug].astro[0m:[93m60[0m:[93m25[0m - [91merror[0m[90m ts(2322): [0mType '{ src: string; alt: string; class: string; onError: (e: any) => string; }' is not assignable to type 'ImgHTMLAttributes'.
+  Property 'onError' does not exist on type 'ImgHTMLAttributes'. Did you mean 'onerror'?
+
+[7m60[0m                         onError={(e) =>
+[7m  [0m [91m                        ~~~~~~~[0m
+
+[96msrc/pages/en/index.astro[0m:[93m15[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m't' is declared but its value is never read.
+
+[7m15[0m const t = useTranslations(lang);
+[7m  [0m [93m      ~[0m
+
+[96msrc/pages/es/index.astro[0m:[93m15[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m't' is declared but its value is never read.
+
+[7m15[0m const t = useTranslations(lang);
+[7m  [0m [93m      ~[0m
+
+Result (42 files): 
+- 13 errors
+- 0 warnings
+- 18 hints
+

@@ -1,0 +1,47 @@
+{
+    "education": [
+        {
+            "id": "itcr",
+            "degreeKey": "education.degree",
+            "institutionKey": "education.institution",
+            "startDate": "2022",
+            "endDateKey": "education.endDate",
+            "descriptionKey": "education.description",
+            "icon": "mdi:school"
+        }
+    ],
+    "certifications": [
+        {
+            "title": "PCAP: Programming Essentials in Python",
+            "issuer": "Cisco Networking Academy",
+            "date": "30/12/2022",
+            "descriptionKey": "certifications.pythonCertification.description",
+            "pdfPath": "/certificates/PCAP-Programming_Essentials_in_Python_certificate.pdf",
+            "icon": "ph:certificate-fill"
+        },
+        {
+            "title": "AWS Certified Solutions Architect – Associate",
+            "issuer": "Amazon Web Services",
+            "date": "08/08/2024",
+            "descriptionKey": "certifications.awsCertification.description",
+            "pdfPath": "/certificates/AWS Course Completion Certificate.pdf",
+            "icon": "ph:certificate-fill"
+        },
+        {
+            "title": "EF SET English Certificate",
+            "issuer": "EF Education First",
+            "date": "18/10/2024",
+            "descriptionKey": "certifications.efset.description",
+            "pdfPath": "/certificates/EF SET Certificate.pdf",
+            "icon": "ph:certificate-fill"
+        },
+        {
+            "title": "Inteligencia artificial",
+            "issuer": "Structuralia",
+            "date": "05/08/2023",
+            "descriptionKey": "certifications.ia.description",
+            "pdfPath": "/certificates/Inteligencia_artificial.pdf",
+            "icon": "ph:certificate-fill"
+        }
+    ]
+}

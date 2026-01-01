@@ -8,6 +8,16 @@ export function getLangFromUrl(url: URL) {
 
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof typeof ui[typeof defaultLang]) {
-    return ui[lang][key] || ui[defaultLang][key];
+    // Si el idioma no existe, usar defaultLang
+    const langObj = ui[lang] || ui[defaultLang];
+    // Si la clave no existe en el idioma, usar defaultLang
+    if (langObj && key in langObj) {
+      return langObj[key];
+    } else if (key in ui[defaultLang]) {
+      return ui[defaultLang][key];
+    } else {
+      // Devuelve la clave como fallback para debug
+      return `[${String(key)}]`;
+    }
   }
 }

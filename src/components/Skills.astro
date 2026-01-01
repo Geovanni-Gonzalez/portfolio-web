@@ -1,13 +1,13 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { Icon } from 'astro-iconify';
-import skillsData from '../data/skills.json';
-import AOSWrapper from '../components/AOSWrapper.jsx';
-import GradientTitle from './GradientTitle.astro';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Icon } from "astro-iconify";
+import skillsData from "../data/skills.json";
+import AOSWrapper from "../components/AOSWrapper.jsx";
+import GradientTitle from "./GradientTitle.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const skills = skillsData.skills[lang] || skillsData.skills['en'];
+const skills = skillsData.skills[lang] || skillsData.skills["en"];
 ---
 
 <section
@@ -20,56 +20,77 @@ const skills = skillsData.skills[lang] || skillsData.skills['en'];
 >
   <AOSWrapper client:load />
 
-  <GradientTitle title={t('skills.title')} />
+  <GradientTitle title={t("skills.title")} />
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {skills.map((category, index) => (
-      <div
-        class="spotlight-card bg-gradient-to-br from-bg/60 via-muted/10 to-bg/80 backdrop-blur-xl
+    {
+      skills.map((category, index) => (
+        <div
+          class="spotlight-card bg-gradient-to-br from-bg/60 via-muted/10 to-bg/80 backdrop-blur-xl
                rounded-3xl border border-text/10 shadow-2xl hover:shadow-orange-400/30
                transition-transform duration-400 hover:scale-[1.03]
                flex flex-col
                h-auto sm:h-[520px] overflow-y-scroll
                scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent"
-        aria-label={category.category}
-        data-aos="zoom-in-up"
-        data-aos-delay={index * 100}
-        data-aos-once="true"
-      >
-        <h3
-          class="sticky top-0 text-center text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
+          aria-label={category.category}
+          data-aos="zoom-in-up"
+          data-aos-delay={index * 100}
+          data-aos-once="true"
+        >
+          <h3
+            class="sticky top-0 text-center text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
                  bg-clip-text text-transparent py-4 bg-bg/80 backdrop-blur-md
                  border-b border-orange-400/20 z-10 rounded-t-3xl"
-        >
-          {category.category}
-        </h3>
+          >
+            {category.category}
+          </h3>
 
-        <ul
-          class="px-3 py-4 grid grid-cols-2 gap-4 flex-1"
-        >
-          {category.items.map((skill, i) => (
-            <li
-              class="flex flex-col items-center text-center bg-bg/90 p-4 rounded-xl
+          <ul class="px-3 py-4 grid grid-cols-2 gap-4 flex-1">
+            {category.items.map((skill, i) => (
+              <li
+                class="flex flex-col items-center text-center bg-bg/90 p-4 rounded-xl
                      border border-orange-500/50 shadow-md hover:shadow-orange-400/40
                      transition-transform duration-300 hover:scale-105 cursor-default"
-              title={`${skill.name} - ${skill.level}`}
-              data-aos="zoom-in"
-              data-aos-duration="600"
-              data-aos-delay={i * 50}
-            >
-              <div class="w-14 h-14 mb-4 flex items-center justify-center">
-                <Icon
-                  name={skill.icon}
-                  class="w-10 h-10 transition duration-300 hover:brightness-110"
-                  aria-hidden="true"
-                />
-              </div>
-              <span class="text-base sm:text-lg font-medium">{skill.name}</span>
-              <span class="text-sm text-zinc-300">{skill.level}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+                title={`${skill.name} - ${skill.level}`}
+                data-aos="zoom-in"
+                data-aos-duration="600"
+                data-aos-delay={i * 50}
+              >
+                <div class="w-14 h-14 mb-4 flex items-center justify-center">
+                  <Icon
+                    name={skill.icon}
+                    class="w-10 h-10 transition duration-300 hover:brightness-110"
+                    aria-hidden="true"
+                  />
+                </div>
+                <span class="text-base sm:text-lg font-medium">
+                  {skill.name}
+                </span>
+
+                <div class="mt-2 w-full flex flex-col items-center gap-1">
+                  <span class="text-[10px] uppercase tracking-tighter text-orange-400 font-bold">
+                    {skill.level}
+                  </span>
+                  <div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <div
+                      class={`h-full bg-gradient-to-r from-orange-600 to-yellow-400 transition-all duration-1000 ease-out`}
+                      style={{
+                        width:
+                          skill.level === "Básico" || skill.level === "Basic"
+                            ? "33%"
+                            : skill.level === "Intermedio" ||
+                                skill.level === "Intermediate"
+                              ? "66%"
+                              : "100%",
+                      }}
+                    />
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
   </div>
 </section>

@@ -1,0 +1,30 @@
+[
+    {
+        "title": "TicTacToe-x86-ASM",
+        "description": {
+            "es": "Juego de Tic Tac Toe clásico desarrollado íntegramente en lenguaje ensamblador x86.",
+            "en": "Classic Tic Tac Toe game developed entirely in x86 assembly language."
+        },
+        "repo": "https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM",
+        "tech": [
+            "x86 Assembly",
+            "DOSBox",
+            "TASM"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "CalculadoraMultibase-DesktopApp",
+        "description": {
+            "es": "Una calculadora de escritorio que soporta operaciones en diferentes bases numéricas (Hex, Dec, Oct, Bin).",
+            "en": "A desktop calculator that supports operations in different number bases (Hex, Dec, Oct, Bin)."
+        },
+        "repo": "https://github.com/Geovanni-Gonzalez/CalculadoraMultibase-DesktopApp",
+        "tech": [
+            "C#",
+            ".NET",
+            "Windows Forms"
+        ],
+        "image": "/images/default-project.png"
+    }
+]

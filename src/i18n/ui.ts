@@ -15,6 +15,7 @@ export const ui = {
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
     'nav.skills': 'Skills',
+    'nav.blog': 'Blog',
 
     'footer.copyright': 'Geovanni Portfolio, All Rights Reserved',
     'footer.aboutMe': 'About Me',
@@ -49,6 +50,7 @@ export const ui = {
     'education.endDate': 'Present',
 
     'certifications.title': 'Certifications',
+    'certifications.subtitle': 'Certifications and Courses',
     'certifications.viewOnline': 'View Certificate',
 
     'certifications.pythonCertification.description': 'Certification validating fundamental programming knowledge in Python, data structures, control flow, functions, and basic OOP principles.',
@@ -72,7 +74,7 @@ export const ui = {
     'contact.phone.placeholder': 'Your Phone',
     'contact.message.placeholder': 'Type your message here...',
     'contact.location': 'Limón, Limón, Costa Rica',
-},
+  },
 
   es: {
     'app.title': 'Portafolio',
@@ -126,7 +128,7 @@ export const ui = {
     'certifications.efset.description': 'Certificación que valida el dominio del idioma inglés a través del examen EF SET.',
     'certifications.ia.description': 'Certificación que valida conocimientos en conceptos y aplicaciones de Inteligencia Artificial.',
 
-    
+
     'contact.title': 'Contacto',
     'contact.email': 'Correo Electrónico',
     'contact.phone': 'Teléfono',
@@ -143,8 +145,8 @@ export const ui = {
     'contact.phone.placeholder': 'Tu teléfono',
     'contact.message.placeholder': 'Escribe tu mensaje aquí...',
     'contact.location': 'Limón, Limón, Costa Rica',
-    
 
 
-},
+
+  },
 } as const;

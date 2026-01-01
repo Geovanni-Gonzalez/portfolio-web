@@ -1,13 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
-import About from '../../components/About.astro';
-import Projects from '../../components/Projects.astro';
-import Skills from '../../components/Skills.astro';
-import Education from '../../components/Education.astro';
-import Contact from '../../components/Contact.astro';
-import Footer from '../../components/Footer.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Projects from "../../components/Projects.astro";
+import Skills from "../../components/Skills.astro";
+import Education from "../../components/Education.astro";
+import Contact from "../../components/Contact.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+import Blog from "../../components/Blog.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -20,6 +22,7 @@ const t = useTranslations(lang);
     <Skills />
     <Education />
     <Projects />
+    <Blog />
     <Contact />
   </main>
   <Footer />

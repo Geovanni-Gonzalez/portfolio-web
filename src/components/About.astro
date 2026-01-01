@@ -1,12 +1,11 @@
 ---
 // components/About.astro
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { Icon } from 'astro-iconify';
-import GradientTitle from './GradientTitle.astro';
-
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Icon } from "astro-iconify";
+import GradientTitle from "./GradientTitle.astro";
+const profileImage = "/images/profile.jpg";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const profileImage = "/images/profile.jpg";
 const cvFileSpanish = "/documents/CurriculumEstudiantil.pdf";
 const cvFileEnglish = "/documents/StudentCurriculum.pdf";
 
@@ -15,87 +14,128 @@ const techStack = [
   { name: "Astro", icon: "logos:astro-icon" },
   { name: "Python", icon: "logos:python" },
   { name: "Tailwind", icon: "logos:tailwindcss-icon" },
-  { name: "Java", icon: "logos:java" }
+  { name: "Java", icon: "logos:java" },
 ];
 ---
 
 <section id="about" class="max-w-7xl mx-auto px-6 py-20">
-  <GradientTitle title={t('about.title')} />
+  <GradientTitle title={t("about.title")} />
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 auto-rows-[minmax(180px,auto)]">
-    
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 auto-rows-[minmax(180px,auto)]"
+  >
     <!-- 1. Profile Image Card (Vertical on mobile, square-ish on desktop) -->
-    <div class="spotlight-card md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-3xl h-80 md:h-auto shadow-lg">
-       <img 
-         src={profileImage} 
-         alt="Geovanni González" 
-         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-       />
-       <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-       
-       <div class="absolute bottom-6 left-6 text-white z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-          <p class="font-bold text-2xl">Geovanni González</p>
-          <p class="text-sm text-orange-300 font-medium mt-1">{t('hero.title')}</p>
-       </div>
+    <div
+      class="spotlight-card md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-3xl h-80 md:h-auto shadow-lg"
+    >
+      <img
+        src={profileImage}
+        alt="Geovanni González"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"
+      >
+      </div>
+
+      <div
+        class="absolute bottom-6 left-6 text-white z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+      >
+        <p class="font-bold text-2xl">Geovanni González</p>
+        <p class="text-sm text-orange-300 font-medium mt-1">
+          {t("hero.title")}
+        </p>
+      </div>
     </div>
 
     <!-- 2. Bio Card (Wide) -->
-    <div class="spotlight-card md:col-span-2 md:row-span-1 bg-bg/50 border border-text/10 backdrop-blur-md rounded-3xl p-6 sm:p-8 flex flex-col justify-center relative overflow-hidden group hover:border-orange-500/30 transition-colors duration-500 shadow-lg">
-        <!-- Background effects -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-        
-        <div class="relative z-10">
-          <h3 class="text-2xl font-bold text-text mb-4 flex items-center gap-2">
-              <Icon name="mdi:account-circle" class="text-orange-400 w-8 h-8" />
-              {t('about.title')}
-          </h3>
-          <p class="text-muted leading-relaxed mb-4 text-sm sm:text-base">
-            {t('about.description-1')}
-          </p>
-          <p class="text-muted leading-relaxed mb-6 text-sm sm:text-base">
-            {t('about.description-2')}
-          </p>
-          
-          <a
-            href={lang === 'es' ? cvFileSpanish : cvFileEnglish}
-            download
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-text/5 border border-text/10 hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-200 text-text transition-all duration-300 group/btn w-fit"
-          >
-            <Icon name="mdi:file-download" class="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-            <span class="font-medium text-sm">{t('about.cvDownload')}</span>
-          </a>
-        </div>
+    <div
+      class="spotlight-card md:col-span-2 md:row-span-1 rounded-3xl p-6 sm:p-8 flex flex-col justify-center relative overflow-hidden group transition-all duration-500"
+    >
+      <!-- Background effects -->
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-text mb-4 flex items-center gap-2">
+          <Icon name="mdi:account-circle" class="text-orange-400 w-8 h-8" />
+          {t("about.title")}
+        </h3>
+        <p class="text-muted leading-relaxed mb-4 text-sm sm:text-base">
+          {t("about.description-1")}
+        </p>
+        <p class="text-muted leading-relaxed mb-6 text-sm sm:text-base">
+          {t("about.description-2")}
+        </p>
+
+        <a
+          href={lang === "es" ? cvFileSpanish : cvFileEnglish}
+          download
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-text/5 border border-text/10 hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-200 text-text transition-all duration-300 group/btn w-fit"
+        >
+          <Icon
+            name="mdi:file-download"
+            class="w-5 h-5 group-hover/btn:scale-110 transition-transform"
+          />
+          <span class="font-medium text-sm">{t("about.cvDownload")}</span>
+        </a>
+      </div>
     </div>
 
     <!-- 3. Location Card -->
-    <div class="spotlight-card md:col-span-1 bg-bg/50 border border-text/10 backdrop-blur-md rounded-3xl p-6 flex flex-col items-center justify-center gap-4 group hover:border-orange-500/30 transition-colors duration-500 shadow-lg relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://api.iconify.design/mdi:map.svg?color=%23ffffff10')] bg-cover opacity-10 group-hover:scale-110 transition-transform duration-700"></div>
-        
-        <div class="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center relative z-10 group-hover:bg-orange-500/20 transition-colors">
-            <Icon name="mdi:map-marker" class="w-8 h-8 text-orange-400 animate-bounce" style="animation-duration: 2s;" />
-        </div>
-        <div class="text-center relative z-10">
-            <p class="text-muted text-xs uppercase tracking-wider font-semibold">Ubicación</p>
-            <p class="text-text font-bold text-xl mt-1">Costa Rica</p>
-            <p class="text-muted text-sm">Cartago, ITCR</p>
-        </div>
+    <div
+      class="spotlight-card md:col-span-1 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 group transition-all duration-500 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[url('https://api.iconify.design/mdi:map.svg?color=%23ffffff10')] bg-cover opacity-10 group-hover:scale-110 transition-transform duration-700"
+      >
+      </div>
+
+      <div
+        class="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center relative z-10 group-hover:bg-orange-500/20 transition-colors"
+      >
+        <Icon
+          name="mdi:map-marker"
+          class="w-8 h-8 text-orange-400 animate-bounce"
+          style="animation-duration: 2s;"
+        />
+      </div>
+      <div class="text-center relative z-10">
+        <p class="text-muted text-xs uppercase tracking-wider font-semibold">
+          Ubicación
+        </p>
+        <p class="text-text font-bold text-xl mt-1">Costa Rica</p>
+        <p class="text-muted text-sm">
+          Limón, ITCR (Centro Académico de Limón)
+        </p>
+      </div>
     </div>
 
     <!-- 4. Tech Stack Focus -->
-    <div class="spotlight-card md:col-span-1 bg-bg/50 border border-text/10 backdrop-blur-md rounded-3xl p-6 flex flex-col justify-center group hover:border-orange-500/30 transition-colors duration-500 shadow-lg">
-        <p class="text-muted text-xs uppercase tracking-wider font-semibold mb-4 flex items-center gap-2">
-          <Icon name="mdi:code-braces" class="text-orange-400" />
-          Stack Principal
-        </p>
-        <div class="flex flex-wrap gap-3">
-            {techStack.map(tech => (
-              <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-text/5 border border-text/10 hover:bg-text/10 transition-colors" title={tech.name}>
-                <Icon name={tech.icon} class="w-5 h-5" />
-                <span class="text-text text-sm font-medium">{tech.name}</span>
-              </div>
-            ))}
-        </div>
+    <div
+      class="spotlight-card md:col-span-1 rounded-3xl p-6 flex flex-col justify-center group transition-all duration-500"
+    >
+      <p
+        class="text-muted text-xs uppercase tracking-wider font-semibold mb-4 flex items-center gap-2"
+      >
+        <Icon name="mdi:code-braces" class="text-orange-400" />
+        Stack Principal
+      </p>
+      <div class="flex flex-wrap gap-3">
+        {
+          techStack.map((tech) => (
+            <div
+              class="flex items-center gap-2 px-3 py-2 rounded-lg bg-text/5 border border-text/10 hover:bg-text/10 transition-colors"
+              title={tech.name}
+            >
+              <Icon name={tech.icon} class="w-5 h-5" />
+              <span class="text-text text-sm font-medium">{tech.name}</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
-
   </div>
 </section>

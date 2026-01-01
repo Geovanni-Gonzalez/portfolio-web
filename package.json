@@ -10,13 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/react": "^4.4.2",
     "@astrojs/vercel": "^9.0.2",
     "@iconify/react": "^6.0.0",
     "@paper-design/shaders-react": "^0.0.43",
+    "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/vite": "^4.1.11",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "aos": "^2.3.4",
     "astro": "^5.16.5",
     "astro-icon": "^1.1.5",
@@ -24,9 +26,10 @@
     "astro-loading-indicator": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "sharp": "^0.34.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.34.3",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
@@ -34,6 +37,10 @@
     "autoprefixer": "^10.4.21",
     "baseline-browser-mapping": "^2.9.6",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.0.0"
+  },
+  "overrides": {
+    "vite": "^6.0.0"
   }
 }

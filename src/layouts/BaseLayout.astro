@@ -76,9 +76,10 @@ const defaultDescription = "Portfolio of Geovanni Gonzalez, computer engineering
     height: 100%;
   }
   
-  /* Hide WarpBackground in light mode if it's too dark/intense */
+  /* Warp visible y vibrante en modo claro */
   :global([data-theme='light']) .warp-bg-wrapper {
-    opacity: 0.1; /* Or display: none, or opacity: 0.1 for a subtle effect */
-    filter: invert(1) hue-rotate(180deg); /* Experimental: invert colors for light mode? */
+    opacity: 0.7;
+    filter: none;
+    transition: opacity 0.5s;
   }
 </style>
