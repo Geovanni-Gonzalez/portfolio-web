@@ -14,11 +14,15 @@ interface ProjectCardProps extends Project {
     onOpen?: MouseEventHandler<HTMLButtonElement>;
     tabIndex?: number;
     "aria-hidden"?: boolean | "true" | "false";
+    style?: React.CSSProperties; // Add style prop
 }
 
-export default function ProjectCard({ title, description, tech, repo, image, onOpen }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tech, repo, image, onOpen, style }: ProjectCardProps) {
     return (
-        <div className="spotlight-card flex flex-col bg-gradient-to-br from-bg/70 via-muted/10 to-bg/70 backdrop-blur-md border border-text/10 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-500 overflow-hidden w-full max-w-lg mx-auto h-full">
+        <div 
+            className="spotlight-card flex flex-col bg-gradient-to-br from-bg/70 via-muted/10 to-bg/70 backdrop-blur-md border border-text/10 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-500 overflow-hidden w-full max-w-lg mx-auto h-full"
+            style={style} // Apply style
+        >
             {/* Imagen */}
             {image ? (
                 <div className="relative w-full h-40 sm:h-44 md:h-48 overflow-hidden">

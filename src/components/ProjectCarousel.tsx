@@ -86,6 +86,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                                     onOpen={() => setSelectedProject(project)}
                                     tabIndex={idx === current ? 0 : -1}
                                     aria-hidden={idx !== current ? "true" : undefined}
+                                    style={{}} // Empty style to satisfy hydration check or real style if needed
                                 />
                             </div>
                         ))}

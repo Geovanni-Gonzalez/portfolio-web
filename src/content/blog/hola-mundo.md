@@ -2,7 +2,7 @@
 title: "Mi primer post en mi nuevo portafolio"
 description: "Bienvenidos a mi blog. Aquí compartiré mis experiencias en la ingeniería en computación y mis proyectos."
 pubDate: "2025-12-29"
-heroImage: "/images/blog-placeholder.jpg"
+heroImage: "/images/profile.jpg"
 tags: ["Astro", "Portfolio", "Personal"]
 ---
 
