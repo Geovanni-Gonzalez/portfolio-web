@@ -24,14 +24,14 @@ export default function LangPicker({ currentLang }) {
 
   return (
     <div ref={dropdownRef} className="relative inline-block text-left">
-      
+
       {/* Botón principal */}
       <button
         onClick={() => setOpen(!open)}
         aria-haspopup="true"
         aria-expanded={open}
         type="button"
-        className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-xl text-white text-sm font-medium rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+        className="inline-flex items-center px-4 py-2 bg-[var(--color-card-bg)] backdrop-blur-xl text-[var(--color-text)] text-sm font-medium rounded-full shadow-sm border border-[var(--color-card-border)] hover:scale-105 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50"
       >
         {languages[currentLang]}
         <svg
@@ -47,33 +47,33 @@ export default function LangPicker({ currentLang }) {
       </button>
 
       {/* Dropdown */}
-<div
-  className={clsx(
-    'absolute right-0 mt-2 w-36 sm:w-40 md:w-48 rounded-xl shadow-2xl bg-black/70 backdrop-blur-xl ring-1 ring-orange-400 ring-opacity-20 transition-all duration-500 overflow-hidden',
-    open ? 'max-h-80 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'
-  )}
->
-  <ul className="flex flex-col gap-1 text-white text-sm">
-    {Object.entries(languages).map(([lang, label], index) => (
-      <li
-        key={lang}
-        style={{ transitionDelay: `${index * 75}ms` }}
+      <div
         className={clsx(
-          'transform transition-all duration-300 ease-in-out',
-          open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
+          'absolute right-0 mt-2 w-36 sm:w-40 md:w-48 rounded-xl shadow-2xl bg-[var(--color-card-bg)] backdrop-blur-xl border border-[var(--color-card-border)] ring-1 ring-orange-400/20 transition-all duration-500 overflow-hidden z-50',
+          open ? 'max-h-80 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'
         )}
       >
-        <button
-          onClick={() => changeLanguage(lang)}
-          className="w-full text-left px-4 py-2 rounded-lg hover:bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600 hover:text-black hover:scale-105 transition-all duration-300 ease-in-out"
-          type="button"
-        >
-          {label}
-        </button>
-      </li>
-    ))}
-  </ul>
-</div>
+        <ul className="flex flex-col gap-1 text-[var(--color-text)] text-sm">
+          {Object.entries(languages).map(([lang, label], index) => (
+            <li
+              key={lang}
+              style={{ transitionDelay: `${index * 75}ms` }}
+              className={clsx(
+                'transform transition-all duration-300 ease-in-out',
+                open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
+              )}
+            >
+              <button
+                onClick={() => changeLanguage(lang)}
+                className="w-full text-left px-4 py-2 rounded-lg hover:bg-orange-500/10 hover:text-orange-400 transition-all duration-300 ease-in-out"
+                type="button"
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
     </div>
   );

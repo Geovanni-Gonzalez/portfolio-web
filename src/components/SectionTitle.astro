@@ -1,6 +1,6 @@
 ---
 // components/ui/SectionTitle.astro
-import { Icon } from 'astro-iconify';
+import { Icon } from "astro-iconify";
 
 const {
   title,
@@ -11,17 +11,30 @@ const {
   underline = true,
 } = Astro.props;
 
-const baseColor = color1 ? `text-${color1}` : 'text-text';
-const underlineColor = color2 ? `bg-${color2}-500` : 'bg-orange-500';
-const alignment = centered ? 'text-center mx-auto justify-center' : 'text-left';
+const baseColor = color1 ? `text-${color1}` : "text-text";
+const underlineColor = color2 ? `bg-${color2}-500` : "bg-orange-500";
+const alignment = centered ? "text-center mx-auto justify-center" : "text-left";
 ---
 
 <div class={`w-fit mb-6 relative flex items-center gap-2 ${alignment}`}>
-  {icon && <Icon name={icon} class={`w-6 h-6 ${baseColor}`} />}
-  <h2 class={`text-3xl md:text-4xl font-extrabold tracking-wide ${baseColor}`}>
+  {
+    icon && (
+      <Icon
+        name={icon}
+        class={`w-6 h-6 ${color1 ? baseColor : "text-[var(--color-text)]"}`}
+      />
+    )
+  }
+  <h2
+    class={`text-3xl md:text-4xl font-extrabold tracking-wide ${icon ? baseColor : "text-[var(--color-text)]"}`}
+  >
     {title}
   </h2>
-  {underline && (
-    <span class={`absolute left-0 -bottom-1 h-1 w-full ${underlineColor} rounded-lg animate-pulse opacity-60`} />
-  )}
+  {
+    underline && (
+      <span
+        class={`absolute left-0 -bottom-1 h-1 w-full ${underlineColor} rounded-lg animate-pulse opacity-60`}
+      />
+    )
+  }
 </div>
