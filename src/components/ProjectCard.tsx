@@ -19,7 +19,7 @@ interface ProjectCardProps extends Project {
 
 export default function ProjectCard({ title, description, tech, repo, image, onOpen, style }: ProjectCardProps) {
     return (
-        <div 
+        <div
             className="spotlight-card flex flex-col bg-gradient-to-br from-bg/70 via-muted/10 to-bg/70 backdrop-blur-md border border-text/10 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-500 overflow-hidden w-full max-w-lg mx-auto h-full"
             style={style} // Apply style
         >
@@ -66,7 +66,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                         {tech.map((item, idx) => (
                             <span
                                 key={idx}
-                                className="bg-gradient-to-r from-orange-500/30 to-yellow-400/30 border border-orange-400 text-orange-200 px-3 py-1 rounded-full font-medium shadow-sm hover:scale-105 hover:shadow-md transition-transform duration-300"
+                                className="px-3 py-1 rounded-full text-xs font-semibold shadow-sm transition-all duration-300 border bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-500/10 dark:border-orange-500/20 dark:text-orange-300 dark:hover:bg-orange-500/20 hover:scale-105"
                             >
                                 {item}
                             </span>

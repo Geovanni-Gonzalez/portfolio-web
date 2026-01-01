@@ -1,46 +1,44 @@
 ---
-import SectionTitle from './SectionTitle.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import ContactInfo from './ContactInfo.jsx';
-import ContactForm from './ContactForm.jsx';
+import SectionTitle from "./SectionTitle.astro";
+import GradientTitle from "./GradientTitle.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ContactInfo from "./ContactInfo.jsx";
+import ContactForm from "./ContactForm.jsx";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const contactInfo = {
-    email: 'geovanniga32@gmail.com',
-    phone: '+506 62180026',
-    linkedin: 'https://www.linkedin.com/in/geovanni-gonzález-aguilar',
-    github: 'https://github.com/Geovanni-Gonzalez',
-    location: t('contact.location'),
+  email: "geovanniga32@gmail.com",
+  phone: "+506 62180026",
+  linkedin: "https://www.linkedin.com/in/geovanni-gonzález-aguilar",
+  github: "https://github.com/Geovanni-Gonzalez",
+  location: t("contact.location"),
 };
 
 const formTranslations = {
-  name: t('contact.name'),
-  namePlaceholder: t('contact.name.placeholder'),
-  email: t('contact.email'),
-  emailPlaceholder: t('contact.email.placeholder'),
-  message: t('contact.message'),
-  messagePlaceholder: t('contact.message.placeholder'),
-  send: t('contact.send'),
-  sent: t('contact.sent'),
-  error: t('contact.error')
+  name: t("contact.name"),
+  namePlaceholder: t("contact.name.placeholder"),
+  email: t("contact.email"),
+  emailPlaceholder: t("contact.email.placeholder"),
+  message: t("contact.message"),
+  messagePlaceholder: t("contact.message.placeholder"),
+  send: t("contact.send"),
+  sent: t("contact.sent"),
+  error: t("contact.error"),
 };
 
 const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
 ---
+
 <section
   id="contact"
   class="w-full min-h-screen flex flex-col justify-center items-center py-20 px-4 sm:px-6 md:px-8 bg-transparent"
+  data-aos="fade-up"
+  data-aos-duration="1000"
 >
   <div class="w-full max-w-7xl mb-12">
-    <SectionTitle
-      title={t('contact.title')}
-      icon="mdi:email-outline"
-      color="orange-500"
-      underline={true}
-      underlineFullWidth={true}
-    />
+    <GradientTitle title={t("contact.title")} />
   </div>
 
   <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-7xl">
@@ -51,22 +49,22 @@ const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
     >
       <div class="space-y-4">
         <h3 class="text-2xl font-bold text-text">
-          {lang === 'es' ? 'Hablemos' : "Let's Talk"}
+          {lang === "es" ? "Hablemos" : "Let's Talk"}
         </h3>
         <p class="text-lg leading-relaxed text-muted font-light">
-          {t('contact.description')}
+          {t("contact.description")}
         </p>
       </div>
-      
+
       <ContactInfo client:visible contactInfo={contactInfo} />
     </div>
 
     <!-- Formulario -->
     <div data-aos="fade-left" data-aos-delay="200">
-      <ContactForm 
-        client:visible 
-        translations={formTranslations} 
-        formId={formId} 
+      <ContactForm
+        client:visible
+        translations={formTranslations}
+        formId={formId}
       />
     </div>
   </div>

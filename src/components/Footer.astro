@@ -1,25 +1,37 @@
 ---
-import Icon from 'astro-iconify';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Icon from "astro-iconify";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-gradient-to-t from-bg via-muted/5 to-bg text-muted py-8 md:py-12 mt-16 md:mt-24 border-t border-text/5">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10">
-
+<footer
+  class="bg-gradient-to-t from-bg via-muted/5 to-bg text-muted py-8 md:py-12 mt-16 md:mt-24 border-t border-text/5"
+>
+  <div
+    class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10"
+  >
     <!-- Quick Links -->
-    <nav class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 text-base font-medium items-center">
-      {[
-        { href: "#home", label: t('nav.home') },
-        { href: "#about", label: t('nav.aboutMe') },
-        { href: "#skills", label: t('nav.skills') },
-        { href: "#projects", label: t('nav.projects') },
-        { href: "#contact", label: t('nav.contact') }
-      ].map(link => (
-        <a href={link.href} class="hover:text-accent transition-colors duration-200">{link.label}</a>
-      ))}
+    <nav
+      class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 text-base font-medium items-center"
+    >
+      {
+        [
+          { href: "#home", label: t("nav.home") },
+          { href: "#about", label: t("nav.aboutMe") },
+          { href: "#skills", label: t("nav.skills") },
+          { href: "#projects", label: t("nav.projects") },
+          { href: "#contact", label: t("nav.contact") },
+        ].map((link) => (
+          <a
+            href={link.href}
+            class="hover:text-accent transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </nav>
 
     <!-- Social Media -->
@@ -47,8 +59,11 @@ const t = useTranslations(lang);
 
   <!-- Copyright -->
   <div class="border-t border-text/10 mt-8 md:mt-10 pt-4 md:pt-6">
-    <p class="text-center text-muted/60 text-xs select-none tracking-wide">
-      © {new Date().getFullYear()} <span class="font-semibold text-muted"> &mdash; {t('footer.copyright')}</span>
+    <p class="text-center text-muted/80 text-sm select-none tracking-wide">
+      © {new Date().getFullYear()}
+      <span class="font-semibold text-text">
+        &mdash; {t("footer.copyright")}</span
+      >
     </p>
   </div>
 </footer>

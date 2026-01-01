@@ -11,6 +11,13 @@ html {
   @apply scroll-smooth;
 }
 
+
+/* Global Text Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
 /* Scrollbar completamente oculta pero funcional (compatible con todos los navegadores modernos) */
 /* tailwind.config.js -> safelist or custom plugin */
 .scrollbar-thin::-webkit-scrollbar {
@@ -29,28 +36,44 @@ html {
 /* Variables de tema */
 :root {
   /* Dark Mode (Default) - Deep Cosmic Theme */
-  --color-bg: #09090b; /* Zinc 950 */
-  --color-text: #fafafa; /* Zinc 50 - Mejorado para mejor contraste */
-  --color-accent: #f97316; /* Orange 500 */
-  --color-accent-light: #fb923c; /* Orange 400 */
-  --color-muted: #a1a1aa; /* Zinc 400 */
-  --color-border: #27272a; /* Zinc 800 */
-  --color-card-bg: rgba(24, 24, 27, 0.6); /* Zinc 900 con transparencia */
-  --color-card-border: rgba(63, 63, 70, 0.3); /* Zinc 700 con transparencia */
-  --color-hover-bg: rgba(39, 39, 42, 0.8); /* Zinc 800 con transparencia */
+  --color-bg: #09090b;
+  /* Zinc 950 */
+  --color-text: #fafafa;
+  /* Zinc 50 - Mejorado para mejor contraste */
+  --color-accent: #f97316;
+  /* Orange 500 */
+  --color-accent-light: #fb923c;
+  /* Orange 400 */
+  --color-muted: #a1a1aa;
+  /* Zinc 400 */
+  --color-border: #27272a;
+  /* Zinc 800 */
+  --color-card-bg: rgba(24, 24, 27, 0.6);
+  /* Zinc 900 con transparencia */
+  --color-card-border: rgba(63, 63, 70, 0.3);
+  /* Zinc 700 con transparencia */
+  --color-hover-bg: rgba(39, 39, 42, 0.8);
+  /* Zinc 800 con transparencia */
 }
 
 [data-theme='light'] {
   /* Light Mode - Clean Paper Theme */
-  --color-bg: #ffffff; /* Blanco puro para mejor contraste */
-  --color-text: #09090b; /* Zinc 950 - Mejorado para mejor contraste */
-  --color-accent: #ea580c; /* Orange 600 */
-  --color-accent-light: #f97316; /* Orange 500 */
-  --color-muted: #52525b; /* Zinc 600 */
-  --color-border: #d4d4d8; /* Zinc 300 - Mejorado para mejor visibilidad */
-  --color-card-bg: rgba(250, 250, 250, 0.8); /* Zinc 50 con transparencia */
-  --color-card-border: rgba(228, 228, 231, 0.6); /* Zinc 200 con transparencia */
-  --color-hover-bg: rgba(244, 244, 245, 0.9); /* Zinc 100 con transparencia */
+  --color-bg: #fafafa;
+  /* Blanco puro para mejor contraste */
+  --color-text: #09090b;
+  /* Zinc 950 - Mejorado para mejor contraste */
+  --color-accent: #ea580c;
+  /* Orange 600 */
+  --color-accent-light: #f97316;
+  /* Orange 500 */
+  --color-muted: #27272a;
+  /* Zinc 800 - Maximized contrast for readability */
+  --color-border: #a1a1aa;
+  /* Zinc 400 - Darkened for visibility */
+  --color-card-bg: rgba(255, 255, 255, 0.98);
+  /* Almost solid to block Warp background */
+  --color-card-border: rgba(228, 228, 231, 0.8);
+  --color-hover-bg: rgba(244, 244, 245, 0.95);
 }
 
 /* Transiciones suaves para cambio de tema */
@@ -68,15 +91,18 @@ html {
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--color-muted);
   border-radius: 20px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-accent);
 }
@@ -118,6 +144,7 @@ html {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);

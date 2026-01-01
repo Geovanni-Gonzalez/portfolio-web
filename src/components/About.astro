@@ -18,7 +18,12 @@ const techStack = [
 ];
 ---
 
-<section id="about" class="max-w-7xl mx-auto px-6 py-20">
+<section
+  id="about"
+  class="max-w-7xl mx-auto px-6 py-20"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
   <GradientTitle title={t("about.title")} />
 
   <div
@@ -27,6 +32,8 @@ const techStack = [
     <!-- 1. Profile Image Card (Vertical on mobile, square-ish on desktop) -->
     <div
       class="spotlight-card md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-3xl h-80 md:h-auto shadow-lg"
+      data-aos="fade-right"
+      data-aos-delay="200"
     >
       <img
         src={profileImage}
@@ -51,6 +58,8 @@ const techStack = [
     <!-- 2. Bio Card (Wide) -->
     <div
       class="spotlight-card md:col-span-2 md:row-span-1 rounded-3xl p-6 sm:p-8 flex flex-col justify-center relative overflow-hidden group transition-all duration-500"
+      data-aos="fade-left"
+      data-aos-delay="300"
     >
       <!-- Background effects -->
       <div
@@ -73,7 +82,7 @@ const techStack = [
         <a
           href={lang === "es" ? cvFileSpanish : cvFileEnglish}
           download
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-text/5 border border-text/10 hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-200 text-text transition-all duration-300 group/btn w-fit"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-text/5 border border-text/10 hover:bg-orange-500/10 hover:border-orange-500/50 hover:text-orange-600 dark:hover:text-orange-200 text-text transition-all duration-300 group/btn w-fit"
         >
           <Icon
             name="mdi:file-download"
@@ -87,6 +96,8 @@ const techStack = [
     <!-- 3. Location Card -->
     <div
       class="spotlight-card md:col-span-1 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 group transition-all duration-500 relative overflow-hidden"
+      data-aos="fade-up"
+      data-aos-delay="400"
     >
       <div
         class="absolute inset-0 bg-[url('https://api.iconify.design/mdi:map.svg?color=%23ffffff10')] bg-cover opacity-10 group-hover:scale-110 transition-transform duration-700"
@@ -116,6 +127,8 @@ const techStack = [
     <!-- 4. Tech Stack Focus -->
     <div
       class="spotlight-card md:col-span-1 rounded-3xl p-6 flex flex-col justify-center group transition-all duration-500"
+      data-aos="fade-up"
+      data-aos-delay="500"
     >
       <p
         class="text-muted text-xs uppercase tracking-wider font-semibold mb-4 flex items-center gap-2"

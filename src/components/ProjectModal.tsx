@@ -70,7 +70,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
                     <div className="flex flex-wrap gap-2 mb-6">
                         {project.tech && project.tech.map((t, i) => (
-                            <span key={i} className="px-3 py-1 text-xs font-medium text-orange-300 bg-orange-500/10 rounded-full border border-orange-500/20">
+                            <span key={i} className="px-3 py-1 text-xs font-semibold rounded-full border shadow-sm transition-colors duration-300 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-500/10 dark:border-orange-500/20 dark:text-orange-300 dark:hover:bg-orange-500/20">
                                 {t}
                             </span>
                         ))}

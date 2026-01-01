@@ -85,7 +85,12 @@ const projects = await Promise.all(
 ).then((results) => results.filter((p) => p !== null));
 ---
 
-<section id="projects" class="relative px-6 py-20 max-w-5xl mx-auto">
+<section
+  id="projects"
+  class="relative px-6 py-20 max-w-5xl mx-auto"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
   <GradientTitle title={t("projects.title")} />
   {
     projects && projects.length > 0 ? (
