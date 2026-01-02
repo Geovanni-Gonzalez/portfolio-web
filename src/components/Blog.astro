@@ -8,7 +8,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const posts = (await getCollection("blog"))
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .sort(
+        (a, b) => Number(new Date(b.data.date)) - Number(new Date(a.data.date)),
+    )
     .slice(0, 3); // Show latest 3
 ---
 
@@ -24,10 +26,16 @@ const posts = (await getCollection("blog"))
                 >
                     <div class="flex items-center gap-2 text-xs text-orange-400 font-bold mb-3 uppercase tracking-widest">
                         <Icon name="mdi:calendar" class="w-4 h-4" />
-                        {post.data.pubDate.toLocaleDateString(
-                            lang === "es" ? "es-ES" : "en-US",
-                            { day: "numeric", month: "long", year: "numeric" },
-                        )}
+                        {post.data.date
+                            ? post.data.date.toLocaleDateString(
+                                  lang === "es" ? "es-ES" : "en-US",
+                                  {
+                                      day: "numeric",
+                                      month: "long",
+                                      year: "numeric",
+                                  },
+                              )
+                            : ""}
                     </div>
                     <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">
                         {post.data.title}

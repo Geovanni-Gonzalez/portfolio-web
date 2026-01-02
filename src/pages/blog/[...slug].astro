@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("blog");
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout
+    title={`${entry.data.title} | Blog`}
+    description={entry.data.description}
+>
+    <div class="pt-24 pb-16 max-w-4xl mx-auto px-6">
+        <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-muted hover:text-orange-500 mb-8 transition-colors"
+        >
+            &larr; Volver al blog
+        </a>
+
+        <header class="mb-10 text-center">
+            <div class="flex justify-center gap-2 mb-4">
+                {
+                    entry.data.tags.map((tag) => (
+                        <span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-semibold">
+                            {tag}
+                        </span>
+                    ))
+                }
+            </div>
+            <h1
+                class="text-3xl md:text-5xl font-extrabold text-[var(--color-text)] mb-4 leading-tight"
+            >
+                {entry.data.title}
+            </h1>
+            <div class="text-muted">
+                <time datetime={entry.data.date.toISOString()}>
+                    {
+                        format(entry.data.date, "d 'de' MMMM, yyyy", {
+                            locale: es,
+                        })
+                    }
+                </time>
+            </div>
+        </header>
+
+        <article
+            class="prose prose-lg dark:prose-invert max-w-none prose-headings:text-[var(--color-text)] prose-p:text-muted prose-a:text-orange-500 hover:prose-a:text-orange-600 prose-img:rounded-xl"
+        >
+            <Content />
+        </article>
+    </div>
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
+
+const posts = (await getCollection("blog"))
+    .filter((post) => post.data.lang === "es")
+    .sort(
+        (a, b) => Number(new Date(b.data.date)) - Number(new Date(a.data.date)),
+    );
+
+const title = "Blog | Geovanni Gonzalez";
+const description =
+    "Artículos sobre desarrollo web, tecnología y mis experiencias como desarrollador.";
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="pt-24 pb-12 max-w-6xl mx-auto px-6">
+        <SectionTitle
+            title="Blog Technical"
+            color1="orange-500"
+            icon="mdi:post"
+            centered
+        />
+
+        <p class="text-center text-muted mb-12 max-w-2xl mx-auto">
+            Compartiendo conocimientos, tutoriales y experiencias sobre el mundo
+            del desarrollo de software.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                posts.map((post) => (
+                    <a href={`/blog/${post.slug}`} class="group block h-full">
+                        <article class="h-full bg-[var(--color-card-bg)] border border-[var(--color-card-border)] rounded-2xl overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex flex-col">
+                            <div class="aspect-video w-full overflow-hidden bg-muted/10 relative">
+                                {/* Placeholder or Image */}
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-blue-500/10 group-hover:scale-110 transition-transform duration-500" />
+                                <div class="absolute inset-0 flex items-center justify-center text-orange-500/20 font-bold text-4xl select-none">
+                                    {post.data.title.charAt(0)}
+                                </div>
+                            </div>
+
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex gap-2 mb-3">
+                                    {post.data.tags.slice(0, 3).map((tag) => (
+                                        <span class="text-xs font-semibold px-2 py-1 rounded-md bg-orange-500/10 text-orange-600 dark:text-orange-400">
+                                            #{tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <h3 class="text-xl font-bold text-[var(--color-text)] mb-3 group-hover:text-orange-500 transition-colors line-clamp-2">
+                                    {post.data.title}
+                                </h3>
+
+                                <p class="text-muted text-sm line-clamp-3 mb-4 flex-grow">
+                                    {post.data.description}
+                                </p>
+
+                                <div class="flex items-center justify-between text-xs text-muted/60 mt-auto pt-4 border-t border-[var(--color-card-border)]">
+                                    <time
+                                        datetime={post.data.date.toISOString()}
+                                    >
+                                        {format(
+                                            post.data.date,
+                                            "d 'de' MMMM, yyyy",
+                                            { locale: es },
+                                        )}
+                                    </time>
+                                    <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform text-orange-500 font-medium">
+                                        Leer más &rarr;
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</BaseLayout>
