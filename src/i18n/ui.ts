@@ -85,6 +85,7 @@ export const ui = {
     'nav.projects': 'Proyectos',
     'nav.contact': 'Contacto',
     'nav.skills': 'Habilidades',
+    'nav.blog': 'Blog',
 
     'footer.copyright': 'Portafolio de Geovanni, Todos los Derechos Reservados',
     'footer.aboutMe': 'Sobre mí',

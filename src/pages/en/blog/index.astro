@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SectionTitle from "../../../components/SectionTitle.astro";
 import { getCollection } from "astro:content";
 import { format } from "date-fns";
+import { Icon } from "astro-iconify";
 import { enUS } from "date-fns/locale";
 
 const posts = (await getCollection("blog"))
@@ -18,6 +19,16 @@ const description =
 
 <BaseLayout title={title} description={description}>
     <div class="pt-24 pb-12 max-w-6xl mx-auto px-6">
+        <a
+            href="/en/"
+            class="group inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-text)] hover:text-orange-500 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 font-bold mb-10"
+        >
+            <Icon
+                name="mdi:arrow-left"
+                class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+            />
+            Back to Home
+        </a>
         <SectionTitle
             title="Technical Blog"
             color1="orange-500"

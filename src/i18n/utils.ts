@@ -2,22 +2,14 @@ import { ui, defaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as keyof typeof ui;
-  return defaultLang;
+  if (lang && lang in ui) return lang as keyof typeof ui;
+  return defaultLang as keyof typeof ui;
 }
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof typeof ui[typeof defaultLang]) {
-    // Si el idioma no existe, usar defaultLang
-    const langObj = ui[lang] || ui[defaultLang];
-    // Si la clave no existe en el idioma, usar defaultLang
-    if (langObj && key in langObj) {
-      return langObj[key];
-    } else if (key in ui[defaultLang]) {
-      return ui[defaultLang][key];
-    } else {
-      // Devuelve la clave como fallback para debug
-      return `[${String(key)}]`;
-    }
+  const translations = ui[lang] || ui[defaultLang];
+
+  return function t(key: string): string {
+    return (translations as any)[key] || (ui[defaultLang] as any)[key] || `[${key}]`;
   }
 }

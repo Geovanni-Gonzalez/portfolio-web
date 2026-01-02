@@ -38,7 +38,7 @@ export default function WarpBackground({ darkColors, lightColors, ...props }: Th
     const defaultProps = {
         speed: 0.4,
         rotation: 0.5,
-        style: { width: '100%', height: '100%' }
+        style: { width: '100%', height: '100%', pointerEvents: 'none' as const }
     };
 
     // Determine colors based on current theme
