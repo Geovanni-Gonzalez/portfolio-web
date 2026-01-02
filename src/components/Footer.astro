@@ -4,6 +4,23 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "/en/";
+const homePath = lang === "es" ? "/" : "/en/";
+
+const footerLinks = [
+  { href: isHome ? "#home" : `${homePath}#home`, label: t("nav.home") },
+  { href: isHome ? "#about" : `${homePath}#about`, label: t("nav.aboutMe") },
+  { href: isHome ? "#skills" : `${homePath}#skills`, label: t("nav.skills") },
+  {
+    href: isHome ? "#projects" : `${homePath}#projects`,
+    label: t("nav.projects"),
+  },
+  {
+    href: isHome ? "#contact" : `${homePath}#contact`,
+    label: t("nav.contact"),
+  },
+];
 ---
 
 <footer
@@ -17,13 +34,7 @@ const t = useTranslations(lang);
       class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 text-base font-medium items-center"
     >
       {
-        [
-          { href: "#home", label: t("nav.home") },
-          { href: "#about", label: t("nav.aboutMe") },
-          { href: "#skills", label: t("nav.skills") },
-          { href: "#projects", label: t("nav.projects") },
-          { href: "#contact", label: t("nav.contact") },
-        ].map((link) => (
+        footerLinks.map((link) => (
           <a
             href={link.href}
             class="hover:text-accent transition-colors duration-200"

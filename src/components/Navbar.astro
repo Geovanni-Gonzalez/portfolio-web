@@ -7,13 +7,22 @@ import ThemeToggle from "./ThemeToggle.jsx";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "/en/";
+const homePath = lang === "es" ? "/" : "/en/";
+
 const menuItems = [
-  { href: "#home", label: t("nav.home") },
-  { href: "#skills", label: t("nav.skills") },
-  { href: "#projects", label: t("nav.projects") },
+  { href: isHome ? "#home" : `${homePath}#home`, label: t("nav.home") },
+  { href: isHome ? "#skills" : `${homePath}#skills`, label: t("nav.skills") },
+  {
+    href: isHome ? "#projects" : `${homePath}#projects`,
+    label: t("nav.projects"),
+  },
   { href: `/${lang === "es" ? "" : "en/"}blog`, label: "Blog" },
-  { href: "#about", label: t("nav.aboutMe") },
-  { href: "#contact", label: t("nav.contact") },
+  { href: isHome ? "#about" : `${homePath}#about`, label: t("nav.aboutMe") },
+  {
+    href: isHome ? "#contact" : `${homePath}#contact`,
+    label: t("nav.contact"),
+  },
 ];
 ---
 

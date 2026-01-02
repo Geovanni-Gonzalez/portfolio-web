@@ -1,16 +1,31 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { getLangFromUrl } from '../i18n/utils';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<BaseLayout title="404 - Not Found">
-  <main class="flex flex-col items-center justify-center min-h-screen text-center px-4 relative z-10">
-    <h1 class="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mb-4">404</h1>
-    <p class="text-2xl text-zinc-300 mb-8">Page not found / Página no encontrada</p>
-    <a href={`/${lang}/`} class="px-8 py-3 bg-gradient-to-r from-orange-600 to-orange-500 text-white font-semibold rounded-full hover:scale-105 transition-transform shadow-lg hover:shadow-orange-500/20">
-      Go Home / Ir al Inicio
+<BaseLayout title="404: Not Found" description="Page not found">
+  <div
+    class="min-h-screen flex flex-col items-center justify-center text-center px-6"
+  >
+    <h1 class="text-9xl font-black text-orange-500 mb-4 animate-pulse">404</h1>
+    <h2 class="text-3xl md:text-5xl font-bold text-[var(--color-text)] mb-8">
+      {lang === "es" ? "Página no encontrada" : "Page Not Found"}
+    </h2>
+    <p class="text-xl text-muted max-w-lg mb-12">
+      {
+        lang === "es"
+          ? "Lo sentimos, la página que buscas no existe o ha sido movida."
+          : "Sorry, the page you are looking for does not exist or has been moved."
+      }
+    </p>
+    <a
+      href="/"
+      class="px-8 py-4 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50"
+    >
+      {lang === "es" ? "Volver al inicio" : "Go back home"}
     </a>
-  </main>
+  </div>
 </BaseLayout>
