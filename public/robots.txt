@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geovanni-portfolio.vercel.app/sitemap-index.xml

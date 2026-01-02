@@ -33,24 +33,32 @@ const defaultDescription =
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title || defaultTitle} />
-    <meta
-      property="og:description"
-      content={description || defaultDescription}
-    />
-    <meta
-      property="og:image"
-      content={new URL("/images/profile.webp", Astro.url)}
-    />
+    <meta property="og:description" content={description || defaultDescription} />
+    <meta property="og:image" content={new URL("/images/profile.webp", Astro.url)} />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={title || defaultTitle} />
-    <meta
-      property="twitter:description"
-      content={description || defaultDescription}
-    />
-    <meta
-      property="twitter:image"
-      content={new URL("/images/profile.webp", Astro.url)}
-    />
+    <meta property="twitter:description" content={description || defaultDescription} />
+    <meta property="twitter:image" content={new URL("/images/profile.webp", Astro.url)} />
+
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "dateCreated": "2024-01-01T00:00:00-06:00",
+        "dateModified": "2025-01-01T00:00:00-06:00",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Geovanni Gonzalez",
+          "alternateName": "Geovanni González",
+          "description": "Portafolio de Geovanni Gonzalez, estudiante de Ingeniería en Computación en TEC, Costa Rica.",
+          "image": "https://geovanni-portfolio.vercel.app/images/profile.webp",
+          "sameAs": [
+            "https://github.com/Geovanni09",
+            "https://www.linkedin.com/in/geovanni-gonzalez-1b1b3b1b3/"
+          ]
+        }
+      }
+    </script>
 
     <Font cssVariable="--font-geist" preload />
     <ClientRouter />
@@ -62,10 +70,7 @@ const defaultDescription =
     aria-label="Contenido principal"
     tabindex="0"
   >
-    <div
-      class="fixed inset-0 -z-20 bg-[var(--color-bg)] transition-colors duration-300"
-    >
-    </div>
+    <div class="fixed inset-0 -z-20 bg-[var(--color-bg)] transition-colors duration-300"></div>
     <ProgressBar />
     <SpotlightEffect />
     <ScrollToTop client:load />
