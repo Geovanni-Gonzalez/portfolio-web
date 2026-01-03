@@ -1,29 +1,54 @@
 [
     {
-        "title": "TicTacToe-x86-ASM",
-        "description": {
-            "es": "Juego de Tic Tac Toe clásico desarrollado íntegramente en lenguaje ensamblador x86.",
-            "en": "Classic Tic Tac Toe game developed entirely in x86 assembly language."
-        },
+        "title": "TicTacToe x86 Assembly",
         "repo": "https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM",
+        "description": {
+            "es": "Juego del Gato (Tic Tac Toe) escrito en ensamblador x86.",
+            "en": "Tic Tac Toe game written in x86 assembly."
+        },
         "tech": [
-            "x86 Assembly",
-            "DOSBox",
-            "TASM"
+            "Assembly",
+            "x86"
         ],
         "image": "/images/default-project.png"
     },
     {
-        "title": "CalculadoraMultibase-DesktopApp",
-        "description": {
-            "es": "Una calculadora de escritorio que soporta operaciones en diferentes bases numéricas (Hex, Dec, Oct, Bin).",
-            "en": "A desktop calculator that supports operations in different number bases (Hex, Dec, Oct, Bin)."
-        },
+        "title": "Calculadora Multibase",
         "repo": "https://github.com/Geovanni-Gonzalez/CalculadoraMultibase-DesktopApp",
+        "description": {
+            "es": "Calculadora de escritorio para conversiones entre bases numéricas.",
+            "en": "Desktop calculator for number base conversions."
+        },
         "tech": [
-            "C#",
-            ".NET",
-            "Windows Forms"
+            "Electron",
+            "JavaScript",
+            "Node.js"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Match-3 Game",
+        "repo": "https://github.com/Geovanni-Gonzalez/Match-3",
+        "description": {
+            "es": "Juego estilo Match-3 multijugador en tiempo real.",
+            "en": "Real-time multiplayer Match-3 game."
+        },
+        "tech": [
+            "React",
+            "TypeScript",
+            "Node.js"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Aventura del Tesoro Perdido",
+        "repo": "https://github.com/Geovanni-Gonzalez/Aventura-del-Tesoro-Perdido",
+        "description": {
+            "es": "Juego de aventura con enfoque lógico.",
+            "en": "Adventure game with logic programming focus."
+        },
+        "tech": [
+            "C#"
         ],
         "image": "/images/default-project.png"
     }

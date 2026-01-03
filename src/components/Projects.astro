@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const username = "Geovanni-Gonzalez";
-const repos = ["TicTacToe-x86-ASM", "CalculadoraMultibase-DesktopApp"];
+const repos = ["TicTacToe-x86-ASM", "CalculadoraMultibase-DesktopApp", "Match-3", "Aventura-del-Tesoro-Perdido"];
 
 const headers = {
   Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
@@ -17,10 +17,7 @@ const headers = {
 const projects = await Promise.all(
   repos.map(async (repo) => {
     try {
-      const res = await fetch(
-        `https://api.github.com/repos/${username}/${repo}`,
-        { headers },
-      );
+      const res = await fetch(`https://api.github.com/repos/${username}/${repo}`, { headers });
       if (!res.ok) throw new Error(`Failed to fetch ${repo}`);
       const data = await res.json();
 
@@ -35,13 +32,10 @@ const projects = await Promise.all(
       );
       if (techFileRes.ok) {
         const techData = await techFileRes.json();
-        const decoded = Buffer.from(techData.content, "base64").toString(
-          "utf-8",
-        );
+        const decoded = Buffer.from(techData.content, "base64").toString("utf-8");
         const json = JSON.parse(decoded);
         techStack = json.tech || [];
-        description =
-          json.description?.[lang] || json.description?.default || description;
+        description = json.description?.[lang] || json.description?.default || description;
       }
       // Buscar imagen en carpeta screenshots
       const screenshotRes = await fetch(
@@ -65,18 +59,12 @@ const projects = await Promise.all(
         image: projectImage || "/images/default-project.png",
       };
     } catch (e) {
-      console.warn(
-        `Error al obtener datos para ${repo}, usando fallback local:`,
-        e,
-      );
+      console.warn(`Error al obtener datos para ${repo}, usando fallback local:`, e);
       const local = localProjects.find((p) => p.repo.endsWith(repo));
       if (local) {
         return {
           ...local,
-          description:
-            local.description[lang] ||
-            local.description.en ||
-            local.description.es,
+          description: local.description[lang] || local.description.en || local.description.es,
         };
       }
       return null;
@@ -98,9 +86,7 @@ const projects = await Promise.all(
     ) : (
       <div class="text-center text-zinc-400 py-10 bg-zinc-900/50 rounded-xl border border-zinc-800">
         <p class="text-lg mb-4">
-          {lang === "es"
-            ? "No se pudieron cargar los proyectos."
-            : "Could not load projects."}
+          {lang === "es" ? "No se pudieron cargar los proyectos." : "Could not load projects."}
         </p>
         <a
           href={`https://github.com/${username}`}

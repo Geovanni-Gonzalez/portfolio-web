@@ -66,7 +66,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
                 {/* Content Section (Right/Bottom) */}
                 <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col">
-                    <h2 className="text-3xl font-bold text-text mb-2">{project.title}</h2>
+                    <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">{project.title}</h2>
 
                     <div className="flex flex-wrap gap-2 mb-6">
                         {project.tech && project.tech.map((t, i) => (
@@ -78,6 +78,11 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
                     <div className="prose prose-invert prose-sm max-w-none text-muted mb-8 flex-grow overflow-y-auto pr-2 custom-scrollbar">
                         <p>{project.description}</p>
+                        {project.repo && (
+                            <p className="text-xs text-muted/80 mt-4 break-all font-mono">
+                                <span className="font-semibold text-orange-500/80">Repo:</span> {project.repo}
+                            </p>
+                        )}
                         {/* Here we could add more details if available in the future */}
                     </div>
 
