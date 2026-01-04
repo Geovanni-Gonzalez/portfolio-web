@@ -8,7 +8,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const username = "Geovanni-Gonzalez";
-const repos = ["TicTacToe-x86-ASM", "CalculadoraMultibase-DesktopApp", "Match-3", "Aventura-del-Tesoro-Perdido"];
+const repos = ["TicTacToe-x86-ASM", "CalculadoraMultibase-DesktopApp", 
+              "Match-3", "Aventura-del-Tesoro-Perdido","Ahorcado-ConsolApp", 
+              "Ahorcado-GUI-App","Ahorcado-GUI-App-POO"];
 
 const headers = {
   Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
