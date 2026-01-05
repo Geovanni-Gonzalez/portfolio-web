@@ -9,6 +9,7 @@
 
 html {
   @apply scroll-smooth;
+  scroll-padding-top: 100px;
 }
 
 
@@ -36,10 +37,10 @@ html {
 /* Variables de tema */
 :root {
   /* Dark Mode (Default) - Deep Cosmic Theme */
-  --color-bg: #09090b;
-  /* Zinc 950 */
+  --color-bg: #050505;
+  /* Zinc 950+ -> Even darker for better contrast with Warp */
   --color-text: #fafafa;
-  /* Zinc 50 - Mejorado para mejor contraste */
+  /* Zinc 50 */
   --color-accent: #f97316;
   /* Orange 500 */
   --color-accent-light: #fb923c;
@@ -48,32 +49,33 @@ html {
   /* Zinc 400 */
   --color-border: #27272a;
   /* Zinc 800 */
-  --color-card-bg: rgba(24, 24, 27, 0.6);
-  /* Zinc 900 con transparencia */
-  --color-card-border: rgba(63, 63, 70, 0.3);
-  /* Zinc 700 con transparencia */
-  --color-hover-bg: rgba(39, 39, 42, 0.8);
-  /* Zinc 800 con transparencia */
+  --color-card-bg: rgba(9, 9, 11, 0.6);
+  /* Zinc 950 with transparency */
+  --color-card-border: rgba(39, 39, 42, 0.4);
+  /* Zinc 800 with transparency */
+  --color-hover-bg: rgba(24, 24, 27, 0.8);
+  /* Zinc 900 with transparency */
 }
 
 [data-theme='light'] {
   /* Light Mode - Clean Paper Theme */
-  --color-bg: #fafafa;
-  /* Blanco puro para mejor contraste */
+  --color-bg: #ffffff;
+  /* Pure White */
   --color-text: #09090b;
-  /* Zinc 950 - Mejorado para mejor contraste */
+  /* Zinc 950 */
   --color-accent: #ea580c;
   /* Orange 600 */
   --color-accent-light: #f97316;
   /* Orange 500 */
-  --color-muted: #27272a;
-  /* Zinc 800 - Maximized contrast for readability */
-  --color-border: #a1a1aa;
-  /* Zinc 400 - Darkened for visibility */
-  --color-card-bg: rgba(255, 255, 255, 0.98);
-  /* Almost solid to block Warp background */
-  --color-card-border: rgba(228, 228, 231, 0.8);
-  --color-hover-bg: rgba(244, 244, 245, 0.95);
+  --color-muted: #52525b;
+  /* Zinc 600 - Better readability */
+  --color-border: #d4d4d8;
+  /* Zinc 300 */
+  --color-card-bg: rgba(255, 255, 255, 0.7);
+  /* More transparent for glassmorphism */
+  --color-card-border: rgba(212, 212, 216, 0.6);
+  /* Zinc 200/300 */
+  --color-hover-bg: rgba(255, 255, 255, 0.9);
 }
 
 /* Transiciones suaves para cambio de tema */

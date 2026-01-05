@@ -1,15 +1,27 @@
 <script>
   // Event delegation for performance and dynamic content support
-  document.addEventListener('mousemove', (e) => {
-    const target = (e.target as Element).closest('.spotlight-card');
-    if (target) {
-      const rect = target.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      (target as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-      (target as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-    }
-  });
+  let ticking = false;
+
+  document.addEventListener(
+    "mousemove",
+    (e) => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const target = (e.target as Element).closest(".spotlight-card");
+          if (target) {
+            const rect = target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            (target as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+            (target as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
 </script>
 
 <style is:global>
@@ -17,9 +29,9 @@
     position: relative;
     /* Ensure overflow is handled by the component itself if needed, 
        but usually we want the spotlight to be clipped by the card border */
-    overflow: hidden; 
+    overflow: hidden;
   }
-  
+
   .spotlight-card::before {
     content: "";
     position: absolute;
@@ -29,8 +41,8 @@
     bottom: 0;
     /* Gradient spotlight effect */
     background: radial-gradient(
-      600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), 
-      var(--color-accent-light), 
+      600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+      var(--color-accent-light),
       transparent 40%
     );
     opacity: 0;
@@ -38,7 +50,7 @@
     pointer-events: none;
     z-index: 2; /* Ensure it's above background but below content if z-index is managed */
   }
-  
+
   .spotlight-card:hover::before {
     opacity: 0.15;
   }

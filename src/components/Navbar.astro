@@ -27,22 +27,19 @@ const menuItems = [
 ---
 
 <nav
-  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3.5 rounded-2xl backdrop-blur-xl bg-[var(--color-card-bg)] border border-[var(--color-card-border)] shadow-2xl z-50 flex items-center justify-between transition-all duration-300"
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-6 py-3.5 rounded-2xl backdrop-blur-xl backdrop-saturate-150 bg-[var(--color-card-bg)] border border-[var(--color-card-border)] shadow-2xl z-50 flex items-center justify-between transition-all duration-300"
   role="navigation"
   aria-label="Barra de navegación principal"
 >
   {/* Logo */}
   <a
-    href="#home"
+    href={isHome ? "#home" : `${homePath}#home`}
     class="text-[var(--color-text)] font-bold text-xl"
     aria-label="Inicio">Geovanni</a
   >
 
   {/* Menú Desktop */}
-  <ul
-    class="hidden md:flex gap-8 text-[var(--color-text)] font-medium text-base"
-    role="menubar"
-  >
+  <ul class="hidden md:flex gap-8 text-[var(--color-text)] font-medium text-base" role="menubar">
     {
       menuItems.map((item) => (
         <li role="none">
@@ -96,9 +93,7 @@ const menuItems = [
         });
 
         // Add active class to the current section's link
-        const activeLink = document.querySelector(
-          `.nav-link[data-target="${entry.target.id}"]`,
-        );
+        const activeLink = document.querySelector(`.nav-link[data-target="${entry.target.id}"]`);
         if (activeLink) {
           activeLink.classList.remove("text-[var(--color-text)]");
           activeLink.classList.add("text-orange-400", "font-bold");
