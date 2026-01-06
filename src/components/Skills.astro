@@ -26,64 +26,65 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
     {
       skills.map((category, index) => (
         <div
-          class="spotlight-card bg-gradient-to-br from-bg/95 via-muted/5 to-bg/95 backdrop-blur-xl
-             rounded-3xl border border-text/10 shadow-2xl hover:shadow-orange-400/30
-             transition-transform duration-400 hover:scale-[1.03]
+          class="spotlight-card bg-gradient-to-br from-bg/90 via-muted/5 to-bg/90 backdrop-blur-2xl
+             rounded-[2rem] border border-text/5 hover:border-orange-500/40 shadow-2xl hover:shadow-orange-500/20
+             transition-all duration-500 hover:scale-[1.02]
              flex flex-col
-             h-[520px] overflow-hidden relative group"
+             h-[540px] overflow-hidden relative group"
           aria-label={category.category}
           data-aos="zoom-in-up"
           data-aos-delay={index * 100}
           data-aos-once="true"
         >
+          <div class="absolute -top-24 -right-24 w-48 h-48 bg-orange-500/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-orange-500/10 transition-colors" />
+
           <h3
-            class="relative z-20 text-center text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
-               bg-clip-text text-transparent py-4 bg-bg/95 backdrop-blur-md
-               border-b border-orange-400/20 rounded-t-3xl shadow-sm"
+            class="relative z-20 text-center text-xl font-black tracking-tight bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
+               bg-clip-text text-transparent py-6 bg-bg/80 backdrop-blur-xl
+               border-b border-white/5 rounded-t-3xl"
           >
             {category.category}
           </h3>
 
-          {/* Mask Gradients for smooth fade in/out */}
-          <div class="absolute inset-x-0 top-[60px] h-10 bg-gradient-to-b from-[var(--color-bg)] to-transparent z-10 pointer-events-none" />
-          <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--color-bg)] to-transparent z-10 pointer-events-none" />
+          {/* Mask Gradients */}
+          <div class="absolute inset-x-0 top-[80px] h-16 bg-gradient-to-b from-[var(--color-bg)] to-transparent z-10 pointer-events-none opacity-80" />
+          <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[var(--color-bg)] to-transparent z-10 pointer-events-none opacity-80" />
 
           {/* Marquee Wrapper */}
           <div class="flex-1 overflow-hidden relative">
-            <div class="animate-marquee-vertical flex flex-col hover:pause-animation">
+            <div class="animate-marquee-vertical flex flex-col hover:pause-animation pt-8">
               {/* Original List */}
-              <ul class="px-3 py-4 grid grid-cols-2 gap-4 pb-8">
+              <ul class="px-4 grid grid-cols-2 gap-5 pb-10">
                 {category.items.map((skill, i) => (
                   <li
-                    class="flex flex-col items-center text-center bg-bg/90 p-4 rounded-xl
-                         border border-orange-500/50 shadow-md hover:shadow-orange-400/40
-                         transition-transform duration-300 hover:scale-105 cursor-default"
+                    class="group/skill flex flex-col items-center text-center bg-white/[0.03] dark:bg-white/[0.02] p-5 rounded-3xl
+                         border border-white/5 hover:border-orange-500/30 shadow-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]
+                         transition-all duration-500 hover:-translate-y-1 cursor-default"
                     title={`${skill.name} - ${skill.level}`}
                   >
-                    <div class="w-14 h-14 mb-4 flex items-center justify-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center relative">
+                      <div class="absolute inset-0 bg-orange-500/0 group-hover/skill:bg-orange-500/10 blur-xl transition-colors rounded-full" />
                       <Icon
                         name={skill.icon}
-                        class="w-10 h-10 transition duration-300 hover:brightness-110"
+                        class="w-11 h-11 transition-all duration-500 group-hover/skill:scale-110 relative z-10 group-hover/skill:drop-shadow-[0_0_10px_rgba(249,115,22,0.5)]"
                         aria-hidden="true"
                       />
                     </div>
-                    <span class="text-base sm:text-lg font-medium">
+                    <span class="text-base font-bold tracking-tight text-text/90">
                       {skill.name}
                     </span>
-                    <div class="mt-2 w-full flex flex-col items-center gap-1">
-                      <span class="text-[10px] uppercase tracking-tighter text-orange-400 font-bold">
+                    <div class="mt-3 w-full flex flex-col items-center gap-2">
+                      <span class="text-[9px] uppercase tracking-[0.2em] text-orange-500/80 font-black">
                         {skill.level}
                       </span>
-                      <div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                      <div class="w-full h-1 bg-zinc-800/50 rounded-full overflow-hidden border border-white/5">
                         <div
-                          class="h-full bg-gradient-to-r from-orange-600 to-yellow-400 transition-all duration-1000 ease-out"
+                          class="h-full bg-gradient-to-r from-orange-600 to-yellow-400 opacity-80 group-hover/skill:opacity-100 transition-all duration-1000 ease-out"
                           style={{
                             width:
-                              skill.level === "Básico" ||
-                              skill.level === "Basic"
+                              skill.level === "Básico" || skill.level === "Basic"
                                 ? "33%"
-                                : skill.level === "Intermedio" ||
-                                    skill.level === "Intermediate"
+                                : skill.level === "Intermedio" || skill.level === "Intermediate"
                                   ? "66%"
                                   : "100%",
                           }}
@@ -94,41 +95,37 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
                 ))}
               </ul>
               {/* Duplicate List for Loop */}
-              <ul
-                class="px-3 py-4 grid grid-cols-2 gap-4 pb-8"
-                aria-hidden="true"
-              >
+              <ul class="px-4 grid grid-cols-2 gap-5 pb-10" aria-hidden="true">
                 {category.items.map((skill, i) => (
                   <li
-                    class="flex flex-col items-center text-center bg-bg/90 p-4 rounded-xl
-                         border border-orange-500/50 shadow-md hover:shadow-orange-400/40
-                         transition-transform duration-300 hover:scale-105 cursor-default"
+                    class="group/skill flex flex-col items-center text-center bg-white/[0.03] dark:bg-white/[0.02] p-5 rounded-3xl
+                         border border-white/5 hover:border-orange-500/30 shadow-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]
+                         transition-all duration-500 hover:-translate-y-1 cursor-default"
                     title={`${skill.name} - ${skill.level}`}
                   >
-                    <div class="w-14 h-14 mb-4 flex items-center justify-center">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center relative">
+                      <div class="absolute inset-0 bg-orange-500/0 group-hover/skill:bg-orange-500/10 blur-xl transition-colors rounded-full" />
                       <Icon
                         name={skill.icon}
-                        class="w-10 h-10 transition duration-300 hover:brightness-110"
+                        class="w-11 h-11 transition-all duration-500 group-hover/skill:scale-110 relative z-10 group-hover/skill:drop-shadow-[0_0_10px_rgba(249,115,22,0.5)]"
                         aria-hidden="true"
                       />
                     </div>
-                    <span class="text-base sm:text-lg font-medium">
+                    <span class="text-base font-bold tracking-tight text-text/90">
                       {skill.name}
                     </span>
-                    <div class="mt-2 w-full flex flex-col items-center gap-1">
-                      <span class="text-[10px] uppercase tracking-tighter text-orange-400 font-bold">
+                    <div class="mt-3 w-full flex flex-col items-center gap-2">
+                      <span class="text-[9px] uppercase tracking-[0.2em] text-orange-500/80 font-black">
                         {skill.level}
                       </span>
-                      <div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                      <div class="w-full h-1 bg-zinc-800/50 rounded-full overflow-hidden border border-white/5">
                         <div
-                          class="h-full bg-gradient-to-r from-orange-600 to-yellow-400 transition-all duration-1000 ease-out"
+                          class="h-full bg-gradient-to-r from-orange-600 to-yellow-400 opacity-80 group-hover/skill:opacity-100 transition-all duration-1000 ease-out"
                           style={{
                             width:
-                              skill.level === "Básico" ||
-                              skill.level === "Basic"
+                              skill.level === "Básico" || skill.level === "Basic"
                                 ? "33%"
-                                : skill.level === "Intermedio" ||
-                                    skill.level === "Intermediate"
+                                : skill.level === "Intermedio" || skill.level === "Intermediate"
                                   ? "66%"
                                   : "100%",
                           }}

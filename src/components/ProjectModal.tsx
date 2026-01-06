@@ -2,13 +2,21 @@ import { X, Github, ExternalLink } from 'lucide-react';
 import { useEffect } from 'react';
 import type { Project } from './ProjectCard';
 
+import { ui } from '../i18n/ui';
+
 interface ProjectModalProps {
     isOpen: boolean;
     onClose: () => void;
     project: Project | null;
+    lang: string;
 }
 
-export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+export default function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalProps) {
+    const t = (key: string) => {
+        const translations = (ui as any)[lang] || (ui as any)['en'];
+        return translations[key] || key;
+    };
+
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === 'Escape') onClose();
@@ -78,12 +86,41 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
                     <div className="prose prose-invert prose-sm max-w-none text-muted mb-8 flex-grow overflow-y-auto pr-2 custom-scrollbar">
                         <p>{project.description}</p>
+
+                        {project.features && project.features.length > 0 && (
+                            <div className="mt-6">
+                                <h3 className="text-lg font-bold text-zinc-100 mb-2">{t('projects.keyFeatures')}</h3>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    {project.features.map((feature, idx) => (
+                                        <li key={idx} className="text-zinc-300">{feature}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {project.stack && (
+                            <div className="mt-6">
+                                <h3 className="text-lg font-bold text-zinc-100 mb-2">{t('projects.techStack')}</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {Object.entries(project.stack).map(([key, value]) => (
+                                        <div key={key} className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700/50">
+                                            <span className="block text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">
+                                                {key.replace(/_/g, ' ')}
+                                            </span>
+                                            <span className="text-sm text-zinc-300">
+                                                {Array.isArray(value) ? value.join(', ') : value}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         {project.repo && (
-                            <p className="text-xs text-muted/80 mt-4 break-all font-mono">
+                            <p className="text-xs text-muted/80 mt-6 break-all font-mono">
                                 <span className="font-semibold text-orange-500/80">Repo:</span> {project.repo}
                             </p>
                         )}
-                        {/* Here we could add more details if available in the future */}
                     </div>
 
                     <div className="flex gap-4 mt-auto pt-6 border-t border-text/10">

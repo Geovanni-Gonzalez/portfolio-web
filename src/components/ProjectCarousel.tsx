@@ -5,9 +5,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProjectCarouselProps {
     projects: Project[];
+    lang: string;
 }
 
-export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
+export default function ProjectCarousel({ projects, lang }: ProjectCarouselProps) {
     // Validación defensiva: asegurar que projects siempre sea un array
     const safeProjects = Array.isArray(projects) ? projects : [];
     const [current, setCurrent] = useState(0);
@@ -133,6 +134,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                 isOpen={!!selectedProject}
                 onClose={() => setSelectedProject(null)}
                 project={selectedProject}
+                lang={lang}
             />
         </>
     );

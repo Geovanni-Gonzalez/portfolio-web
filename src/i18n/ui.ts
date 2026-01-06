@@ -35,6 +35,8 @@ export const ui = {
 
     'projects.title': 'Projects',
     'projects.viewOnGitHub': 'View on GitHub',
+    'projects.keyFeatures': 'Key Features',
+    'projects.techStack': 'Tech Stack',
 
     'skills.title': 'Technical Skills',
     'skills.languages': 'Languages',
@@ -105,6 +107,8 @@ export const ui = {
 
     'projects.title': 'Proyectos',
     'projects.viewOnGitHub': 'Ver en GitHub',
+    'projects.keyFeatures': 'Características Principales',
+    'projects.techStack': 'Stack Tecnológico',
 
     'skills.title': 'Habilidades Técnicas',
     'skills.languages': 'Lenguajes',

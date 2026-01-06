@@ -8,9 +8,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const username = "Geovanni-Gonzalez";
-const repos = ["TicTacToe-x86-ASM", "CalculadoraMultibase-DesktopApp", 
-              "Match-3", "Aventura-del-Tesoro-Perdido","Ahorcado-ConsolApp", 
-              "Ahorcado-GUI-App","Ahorcado-GUI-App-POO","BattleshipARM"];
+const repos = [
+  "TicTacToe-x86-ASM",
+  "CalculadoraMultibase-DesktopApp",
+  "Match-3",
+  "Aventura-del-Tesoro-Perdido",
+  "Ahorcado-ConsolApp",
+  "Ahorcado-GUI-App",
+  "Ahorcado-GUI-App-POO",
+  "BattleshipARM",
+  "Blackjack-WebApp",
+  "GestionDeFincaAgricola-TUIApp"
+];
 
 const headers = {
   Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
@@ -32,13 +41,38 @@ const projects = await Promise.all(
         `https://api.github.com/repos/${username}/${repo}/contents/project-info.json`,
         { headers },
       );
+      let features: string[] = [];
+      let stack: any = null;
+
       if (techFileRes.ok) {
         const techData = await techFileRes.json();
         const decoded = Buffer.from(techData.content, "base64").toString("utf-8");
         const json = JSON.parse(decoded);
         techStack = json.tech || [];
-        description = json.description?.[lang] || json.description?.default || description;
+        description =
+          json.description?.[lang] || json.description?.en || json.description?.es || description;
+
+        // Extraer features y stack con soporte de lenguaje
+        if (json.features) {
+          if (Array.isArray(json.features)) {
+            features = json.features;
+          } else {
+            features = json.features[lang] || json.features.en || json.features.es || [];
+          }
+        }
+
+        if (json.stack) {
+          stack = {};
+          for (const [key, value] of Object.entries(json.stack)) {
+            if (typeof value === "object" && !Array.isArray(value)) {
+              stack[key] = value[lang] || value.en || value.es || value;
+            } else {
+              stack[key] = value;
+            }
+          }
+        }
       }
+
       // Buscar imagen en carpeta screenshots
       const screenshotRes = await fetch(
         `https://api.github.com/repos/${username}/${repo}/contents/screenshots`,
@@ -59,6 +93,8 @@ const projects = await Promise.all(
         repo: data.html_url,
         tech: techStack,
         image: projectImage || "/images/default-project.png",
+        features,
+        stack,
       };
     } catch (e) {
       console.warn(`Error al obtener datos para ${repo}, usando fallback local:`, e);
@@ -84,7 +120,7 @@ const projects = await Promise.all(
   <GradientTitle title={t("projects.title")} />
   {
     projects && projects.length > 0 ? (
-      <ProjectCarousel client:load projects={projects} />
+      <ProjectCarousel client:load projects={projects as any} lang={lang} />
     ) : (
       <div class="text-center text-zinc-400 py-10 bg-zinc-900/50 rounded-xl border border-zinc-800">
         <p class="text-lg mb-4">
