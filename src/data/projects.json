@@ -51,5 +51,95 @@
             "C#"
         ],
         "image": "/images/default-project.png"
+    },
+    {
+        "title": "Analisis de Ventas",
+        "repo": "https://github.com/Geovanni-Gonzalez/AnalisisDeVentas",
+        "description": {
+            "es": "Aplicación para el análisis de datos de ventas.",
+            "en": "Application for sales data analysis."
+        },
+        "tech": [
+            "Python",
+            "Pandas"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Libreria String",
+        "repo": "https://github.com/Geovanni-Gonzalez/LibreriaString",
+        "description": {
+            "es": "Librería personalizada para manipulación de strings.",
+            "en": "Custom library for string manipulation."
+        },
+        "tech": [
+            "C++"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Luiki Kart",
+        "repo": "https://github.com/Geovanni-Gonzalez/LuikiKart-WebApp",
+        "description": {
+            "es": "Mini juego inspirado en Mario Kart como aplicación web.",
+            "en": "Mini game inspired by Mario Kart as a web application."
+        },
+        "tech": [
+            "JavaScript",
+            "HTML5",
+            "CSS3"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Mini Waze",
+        "repo": "https://github.com/Geovanni-Gonzalez/MiniWaze-GUI-App",
+        "description": {
+            "es": "Simulador de navegación basado en grafos.",
+            "en": "Navigation simulator based on graphs."
+        },
+        "tech": [
+            "Java",
+            "Swing"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "RISC Matrix App",
+        "repo": "https://github.com/Geovanni-Gonzalez/RISCMatrixApp",
+        "description": {
+            "es": "Aplicación de operaciones de matrices optimizada para RISC.",
+            "en": "Matrix operations application optimized for RISC."
+        },
+        "tech": [
+            "ARM Assembly"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Simulador de Procesos",
+        "repo": "https://github.com/Geovanni-Gonzalez/SimuladorDeProcesos-GUI-App",
+        "description": {
+            "es": "Simulador de algoritmos de planificación de CPU.",
+            "en": "CPU scheduling algorithms simulator."
+        },
+        "tech": [
+            "Java",
+            "Swing"
+        ],
+        "image": "/images/default-project.png"
+    },
+    {
+        "title": "Visualizador de Grafos",
+        "repo": "https://github.com/Geovanni-Gonzalez/VisualizadorDeGrafos-GUI-App",
+        "description": {
+            "es": "Herramienta visual para la creación y análisis de grafos.",
+            "en": "Visual tool for graph creation and analysis."
+        },
+        "tech": [
+            "C++",
+            "Qt"
+        ],
+        "image": "/images/default-project.png"
     }
 ]

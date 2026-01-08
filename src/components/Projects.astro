@@ -20,7 +20,22 @@ const repos = [
   "Blackjack-WebApp",
   "GestionDeFincaAgricola-TUIApp",
   "GestionLibreria",
-  "Laberinto-WebApp"
+  "Laberinto-WebApp",
+  "AnalisisDeVentas",
+  "LibreriaString",
+  "LuikiKart-WebApp",
+  "MiniWaze-GUI-App",
+  "QuienQuiereSerMillonario-ConsolApp",
+  "RISCMatrixApp",
+  "SimuladorDeProcesos-GUI-App",
+  "SistemaDeGestionPulperia-ConsolApp",
+  "SistemaDePuntoDeVenta-ConsolApp",
+  "SistemaDeVentas--GUI-App",
+  "SistemaDeVentas-GUI-App-V2",
+  "Sudoku-GUI-App",
+  "Trivia-TUIApp",
+  "VisualizadorDeGrafos-GUI-App",
+  "XMLDocument-TreeBuilder",
 ];
 
 const headers = {
@@ -37,56 +52,80 @@ const projects = await Promise.all(
       let techStack = [];
       let projectImage = null;
       let description = data.description || "";
+      let features: string[] = [];
+      let stack: any = null;
 
       // Leer project-info.json
       const techFileRes = await fetch(
         `https://api.github.com/repos/${username}/${repo}/contents/project-info.json`,
         { headers },
       );
-      let features: string[] = [];
-      let stack: any = null;
 
       if (techFileRes.ok) {
         const techData = await techFileRes.json();
         const decoded = Buffer.from(techData.content, "base64").toString("utf-8");
         const json = JSON.parse(decoded);
-        techStack = json.tech || [];
-        description =
-          json.description?.[lang] || json.description?.en || json.description?.es || description;
 
-        // Extraer features y stack con soporte de lenguaje
-        if (json.features) {
-          if (Array.isArray(json.features)) {
-            features = json.features;
-          } else {
-            features = json.features[lang] || json.features.en || json.features.es || [];
+        // Determinar qué objeto de idioma usar
+        const langData = json[lang] || json.es || json.en || json;
+
+        // Si el JSON tiene estructura bilingüe (en/es en la raíz)
+        if (json.en || json.es) {
+          techStack = langData.tech || [];
+          description = langData.description || description;
+          features = langData.features || [];
+          stack = langData.stack || null;
+
+          // Manejo de screenshots si existen en el JSON
+          if (langData.screenshots && langData.screenshots.length > 0) {
+            projectImage = langData.screenshots[0];
           }
-        }
+        } else {
+          // Mantener compatibilidad con formato antiguo
+          techStack = json.tech || [];
+          description =
+            json.description?.[lang] ||
+            json.description?.en ||
+            json.description?.es ||
+            json.description ||
+            description;
 
-        if (json.stack) {
-          stack = {};
-          for (const [key, value] of Object.entries(json.stack)) {
-            if (typeof value === "object" && !Array.isArray(value)) {
-              stack[key] = value[lang] || value.en || value.es || value;
+          if (json.features) {
+            if (Array.isArray(json.features)) {
+              features = json.features;
             } else {
-              stack[key] = value;
+              features = json.features[lang] || json.features.en || json.features.es || [];
+            }
+          }
+
+          if (json.stack) {
+            stack = {};
+            for (const [key, value] of Object.entries(json.stack)) {
+              if (typeof value === "object" && !Array.isArray(value) && value !== null) {
+                stack[key] =
+                  (value as any)[lang] || (value as any).en || (value as any).es || value;
+              } else {
+                stack[key] = value;
+              }
             }
           }
         }
       }
 
-      // Buscar imagen en carpeta screenshots
-      const screenshotRes = await fetch(
-        `https://api.github.com/repos/${username}/${repo}/contents/screenshots`,
-        { headers },
-      );
-      if (screenshotRes.ok) {
-        const screenshotData = await screenshotRes.json();
-        const firstImage = screenshotData.find(
-          (file: { type: string; name: string; download_url: string }) =>
-            file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/i),
+      // Buscar imagen en carpeta screenshots si no se definió en el JSON
+      if (!projectImage) {
+        const screenshotRes = await fetch(
+          `https://api.github.com/repos/${username}/${repo}/contents/screenshots`,
+          { headers },
         );
-        if (firstImage) projectImage = firstImage.download_url;
+        if (screenshotRes.ok) {
+          const screenshotData = await screenshotRes.json();
+          const firstImage = screenshotData.find(
+            (file: { type: string; name: string; download_url: string }) =>
+              file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/i),
+          );
+          if (firstImage) projectImage = firstImage.download_url;
+        }
       }
 
       return {
@@ -104,7 +143,11 @@ const projects = await Promise.all(
       if (local) {
         return {
           ...local,
-          description: local.description[lang] || local.description.en || local.description.es,
+          description:
+            (local.description as any)[lang] ||
+            (local.description as any).en ||
+            (local.description as any).es ||
+            local.description,
         };
       }
       return null;
