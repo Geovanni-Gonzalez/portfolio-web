@@ -37,11 +37,11 @@ const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
   data-aos="fade-up"
   data-aos-duration="1000"
 >
-  <div class="w-full max-w-7xl mb-12">
+  <div class="w-full max-w-6xl mb-12">
     <GradientTitle title={t("contact.title")} />
   </div>
 
-  <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-7xl">
+  <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl">
     <!-- Información de contacto -->
     <div
       class="h-full p-8 rounded-3xl shadow-lg border border-text/10 bg-bg/50 backdrop-blur-md flex flex-col justify-center space-y-8"
@@ -61,11 +61,7 @@ const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
 
     <!-- Formulario -->
     <div data-aos="fade-left" data-aos-delay="200">
-      <ContactForm
-        client:visible
-        translations={formTranslations}
-        formId={formId}
-      />
+      <ContactForm client:visible translations={formTranslations} formId={formId} />
     </div>
   </div>
 </section>
