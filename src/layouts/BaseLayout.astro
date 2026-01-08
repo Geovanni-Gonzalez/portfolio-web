@@ -10,6 +10,7 @@ import AOSWrapper from "../components/AOSWrapper.jsx";
 import SpotlightEffect from "../components/SpotlightEffect.astro";
 import ProgressBar from "../components/ProgressBar.astro";
 import ScrollToTop from "../components/ScrollToTop.jsx";
+import CommandPalette from "../components/CommandPalette.tsx";
 
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
@@ -74,6 +75,7 @@ const defaultDescription =
     <ProgressBar />
     <SpotlightEffect />
     <ScrollToTop client:load />
+    <CommandPalette client:load lang={lang} />
     <div class="warp-bg-wrapper">
       <WarpBackground
         darkColors={["#f97316", "#ea580c", "#7c2d12"]}

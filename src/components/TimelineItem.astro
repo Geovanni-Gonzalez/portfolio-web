@@ -48,26 +48,26 @@ const {
   <div class="flex-grow pt-2">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
       <h3
-        class="text-2xl font-black tracking-tighter text-text/90 group-hover:text-orange-500 transition-colors duration-500"
+        class="text-2xl font-black tracking-tighter text-zinc-900 dark:text-zinc-100 group-hover:text-orange-500 transition-colors duration-500"
       >
         {title}
       </h3>
       <span
-        class="text-[10px] uppercase font-black tracking-[0.2em] text-orange-500/80 bg-orange-500/5 px-4 py-1.5 rounded-lg border border-orange-500/10 w-fit backdrop-blur-sm"
+        class="text-[10px] uppercase font-black tracking-[0.2em] text-orange-600 dark:text-orange-500/80 bg-orange-500/10 dark:bg-orange-500/5 px-4 py-1.5 rounded-lg border border-orange-500/10 w-fit backdrop-blur-sm"
       >
         {date}
       </span>
     </div>
 
     <p
-      class="text-lg text-zinc-500 dark:text-zinc-400 font-bold tracking-tight mb-4 border-l-2 border-orange-500/20 pl-4"
+      class="text-lg text-zinc-700 dark:text-[var(--color-muted)] font-bold tracking-tight mb-4 border-l-2 border-orange-500/20 pl-4"
     >
       {subtitle}
     </p>
 
     {
       description && (
-        <p class="text-zinc-500 dark:text-zinc-500 leading-relaxed text-sm sm:text-base max-w-3xl font-light">
+        <p class="text-zinc-600 dark:text-[var(--color-muted)] leading-relaxed text-sm sm:text-base max-w-3xl font-light">
           {description}
         </p>
       )

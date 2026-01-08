@@ -7,8 +7,9 @@ import ThemeToggle from "./ThemeToggle.jsx";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "/en/";
-const homePath = lang === "es" ? "/" : "/en/";
+const isHome =
+  Astro.url.pathname === "/" || Astro.url.pathname === "/en/" || Astro.url.pathname === "/es/";
+const homePath = lang === "es" ? "/es/" : "/en/";
 
 const menuItems = [
   { href: isHome ? "#home" : `${homePath}#home`, label: t("nav.home") },
@@ -27,25 +28,28 @@ const menuItems = [
 ---
 
 <nav
-  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl px-6 py-3 rounded-2xl backdrop-blur-md bg-zinc-900/60 border border-white/10 shadow-lg z-50 flex items-center justify-between transition-all duration-500"
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl px-6 py-3 rounded-2xl backdrop-blur-xl bg-[var(--color-card-bg)] border border-[var(--color-border)] shadow-lg z-50 flex items-center justify-between transition-all duration-500"
   role="navigation"
   aria-label="Barra de navegación principal"
 >
   {/* Logo */}
   <a
     href={isHome ? "#home" : `${homePath}#home`}
-    class="text-zinc-100 font-bold text-xl tracking-tight hover:text-orange-400 transition-colors duration-300"
+    class="text-[var(--color-text)] font-bold text-xl tracking-tight hover:text-orange-500 transition-colors duration-300"
     aria-label="Inicio">Geovanni</a
   >
 
   {/* Menú Desktop */}
-  <ul class="hidden md:flex gap-8 text-zinc-300 font-medium text-sm" role="menubar">
+  <ul
+    class="hidden md:flex gap-8 text-zinc-600 dark:text-zinc-300 font-medium text-sm"
+    role="menubar"
+  >
     {
       menuItems.map((item) => (
         <li role="none">
           <a
             href={item.href}
-            class="nav-link relative py-1 hover:text-white transition-colors duration-300"
+            class="nav-link relative py-1 hover:text-[var(--color-text)] transition-colors duration-300"
             data-target={item.href.includes("#") ? item.href.split("#")[1] : ""}
             role="menuitem"
             tabindex="0"
@@ -88,12 +92,14 @@ const menuItems = [
         const currentId = entry.target.getAttribute("id");
 
         navLinks.forEach((link) => {
-          link.classList.remove("text-orange-400", "font-bold", "text-white");
-          link.classList.add("text-zinc-300");
+          // Reset to default state
+          link.classList.remove("text-orange-500", "font-bold", "text-[var(--color-text)]");
+          link.classList.add("text-zinc-600", "dark:text-zinc-300");
 
           if (link.getAttribute("data-target") === currentId) {
-            link.classList.remove("text-zinc-300");
-            link.classList.add("text-orange-400", "font-bold");
+            // Set active state
+            link.classList.remove("text-zinc-600", "dark:text-zinc-300");
+            link.classList.add("text-orange-500", "font-bold");
           }
         });
       }

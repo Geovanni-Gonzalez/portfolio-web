@@ -28,7 +28,7 @@ interface ProjectCardProps extends Project {
 export default function ProjectCard({ title, description, tech, repo, image, onOpen, style }: ProjectCardProps) {
     return (
         <div
-            className="spotlight-card flex flex-col bg-bg/40 backdrop-blur-2xl border border-white/5 rounded-[2rem] shadow-2xl transition-all duration-500 overflow-hidden w-full max-w-lg mx-auto h-full group/card hover:border-orange-500/30 hover:shadow-orange-500/10"
+            className="spotlight-card flex flex-col bg-[var(--color-card-bg)] backdrop-blur-2xl border border-[var(--color-border)] rounded-[2rem] shadow-2xl transition-all duration-500 overflow-hidden w-full max-w-lg mx-auto h-full group/card hover:border-orange-500/30 hover:shadow-orange-500/10"
             style={style}
         >
             {/* Imagen */}
@@ -65,7 +65,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                 </h3>
 
                 {/* Descripción */}
-                <p className="mt-4 text-zinc-500 dark:text-zinc-500 text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/10 pl-4 group-hover/card:border-orange-500/30 transition-all duration-500">
+                <p className="mt-4 text-[var(--color-muted)] text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/30 pl-4 group-hover/card:border-orange-500/60 transition-all duration-500">
                     {description}
                 </p>
 
@@ -75,7 +75,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                         {tech.map((item, idx) => (
                             <span
                                 key={idx}
-                                className="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest border border-white/5 bg-white/5 text-zinc-400 group-hover/card:border-orange-500/20 group-hover/card:text-zinc-300 transition-all duration-500"
+                                className="px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest border border-orange-500/20 bg-orange-500/5 text-orange-500/90 group-hover/card:bg-orange-500/10 group-hover/card:text-orange-400 transition-all duration-500"
                             >
                                 {item}
                             </span>
@@ -87,7 +87,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                 <div className="mt-8 flex gap-4">
                     <button
                         onClick={onOpen}
-                        className="flex-1 inline-flex items-center justify-center bg-white/5 hover:bg-orange-500/10 text-text border border-white/5 hover:border-orange-500/30 text-xs font-black uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-500"
+                        className="flex-1 inline-flex items-center justify-center bg-transparent hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50 text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-accent)] text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-300"
                     >
                         Detalles
                     </button>
@@ -95,7 +95,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                         href={repo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn relative flex-1 inline-flex items-center justify-center bg-orange-600 text-white text-xs font-black uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-500 overflow-hidden shadow-xl hover:shadow-orange-500/20"
+                        className="group/btn relative flex-1 inline-flex items-center justify-center bg-[var(--color-accent)] text-white text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-500 overflow-hidden shadow-lg hover:shadow-[var(--color-accent)]/30 hover:-translate-y-0.5"
                         aria-label={`Ver repositorio GitHub de ${title}`}
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>

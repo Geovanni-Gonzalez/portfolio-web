@@ -42,19 +42,29 @@ const educations = educationData.education.map((edu: any) => ({
     </h2>
 
     <!-- Educación Timeline -->
-    <div class="w-full pl-2 sm:pl-4">
-      {
-        educations.map(({ degree, institution, startDate, endDate, description }, index) => (
-          <TimelineItem
-            title={degree}
-            subtitle={institution}
-            date={`${startDate} - ${endDate}`}
-            description={description}
-            icon="mdi:school"
-            isLast={index === educations.length - 1}
-          />
-        ))
-      }
+    <div
+      class="bg-[var(--color-card-bg)] backdrop-blur-2xl border border-[var(--color-border)] rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden group hover:border-orange-500/20 transition-colors duration-500 mt-8"
+    >
+      <!-- Decorative Glow -->
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-orange-500/10 transition-colors duration-500"
+      >
+      </div>
+
+      <div class="relative z-10 w-full pl-2 sm:pl-4">
+        {
+          educations.map(({ degree, institution, startDate, endDate, description }, index) => (
+            <TimelineItem
+              title={degree}
+              subtitle={institution}
+              date={`${startDate} - ${endDate}`}
+              description={description}
+              icon="mdi:school"
+              isLast={index === educations.length - 1}
+            />
+          ))
+        }
+      </div>
     </div>
   </div>
 

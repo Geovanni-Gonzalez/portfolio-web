@@ -16,6 +16,7 @@ body {
   @apply text-zinc-900 bg-white dark:text-zinc-100 dark:bg-black antialiased selection:bg-orange-500/30;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Base Typography Refinements */
@@ -78,29 +79,49 @@ body::before {
 
 /* Variables de tema */
 :root {
-  /* Dark Mode (Default) - Deep Cosmic Theme */
-  --color-bg: #050505;
-  --color-text: #fafafa;
+  /* Dark Mode (Default) - Warm Stone/Bronze Theme */
+  --color-bg: #0c0a09;
+  /* Stone 950 - Warmer Black */
+  --color-text: #fafaf9;
+  /* Stone 50 */
   --color-accent: #f97316;
+  /* Orange 500 */
   --color-accent-light: #fb923c;
-  --color-muted: #a1a1aa;
-  --color-border: #27272a;
-  --color-card-bg: rgba(10, 10, 12, 0.4);
-  --color-card-border: rgba(63, 63, 70, 0.3);
-  --color-hover-bg: rgba(24, 24, 27, 0.6);
+  /* Orange 400 */
+  --color-muted: #a8a29e;
+  /* Stone 400 */
+  --color-border: #44403c;
+  /* Stone 700 - Warm Grey */
+  --color-card-bg: rgba(28, 25, 23, 0.7);
+  /* Stone 900 @ 70% */
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-hover-bg: rgba(41, 37, 36, 0.6);
+  /* Stone 800 @ 60% */
+  --color-warp-glow: rgba(251, 146, 60, 0.15);
+  /* Orange ambient glow */
 }
 
 [data-theme='light'] {
-  /* Light Mode - Clean Paper Theme */
+  /* Light Mode - Clean Warm Theme */
   --color-bg: #ffffff;
-  --color-text: #09090b;
+  --color-text: #cacaca;
+  /* Stone 900 */
   --color-accent: #ea580c;
+  /* Orange 600 */
   --color-accent-light: #f97316;
-  --color-muted: #52525b;
-  --color-border: #e4e4e7;
-  --color-card-bg: rgba(255, 255, 255, 0.5);
-  --color-card-border: rgba(228, 228, 231, 0.5);
-  --color-hover-bg: rgba(250, 250, 250, 0.8);
+  /* Orange 500 */
+  --color-muted: #78716c;
+  /* Stone 500 */
+  --color-border: #e7e5e4;
+  /* Stone 200 */
+  --color-card-bg: rgba(255, 250, 245, 0.9);
+  /* Warm White Tint */
+  --color-card-border: rgba(234, 88, 12, 0.1);
+  /* Subtle Orange Border */
+  --color-hover-bg: rgba(244, 244, 245, 0.8);
+  /* Zinc 100 @ 80% */
+  --color-warp-glow: rgba(251, 146, 60, 0.2);
+  /* Orange ambient glow light */
 }
 
 /* Transiciones suaves para cambio de tema */
@@ -140,11 +161,15 @@ body::before {
   border-color: var(--color-card-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  transition: all 0.5s ease;
 }
 
 .spotlight-card:hover {
-  background: var(--color-hover-bg);
+  background: linear-gradient(to bottom right,
+      var(--color-hover-bg),
+      var(--color-warp-glow));
   border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 /* Modo claro: sombras más sutiles */
@@ -153,16 +178,16 @@ body::before {
 }
 
 [data-theme='light'] .spotlight-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px -3px rgba(251, 146, 60, 0.2), 0 4px 6px -2px rgba(251, 146, 60, 0.1);
 }
 
-/* Modo oscuro: sombras más dramáticas */
+/* Modo oscuro: sombras más dramáticas con ambient glow */
 [data-theme='dark'] .spotlight-card {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme='dark'] .spotlight-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.2), 0 4px 6px -2px rgba(249, 115, 22, 0.1);
+  box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.15), 0 4px 10px -2px rgba(249, 115, 22, 0.1);
 }
 
 /* Modal Animation */

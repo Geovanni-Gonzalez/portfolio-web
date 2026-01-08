@@ -4,6 +4,7 @@ import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 export default function ContactForm({ translations, formId }) {
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [focused, setFocused] = useState({ name: false, email: false, message: false });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ export default function ContactForm({ translations, formId }) {
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
+        setFocused({ name: false, email: false, message: false });
       } else {
         setStatus('error');
       }
@@ -36,22 +38,32 @@ export default function ContactForm({ translations, formId }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleFocus = (e) => {
+    setFocused({ ...focused, [e.target.name]: true });
+  };
+
+  const handleBlur = (e) => {
+    setFocused({ ...focused, [e.target.name]: false });
+  };
+
+  const isFloating = (name) => formData[name] || focused[name];
+
   return (
-    <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-[2rem] border border-white/5 bg-bg/40 backdrop-blur-2xl shadow-2xl flex flex-col gap-8 relative overflow-hidden group/form transition-all duration-500 hover:border-orange-500/20" aria-live="polite" aria-busy={status === 'submitting'}>
+    <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-card-bg)] backdrop-blur-2xl shadow-2xl flex flex-col gap-8 relative overflow-hidden group/form transition-all duration-500 hover:border-orange-500/20" aria-live="polite" aria-busy={status === 'submitting'}>
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none group-hover/form:bg-orange-500/10 transition-colors" />
 
       {/* Success/Error overlays for better feedback */}
       {status === 'success' && (
-        <div role="status" className="absolute inset-0 bg-bg/95 backdrop-blur-xl z-20 flex flex-col items-center justify-center p-8 text-center animate-modalEnter">
+        <div role="status" className="absolute inset-0 bg-[var(--color-bg)]/95 backdrop-blur-xl z-20 flex flex-col items-center justify-center p-8 text-center animate-modalEnter">
           <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/30">
             <CheckCircle className="w-10 h-10 text-green-500 animate-bounce" />
           </div>
-          <h4 className="text-2xl font-black tracking-tighter mb-2">{translations.sent}</h4>
-          <p className="text-zinc-500 text-sm font-light">Gracias por tu mensaje. Responderé pronto.</p>
+          <h4 className="text-2xl font-black tracking-tighter mb-2 text-[var(--color-text)]">{translations.sent}</h4>
+          <p className="text-[var(--color-muted)] text-sm font-light">Gracias por tu mensaje. Responderé pronto.</p>
           <button
             onClick={() => setStatus('idle')}
-            className="mt-8 px-8 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 transition-colors text-sm font-bold uppercase tracking-widest"
+            className="mt-8 px-8 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-white/5 transition-colors text-sm font-bold uppercase tracking-widest text-[var(--color-text)]"
             type="button"
           >
             Cerrar
@@ -60,7 +72,7 @@ export default function ContactForm({ translations, formId }) {
       )}
 
       <div className="relative group/input">
-        <label htmlFor="name" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${formData.name ? '-top-3 text-[10px] text-orange-500 bg-bg px-2 rounded-md font-black tracking-widest' : 'top-4 text-zinc-500 text-sm'}`}>
+        <label htmlFor="name" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('name') ? '-top-3 text-[10px] text-orange-500 bg-[var(--color-card-bg)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--color-muted)] text-sm'}`}>
           {translations.name}
         </label>
         <input
@@ -69,15 +81,17 @@ export default function ContactForm({ translations, formId }) {
           name="name"
           value={formData.name}
           onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           required
-          placeholder={formData.name ? "" : translations.namePlaceholder}
-          className="w-full rounded-2xl border border-white/5 bg-white/5 p-4 text-text placeholder:text-zinc-600 focus:outline-none focus:border-orange-500/50 focus:bg-white/[0.07] transition-all duration-300 font-medium pt-5"
+          placeholder={focused.name ? translations.namePlaceholder : ""}
+          className="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-[var(--color-text)] placeholder-[var(--color-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/10 transition-all duration-300 font-medium pt-5"
           aria-required="true"
         />
       </div>
 
       <div className="relative group/input">
-        <label htmlFor="email" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${formData.email ? '-top-3 text-[10px] text-orange-500 bg-bg px-2 rounded-md font-black tracking-widest' : 'top-4 text-zinc-500 text-sm'}`}>
+        <label htmlFor="email" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('email') ? '-top-3 text-[10px] text-orange-500 bg-[var(--color-card-bg)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--color-muted)] text-sm'}`}>
           {translations.email}
         </label>
         <input
@@ -86,14 +100,16 @@ export default function ContactForm({ translations, formId }) {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           required
-          placeholder={formData.email ? "" : translations.emailPlaceholder}
-          className="w-full rounded-2xl border border-white/5 bg-white/5 p-4 text-text placeholder:text-zinc-600 focus:outline-none focus:border-orange-500/50 focus:bg-white/[0.07] transition-all duration-300 font-medium pt-5"
+          placeholder={focused.email ? translations.emailPlaceholder : ""}
+          className="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-[var(--color-text)] placeholder-[var(--color-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/10 transition-all duration-300 font-medium pt-5"
         />
       </div>
 
       <div className="relative group/input">
-        <label htmlFor="message" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${formData.message ? '-top-3 text-[10px] text-orange-500 bg-bg px-2 rounded-md font-black tracking-widest' : 'top-4 text-zinc-500 text-sm'}`}>
+        <label htmlFor="message" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('message') ? '-top-3 text-[10px] text-orange-500 bg-[var(--color-card-bg)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--color-muted)] text-sm'}`}>
           {translations.message}
         </label>
         <textarea
@@ -102,9 +118,11 @@ export default function ContactForm({ translations, formId }) {
           rows="5"
           value={formData.message}
           onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           required
-          placeholder={formData.message ? "" : translations.messagePlaceholder}
-          className="w-full rounded-2xl border border-white/5 bg-white/5 p-4 text-text placeholder:text-zinc-600 focus:outline-none focus:border-orange-500/50 focus:bg-white/[0.07] resize-none transition-all duration-300 font-medium pt-5 min-h-[160px]"
+          placeholder={focused.message ? translations.messagePlaceholder : ""}
+          className="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-[var(--color-text)] placeholder-[var(--color-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/10 resize-none transition-all duration-300 font-medium pt-5 min-h-[160px]"
         ></textarea>
       </div>
 
