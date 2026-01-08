@@ -1,383 +1,468 @@
 {
-  "skills": {
-    "es": [
-      {
-        "category": "Lenguajes de Programación",
-        "items": [
-          {
-            "name": "C",
-            "level": "Intermedio",
-            "icon": "logos:c"
-          },
-          {
-            "name": "C#",
-            "level": "Básico",
-            "icon": "logos:c-sharp"
-          },
-          {
-            "name": "C++",
-            "level": "Intermedio",
-            "icon": "logos:c-plusplus"
-          },
-          {
-            "name": "CSS",
-            "level": "Intermedio",
-            "icon": "logos:css-3"
-          },
-          {
-            "name": "HTML",
-            "level": "Intermedio",
-            "icon": "logos:html-5"
-          },
-          {
-            "name": "Java",
-            "level": "Intermedio",
-            "icon": "logos:java"
-          },
-          {
-            "name": "JavaScript",
-            "level": "Intermedio",
-            "icon": "logos:javascript"
-          },
-          {
-            "name": "Python",
-            "level": "Intermedio",
-            "icon": "logos:python"
-          },
-          {
-            "name": "SQL",
-            "level": "Básico",
-            "icon": "logos:mysql"
-          },
-          {
-            "name": "TypeScript",
-            "level": "Básico",
-            "icon": "logos:typescript-icon"
-          },
-          {
-            "name": "Assembly (x86 & ARM)",
-            "level": "Básico",
-            "icon": "mdi:cpu-64-bit"
-          },
-          {
-            "name": "Haskell",
-            "level": "Básico",
-            "icon": "logos:haskell-icon"
-          }
+    "skills": {
+        "es": [
+            {
+                "category": "Lenguajes de Programación",
+                "items": [
+                    {
+                        "name": "C",
+                        "level": "Avanzado",
+                        "icon": "logos:c"
+                    },
+                    {
+                        "name": "C++",
+                        "level": "Avanzado",
+                        "icon": "logos:c-plusplus"
+                    },
+                    {
+                        "name": "Python",
+                        "level": "Avanzado",
+                        "icon": "logos:python"
+                    },
+                    {
+                        "name": "Java",
+                        "level": "Intermedio",
+                        "icon": "logos:java"
+                    },
+                    {
+                        "name": "JavaScript",
+                        "level": "Intermedio",
+                        "icon": "logos:javascript"
+                    },
+                    {
+                        "name": "TypeScript",
+                        "level": "Intermedio",
+                        "icon": "logos:typescript-icon"
+                    },
+                    {
+                        "name": "Haskell",
+                        "level": "Intermedio",
+                        "icon": "logos:haskell-icon"
+                    },
+                    {
+                        "name": "Assembly (ARM & x86)",
+                        "level": "Intermedio",
+                        "icon": "mdi:cpu-64-bit"
+                    },
+                    {
+                        "name": "Prolog",
+                        "level": "Intermedio",
+                        "icon": "mdi:brain"
+                    },
+                    {
+                        "name": "C#",
+                        "level": "Básico",
+                        "icon": "logos:c-sharp"
+                    },
+                    {
+                        "name": "SQL",
+                        "level": "Intermedio",
+                        "icon": "logos:mysql"
+                    }
+                ]
+            },
+            {
+                "category": "Frameworks y Librerías",
+                "items": [
+                    {
+                        "name": "React",
+                        "level": "Intermedio",
+                        "icon": "logos:react"
+                    },
+                    {
+                        "name": "Node.js",
+                        "level": "Intermedio",
+                        "icon": "logos:nodejs-icon"
+                    },
+                    {
+                        "name": "Express.js",
+                        "level": "Intermedio",
+                        "icon": "simple-icons:express"
+                    },
+                    {
+                        "name": "Flask",
+                        "level": "Intermedio",
+                        "icon": "file-icons:flask"
+                    },
+                    {
+                        "name": "Tkinter",
+                        "level": "Avanzado",
+                        "icon": "mdi:application-cog"
+                    },
+                    {
+                        "name": "Socket.IO",
+                        "level": "Intermedio",
+                        "icon": "logos:socket-io"
+                    },
+                    {
+                        "name": "Three.js",
+                        "level": "Básico",
+                        "icon": "logos:threejs"
+                    },
+                    {
+                        "name": "Tailwind CSS",
+                        "level": "Intermedio",
+                        "icon": "logos:tailwindcss-icon"
+                    },
+                    {
+                        "name": "Electron",
+                        "level": "Intermedio",
+                        "icon": "logos:electron"
+                    }
+                ]
+            },
+            {
+                "category": "Bases de Datos",
+                "items": [
+                    {
+                        "name": "MySQL",
+                        "level": "Intermedio",
+                        "icon": "logos:mysql"
+                    },
+                    {
+                        "name": "SQLite",
+                        "level": "Avanzado",
+                        "icon": "simple-icons:sqlite"
+                    },
+                    {
+                        "name": "Redis",
+                        "level": "Intermedio",
+                        "icon": "logos:redis"
+                    },
+                    {
+                        "name": "PostgreSQL",
+                        "level": "Básico",
+                        "icon": "logos:postgresql"
+                    },
+                    {
+                        "name": "MongoDB",
+                        "level": "Básico",
+                        "icon": "logos:mongodb-icon"
+                    }
+                ]
+            },
+            {
+                "category": "DevOps y Herramientas",
+                "items": [
+                    {
+                        "name": "Git & GitHub",
+                        "level": "Avanzado",
+                        "icon": "logos:git-icon"
+                    },
+                    {
+                        "name": "Linux (Syscalls)",
+                        "level": "Intermedio",
+                        "icon": "logos:linux-tux"
+                    },
+                    {
+                        "name": "Docker",
+                        "level": "Intermedio",
+                        "icon": "logos:docker-icon"
+                    },
+                    {
+                        "name": "QEMU",
+                        "level": "Intermedio",
+                        "icon": "mdi:console-line"
+                    },
+                    {
+                        "name": "Vite",
+                        "level": "Intermedio",
+                        "icon": "logos:vitejs"
+                    }
+                ]
+            },
+            {
+                "category": "Paradigmas y Conceptos",
+                "items": [
+                    {
+                        "name": "POO",
+                        "level": "Avanzado",
+                        "icon": "mdi:cube-outline"
+                    },
+                    {
+                        "name": "Programación Funcional",
+                        "level": "Intermedio",
+                        "icon": "mdi:function"
+                    },
+                    {
+                        "name": "Programación Lógica",
+                        "level": "Intermedio",
+                        "icon": "mdi:head-cog-outline"
+                    },
+                    {
+                        "name": "Estructuras de Datos",
+                        "level": "Avanzado",
+                        "icon": "mdi:graph-outline"
+                    },
+                    {
+                        "name": "Algoritmos (IA)",
+                        "level": "Intermedio",
+                        "icon": "mdi:robot"
+                    }
+                ]
+            },
+            {
+                "category": "Habilidades Blandas",
+                "items": [
+                    {
+                        "name": "Resolución de Problemas",
+                        "level": "Avanzado",
+                        "icon": "mdi:puzzle-check"
+                    },
+                    {
+                        "name": "Pensamiento Crítico",
+                        "level": "Avanzado",
+                        "icon": "mdi:head-lightbulb"
+                    },
+                    {
+                        "name": "Comunicación Técnica",
+                        "level": "Intermedio",
+                        "icon": "mdi:message-text-outline"
+                    },
+                    {
+                        "name": "Adaptabilidad",
+                        "level": "Avanzado",
+                        "icon": "mdi:compass-outline"
+                    },
+                    {
+                        "name": "Autodidacta",
+                        "level": "Avanzado",
+                        "icon": "mdi:school-outline"
+                    }
+                ]
+            }
+        ],
+        "en": [
+            {
+                "category": "Programming Languages",
+                "items": [
+                    {
+                        "name": "C",
+                        "level": "Advanced",
+                        "icon": "logos:c"
+                    },
+                    {
+                        "name": "C++",
+                        "level": "Advanced",
+                        "icon": "logos:c-plusplus"
+                    },
+                    {
+                        "name": "Python",
+                        "level": "Advanced",
+                        "icon": "logos:python"
+                    },
+                    {
+                        "name": "Java",
+                        "level": "Intermediate",
+                        "icon": "logos:java"
+                    },
+                    {
+                        "name": "JavaScript",
+                        "level": "Intermediate",
+                        "icon": "logos:javascript"
+                    },
+                    {
+                        "name": "TypeScript",
+                        "level": "Intermediate",
+                        "icon": "logos:typescript-icon"
+                    },
+                    {
+                        "name": "Haskell",
+                        "level": "Intermediate",
+                        "icon": "logos:haskell-icon"
+                    },
+                    {
+                        "name": "Assembly (ARM & x86)",
+                        "level": "Intermediate",
+                        "icon": "mdi:cpu-64-bit"
+                    },
+                    {
+                        "name": "Prolog",
+                        "level": "Intermediate",
+                        "icon": "mdi:brain"
+                    },
+                    {
+                        "name": "C#",
+                        "level": "Basic",
+                        "icon": "logos:c-sharp"
+                    },
+                    {
+                        "name": "SQL",
+                        "level": "Intermediate",
+                        "icon": "logos:mysql"
+                    }
+                ]
+            },
+            {
+                "category": "Frameworks and Libraries",
+                "items": [
+                    {
+                        "name": "React",
+                        "level": "Intermediate",
+                        "icon": "logos:react"
+                    },
+                    {
+                        "name": "Node.js",
+                        "level": "Intermediate",
+                        "icon": "logos:nodejs-icon"
+                    },
+                    {
+                        "name": "Express.js",
+                        "level": "Intermediate",
+                        "icon": "simple-icons:express"
+                    },
+                    {
+                        "name": "Flask",
+                        "level": "Intermediate",
+                        "icon": "file-icons:flask"
+                    },
+                    {
+                        "name": "Tkinter",
+                        "level": "Advanced",
+                        "icon": "mdi:application-cog"
+                    },
+                    {
+                        "name": "Socket.IO",
+                        "level": "Intermediate",
+                        "icon": "logos:socket-io"
+                    },
+                    {
+                        "name": "Three.js",
+                        "level": "Basic",
+                        "icon": "logos:threejs"
+                    },
+                    {
+                        "name": "Tailwind CSS",
+                        "level": "Intermediate",
+                        "icon": "logos:tailwindcss-icon"
+                    },
+                    {
+                        "name": "Electron",
+                        "level": "Intermediate",
+                        "icon": "logos:electron"
+                    }
+                ]
+            },
+            {
+                "category": "Databases",
+                "items": [
+                    {
+                        "name": "MySQL",
+                        "level": "Intermediate",
+                        "icon": "logos:mysql"
+                    },
+                    {
+                        "name": "SQLite",
+                        "level": "Advanced",
+                        "icon": "simple-icons:sqlite"
+                    },
+                    {
+                        "name": "Redis",
+                        "level": "Intermediate",
+                        "icon": "logos:redis"
+                    },
+                    {
+                        "name": "PostgreSQL",
+                        "level": "Basic",
+                        "icon": "logos:postgresql"
+                    },
+                    {
+                        "name": "MongoDB",
+                        "level": "Basic",
+                        "icon": "logos:mongodb-icon"
+                    }
+                ]
+            },
+            {
+                "category": "DevOps and Tools",
+                "items": [
+                    {
+                        "name": "Git & GitHub",
+                        "level": "Advanced",
+                        "icon": "logos:git-icon"
+                    },
+                    {
+                        "name": "Linux (Syscalls)",
+                        "level": "Intermediate",
+                        "icon": "logos:linux-tux"
+                    },
+                    {
+                        "name": "Docker",
+                        "level": "Intermediate",
+                        "icon": "logos:docker-icon"
+                    },
+                    {
+                        "name": "QEMU",
+                        "level": "Intermediate",
+                        "icon": "mdi:console-line"
+                    },
+                    {
+                        "name": "Vite",
+                        "level": "Intermediate",
+                        "icon": "logos:vitejs"
+                    }
+                ]
+            },
+            {
+                "category": "Paradigms and Concepts",
+                "items": [
+                    {
+                        "name": "OOP",
+                        "level": "Advanced",
+                        "icon": "mdi:cube-outline"
+                    },
+                    {
+                        "name": "Functional Programming",
+                        "level": "Intermediate",
+                        "icon": "mdi:function"
+                    },
+                    {
+                        "name": "Logic Programming",
+                        "level": "Intermediate",
+                        "icon": "mdi:head-cog-outline"
+                    },
+                    {
+                        "name": "Data Structures",
+                        "level": "Advanced",
+                        "icon": "mdi:graph-outline"
+                    },
+                    {
+                        "name": "Algorithms (AI)",
+                        "level": "Intermediate",
+                        "icon": "mdi:robot"
+                    }
+                ]
+            },
+            {
+                "category": "Soft Skills",
+                "items": [
+                    {
+                        "name": "Problem Solving",
+                        "level": "Advanced",
+                        "icon": "mdi:puzzle-check"
+                    },
+                    {
+                        "name": "Critical Thinking",
+                        "level": "Advanced",
+                        "icon": "mdi:head-lightbulb"
+                    },
+                    {
+                        "name": "Technical Communication",
+                        "level": "Intermediate",
+                        "icon": "mdi:message-text-outline"
+                    },
+                    {
+                        "name": "Adaptability",
+                        "level": "Advanced",
+                        "icon": "mdi:compass-outline"
+                    },
+                    {
+                        "name": "Self-Taught",
+                        "level": "Advanced",
+                        "icon": "mdi:school-outline"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "category": "Frameworks y Librerías",
-        "items": [
-          {
-            "name": "Bootstrap",
-            "level": "Intermedio",
-            "icon": "logos:bootstrap"
-          },
-          {
-            "name": "Django",
-            "level": "Intermedio",
-            "icon": "material-icon-theme:django"
-          },
-          {
-            "name": "Electron",
-            "level": "Intermedio",
-            "icon": "logos:electron"
-          },
-          {
-            "name": "Express.js",
-            "level": "Intermedio",
-            "icon": "simple-icons:express"
-          },
-          {
-            "name": "Flask",
-            "level": "Intermedio",
-            "icon": "file-icons:flask"
-          },
-          {
-            "name": "Node.js",
-            "level": "Intermedio",
-            "icon": "logos:nodejs-icon"
-          },
-          {
-            "name": "React",
-            "level": "Intermedio",
-            "icon": "logos:react"
-          },
-          {
-            "name": "Tailwind CSS",
-            "level": "Intermedio",
-            "icon": "logos:tailwindcss-icon"
-          }
-        ]
-      },
-      {
-        "category": "Bases de Datos",
-        "items": [
-          {
-            "name": "MongoDB",
-            "level": "Intermedio",
-            "icon": "logos:mongodb-icon"
-          },
-          {
-            "name": "MySQL",
-            "level": "Intermedio",
-            "icon": "logos:mysql"
-          },
-          {
-            "name": "PostgreSQL",
-            "level": "Intermedio",
-            "icon": "logos:postgresql"
-          },
-          {
-            "name": "SQLite",
-            "level": "Intermedio",
-            "icon": "simple-icons:sqlite"
-          }
-        ]
-      },
-      {
-        "category": "DevOps y Herramientas",
-        "items": [
-          {
-            "name": "Git",
-            "level": "Intermedio",
-            "icon": "logos:git-icon"
-          },
-          {
-            "name": "Linux",
-            "level": "Intermedio",
-            "icon": "logos:linux-tux"
-          },
-          {
-            "name": "Vercel",
-            "level": "Intermedio",
-            "icon": "vscode-icons:file-type-vercel"
-          },
-          {
-            "name": "Github",
-            "level": "Intermedio",
-            "icon": "line-md:github-loop"
-          }
-        ]
-      },
-      {
-        "category": "Otras habilidades",
-        "items": [
-          {
-            "name": "Adaptabilidad",
-            "level": "Intermedio",
-            "icon": "mdi:swap-horizontal"
-          },
-          {
-            "name": "Aprendizaje continuo",
-            "level": "Intermedio",
-            "icon": "mdi:book-open"
-          },
-          {
-            "name": "Comunicación técnica",
-            "level": "Intermedio",
-            "icon": "mdi:chat"
-          },
-          {
-            "name": "Resolución de problemas",
-            "level": "Intermedio",
-            "icon": "mdi:brain"
-          },
-          {
-            "name": "Trabajo en equipo",
-            "level": "Intermedio",
-            "icon": "mdi:account-group"
-          }
-        ]
-      }
-    ],
-    "en": [
-      {
-        "category": "Programming Languages",
-        "items": [
-          {
-            "name": "C",
-            "level": "Intermediate",
-            "icon": "logos:c"
-          },
-          {
-            "name": "C#",
-            "level": "Basic",
-            "icon": "logos:c-sharp"
-          },
-          {
-            "name": "C++",
-            "level": "Intermediate",
-            "icon": "logos:c-plusplus"
-          },
-          {
-            "name": "CSS",
-            "level": "Intermediate",
-            "icon": "logos:css-3"
-          },
-          {
-            "name": "HTML",
-            "level": "Intermediate",
-            "icon": "logos:html-5"
-          },
-          {
-            "name": "Java",
-            "level": "Intermediate",
-            "icon": "logos:java"
-          },
-          {
-            "name": "JavaScript",
-            "level": "Intermediate",
-            "icon": "logos:javascript"
-          },
-          {
-            "name": "Python",
-            "level": "Intermediate",
-            "icon": "logos:python"
-          },
-          {
-            "name": "SQL",
-            "level": "Basic",
-            "icon": "logos:mysql"
-          },
-          {
-            "name": "TypeScript",
-            "level": "Basic",
-            "icon": "logos:typescript-icon"
-          },
-          {
-            "name": "Assembly (x86 & ARM)",
-            "level": "Basic",
-            "icon": "mdi:cpu-64-bit"
-          },
-          {
-            "name": "Haskell",
-            "level": "Basic",
-            "icon": "logos:haskell-icon"
-          }
-        ]
-      },
-      {
-        "category": "Frameworks and Libraries",
-        "items": [
-          {
-            "name": "Bootstrap",
-            "level": "Intermediate",
-            "icon": "logos:bootstrap"
-          },
-          {
-            "name": "Django",
-            "level": "Intermediate",
-            "icon": "material-icon-theme:django"
-          },
-          {
-            "name": "Electron",
-            "level": "Intermediate",
-            "icon": "logos:electron"
-          },
-          {
-            "name": "Express.js",
-            "level": "Intermediate",
-            "icon": "simple-icons:express"
-          },
-          {
-            "name": "Flask",
-            "level": "Intermediate",
-            "icon": "file-icons:flask"
-          },
-          {
-            "name": "Node.js",
-            "level": "Intermediate",
-            "icon": "logos:nodejs-icon"
-          },
-          {
-            "name": "React",
-            "level": "Intermediate",
-            "icon": "logos:react"
-          },
-          {
-            "name": "Tailwind CSS",
-            "level": "Intermediate",
-            "icon": "logos:tailwindcss-icon"
-          }
-        ]
-      },
-      {
-        "category": "Databases",
-        "items": [
-          {
-            "name": "MongoDB",
-            "level": "Intermediate",
-            "icon": "logos:mongodb-icon"
-          },
-          {
-            "name": "MySQL",
-            "level": "Intermediate",
-            "icon": "logos:mysql"
-          },
-          {
-            "name": "PostgreSQL",
-            "level": "Intermediate",
-            "icon": "logos:postgresql"
-          }
-        ]
-      },
-      {
-        "category": "DevOps and Tools",
-        "items": [
-          {
-            "name": "Git",
-            "level": "Intermediate",
-            "icon": "logos:git-icon"
-          },
-          {
-            "name": "Linux",
-            "level": "Intermediate",
-            "icon": "logos:linux-tux"
-          },
-          {
-            "name": "Vercel",
-            "level": "Intermediate",
-            "icon": "vscode-icons:file-type-vercel"
-          },
-          {
-            "name": "GitHub",
-            "level": "Intermediate",
-            "icon": "line-md:github-loop"
-          }
-        ]
-      },
-      {
-        "category": "Other Skills",
-        "items": [
-          {
-            "name": "Adaptability",
-            "level": "Intermediate",
-            "icon": "mdi:swap-horizontal"
-          },
-          {
-            "name": "Continuous Learning",
-            "level": "Intermediate",
-            "icon": "mdi:book-open"
-          },
-          {
-            "name": "Problem Solving",
-            "level": "Intermediate",
-            "icon": "mdi:brain"
-          },
-          {
-            "name": "Technical Communication",
-            "level": "Intermediate",
-            "icon": "mdi:chat"
-          },
-          {
-            "name": "Teamwork",
-            "level": "Intermediate",
-            "icon": "mdi:account-group"
-          }
-        ]
-      }
-    ]
-  }
+    }
 }

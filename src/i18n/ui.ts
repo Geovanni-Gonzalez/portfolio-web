@@ -28,9 +28,9 @@ export const ui = {
 
     'about.title': 'About Me',
     'about.description-1':
-      'Computer Engineering student at the Costa Rica Institute of Technology, focusing on software development and problem-solving. I am passionate about research and continuous learning, understanding how technologies work and how to apply them to create innovative solutions.',
+      'Computer Engineering student with a solid ability to materialize complex solutions. My approach integrates the rigor of low-level systems with the versatility of modern web development, allowing me to create efficient and scalable software.',
     'about.description-2':
-      'I have participated in the development of projects ranging from interactive web applications to distributed data management systems. My goal is to combine good development practices with user-centered design to build quality software.',
+      'With over 25 projects in my portfolio, I apply an analytical vision to solve technical challenges across various areas. My adaptability between paradigms and technologies allows me to design robust architectures, from AI engines to real-time distributed systems.',
     'about.cvDownload': 'Download CV',
 
     'projects.title': 'Projects',
@@ -100,9 +100,9 @@ export const ui = {
 
     'about.title': 'Sobre mí',
     'about.description-1':
-      'Estudiante de Ingeniería en Computación en el Tecnológico de Costa Rica, con enfoque en el desarrollo de software y la resolución de problemas. Me apasiona la investigación y el aprendizaje continuo, entender cómo funcionan las tecnologías y cómo aplicarlas para crear soluciones innovadoras.',
+      'Ingeniero en Computación en formación con sólida capacidad para materializar soluciones complejas. Mi enfoque integra el rigor de los sistemas de bajo nivel con la versatilidad del desarrollo web moderno, permitiéndome crear software eficiente y escalable.',
     'about.description-2':
-      'He participado en el desarrollo de proyectos que van desde aplicaciones web interactivas hasta sistemas de gestión de datos distribuidos. Mi objetivo es combinar buenas prácticas de desarrollo con un diseño centrado en el usuario para construir software de calidad.',
+      'Con más de 25 proyectos en mi portafolio, aplico una visión analítica para resolver desafíos técnicos en diversas áreas. Mi adaptabilidad entre paradigmas y tecnologías me permite diseñar arquitecturas robustas, desde motores de inteligencia artificial hasta sistemas distribuidos en tiempo real.',
     'about.cvDownload': 'Descargar CV',
 
     'projects.title': 'Proyectos',

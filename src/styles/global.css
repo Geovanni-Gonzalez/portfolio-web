@@ -104,7 +104,7 @@ body::before {
 [data-theme='light'] {
   /* Light Mode - Clean Warm Theme */
   --color-bg: #ffffff;
-  --color-text: #cacaca;
+  --color-text: #1c1917;
   /* Stone 900 */
   --color-accent: #ea580c;
   /* Orange 600 */
