@@ -40,8 +40,8 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
 
           <h3
             class="relative z-20 text-center text-xl font-black tracking-tight
-               bg-gradient-to-r from-orange-600 via-amber-500 to-orange-700 dark:from-orange-400 dark:via-yellow-400 dark:to-orange-600
-               bg-clip-text text-transparent py-6 bg-bg/80 backdrop-blur-xl
+               card-header-gradient
+               py-6 bg-bg/80 backdrop-blur-xl
                border-b border-white/5 rounded-t-3xl"
           >
             {category.category}
@@ -190,5 +190,31 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
 
   :global([data-theme="dark"]) .level-text {
     color: rgba(249, 115, 22, 0.8); /* orange-500/80 */
+  }
+
+  /* Card Header Gradient */
+  .card-header-gradient {
+    background-image: linear-gradient(
+      to right,
+      #9a3412,
+      #ea580c,
+      #9a3412
+    ); /* Default/Light: Dark Orange */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  :global([data-theme="light"]) .card-header-gradient {
+    background-image: linear-gradient(to right, #d88f3b, #ffcf9c, #d88f3b) !important;
+  }
+
+  :global([data-theme="dark"]) .card-header-gradient {
+    background-image: linear-gradient(
+      to right,
+      #fb923c,
+      #facc15,
+      #ea580c
+    ) !important; /* Orange-400 -> Yellow-400 -> Orange-600 */
   }
 </style>
