@@ -2,6 +2,7 @@
 import { getLangFromUrl } from "../i18n/utils";
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import "../styles/global.css";
 import LoadingIndicator from "astro-loading-indicator/component";
 import Navbar from "../components/Navbar.astro";
@@ -102,6 +103,8 @@ const defaultDescription =
     <main id="main-content" tabindex="-1" aria-label="Sección principal">
       <slot />
     </main>
+
+    <SpeedInsights />
   </body>
 </html>
 
