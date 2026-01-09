@@ -39,7 +39,8 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
           <div class="absolute -top-24 -right-24 w-48 h-48 bg-orange-500/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-orange-500/10 transition-colors" />
 
           <h3
-            class="relative z-20 text-center text-xl font-black tracking-tight bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-600
+            class="relative z-20 text-center text-xl font-black tracking-tight
+               bg-gradient-to-r from-orange-600 via-amber-500 to-orange-700 dark:from-orange-400 dark:via-yellow-400 dark:to-orange-600
                bg-clip-text text-transparent py-6 bg-bg/80 backdrop-blur-xl
                border-b border-white/5 rounded-t-3xl"
           >
@@ -57,8 +58,9 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
               <ul class="px-4 grid grid-cols-2 gap-5 pb-10">
                 {category.items.map((skill, i) => (
                   <li
-                    class="group/skill flex flex-col items-center text-center bg-white/[0.03] dark:bg-white/[0.02] p-5 rounded-3xl
-                         border border-white/5 hover:border-orange-500/30 shadow-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]
+                    class="group/skill flex flex-col items-center text-center 
+                         bg-orange-500/5 dark:bg-white/[0.02] p-5 rounded-3xl
+                         border border-black/5 dark:border-white/5 hover:border-orange-500/30 shadow-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]
                          transition-all duration-500 hover:-translate-y-1 cursor-default"
                     title={`${skill.name} - ${skill.level}`}
                   >
@@ -70,11 +72,9 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
                         aria-hidden="true"
                       />
                     </div>
-                    <span class="text-base font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                      {skill.name}
-                    </span>
+                    <span class="text-base font-bold tracking-tight skill-text">{skill.name}</span>
                     <div class="mt-3 w-full flex flex-col items-center gap-2">
-                      <span class="text-[9px] uppercase tracking-[0.2em] text-orange-500/80 font-black">
+                      <span class="text-[9px] uppercase tracking-[0.2em] font-black level-text">
                         {skill.level}
                       </span>
                       <div class="w-full h-1 bg-zinc-800/50 rounded-full overflow-hidden border border-white/5">
@@ -98,8 +98,9 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
               <ul class="px-4 grid grid-cols-2 gap-5 pb-10" aria-hidden="true">
                 {category.items.map((skill, i) => (
                   <li
-                    class="group/skill flex flex-col items-center text-center bg-white/[0.03] dark:bg-white/[0.02] p-5 rounded-3xl
-                         border border-white/5 hover:border-orange-500/30 shadow-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]
+                    class="group/skill flex flex-col items-center text-center 
+                         bg-orange-500/5 dark:bg-white/[0.02] p-5 rounded-3xl
+                         border border-black/5 dark:border-white/5 hover:border-orange-500/30 shadow-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]
                          transition-all duration-500 hover:-translate-y-1 cursor-default"
                     title={`${skill.name} - ${skill.level}`}
                   >
@@ -111,11 +112,9 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
                         aria-hidden="true"
                       />
                     </div>
-                    <span class="text-base font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                      {skill.name}
-                    </span>
+                    <span class="text-base font-bold tracking-tight skill-text">{skill.name}</span>
                     <div class="mt-3 w-full flex flex-col items-center gap-2">
-                      <span class="text-[9px] uppercase tracking-[0.2em] text-orange-500/80 font-black">
+                      <span class="text-[9px] uppercase tracking-[0.2em] font-black level-text">
                         {skill.level}
                       </span>
                       <div class="w-full h-1 bg-zinc-800/50 rounded-full overflow-hidden border border-white/5">
@@ -167,5 +166,29 @@ const skills = skillsData.skills[lang] || skillsData.skills["en"];
   /* Pause on hover for accessibility */
   .hover\:pause-animation:hover {
     animation-play-state: paused;
+  }
+
+  /* Theme-aware text colors with explicit selectors and high priority */
+
+  /* Default / Light Mode */
+  .skill-text {
+    color: #ea580c !important; /* Orange-600 - Matches level color */
+  }
+
+  :global([data-theme="light"]) .skill-text {
+    color: #ea580c !important; /* Force Orange-600 in light mode */
+  }
+
+  .level-text {
+    color: rgba(234, 88, 12, 0.9); /* orange-600/90 */
+  }
+
+  /* Dark Mode Overrides */
+  :global([data-theme="dark"]) .skill-text {
+    color: #fff7ed !important; /* orange-50 */
+  }
+
+  :global([data-theme="dark"]) .level-text {
+    color: rgba(249, 115, 22, 0.8); /* orange-500/80 */
   }
 </style>

@@ -19,14 +19,59 @@ const {
   ]}
 >
   <span
-    class="bg-gradient-to-r from-orange-700 via-orange-600 to-amber-700 dark:from-orange-300 dark:via-amber-300 dark:to-orange-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(249,115,22,0.3)] dark:drop-shadow-[0_0_30px_rgba(251,146,60,0.6)]"
+    class="gradient-text drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_30px_rgba(251,146,60,0.6)]"
   >
     {title}
   </span>
   <span
     class:list={[
-      "block h-1.5 mt-5 rounded-full bg-gradient-to-r from-orange-700 via-orange-600 to-amber-700 dark:from-orange-300 dark:via-amber-300 dark:to-orange-400 shadow-[0_2px_10px_rgba(249,115,22,0.3)] dark:shadow-[0_0_30px_rgba(251,146,60,0.6)]",
+      "block h-1.5 mt-5 rounded-full gradient-underline shadow-[0_2px_10px_rgba(249,115,22,0.3)] dark:shadow-[0_0_30px_rgba(251,146,60,0.6)]",
       underlineClass,
     ]}
     aria-hidden="true"></span>
 </h2>
+
+<style>
+  .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      #431407,
+      #9a3412,
+      #78350f
+    ); /* Orange-950 -> Orange-800 -> Amber-900 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  :global([data-theme="light"]) .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      #ffe5c8,
+      #ffcf9c,
+      #ffe5c8
+    ) !important; /* Orange-800 -> Orange-700 (Warm Copper) */
+  }
+
+  :global([data-theme="dark"]) .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      #fdba74,
+      #fcd34d,
+      #fb923c
+    ) !important; /* Orange-300 -> Amber-300 -> Orange-400 */
+  }
+
+  /* Underline Styles matching text */
+  .gradient-underline {
+    background-image: linear-gradient(to right, #431407, #9a3412, #78350f);
+  }
+
+  :global([data-theme="light"]) .gradient-underline {
+    background-image: linear-gradient(to right, #ffe5c8, #ffcf9c, #ffe5c8) !important;
+  }
+
+  :global([data-theme="dark"]) .gradient-underline {
+    background-image: linear-gradient(to right, #fdba74, #fcd34d, #fb923c) !important;
+  }
+</style>
