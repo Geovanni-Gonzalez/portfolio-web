@@ -3,6 +3,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import HamburgerMenu from "./HamburgerMenu.jsx";
 import LangPicker from "./LangPicker.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
+import Logo from "./Logo.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -35,9 +36,11 @@ const menuItems = [
   {/* Logo */}
   <a
     href={isHome ? "#home" : `${homePath}#home`}
-    class="text-[var(--color-text)] font-bold text-xl tracking-tight hover:text-orange-500 transition-colors duration-300"
-    aria-label="Inicio">Geovanni</a
+    class="group hover:scale-105 transition-transform duration-300"
+    aria-label="Inicio"
   >
+    <Logo class="h-10 w-auto -my-4 relative z-10 logo-custom" />
+  </a>
 
   {/* Menú Desktop */}
   <ul
@@ -75,6 +78,31 @@ const menuItems = [
     <LangPicker currentLang={lang} client:load />
   </div>
 </nav>
+
+<style>
+  /* Custom Logo Logic to bypass potential Tailwind specificity issues */
+  .logo-custom {
+    color: #f97316; /* Light Mode Default: Orange */
+    transition: color 0.3s ease;
+  }
+
+  /* Light Mode Hover */
+  .group:hover .logo-custom {
+    color: white;
+  }
+
+  /* Dark Mode Default */
+  :global(.dark) .logo-custom,
+  :global([data-theme="dark"]) .logo-custom {
+    color: white;
+  }
+
+  /* Dark Mode Hover */
+  :global(.dark) .group:hover .logo-custom,
+  :global([data-theme="dark"]) .group:hover .logo-custom {
+    color: #f97316;
+  }
+</style>
 
 <script>
   // Simple and robust intersection observer for active links
