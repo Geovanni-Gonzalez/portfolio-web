@@ -59,7 +59,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                 </div>
             )}
             {/* Contenido */}
-            <div className="flex flex-col flex-grow p-6 sm:p-8">
+            <div className="flex flex-col flex-grow p-5 sm:p-8">
                 {/* Título */}
                 <h3 className="text-2xl font-black tracking-tighter text-text/90 group-hover/card:text-orange-500 transition-colors duration-500 dark:text-text/90 light:text-orange-800">
                     {title}
@@ -85,7 +85,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                 )}
 
                 {/* Botones */}
-                <div className="mt-8 flex gap-4">
+                <div className="mt-auto pt-6 flex gap-4">
                     <button
                         onClick={onOpen}
                         className="flex-1 inline-flex items-center justify-center bg-transparent hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50 text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-accent)] text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-300"

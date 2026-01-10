@@ -76,7 +76,7 @@ export default function ProjectCarousel({ projects, lang, detailsLabel }: Projec
                 ref={carouselRef}
             >
                 {/* Contenedor de Proyectos */}
-                <div className="relative h-[520px] sm:h-[540px] md:h-[560px] overflow-hidden">
+                <div className="relative h-[650px] sm:h-[600px] md:h-[560px] overflow-hidden">
                     <div
                         className="flex transition-transform duration-700 ease-in-out h-full"
                         style={{ transform: `translateX(-${current * 100}%)` }}
