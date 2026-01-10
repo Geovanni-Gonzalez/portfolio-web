@@ -8,51 +8,78 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const posts = (await getCollection("blog"))
-    .sort(
-        (a, b) => Number(new Date(b.data.date)) - Number(new Date(a.data.date)),
-    )
-    .slice(0, 3); // Show latest 3
+  .sort((a, b) => Number(new Date(b.data.date)) - Number(new Date(a.data.date)))
+  .slice(0, 3); // Show latest 3
 ---
 
 <section id="blog" class="max-w-5xl mx-auto py-20 px-6 scroll-mt-20">
-    <GradientTitle title="Blog" />
+  <GradientTitle title="Blog" />
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        {
-            posts.map((post) => (
-                <a
-                    href={`/blog/${post.slug}`}
-                    class="spotlight-card group block p-6 rounded-2xl border border-text/10 bg-bg/50 backdrop-blur-md hover:border-accent/30 transition-all duration-300"
-                >
-                    <div class="flex items-center gap-2 text-xs text-orange-400 font-bold mb-3 uppercase tracking-widest">
-                        <Icon name="mdi:calendar" class="w-4 h-4" />
-                        {post.data.date
-                            ? post.data.date.toLocaleDateString(
-                                  lang === "es" ? "es-ES" : "en-US",
-                                  {
-                                      day: "numeric",
-                                      month: "long",
-                                      year: "numeric",
-                                  },
-                              )
-                            : ""}
-                    </div>
-                    <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">
-                        {post.data.title}
-                    </h3>
-                    <p class="text-muted text-sm line-clamp-2 leading-relaxed">
-                        {post.data.description}
-                    </p>
-                    <div class="mt-4 flex items-center gap-2 text-accent text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                        {lang === "es" ? "Leer más" : "Read more"}
-                        <Icon name="mdi:arrow-right" class="w-4 h-4" />
-                    </div>
-                </a>
-            ))
-        }
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+    {
+      posts.map((post) => (
+        <a
+          href={`/blog/${post.slug}`}
+          class="spotlight-card group block p-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] backdrop-blur-2xl hover:border-orange-500/30 transition-all duration-300 blog-card"
+        >
+          <div class="flex items-center gap-2 text-xs text-orange-400 font-bold mb-3 uppercase tracking-widest">
+            <Icon name="mdi:calendar" class="w-4 h-4" />
+            {post.data.date
+              ? post.data.date.toLocaleDateString(lang === "es" ? "es-ES" : "en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })
+              : ""}
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-accent transition-colors blog-title">
+            {post.data.title}
+          </h3>
+          <p class="text-sm line-clamp-2 leading-relaxed blog-desc">{post.data.description}</p>
+          <div class="mt-4 flex items-center gap-2 text-accent text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+            {lang === "es" ? "Leer más" : "Read more"}
+            <Icon name="mdi:arrow-right" class="w-4 h-4" />
+          </div>
+        </a>
+      ))
+    }
+  </div>
 
-    <div class="mt-12 text-center">
-        <p class="text-muted italic text-sm">Próximamente más artículos...</p>
-    </div>
+  <div class="mt-12 text-center">
+    <p class="text-muted italic text-sm">Próximamente más artículos...</p>
+  </div>
 </section>
+
+<style>
+  /* Blog Card Styling */
+  /* Blog Card Styling */
+  /* Rely on standard classes + variable for consistency */
+  /* .blog-card override removed to use --color-card-bg */
+
+  /* Blog Title */
+  .blog-title {
+    color: #9a3412;
+  }
+
+  :global([data-theme="light"]) .blog-title {
+    color: #ff9165 !important; /* Soft Orange (Matching Education) */
+  }
+
+  :global([data-theme="dark"]) .blog-title {
+    color: #f4f4f5 !important; /* White */
+  }
+
+  /* Blog Description */
+  .blog-desc {
+    color: #52525b;
+  }
+
+  :global([data-theme="light"]) .blog-desc {
+    color: #431407 !important; /* Very Dark Brown for readability */
+    opacity: 0.8;
+  }
+
+  :global([data-theme="dark"]) .blog-desc {
+    color: #a1a1aa !important; /* Zinc-400 */
+  }
+</style>

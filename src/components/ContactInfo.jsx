@@ -34,12 +34,13 @@ export default function ContactInfo({ contactInfo }) {
               group w-full flex items-center gap-4 p-4 rounded-xl border border-text/10 bg-bg/50 backdrop-blur-sm text-muted 
               hover:border-accent/50 hover:text-text hover:bg-bg/80 transition-all duration-300 relative overflow-hidden
               ${item.type !== 'text' ? 'cursor-pointer' : 'cursor-default'}
+              dark:text-muted light:text-orange-900/80
             `}
           >
             <div className="p-2 rounded-lg bg-text/5 group-hover:bg-accent/10 transition-colors duration-300">
               <Icon className="w-5 h-5 text-accent group-hover:scale-110 transition-transform duration-300" />
             </div>
-            
+
             <span className="flex-1 text-left font-medium truncate">
               {item.label}
             </span>

@@ -22,13 +22,13 @@ const t = useTranslations(lang);
         className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-none text-center sm:text-left selection:text-white"
       >
         <span
-          class="inline-block hover:scale-[1.02] transition-transform duration-500 cursor-default"
+          class="inline-block hover:scale-[1.02] transition-transform duration-500 cursor-default hero-name"
         >
           {t("hero.name")}
         </span>
         <br />
         <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-200 drop-shadow-[0_0_25px_rgba(249,115,22,0.6)] inline-block animate-float"
+          class="text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-200 drop-shadow-[0_0_25px_rgba(249,115,22,0.6)] inline-block animate-float hero-lastname"
           >{t("hero.lastname")}</span
         >
       </H1>
@@ -38,7 +38,7 @@ const t = useTranslations(lang);
       <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
         <H1
           size="default"
-          className="text-xl sm:text-2xl md:text-3xl font-light text-zinc-100/90 text-center sm:text-left tracking-wide drop-shadow-md"
+          className="text-xl sm:text-2xl md:text-3xl font-light text-center sm:text-left tracking-wide drop-shadow-md hero-role"
         >
           {t("hero.title")}
         </H1>
@@ -100,3 +100,30 @@ const t = useTranslations(lang);
     </div>
   </div>
 </div>
+
+<style>
+  /* Hero Text Visibility */
+
+  /* Name: Geovanni */
+  .hero-name {
+    color: #ffffff;
+  }
+  :global([data-theme="light"]) .hero-name {
+    color: #ffffff !important;
+  }
+
+  /* Lastname: González (Gradient) */
+  :global([data-theme="light"]) .hero-lastname {
+    background-image: linear-gradient(to right, #ffffff, #ffc983) !important;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(255, 98, 98, 0.3));
+  }
+
+  /* Role: Full Stack Developer... */
+  .hero-role {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  :global([data-theme="light"]) .hero-role {
+    color: #b92e00 !important;
+  }
+</style>

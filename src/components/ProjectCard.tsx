@@ -60,12 +60,12 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
             {/* Contenido */}
             <div className="flex flex-col flex-grow p-6 sm:p-8">
                 {/* Título */}
-                <h3 className="text-2xl font-black tracking-tighter text-text/90 group-hover/card:text-orange-500 transition-colors duration-500">
+                <h3 className="text-2xl font-black tracking-tighter text-text/90 group-hover/card:text-orange-500 transition-colors duration-500 dark:text-text/90 light:text-orange-800">
                     {title}
                 </h3>
 
                 {/* Descripción */}
-                <p className="mt-4 text-[var(--color-muted)] text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/30 pl-4 group-hover/card:border-orange-500/60 transition-all duration-500">
+                <p className="mt-4 text-[var(--color-muted)] text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/30 pl-4 group-hover/card:border-orange-500/60 transition-all duration-500 dark:text-[var(--color-muted)] light:text-orange-950/80">
                     {description}
                 </p>
 
