@@ -66,7 +66,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                 </h3>
 
                 {/* Descripción */}
-                <p className="mt-4 text-[var(--color-muted)] text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/30 pl-4 group-hover/card:border-orange-500/60 transition-all duration-500 dark:text-[var(--color-muted)] light:text-orange-950/80">
+                <p className="mt-4 text-[var(--color-muted)] text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/30 pl-4 group-hover/card:border-orange-500/60 transition-all duration-500 dark:text-[var(--color-muted)] light:text-orange-950/80 line-clamp-4 text-pretty">
                     {description}
                 </p>
 
