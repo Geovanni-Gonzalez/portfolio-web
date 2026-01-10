@@ -13,6 +13,7 @@
     "certifications": [
         {
             "title": "PCAP: Programming Essentials in Python",
+            "titleKey": "certifications.pcap",
             "issuer": "Cisco Networking Academy",
             "date": "30/12/2022",
             "descriptionKey": "certifications.pythonCertification.description",
@@ -21,6 +22,7 @@
         },
         {
             "title": "AWS Certified Solutions Architect – Associate",
+            "titleKey": "certifications.aws",
             "issuer": "Amazon Web Services",
             "date": "08/08/2024",
             "descriptionKey": "certifications.awsCertification.description",
@@ -29,6 +31,7 @@
         },
         {
             "title": "EF SET English Certificate",
+            "titleKey": "certifications.efset",
             "issuer": "EF Education First",
             "date": "18/10/2024",
             "descriptionKey": "certifications.efset.description",
@@ -37,6 +40,7 @@
         },
         {
             "title": "Inteligencia artificial",
+            "titleKey": "certifications.ai",
             "issuer": "Structuralia",
             "date": "05/08/2023",
             "descriptionKey": "certifications.ia.description",

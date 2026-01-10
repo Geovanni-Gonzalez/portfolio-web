@@ -23,9 +23,10 @@ interface ProjectCardProps extends Project {
     tabIndex?: number;
     "aria-hidden"?: boolean | "true" | "false";
     style?: React.CSSProperties; // Add style prop
+    detailsLabel?: string;
 }
 
-export default function ProjectCard({ title, description, tech, repo, image, onOpen, style }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tech, repo, image, onOpen, style, detailsLabel = "Detalles" }: ProjectCardProps) {
     return (
         <div
             className="spotlight-card flex flex-col bg-[var(--color-card-bg)] backdrop-blur-2xl border border-[var(--color-border)] rounded-[2rem] shadow-2xl transition-all duration-500 overflow-hidden w-full max-w-lg mx-auto h-full group/card hover:border-orange-500/30 hover:shadow-orange-500/10"
@@ -89,7 +90,7 @@ export default function ProjectCard({ title, description, tech, repo, image, onO
                         onClick={onOpen}
                         className="flex-1 inline-flex items-center justify-center bg-transparent hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50 text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-accent)] text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-300"
                     >
-                        Detalles
+                        {detailsLabel}
                     </button>
                     <a
                         href={repo}

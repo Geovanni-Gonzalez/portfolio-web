@@ -6,9 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface ProjectCarouselProps {
     projects: Project[];
     lang: string;
+    detailsLabel: string;
 }
 
-export default function ProjectCarousel({ projects, lang }: ProjectCarouselProps) {
+export default function ProjectCarousel({ projects, lang, detailsLabel }: ProjectCarouselProps) {
     // Validación defensiva: asegurar que projects siempre sea un array
     const safeProjects = Array.isArray(projects) ? projects : [];
     const [current, setCurrent] = useState(0);
@@ -88,6 +89,7 @@ export default function ProjectCarousel({ projects, lang }: ProjectCarouselProps
                                     tabIndex={idx === current ? 0 : -1}
                                     aria-hidden={idx !== current ? "true" : undefined}
                                     style={{}} // Empty style to satisfy hydration check or real style if needed
+                                    detailsLabel={detailsLabel}
                                 />
                             </div>
                         ))}

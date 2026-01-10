@@ -12,6 +12,7 @@ import educationData from "../data/education.json";
 
 const certifications = educationData.certifications.map((cert: any) => ({
   ...cert,
+  title: cert.titleKey ? t(cert.titleKey as any) : cert.title,
   description: t(cert.descriptionKey as any),
 }));
 ---

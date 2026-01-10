@@ -33,10 +33,16 @@ export const ui = {
       'With over 25 projects in my portfolio, I apply an analytical vision to solve technical challenges across various areas. My adaptability between paradigms and technologies allows me to design robust architectures, from AI engines to real-time distributed systems.',
     'about.cvDownload': 'Download CV',
 
+    'about.locationLabel': 'Location',
+    'about.coreStack': 'Core Stack',
+    'about.country': 'Costa Rica',
+    'about.locationDetail': 'Limón, ITCR (Limón Academic Center)',
+
     'projects.title': 'Projects',
     'projects.viewOnGitHub': 'View on GitHub',
     'projects.keyFeatures': 'Key Features',
     'projects.techStack': 'Tech Stack',
+    'projects.details': 'Details',
 
     'skills.title': 'Technical Skills',
     'skills.languages': 'Languages',
@@ -59,6 +65,10 @@ export const ui = {
     'certifications.awsCertification.description': 'Certification AWS Compute Services Overview (LATAM Spanish)',
     'certifications.efset.description': 'Certification validating English language proficiency through the EF SET exam.',
     'certifications.ia.description': 'Certification validating knowledge in Artificial Intelligence concepts and applications.',
+    'certifications.pcap': 'PCAP: Programming Essentials in Python',
+    'certifications.aws': 'AWS Certified Solutions Architect – Associate',
+    'certifications.efset': 'EF SET English Certificate',
+    'certifications.ai': 'Artificial Intelligence',
 
     'contact.title': 'Contact',
     'contact.email': 'Email',
@@ -70,6 +80,7 @@ export const ui = {
     'contact.error': 'Error',
     'contact.success': 'Message sent successfully. I will get back to you soon.',
     'contact.description': 'I am open to new opportunities. You can reach out to me through any of the following means or send me a message using the form below.',
+    'contact.talk': "Let's Talk",
 
     'contact.name.placeholder': 'Your Name',
     'contact.email.placeholder': 'youremail@example.com',
@@ -105,10 +116,16 @@ export const ui = {
       'Con más de 25 proyectos en mi portafolio, aplico una visión analítica para resolver desafíos técnicos en diversas áreas. Mi adaptabilidad entre paradigmas y tecnologías me permite diseñar arquitecturas robustas, desde motores de inteligencia artificial hasta sistemas distribuidos en tiempo real.',
     'about.cvDownload': 'Descargar CV',
 
+    'about.locationLabel': 'Ubicación',
+    'about.coreStack': 'Stack Principal',
+    'about.country': 'Costa Rica',
+    'about.locationDetail': 'Limón, ITCR (Centro Académico de Limón)',
+
     'projects.title': 'Proyectos',
     'projects.viewOnGitHub': 'Ver en GitHub',
     'projects.keyFeatures': 'Características Principales',
     'projects.techStack': 'Stack Tecnológico',
+    'projects.details': 'Detalles',
 
     'skills.title': 'Habilidades Técnicas',
     'skills.languages': 'Lenguajes',
@@ -132,6 +149,10 @@ export const ui = {
     'certifications.awsCertification.description': 'Certificación AWS Compute Services Overview (LATAM Spanish)',
     'certifications.efset.description': 'Certificación que valida el dominio del idioma inglés a través del examen EF SET.',
     'certifications.ia.description': 'Certificación que valida conocimientos en conceptos y aplicaciones de Inteligencia Artificial.',
+    'certifications.pcap': 'PCAP: Programming Essentials in Python',
+    'certifications.aws': 'AWS Certified Solutions Architect – Associate',
+    'certifications.efset': 'EF SET English Certificate',
+    'certifications.ai': 'Inteligencia Artificial',
 
 
     'contact.title': 'Contacto',
@@ -144,6 +165,7 @@ export const ui = {
     'contact.error': 'Error',
     'contact.success': 'Mensaje enviado con éxito. Me pondré en contacto contigo pronto.',
     'contact.description': 'Estoy abierto a nuevas oportunidades. Puedes contactarme a través de cualquiera de los siguientes medios o enviarme un mensaje usando el formulario a continuación.',
+    'contact.talk': 'Hablemos',
 
     'contact.name.placeholder': 'Tu nombre',
     'contact.email.placeholder': 'tucorreo@ejemplo.com',

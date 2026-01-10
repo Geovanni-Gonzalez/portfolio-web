@@ -165,7 +165,12 @@ const projects = await Promise.all(
   <GradientTitle title={t("projects.title")} />
   {
     projects && projects.length > 0 ? (
-      <ProjectCarousel client:load projects={projects as any} lang={lang} />
+      <ProjectCarousel
+        client:load
+        projects={projects as any}
+        lang={lang}
+        detailsLabel={t("projects.details")}
+      />
     ) : (
       <div class="text-center text-zinc-400 py-10 bg-zinc-900/50 rounded-xl border border-zinc-800">
         <p class="text-lg mb-4">
