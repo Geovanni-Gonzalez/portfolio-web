@@ -20,6 +20,30 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 99999;
+  transform: translateY(-150%);
+  border-radius: 0.75rem;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+:focus-visible {
+  outline-color: var(--color-accent);
+}
+
 /* Base Typography Refinements */
 h1,
 h2,
@@ -128,6 +152,21 @@ body::before {
 /* Transiciones suaves para cambio de tema */
 * {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Excluir transiciones de elementos específicos */

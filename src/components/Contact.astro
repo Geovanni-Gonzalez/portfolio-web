@@ -1,5 +1,4 @@
 ---
-import SectionTitle from "./SectionTitle.astro";
 import GradientTitle from "./GradientTitle.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import ContactInfo from "./ContactInfo.jsx";
@@ -26,6 +25,7 @@ const formTranslations = {
   send: t("contact.send"),
   sent: t("contact.sent"),
   error: t("contact.error"),
+  success: t("contact.success"),
 };
 
 const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
@@ -33,27 +33,24 @@ const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
 
 <section
   id="contact"
-  class="w-full min-h-screen flex flex-col justify-center items-center py-20 px-4 sm:px-6 md:px-8 bg-transparent"
+  class="flex w-full flex-col items-center px-4 py-20 sm:px-6 md:px-8"
   data-aos="fade-up"
   data-aos-duration="1000"
 >
-  <div class="w-full max-w-6xl mb-12">
+  <div class="mb-12 w-full max-w-6xl">
     <GradientTitle title={t("contact.title")} />
   </div>
 
-  <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl">
-    <!-- Información de contacto -->
+  <div class="grid w-full max-w-6xl grid-cols-1 gap-8 md:gap-12 lg:grid-cols-2">
     <div
-      class="h-full p-8 rounded-3xl shadow-lg border border-text/10 bg-bg/50 backdrop-blur-md flex flex-col justify-center space-y-8"
+      class="flex h-full flex-col justify-center space-y-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] p-8 shadow-lg backdrop-blur-md"
       data-aos="fade-right"
     >
       <div class="space-y-4">
-        <h3 class="text-2xl font-bold text-text dark:text-text light:text-orange-800">
+        <h3 class="text-2xl font-black tracking-tight text-[var(--color-text)]">
           {t("contact.talk")}
         </h3>
-        <p
-          class="text-lg leading-relaxed text-muted font-light dark:text-muted light:text-orange-950/80"
-        >
+        <p class="text-base leading-8 text-[var(--color-muted)] sm:text-lg">
           {t("contact.description")}
         </p>
       </div>
@@ -61,7 +58,6 @@ const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
       <ContactInfo client:visible contactInfo={contactInfo} />
     </div>
 
-    <!-- Formulario -->
     <div data-aos="fade-left" data-aos-delay="200">
       <ContactForm client:visible translations={formTranslations} formId={formId} />
     </div>

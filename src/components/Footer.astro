@@ -13,64 +13,51 @@ const footerLinks = [
   { href: isHome ? "#home" : `${homePath}#home`, label: t("nav.home") },
   { href: isHome ? "#about" : `${homePath}#about`, label: t("nav.aboutMe") },
   { href: isHome ? "#skills" : `${homePath}#skills`, label: t("nav.skills") },
-  {
-    href: isHome ? "#projects" : `${homePath}#projects`,
-    label: t("nav.projects"),
-  },
-  {
-    href: isHome ? "#contact" : `${homePath}#contact`,
-    label: t("nav.contact"),
-  },
+  { href: isHome ? "#projects" : `${homePath}#projects`, label: t("nav.projects") },
+  { href: isHome ? "#contact" : `${homePath}#contact`, label: t("nav.contact") },
 ];
 ---
 
 <footer
-  class="bg-[var(--color-card-bg)] backdrop-blur-xl text-[var(--color-text)] py-8 md:py-12 mt-16 md:mt-24 border-t border-[var(--color-border)] shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.1)] relative z-10"
+  class="relative z-10 mt-16 border-t border-[var(--color-border)] bg-[var(--color-card-bg)] py-8 text-[var(--color-text)] shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.1)] backdrop-blur-xl md:mt-24 md:py-12"
 >
-  <div
-    class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10"
-  >
-    <!-- Quick Links -->
-    <nav
-      class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 text-base font-medium items-center"
-    >
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-4 sm:px-6 md:flex-row md:gap-10">
+    <nav class="flex flex-col flex-wrap items-center gap-4 text-base font-semibold sm:flex-row sm:gap-8" aria-label={lang === "es" ? "Enlaces del pie de página" : "Footer links"}>
       {
         footerLinks.map((link) => (
-          <a href={link.href} class="hover:text-accent transition-colors duration-200">
+          <a href={link.href} class="rounded-md transition-colors duration-200 hover:text-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400">
             {link.label}
           </a>
         ))
       }
     </nav>
 
-    <!-- Social Media -->
-    <div class="flex gap-4 md:gap-5 mt-4 md:mt-0">
+    <div class="flex gap-4 md:gap-5">
       <a
         href="https://github.com/Geovanni-Gonzalez"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        class="p-3 rounded-full bg-[var(--color-card-bg)] text-[var(--color-text)] border border-[var(--color-card-border)] shadow-md hover:scale-110 hover:border-orange-500 hover:text-orange-500 hover:shadow-orange-500/20 transition-all duration-300 backdrop-blur-sm group"
+        class="rounded-full border border-[var(--color-card-border)] bg-[var(--color-card-bg)] p-3 text-[var(--color-text)] shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500 hover:text-orange-500 hover:shadow-orange-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
       >
-        <Icon name="mdi:github" class="w-6 h-6 transition-transform group-hover:rotate-12" />
+        <Icon name="mdi:github" class="h-6 w-6" aria-hidden="true" />
       </a>
       <a
         href="https://www.linkedin.com/in/geovanni-gonzález-aguilar"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        class="p-3 rounded-full bg-[var(--color-card-bg)] text-[var(--color-text)] border border-[var(--color-card-border)] shadow-md hover:scale-110 hover:border-blue-500 hover:text-blue-500 hover:shadow-blue-500/20 transition-all duration-300 backdrop-blur-sm group"
+        class="rounded-full border border-[var(--color-card-border)] bg-[var(--color-card-bg)] p-3 text-[var(--color-text)] shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:text-blue-500 hover:shadow-blue-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
       >
-        <Icon name="mdi:linkedin" class="w-6 h-6 transition-transform group-hover:-rotate-12" />
+        <Icon name="mdi:linkedin" class="h-6 w-6" aria-hidden="true" />
       </a>
     </div>
   </div>
 
-  <!-- Copyright -->
-  <div class="border-t border-text/10 mt-8 md:mt-10 pt-4 md:pt-6">
-    <p class="text-center text-muted/80 text-sm select-none tracking-wide">
+  <div class="mt-8 border-t border-text/10 pt-4 md:mt-10 md:pt-6">
+    <p class="text-center text-sm tracking-wide text-muted/80">
       © {new Date().getFullYear()}
-      <span class="font-semibold text-text"> &mdash; {t("footer.copyright")}</span>
+      <span class="font-semibold text-text"> · {t("footer.copyright")}</span>
     </p>
   </div>
 </footer>

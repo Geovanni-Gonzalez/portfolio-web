@@ -60,13 +60,13 @@ export default function ContactForm({ translations, formId }) {
             <CheckCircle className="w-10 h-10 text-green-500 animate-bounce" />
           </div>
           <h4 className="text-2xl font-black tracking-tighter mb-2 text-[var(--color-text)]">{translations.sent}</h4>
-          <p className="text-[var(--color-muted)] text-sm font-light">Gracias por tu mensaje. Responderé pronto.</p>
+          <p className="text-[var(--color-muted)] text-sm font-light">{translations.success || 'Gracias por tu mensaje. Responderé pronto.'}</p>
           <button
             onClick={() => setStatus('idle')}
             className="mt-8 px-8 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-white/5 transition-colors text-sm font-bold uppercase tracking-widest text-[var(--color-text)]"
             type="button"
           >
-            Cerrar
+            OK
           </button>
         </div>
       )}

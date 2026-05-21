@@ -7,7 +7,6 @@ import "../styles/global.css";
 import LoadingIndicator from "astro-loading-indicator/component";
 import Navbar from "../components/Navbar.astro";
 import WarpBackground from "../components/WarpBackground";
-import AOSWrapper from "../components/AOSWrapper.jsx";
 import SpotlightEffect from "../components/SpotlightEffect.astro";
 import ProgressBar from "../components/ProgressBar.astro";
 import ScrollToTop from "../components/ScrollToTop.jsx";
@@ -15,9 +14,16 @@ import CommandPalette from "../components/CommandPalette.tsx";
 
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const defaultTitle = "Geovanni Gonzalez";
+const defaultTitle =
+  lang === "es"
+    ? "Geovanni González | Portfolio de Ingeniería en Computación"
+    : "Geovanni González | Computer Engineering Portfolio";
 const defaultDescription =
-  "Portfolio of Geovanni Gonzalez, computer engineering student at TEC, Costa Rica.";
+  lang === "es"
+    ? "Portfolio de Geovanni González, estudiante de Ingeniería en Computación del Tecnológico de Costa Rica enfocado en desarrollo de software, sistemas, estructuras de datos y soluciones web."
+    : "Portfolio of Geovanni González, Computer Engineering student at Tecnológico de Costa Rica focused on software engineering, systems, data structures, and practical web solutions.";
+const pageTitle = title || defaultTitle;
+const pageDescription = description || defaultDescription;
 ---
 
 <!doctype html>
@@ -25,21 +31,23 @@ const defaultDescription =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="title" content={title || defaultTitle} />
-    <meta name="description" content={description || defaultDescription} />
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0c0a09" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO & Open Graph -->
     <link rel="canonical" href={Astro.url} />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title || defaultTitle} />
-    <meta property="og:description" content={description || defaultDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content={new URL("/images/profile.webp", Astro.url)} />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={title || defaultTitle} />
-    <meta property="twitter:description" content={description || defaultDescription} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={pageDescription} />
     <meta property="twitter:image" content={new URL("/images/profile.webp", Astro.url)} />
 
     <script type="application/ld+json" is:inline>
@@ -47,16 +55,16 @@ const defaultDescription =
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         "dateCreated": "2024-01-01T00:00:00-06:00",
-        "dateModified": "2025-01-01T00:00:00-06:00",
+        "dateModified": "2026-05-21T00:00:00-06:00",
         "mainEntity": {
           "@type": "Person",
-          "name": "Geovanni Gonzalez",
-          "alternateName": "Geovanni González",
-          "description": "Portafolio de Geovanni Gonzalez, estudiante de Ingeniería en Computación en TEC, Costa Rica.",
+          "name": "Geovanni González",
+          "alternateName": "Geovanni Gonzalez",
+          "description": "Estudiante de Ingeniería en Computación en el Tecnológico de Costa Rica, enfocado en desarrollo de software, sistemas y soluciones web.",
           "image": "https://geovanni-portfolio.vercel.app/images/profile.webp",
           "sameAs": [
-            "https://github.com/Geovanni09",
-            "https://www.linkedin.com/in/geovanni-gonzalez-1b1b3b1b3/"
+            "https://github.com/Geovanni-Gonzalez",
+            "https://www.linkedin.com/in/geovanni-gonzález-aguilar"
           ]
         }
       }
@@ -67,11 +75,10 @@ const defaultDescription =
     <LoadingIndicator color="#f4f4f5" height="2px" />
   </head>
 
-  <body
-    class="font-sans min-h-screen text-[var(--color-text)] transition-colors duration-300"
-    aria-label="Contenido principal"
-    tabindex="0"
-  >
+  <body class="font-sans min-h-screen text-[var(--color-text)] transition-colors duration-300">
+    <a href="#main-content" class="skip-link">
+      {lang === "es" ? "Saltar al contenido principal" : "Skip to main content"}
+    </a>
     <div class="fixed inset-0 -z-20 bg-[var(--color-bg)] transition-colors duration-300"></div>
     <ProgressBar />
     <SpotlightEffect />
@@ -81,10 +88,10 @@ const defaultDescription =
       <WarpBackground
         darkColors={["#f97316", "#ea580c", "#7c2d12"]}
         lightColors={["#fb923c", "#f97316", "#ea580c"]}
-        speed={0.8}
-        swirl={0.9}
-        swirlIterations={10}
-        shapeScale={0.35}
+        speed={0.65}
+        swirl={0.75}
+        swirlIterations={8}
+        shapeScale={0.3}
         client:load
         className="fixed inset-0 -z-10"
         style={{
@@ -100,7 +107,7 @@ const defaultDescription =
     </div>
     <Navbar lang={lang} />
 
-    <main id="main-content" tabindex="-1" aria-label="Sección principal">
+    <main id="main-content" tabindex="-1" aria-label={lang === "es" ? "Contenido principal" : "Main content"}>
       <slot />
     </main>
 
@@ -116,10 +123,9 @@ const defaultDescription =
     height: 100%;
   }
 
-  /* Warp visible y vibrante en modo claro */
   :global([data-theme="light"]) .warp-bg-wrapper {
-    opacity: 0.7;
-    filter: none;
+    opacity: 0.45;
+    filter: saturate(0.75);
     transition: opacity 0.5s;
   }
 </style>

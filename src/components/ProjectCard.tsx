@@ -1,110 +1,130 @@
-import { Github } from 'lucide-react';
-import type { MouseEventHandler } from 'react';
+import { Github } from "lucide-react";
+import type { CSSProperties, MouseEventHandler } from "react";
 
 export interface Project {
-    title: string;
-    description: string;
-    tech: string[];
-    repo: string;
-    image: string;
-    demo?: string;
-    features?: string[];
-    stack?: {
-        language?: string;
-        framework?: string;
-        database?: string;
-        frontend?: string;
-        tools?: string[];
-    };
+  title: string;
+  description: string;
+  tech: string[];
+  repo: string;
+  image?: string;
+  demo?: string;
+  problem?: string;
+  solution?: string;
+  role?: string;
+  impact?: string;
+  features?: string[];
+  stack?: {
+    language?: string;
+    framework?: string;
+    database?: string;
+    frontend?: string;
+    tools?: string[];
+  };
 }
 
 interface ProjectCardProps extends Project {
-    onOpen?: MouseEventHandler<HTMLButtonElement>;
-    tabIndex?: number;
-    "aria-hidden"?: boolean | "true" | "false";
-    style?: React.CSSProperties; // Add style prop
-    detailsLabel?: string;
+  onOpen?: MouseEventHandler<HTMLButtonElement>;
+  style?: CSSProperties;
+  detailsLabel?: string;
+  repoLabel?: string;
 }
 
-export default function ProjectCard({ title, description, tech, repo, image, onOpen, style, detailsLabel = "Detalles" }: ProjectCardProps) {
-    return (
-        <div
-            className="spotlight-card flex flex-col bg-[var(--color-card-bg)] backdrop-blur-2xl border border-[var(--color-border)] rounded-[2rem] shadow-2xl transition-all duration-500 overflow-hidden w-full max-w-lg mx-auto h-full group/card hover:border-orange-500/30 hover:shadow-orange-500/10"
-            style={style}
-        >
-            {/* Imagen */}
-            {image ? (
-                <div className="relative w-full h-48 sm:h-52 overflow-hidden">
-                    <img
-                        src={image}
-                        alt={`Captura de ${title}`}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/card:scale-110 bg-black"
-                        loading="lazy"
-                        width="400"
-                        height="208"
-                        decoding="async"
-                        onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.onerror = null;
-                            target.src = '/images/profile.webp';
-                        }}
-                    />
-                    {/* Overlay refined */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60" />
-                    <div className="absolute inset-0 bg-orange-500/10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
-                </div>
-            ) : (
-                <div className="relative w-full h-48 sm:h-52 flex items-center justify-center bg-zinc-900 text-white/50 text-xs font-black uppercase tracking-widest">
-                    Sin imagen
-                </div>
-            )}
-            {/* Contenido */}
-            <div className="flex flex-col flex-grow p-5 sm:p-8">
-                {/* Título */}
-                <h3 className="text-2xl font-black tracking-tighter text-text/90 group-hover/card:text-orange-500 transition-colors duration-500 dark:text-text/90 light:text-orange-800">
-                    {title}
-                </h3>
+const initialsFromTitle = (title: string) =>
+  title
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
 
-                {/* Descripción */}
-                <p className="mt-4 text-[var(--color-muted)] text-sm sm:text-base leading-relaxed flex-grow font-light tracking-tight border-l-2 border-orange-500/30 pl-4 group-hover/card:border-orange-500/60 transition-all duration-500 dark:text-[var(--color-muted)] light:text-orange-950/80 line-clamp-4 text-pretty">
-                    {description}
-                </p>
-
-                {/* Tecnologías */}
-                {tech?.length > 0 && (
-                    <div className="mt-6 flex flex-wrap gap-2 text-xs">
-                        {tech.map((item, idx) => (
-                            <span
-                                key={idx}
-                                className="px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest border border-orange-500/20 bg-orange-500/5 text-orange-500/90 group-hover/card:bg-orange-500/10 group-hover/card:text-orange-400 transition-all duration-500"
-                            >
-                                {item}
-                            </span>
-                        ))}
-                    </div>
-                )}
-
-                {/* Botones */}
-                <div className="mt-auto pt-6 flex gap-4">
-                    <button
-                        onClick={onOpen}
-                        className="flex-1 inline-flex items-center justify-center bg-transparent hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50 text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-accent)] text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-300"
-                    >
-                        {detailsLabel}
-                    </button>
-                    <a
-                        href={repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group/btn relative flex-1 inline-flex items-center justify-center bg-[var(--color-accent)] text-white text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-xl transition-all duration-500 overflow-hidden shadow-lg hover:shadow-[var(--color-accent)]/30 hover:-translate-y-0.5"
-                        aria-label={`Ver repositorio GitHub de ${title}`}
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                        <Github className="mr-2 w-4 h-4 relative z-10" strokeWidth={2.5} />
-                        <span className="relative z-10">Github</span>
-                    </a>
-                </div>
-            </div>
+export default function ProjectCard({
+  title,
+  description,
+  tech,
+  repo,
+  image,
+  onOpen,
+  style,
+  detailsLabel = "Detalles",
+  repoLabel = "GitHub",
+}: ProjectCardProps) {
+  return (
+    <article
+      className="spotlight-card group/card flex h-full w-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:border-orange-500/30 hover:shadow-orange-500/10"
+      style={style}
+    >
+      {image ? (
+        <div className="relative h-44 w-full overflow-hidden">
+          <img
+            src={image}
+            alt={`Captura de ${title}`}
+            className="absolute inset-0 h-full w-full bg-black object-cover transition-transform duration-1000 group-hover/card:scale-105"
+            loading="lazy"
+            width="520"
+            height="176"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
         </div>
-    );
+      ) : (
+        <div className="relative flex h-44 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-950 via-orange-950 to-zinc-950">
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 30% 20%, rgba(251,146,60,.65), transparent 28%), linear-gradient(135deg, rgba(255,255,255,.08) 1px, transparent 1px)",
+              backgroundSize: "100% 100%, 22px 22px",
+            }}
+          />
+          <span className="relative rounded-2xl border border-white/15 bg-white/10 px-5 py-4 text-3xl font-black tracking-tight text-white shadow-2xl backdrop-blur">
+            {initialsFromTitle(title)}
+          </span>
+        </div>
+      )}
+
+      <div className="flex flex-grow flex-col p-5 sm:p-6">
+        <h3 className="text-xl font-black tracking-tight text-[var(--color-text)] transition-colors duration-500 group-hover/card:text-orange-500">
+          {title}
+        </h3>
+
+        <p className="mt-3 line-clamp-4 flex-grow border-l-2 border-orange-500/30 pl-4 text-pretty text-sm leading-relaxed text-[var(--color-muted)] transition-all duration-500 group-hover/card:border-orange-500/60">
+          {description}
+        </p>
+
+        {tech?.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-2 text-xs">
+            {tech.slice(0, 4).map((item) => (
+              <span
+                key={item}
+                className="rounded-lg border border-orange-500/20 bg-orange-500/5 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-orange-500/90 transition-all duration-500 group-hover/card:bg-orange-500/10 group-hover/card:text-orange-400"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-auto flex gap-3 pt-6">
+          <button
+            onClick={onOpen}
+            className="inline-flex min-h-11 flex-1 items-center justify-center rounded-xl border border-[var(--color-border)] bg-transparent px-4 py-3 text-xs font-bold uppercase tracking-widest text-[var(--color-text)] transition-all duration-300 hover:border-[var(--color-accent)] hover:bg-zinc-100/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 dark:hover:bg-zinc-800/50"
+          >
+            {detailsLabel}
+          </button>
+          <a
+            href={repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/btn relative inline-flex min-h-11 flex-1 items-center justify-center overflow-hidden rounded-xl bg-[var(--color-accent)] px-4 py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[var(--color-accent)]/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+            aria-label={`${repoLabel}: ${title}`}
+          >
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-1000 group-hover/btn:translate-x-full" />
+            <Github className="relative z-10 mr-2 h-4 w-4" strokeWidth={2.5} />
+            <span className="relative z-10">{repoLabel}</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  );
 }

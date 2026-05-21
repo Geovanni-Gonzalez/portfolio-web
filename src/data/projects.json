@@ -1,145 +1,182 @@
 [
-    {
-        "title": "TicTacToe x86 Assembly",
-        "repo": "https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM",
-        "description": {
-            "es": "Juego del Gato (Tic Tac Toe) escrito en ensamblador x86.",
-            "en": "Tic Tac Toe game written in x86 assembly."
-        },
-        "tech": [
-            "Assembly",
-            "x86"
-        ],
-        "image": "/images/default-project.png"
+  {
+    "title": "Mini Waze",
+    "repo": "https://github.com/Geovanni-Gonzalez/MiniWaze-GUI-App",
+    "description": {
+      "es": "Simulador de navegación que modela rutas y conexiones mediante grafos para visualizar decisiones de recorrido.",
+      "en": "Navigation simulator that models routes and connections with graphs to visualize routing decisions."
     },
-    {
-        "title": "Calculadora Multibase",
-        "repo": "https://github.com/Geovanni-Gonzalez/CalculadoraMultibase-DesktopApp",
-        "description": {
-            "es": "Calculadora de escritorio para conversiones entre bases numéricas.",
-            "en": "Desktop calculator for number base conversions."
-        },
-        "tech": [
-            "Electron",
-            "JavaScript",
-            "Node.js"
-        ],
-        "image": "/images/default-project.png"
+    "problem": {
+      "es": "Representar rutas de forma comprensible y aplicar estructuras de grafos a un caso cercano a la navegación real.",
+      "en": "Represent routes clearly and apply graph structures to a practical navigation scenario."
     },
-    {
-        "title": "Match-3 Game",
-        "repo": "https://github.com/Geovanni-Gonzalez/Match-3",
-        "description": {
-            "es": "Juego estilo Match-3 multijugador en tiempo real.",
-            "en": "Real-time multiplayer Match-3 game."
-        },
-        "tech": [
-            "React",
-            "TypeScript",
-            "Node.js"
-        ],
-        "image": "/images/default-project.png"
+    "solution": {
+      "es": "Interfaz de escritorio con creación de nodos, conexiones y cálculo visual de recorridos.",
+      "en": "Desktop interface for creating nodes, connections, and visual route calculations."
     },
-    {
-        "title": "Aventura del Tesoro Perdido",
-        "repo": "https://github.com/Geovanni-Gonzalez/Aventura-del-Tesoro-Perdido",
-        "description": {
-            "es": "Juego de aventura con enfoque lógico.",
-            "en": "Adventure game with logic programming focus."
-        },
-        "tech": [
-            "C#"
-        ],
-        "image": "/images/default-project.png"
+    "role": {
+      "es": "Diseño de la lógica de grafos, estructura de datos e interfaz de usuario.",
+      "en": "Designed graph logic, data structures, and the user interface."
     },
-    {
-        "title": "Analisis de Ventas",
-        "repo": "https://github.com/Geovanni-Gonzalez/AnalisisDeVentas",
-        "description": {
-            "es": "Aplicación para el análisis de datos de ventas.",
-            "en": "Application for sales data analysis."
-        },
-        "tech": [
-            "Python",
-            "Pandas"
-        ],
-        "image": "/images/default-project.png"
+    "impact": {
+      "es": "Demuestra criterio en algoritmos, visualización y traducción de teoría a software usable.",
+      "en": "Shows judgment in algorithms, visualization, and translating theory into usable software."
     },
-    {
-        "title": "Libreria String",
-        "repo": "https://github.com/Geovanni-Gonzalez/LibreriaString",
-        "description": {
-            "es": "Librería personalizada para manipulación de strings.",
-            "en": "Custom library for string manipulation."
-        },
-        "tech": [
-            "C++"
-        ],
-        "image": "/images/default-project.png"
+    "features": {
+      "es": ["Modelado de nodos y aristas", "Visualización de rutas", "Interfaz Java Swing"],
+      "en": ["Node and edge modeling", "Route visualization", "Java Swing interface"]
     },
-    {
-        "title": "Luiki Kart",
-        "repo": "https://github.com/Geovanni-Gonzalez/LuikiKart-WebApp",
-        "description": {
-            "es": "Mini juego inspirado en Mario Kart como aplicación web.",
-            "en": "Mini game inspired by Mario Kart as a web application."
-        },
-        "tech": [
-            "JavaScript",
-            "HTML5",
-            "CSS3"
-        ],
-        "image": "/images/default-project.png"
+    "tech": ["Java", "Swing", "Grafos"],
+    "image": ""
+  },
+  {
+    "title": "Visualizador de Grafos",
+    "repo": "https://github.com/Geovanni-Gonzalez/VisualizadorDeGrafos-GUI-App",
+    "description": {
+      "es": "Herramienta visual para construir, explorar y analizar grafos desde una interfaz de escritorio.",
+      "en": "Visual tool to build, explore, and analyze graphs from a desktop interface."
     },
-    {
-        "title": "Mini Waze",
-        "repo": "https://github.com/Geovanni-Gonzalez/MiniWaze-GUI-App",
-        "description": {
-            "es": "Simulador de navegación basado en grafos.",
-            "en": "Navigation simulator based on graphs."
-        },
-        "tech": [
-            "Java",
-            "Swing"
-        ],
-        "image": "/images/default-project.png"
+    "problem": {
+      "es": "Hacer más tangible el análisis de grafos y sus relaciones para aprendizaje y experimentación.",
+      "en": "Make graph analysis and relationships more tangible for learning and experimentation."
     },
-    {
-        "title": "RISC Matrix App",
-        "repo": "https://github.com/Geovanni-Gonzalez/RISCMatrixApp",
-        "description": {
-            "es": "Aplicación de operaciones de matrices optimizada para RISC.",
-            "en": "Matrix operations application optimized for RISC."
-        },
-        "tech": [
-            "ARM Assembly"
-        ],
-        "image": "/images/default-project.png"
+    "solution": {
+      "es": "Aplicación con representación gráfica, manipulación de elementos y organización visual de relaciones.",
+      "en": "Application with graphical representation, element manipulation, and visual relationship organization."
     },
-    {
-        "title": "Simulador de Procesos",
-        "repo": "https://github.com/Geovanni-Gonzalez/SimuladorDeProcesos-GUI-App",
-        "description": {
-            "es": "Simulador de algoritmos de planificación de CPU.",
-            "en": "CPU scheduling algorithms simulator."
-        },
-        "tech": [
-            "Java",
-            "Swing"
-        ],
-        "image": "/images/default-project.png"
+    "role": {
+      "es": "Implementación de interfaz, estructuras de datos y comportamiento de visualización.",
+      "en": "Implemented the interface, data structures, and visualization behavior."
     },
-    {
-        "title": "Visualizador de Grafos",
-        "repo": "https://github.com/Geovanni-Gonzalez/VisualizadorDeGrafos-GUI-App",
-        "description": {
-            "es": "Herramienta visual para la creación y análisis de grafos.",
-            "en": "Visual tool for graph creation and analysis."
-        },
-        "tech": [
-            "C++",
-            "Qt"
-        ],
-        "image": "/images/default-project.png"
-    }
+    "impact": {
+      "es": "Refuerza habilidades en C++, abstracción, UI de escritorio y pensamiento algorítmico.",
+      "en": "Strengthens C++, abstraction, desktop UI, and algorithmic thinking."
+    },
+    "features": {
+      "es": ["Creación de grafos", "Representación visual", "Análisis de relaciones"],
+      "en": ["Graph creation", "Visual representation", "Relationship analysis"]
+    },
+    "tech": ["C++", "Qt", "Estructuras de datos"],
+    "image": ""
+  },
+  {
+    "title": "Analisis de Ventas",
+    "repo": "https://github.com/Geovanni-Gonzalez/AnalisisDeVentas",
+    "description": {
+      "es": "Aplicación para explorar datos de ventas y convertir registros en lectura útil para decisiones.",
+      "en": "Application for exploring sales data and turning records into useful decision-oriented insight."
+    },
+    "problem": {
+      "es": "Interpretar datos de ventas sin depender solo de revisión manual o cálculos aislados.",
+      "en": "Interpret sales data without relying only on manual review or isolated calculations."
+    },
+    "solution": {
+      "es": "Procesamiento de datos con Python para resumir tendencias, métricas y patrones principales.",
+      "en": "Python data processing to summarize trends, metrics, and key patterns."
+    },
+    "role": {
+      "es": "Limpieza de datos, análisis, estructura del flujo y presentación de resultados.",
+      "en": "Handled data cleaning, analysis, flow structure, and result presentation."
+    },
+    "impact": {
+      "es": "Conecta programación con problemas de negocio y comunicación de información accionable.",
+      "en": "Connects programming with business problems and actionable information."
+    },
+    "features": {
+      "es": ["Procesamiento tabular", "Métricas de ventas", "Lectura de tendencias"],
+      "en": ["Tabular processing", "Sales metrics", "Trend reading"]
+    },
+    "tech": ["Python", "Pandas", "Análisis de datos"],
+    "image": ""
+  },
+  {
+    "title": "Simulador de Procesos",
+    "repo": "https://github.com/Geovanni-Gonzalez/SimuladorDeProcesos-GUI-App",
+    "description": {
+      "es": "Simulador gráfico de algoritmos de planificación de CPU para comparar comportamientos de ejecución.",
+      "en": "Graphical simulator of CPU scheduling algorithms for comparing execution behavior."
+    },
+    "problem": {
+      "es": "Comprender cómo diferentes algoritmos de planificación afectan tiempos y orden de ejecución.",
+      "en": "Understand how scheduling algorithms affect execution times and order."
+    },
+    "solution": {
+      "es": "Interfaz que permite configurar procesos y observar resultados de planificación.",
+      "en": "Interface to configure processes and observe scheduling results."
+    },
+    "role": {
+      "es": "Implementación de reglas de planificación, interfaz y validación de casos.",
+      "en": "Implemented scheduling rules, interface, and case validation."
+    },
+    "impact": {
+      "es": "Evidencia comprensión de sistemas operativos y capacidad de explicar conceptos complejos visualmente.",
+      "en": "Shows operating systems understanding and the ability to explain complex concepts visually."
+    },
+    "features": {
+      "es": ["Configuración de procesos", "Simulación de planificación", "Comparación de resultados"],
+      "en": ["Process configuration", "Scheduling simulation", "Result comparison"]
+    },
+    "tech": ["Java", "Swing", "Sistemas operativos"],
+    "image": ""
+  },
+  {
+    "title": "Match-3 Game",
+    "repo": "https://github.com/Geovanni-Gonzalez/Match-3",
+    "description": {
+      "es": "Juego tipo Match-3 con enfoque en lógica de tablero, interacción y experiencia en tiempo real.",
+      "en": "Match-3 game focused on board logic, interaction, and real-time experience."
+    },
+    "problem": {
+      "es": "Crear una experiencia interactiva que combine reglas de juego, estado compartido y respuesta rápida.",
+      "en": "Create an interactive experience combining game rules, shared state, and fast feedback."
+    },
+    "solution": {
+      "es": "Aplicación web con componentes, lógica de tablero y manejo de eventos de usuario.",
+      "en": "Web application with components, board logic, and user event handling."
+    },
+    "role": {
+      "es": "Desarrollo de lógica de juego, interfaz y estructura frontend.",
+      "en": "Developed game logic, interface, and frontend structure."
+    },
+    "impact": {
+      "es": "Muestra dominio de interacción, estado de aplicación y diseño de reglas.",
+      "en": "Shows command of interaction, application state, and rule design."
+    },
+    "features": {
+      "es": ["Lógica de tablero", "Interacciones en tiempo real", "Componentes frontend"],
+      "en": ["Board logic", "Real-time interactions", "Frontend components"]
+    },
+    "tech": ["React", "TypeScript", "Node.js"],
+    "image": ""
+  },
+  {
+    "title": "TicTacToe x86 Assembly",
+    "repo": "https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM",
+    "description": {
+      "es": "Juego del Gato implementado en ensamblador x86 para practicar control de flujo y lógica a bajo nivel.",
+      "en": "Tic Tac Toe implemented in x86 assembly to practice control flow and low-level logic."
+    },
+    "problem": {
+      "es": "Resolver una lógica de juego conocida usando restricciones de programación de bajo nivel.",
+      "en": "Solve familiar game logic under low-level programming constraints."
+    },
+    "solution": {
+      "es": "Implementación en ensamblador con validación de jugadas, turnos y condiciones de victoria.",
+      "en": "Assembly implementation with move validation, turns, and win conditions."
+    },
+    "role": {
+      "es": "Programación de la lógica completa, flujo de ejecución y validaciones.",
+      "en": "Programmed full logic, execution flow, and validations."
+    },
+    "impact": {
+      "es": "Comunica base técnica fuerte y comprensión de ejecución cercana al hardware.",
+      "en": "Communicates strong technical foundations and near-hardware execution understanding."
+    },
+    "features": {
+      "es": ["Validación de jugadas", "Control de turnos", "Condiciones de victoria"],
+      "en": ["Move validation", "Turn control", "Win conditions"]
+    },
+    "tech": ["Assembly", "x86", "Bajo nivel"],
+    "image": ""
+  }
 ]

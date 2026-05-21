@@ -1,5 +1,5 @@
 ---
-import ProjectCarousel from "../components/ProjectCarousel";
+import ProjectShowcase from "../components/ProjectShowcase";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import GradientTitle from "./GradientTitle.astro";
 import localProjects from "../data/projects.json";
@@ -7,184 +7,52 @@ import localProjects from "../data/projects.json";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const username = "Geovanni-Gonzalez";
-const repos = [
-  "Ahorcado-ConsolApp",
-  "Ahorcado-GUI-App",
-  "Ahorcado-GUI-App-POO",
-  "AnalisisDeVentas",
-  "Aventura-del-Tesoro-Perdido",
-  "BattleshipARM",
-  "BlackJack-WebApp",
-  "CalculadoraMultibase-DesktopApp",
-  "GestionDeFincaAgricola-TUIApp",
-  "GestionLibreria",
-  "Laberinto-WebApp",
-  "LibreriaString",
-  "LuikiKart-WebApp",
-  "Match-3",
-  "MiniWaze-GUI-App",
-  "QuienQuiereSerMillonario-ConsolApp",
-  "RISCMatrixApp",
-  "SimuladorDeProcesos-GUI-App",
-  "SistemaDeGestionPulperia-ConsolApp",
-  "SistemaDePuntoDeVenta-ConsolApp",
-  "SistemaDeVentas--GUI-App",
-  "SistemaDeVentas-GUI-App-V2",
-  "Sudoku-GUI-App",
-  "TicTacToe-x86-ASM",
-  "Trivia-TUIApp",
-  "VisualizadorDeGrafos-GUI-App",
-  "XMLDocument-TreeBuilder",
-];
-
-const headers = {
-  Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
+const pickLocalized = (value: unknown) => {
+  if (typeof value === "string") return value;
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    return (record[lang] || record.es || record.en || "") as string;
+  }
+  return "";
 };
 
-const projects = await Promise.all(
-  repos.map(async (repo) => {
-    try {
-      const res = await fetch(`https://api.github.com/repos/${username}/${repo}`, { headers });
-      if (!res.ok) throw new Error(`Failed to fetch ${repo}`);
-      const data = await res.json();
+const pickLocalizedArray = (value: unknown) => {
+  if (Array.isArray(value)) return value;
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    return (record[lang] || record.es || record.en || []) as string[];
+  }
+  return [];
+};
 
-      let techStack = [];
-      let projectImage = null;
-      let description = data.description || "";
-      let features: string[] = [];
-      let stack: any = null;
-
-      // Leer project-info.json
-      const techFileRes = await fetch(
-        `https://api.github.com/repos/${username}/${repo}/contents/project-info.json`,
-        { headers },
-      );
-
-      if (techFileRes.ok) {
-        const techData = await techFileRes.json();
-        const decoded = Buffer.from(techData.content, "base64").toString("utf-8");
-        const json = JSON.parse(decoded);
-
-        // Determinar qué objeto de idioma usar
-        const langData = json[lang] || json.es || json.en || json;
-
-        // Si el JSON tiene estructura bilingüe (en/es en la raíz)
-        if (json.en || json.es) {
-          techStack = langData.tech || [];
-          description = langData.description || description;
-          features = langData.features || [];
-          stack = langData.stack || null;
-
-          // Manejo de screenshots si existen en el JSON
-          if (langData.screenshots && langData.screenshots.length > 0) {
-            projectImage = langData.screenshots[0];
-          }
-        } else {
-          // Mantener compatibilidad con formato antiguo
-          techStack = json.tech || [];
-          description =
-            json.description?.[lang] ||
-            json.description?.en ||
-            json.description?.es ||
-            json.description ||
-            description;
-
-          if (json.features) {
-            if (Array.isArray(json.features)) {
-              features = json.features;
-            } else {
-              features = json.features[lang] || json.features.en || json.features.es || [];
-            }
-          }
-
-          if (json.stack) {
-            stack = {};
-            for (const [key, value] of Object.entries(json.stack)) {
-              if (typeof value === "object" && !Array.isArray(value) && value !== null) {
-                stack[key] =
-                  (value as any)[lang] || (value as any).en || (value as any).es || value;
-              } else {
-                stack[key] = value;
-              }
-            }
-          }
-        }
-      }
-
-      // Buscar imagen en carpeta screenshots si no se definió en el JSON
-      if (!projectImage) {
-        const screenshotRes = await fetch(
-          `https://api.github.com/repos/${username}/${repo}/contents/screenshots`,
-          { headers },
-        );
-        if (screenshotRes.ok) {
-          const screenshotData = await screenshotRes.json();
-          const firstImage = screenshotData.find(
-            (file: { type: string; name: string; download_url: string }) =>
-              file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/i),
-          );
-          if (firstImage) projectImage = firstImage.download_url;
-        }
-      }
-
-      return {
-        title: data.name,
-        description: description,
-        repo: data.html_url,
-        tech: techStack,
-        image: projectImage || "/images/default-project.png",
-        features,
-        stack,
-      };
-    } catch (e) {
-      console.warn(`Error al obtener datos para ${repo}, usando fallback local:`, e);
-      const local = localProjects.find((p) => p.repo.endsWith(repo));
-      if (local) {
-        return {
-          ...local,
-          description:
-            (local.description as any)[lang] ||
-            (local.description as any).en ||
-            (local.description as any).es ||
-            local.description,
-        };
-      }
-      return null;
-    }
-  }),
-).then((results) => results.filter((p) => p !== null));
+const projects = localProjects.map((project) => ({
+  ...project,
+  description: pickLocalized(project.description),
+  problem: pickLocalized(project.problem),
+  solution: pickLocalized(project.solution),
+  role: pickLocalized(project.role),
+  impact: pickLocalized(project.impact),
+  features: pickLocalizedArray(project.features),
+  image: project.image || undefined,
+}));
 ---
 
 <section
   id="projects"
-  class="relative px-4 sm:px-6 py-20 max-w-6xl mx-auto"
+  class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6"
   data-aos="fade-up"
   data-aos-duration="1000"
 >
   <GradientTitle title={t("projects.title")} />
-  {
-    projects && projects.length > 0 ? (
-      <ProjectCarousel
-        client:load
-        projects={projects as any}
-        lang={lang}
-        detailsLabel={t("projects.details")}
-      />
-    ) : (
-      <div class="text-center text-zinc-400 py-10 bg-zinc-900/50 rounded-xl border border-zinc-800">
-        <p class="text-lg mb-4">
-          {lang === "es" ? "No se pudieron cargar los proyectos." : "Could not load projects."}
-        </p>
-        <a
-          href={`https://github.com/${username}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors"
-        >
-          {t("projects.viewOnGitHub")}
-        </a>
-      </div>
-    )
-  }
+  <p class="mx-auto mb-10 max-w-2xl text-center text-base leading-8 text-[var(--color-muted)]">
+    {t("projects.subtitle")}
+  </p>
+
+  <ProjectShowcase
+    client:load
+    projects={projects as any}
+    lang={lang}
+    detailsLabel={t("projects.details")}
+    repoLabel={t("projects.viewOnGitHub")}
+  />
 </section>

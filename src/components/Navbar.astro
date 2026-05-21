@@ -14,65 +14,49 @@ const homePath = lang === "es" ? "/es/" : "/en/";
 
 const menuItems = [
   { href: isHome ? "#home" : `${homePath}#home`, label: t("nav.home") },
-  { href: isHome ? "#skills" : `${homePath}#skills`, label: t("nav.skills") },
-  {
-    href: isHome ? "#projects" : `${homePath}#projects`,
-    label: t("nav.projects"),
-  },
-  { href: `/${lang === "es" ? "" : "en/"}blog`, label: t("nav.blog") },
   { href: isHome ? "#about" : `${homePath}#about`, label: t("nav.aboutMe") },
-  {
-    href: isHome ? "#contact" : `${homePath}#contact`,
-    label: t("nav.contact"),
-  },
+  { href: isHome ? "#skills" : `${homePath}#skills`, label: t("nav.skills") },
+  { href: isHome ? "#projects" : `${homePath}#projects`, label: t("nav.projects") },
+  { href: `/${lang === "es" ? "" : "en/"}blog`, label: t("nav.blog") },
+  { href: isHome ? "#contact" : `${homePath}#contact`, label: t("nav.contact") },
 ];
 ---
 
 <nav
-  class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl px-6 py-3 rounded-2xl backdrop-blur-xl bg-[var(--color-card-bg)] border border-[var(--color-border)] shadow-lg z-50 flex items-center justify-between transition-all duration-500"
+  class="fixed left-1/2 top-4 z-50 flex w-[95%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-5 py-3 shadow-lg backdrop-blur-xl transition-all duration-500 sm:px-6"
   role="navigation"
-  aria-label="Barra de navegación principal"
+  aria-label={lang === "es" ? "Navegación principal" : "Main navigation"}
 >
-  {/* Logo */}
   <a
     href={isHome ? "#home" : `${homePath}#home`}
-    class="group hover:scale-105 transition-transform duration-300"
-    aria-label="Inicio"
+    class="group rounded-lg transition-transform duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
+    aria-label={lang === "es" ? "Ir al inicio" : "Go to home"}
   >
     <Logo class="h-10 w-auto -my-4 relative z-10 logo-custom" />
   </a>
 
-  {/* Menú Desktop */}
-  <ul
-    class="hidden md:flex gap-8 text-zinc-600 dark:text-zinc-300 font-medium text-sm"
-    role="menubar"
-  >
+  <ul class="hidden gap-6 text-sm font-semibold text-zinc-600 dark:text-zinc-300 md:flex" role="list">
     {
       menuItems.map((item) => (
-        <li role="none">
+        <li>
           <a
             href={item.href}
-            class="nav-link relative py-1 hover:text-[var(--color-text)] transition-colors duration-300"
+            class="nav-link relative rounded-md py-1 hover:text-[var(--color-text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 transition-colors duration-300"
             data-target={item.href.includes("#") ? item.href.split("#")[1] : ""}
-            role="menuitem"
-            tabindex="0"
           >
             {item.label}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full opacity-0 hover:opacity-100" />
           </a>
         </li>
       ))
     }
   </ul>
 
-  {/* Menú Mobile + LangPicker */}
-  <div class="md:hidden flex items-center gap-4 relative">
+  <div class="md:hidden flex items-center gap-3 relative">
     <ThemeToggle client:load />
     <HamburgerMenu menuItems={menuItems} client:load />
     <LangPicker currentLang={lang} client:load />
   </div>
 
-  {/* LangPicker Desktop */}
   <div class="hidden md:flex items-center gap-4">
     <ThemeToggle client:load />
     <LangPicker currentLang={lang} client:load />
@@ -80,24 +64,20 @@ const menuItems = [
 </nav>
 
 <style>
-  /* Custom Logo Logic to bypass potential Tailwind specificity issues */
   .logo-custom {
-    color: #f97316; /* Light Mode Default: Orange */
+    color: #f97316;
     transition: color 0.3s ease;
   }
 
-  /* Light Mode Hover */
   .group:hover .logo-custom {
     color: white;
   }
 
-  /* Dark Mode Default */
   :global(.dark) .logo-custom,
   :global([data-theme="dark"]) .logo-custom {
     color: white;
   }
 
-  /* Dark Mode Hover */
   :global(.dark) .group:hover .logo-custom,
   :global([data-theme="dark"]) .group:hover .logo-custom {
     color: #f97316;
@@ -105,34 +85,26 @@ const menuItems = [
 </style>
 
 <script>
-  // Simple and robust intersection observer for active links
-  const sections = document.querySelectorAll("section[id], div[id='home']");
+  const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  const observerOptions = {
-    threshold: 0.2,
-    rootMargin: "-20% 0px -50% 0px", // Trigger when section is near top/center
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
         const currentId = entry.target.getAttribute("id");
 
         navLinks.forEach((link) => {
-          // Reset to default state
-          link.classList.remove("text-orange-500", "font-bold", "text-[var(--color-text)]");
-          link.classList.add("text-zinc-600", "dark:text-zinc-300");
+          link.classList.remove("text-orange-500", "font-bold");
 
           if (link.getAttribute("data-target") === currentId) {
-            // Set active state
-            link.classList.remove("text-zinc-600", "dark:text-zinc-300");
             link.classList.add("text-orange-500", "font-bold");
           }
         });
-      }
-    });
-  }, observerOptions);
+      });
+    },
+    { threshold: 0.2, rootMargin: "-20% 0px -50% 0px" },
+  );
 
   sections.forEach((section) => observer.observe(section));
 </script>

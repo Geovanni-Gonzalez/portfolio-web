@@ -1,152 +1,146 @@
-import { X, Github, ExternalLink } from 'lucide-react';
-import { useEffect } from 'react';
-import type { Project } from './ProjectCard';
-
-import { ui } from '../i18n/ui';
+import { ExternalLink, Github, X } from "lucide-react";
+import { useEffect, useRef } from "react";
+import type { Project } from "./ProjectCard";
+import { ui } from "../i18n/ui";
 
 interface ProjectModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    project: Project | null;
-    lang: string;
+  isOpen: boolean;
+  onClose: () => void;
+  project: Project | null;
+  lang: string;
 }
 
 export default function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalProps) {
-    const t = (key: string) => {
-        const translations = (ui as any)[lang] || (ui as any)['en'];
-        return translations[key] || key;
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const t = (key: string) => {
+    const translations = (ui as any)[lang] || (ui as any).en;
+    return translations[key] || key;
+  };
+
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
     };
 
-    useEffect(() => {
-        const handleEsc = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose();
-        };
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleEsc);
+      window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+    }
 
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-            window.addEventListener('keydown', handleEsc);
-        } else {
-            document.body.style.overflow = 'unset';
-        }
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, onClose]);
 
-        return () => {
-            window.removeEventListener('keydown', handleEsc);
-            document.body.style.overflow = 'unset';
-        };
-    }, [isOpen, onClose]);
+  if (!isOpen || !project) return null;
 
-    if (!isOpen || !project) return null;
+  const detailBlocks = [
+    { label: t("projects.problem"), value: project.problem },
+    { label: t("projects.solution"), value: project.solution },
+    { label: t("projects.role"), value: project.role },
+    { label: t("projects.impact"), value: project.impact },
+  ].filter((item) => item.value);
 
-    return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-            {/* Backdrop */}
-            <div
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
-                onClick={onClose}
-            ></div>
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button
+        type="button"
+        className="absolute inset-0 cursor-default bg-black/80 backdrop-blur-sm"
+        onClick={onClose}
+        aria-label="Cerrar"
+      />
 
-            {/* Modal Content */}
-            <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-bg border border-text/10 rounded-3xl shadow-2xl flex flex-col md:flex-row modal-animate-in">
+      <div className="modal-animate-in relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-y-auto rounded-2xl border border-white/10 bg-[var(--color-bg)] shadow-2xl md:flex-row">
+        <button
+          ref={closeButtonRef}
+          onClick={onClose}
+          className="absolute right-4 top-4 z-10 rounded-full bg-black/55 p-2 text-white transition-colors hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
+          aria-label="Cerrar detalles del proyecto"
+        >
+          <X className="h-5 w-5" />
+        </button>
 
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-orange-500 transition-colors"
-                >
-                    <X className="w-5 h-5" />
-                </button>
-
-                {/* Image Section (Left/Top) */}
-                <div className="w-full md:w-1/2 h-64 md:h-auto relative bg-black">
-                    {project.image ? (
-                        <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-contain"
-                        />
-                    ) : (
-                        <div className="w-full h-full flex items-center justify-center text-muted">
-                            No image available
-                        </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent md:bg-gradient-to-r"></div>
-                </div>
-
-                {/* Content Section (Right/Bottom) */}
-                <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col">
-                    <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">{project.title}</h2>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                        {project.tech && project.tech.map((t, i) => (
-                            <span key={i} className="px-3 py-1 text-xs font-semibold rounded-full border shadow-sm transition-colors duration-300 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-500/10 dark:border-orange-500/20 dark:text-orange-300 dark:hover:bg-orange-500/20">
-                                {t}
-                            </span>
-                        ))}
-                    </div>
-
-                    <div className="prose prose-invert prose-sm max-w-none text-muted mb-8 flex-grow overflow-y-auto pr-2 custom-scrollbar">
-                        <p>{project.description}</p>
-
-                        {project.features && project.features.length > 0 && (
-                            <div className="mt-6">
-                                <h3 className="text-lg font-bold text-zinc-100 mb-2">{t('projects.keyFeatures')}</h3>
-                                <ul className="list-disc pl-5 space-y-1">
-                                    {project.features.map((feature, idx) => (
-                                        <li key={idx} className="text-zinc-300">{feature}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {project.stack && (
-                            <div className="mt-6">
-                                <h3 className="text-lg font-bold text-zinc-100 mb-2">{t('projects.techStack')}</h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {Object.entries(project.stack).map(([key, value]) => (
-                                        <div key={key} className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700/50">
-                                            <span className="block text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">
-                                                {key.replace(/_/g, ' ')}
-                                            </span>
-                                            <span className="text-sm text-zinc-300">
-                                                {Array.isArray(value) ? value.join(', ') : value}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {project.repo && (
-                            <p className="text-xs text-muted/80 mt-6 break-all font-mono">
-                                <span className="font-semibold text-orange-500/80">Repo:</span> {project.repo}
-                            </p>
-                        )}
-                    </div>
-
-                    <div className="flex gap-4 mt-auto pt-6 border-t border-text/10">
-                        <a
-                            href={project.repo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-text/5 hover:bg-text/10 text-text font-semibold transition-colors border border-text/10"
-                        >
-                            <Github className="w-5 h-5" />
-                            GitHub
-                        </a>
-                        {project.demo && (
-                            <a
-                                href={project.demo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-colors shadow-lg shadow-orange-500/20"
-                            >
-                                <ExternalLink className="w-5 h-5" />
-                                Live Demo
-                            </a>
-                        )}
-                    </div>
-                </div>
+        <div className="relative flex min-h-56 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-950 via-orange-950 to-zinc-950 md:w-2/5">
+          {project.image ? (
+            <img src={project.image} alt={`Captura de ${project.title}`} className="h-full w-full object-cover" />
+          ) : (
+            <div className="p-8 text-center">
+              <p className="text-5xl font-black tracking-tight text-white">{project.title}</p>
+              <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-orange-200">
+                {project.tech?.slice(0, 3).join(" · ")}
+              </p>
             </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent md:bg-gradient-to-r" />
         </div>
-    );
+
+        <div className="flex w-full flex-col p-6 md:w-3/5 md:p-8">
+          <h2 id="project-modal-title" className="text-3xl font-black tracking-tight text-[var(--color-text)]">
+            {project.title}
+          </h2>
+
+          <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">{project.description}</p>
+
+          {project.tech?.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {project.tech.map((item) => (
+                <span key={item} className="rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-bold text-orange-300">
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <div className="mt-6 grid gap-3">
+            {detailBlocks.map((item) => (
+              <section key={item.label} className="rounded-xl border border-[var(--color-border)] bg-white/[0.03] p-4">
+                <h3 className="text-xs font-black uppercase tracking-[0.18em] text-orange-400">{item.label}</h3>
+                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">{item.value}</p>
+              </section>
+            ))}
+          </div>
+
+          {project.features && project.features.length > 0 && (
+            <section className="mt-6">
+              <h3 className="text-xs font-black uppercase tracking-[0.18em] text-orange-400">
+                {t("projects.keyFeatures")}
+              </h3>
+              <ul className="mt-3 grid gap-2 text-sm text-[var(--color-muted)] sm:grid-cols-2">
+                {project.features.map((feature) => (
+                  <li key={feature} className="rounded-lg border border-[var(--color-border)] px-3 py-2">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <div className="mt-8 flex flex-col gap-3 border-t border-[var(--color-border)] pt-6 sm:flex-row">
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--color-border)] px-4 py-3 font-bold text-[var(--color-text)] transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+            >
+              <Github className="h-5 w-5" />
+              {t("projects.viewOnGitHub")}
+            </a>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-orange-600 px-4 py-3 font-bold text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              >
+                <ExternalLink className="h-5 w-5" />
+                {t("projects.demo")}
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
