@@ -4,7 +4,7 @@
 @plugin "@tailwindcss/forms";
 
 @theme inline {
-  --font-sans: var(--font-geist);
+  --font-sans: var(--font-geist); 
 }
 
 :root {
