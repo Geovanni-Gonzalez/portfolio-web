@@ -48,7 +48,7 @@ const techStack = [
         class="absolute bottom-6 left-6 text-white z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
       >
         <p class="font-bold text-2xl">Geovanni González</p>
-        <p class="text-sm text-orange-300 font-medium mt-1">
+        <p class="text-sm text-[var(--secondary)] font-medium mt-1">
           {t("hero.title")}
         </p>
       </div>
@@ -56,13 +56,13 @@ const techStack = [
 
     <!-- 2. Bio Card (Wide) -->
     <div
-      class="spotlight-card md:col-span-2 md:row-span-1 rounded-3xl p-8 sm:p-10 flex flex-col justify-center relative overflow-hidden group transition-all duration-500 hover:shadow-orange-500/10"
+      class="spotlight-card md:col-span-2 md:row-span-1 rounded-3xl p-8 sm:p-10 flex flex-col justify-center relative overflow-hidden group transition-all duration-500"
       data-aos="fade-left"
       data-aos-delay="300"
     >
       <!-- Background effects -->
       <div
-        class="absolute top-0 right-0 w-80 h-80 bg-orange-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-orange-500/10 transition-colors duration-700"
+        class="absolute top-0 right-0 w-80 h-80 bg-[var(--primary-soft)] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-70 transition-colors duration-700"
       >
       </div>
 
@@ -70,23 +70,23 @@ const techStack = [
         <h3 class="text-3xl font-bold text-text mb-6 flex items-center gap-3 tracking-tighter">
           <Icon
             name="mdi:account-circle"
-            class="text-orange-500 w-10 h-10 group-hover:scale-110 transition-transform duration-500"
+            class="text-[var(--primary)] w-10 h-10 group-hover:scale-110 transition-transform duration-500"
           />
           {t("about.title")}
         </h3>
         <p
-          class="text-[var(--color-muted)] leading-relaxed mb-6 text-base sm:text-lg font-light tracking-wide italic border-l-2 border-orange-500/30 pl-6"
+          class="text-[var(--text-secondary)] leading-relaxed mb-6 text-base sm:text-lg font-medium italic border-l-2 border-[var(--primary)] pl-6"
         >
           {t("about.description-1")}
         </p>
-        <p class="text-[var(--color-muted)] leading-relaxed mb-8 text-sm sm:text-base">
+        <p class="text-[var(--text-secondary)] leading-relaxed mb-8 text-sm sm:text-base font-medium">
           {t("about.description-2")}
         </p>
 
         <a
           href={lang === "es" ? cvFileSpanish : cvFileEnglish}
           download
-          class="group/btn relative inline-flex items-center gap-3 px-8 py-3.5 rounded-2xl bg-orange-500/5 dark:bg-orange-500/10 border border-orange-500/20 hover:bg-orange-500 hover:text-white transition-all duration-500 overflow-hidden"
+          class="btn-secondary group/btn relative inline-flex items-center gap-3 px-8 py-3.5 rounded-2xl hover:bg-[var(--primary)] hover:text-[var(--button-primary-text)] transition-all duration-500 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
         >
           <div
             class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"
@@ -114,7 +114,7 @@ const techStack = [
       >
         <div
           class="absolute inset-0"
-          style="background-image: radial-gradient(circle at center, var(--color-accent) 1px, transparent 1px); background-size: 24px 24px;"
+          style="background-image: radial-gradient(circle at center, var(--primary) 1px, transparent 1px); background-size: 24px 24px;"
         >
         </div>
         <div
@@ -125,23 +125,23 @@ const techStack = [
       </div>
 
       <div
-        class="w-20 h-20 rounded-full bg-orange-500/10 flex items-center justify-center relative z-10 group-hover:bg-orange-500/20 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.2)]"
+        class="w-20 h-20 rounded-full bg-[var(--primary-soft)] flex items-center justify-center relative z-10 transition-all duration-500"
       >
         <div
-          class="absolute inset-0 rounded-full border border-orange-500/30 animate-ping opacity-20"
+          class="absolute inset-0 rounded-full border border-[var(--primary)] animate-ping opacity-20"
         >
         </div>
-        <Icon name="mdi:map-marker" class="w-10 h-10 text-orange-500" />
+        <Icon name="mdi:map-marker" class="w-10 h-10 text-[var(--primary)]" />
       </div>
       <div class="text-center relative z-10">
-        <p class="text-xs uppercase tracking-[0.2em] font-black text-orange-500/60 mb-2">
+        <p class="text-xs uppercase tracking-[0.2em] font-black text-[var(--primary)] mb-2">
           {t("about.locationLabel")}
         </p>
-        <p class="text-orange-600 dark:text-text font-black text-2xl tracking-tighter">
+        <p class="text-[var(--text-primary)] font-black text-2xl tracking-tighter">
           {t("about.country")}
         </p>
         <p
-          class="text-orange-900/80 dark:text-muted text-xs font-medium mt-2 max-w-[150px] mx-auto leading-tight"
+          class="text-[var(--text-secondary)] text-xs font-bold mt-2 max-w-[150px] mx-auto leading-tight"
         >
           {t("about.locationDetail")}
         </p>
@@ -155,21 +155,21 @@ const techStack = [
       data-aos-delay="500"
     >
       <div
-        class="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-500/5 rounded-full blur-3xl pointer-events-none"
+        class="absolute -bottom-10 -right-10 w-32 h-32 bg-[var(--primary-soft)] rounded-full blur-3xl pointer-events-none opacity-70"
       >
       </div>
 
       <p
-        class="text-xs uppercase tracking-[0.2em] font-black text-orange-500/60 mb-6 flex items-center gap-2"
+        class="text-xs uppercase tracking-[0.2em] font-black text-[var(--primary)] mb-6 flex items-center gap-2"
       >
-        <Icon name="mdi:code-braces" class="text-orange-500 w-5 h-5" />
+        <Icon name="mdi:code-braces" class="text-[var(--primary)] w-5 h-5" />
         {t("about.coreStack")}
       </p>
       <div class="flex flex-wrap gap-4 relative z-10">
         {
           techStack.map((tech) => (
             <div
-              class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-text/5 border border-text/10 hover:bg-orange-500/10 hover:border-orange-500/30 transition-all duration-300 group/item hover:-translate-y-1"
+              class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[var(--surface-elevated)] border border-[var(--card-border)] hover:bg-[var(--surface)] hover:border-[var(--primary)] transition-all duration-300 group/item hover:-translate-y-1"
               title={tech.name}
             >
               <Icon

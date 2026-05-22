@@ -20,13 +20,13 @@ const footerLinks = [
 ---
 
 <footer
-  class="relative z-10 mt-16 border-t border-[var(--color-border)] bg-[var(--color-card-bg)] py-8 text-[var(--color-text)] shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.1)] backdrop-blur-xl md:mt-24 md:py-12"
+  class="relative z-10 mt-16 border-t border-[var(--card-border)] bg-[var(--footer-bg)] py-8 text-[var(--text-primary)] shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.16)] backdrop-blur-xl md:mt-24 md:py-12"
 >
   <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-4 sm:px-6 md:flex-row md:gap-10">
     <nav class="flex flex-col flex-wrap items-center gap-4 text-base font-semibold sm:flex-row sm:gap-8" aria-label={lang === "es" ? "Enlaces del pie de página" : "Footer links"}>
       {
         footerLinks.map((link) => (
-          <a href={link.href} class="rounded-md transition-colors duration-200 hover:text-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400">
+          <a href={link.href} class="rounded-md transition-colors duration-200 hover:text-[var(--primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]">
             {link.label}
           </a>
         ))
@@ -39,7 +39,7 @@ const footerLinks = [
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        class="rounded-full border border-[var(--color-card-border)] bg-[var(--color-card-bg)] p-3 text-[var(--color-text)] shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500 hover:text-orange-500 hover:shadow-orange-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
+        class="rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] p-3 text-[var(--text-primary)] shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
       >
         <Icon name="mdi:github" class="h-6 w-6" aria-hidden="true" />
       </a>
@@ -48,17 +48,17 @@ const footerLinks = [
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        class="rounded-full border border-[var(--color-card-border)] bg-[var(--color-card-bg)] p-3 text-[var(--color-text)] shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:text-blue-500 hover:shadow-blue-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
+        class="rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] p-3 text-[var(--text-primary)] shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[var(--link)] hover:text-[var(--link)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
       >
         <Icon name="mdi:linkedin" class="h-6 w-6" aria-hidden="true" />
       </a>
     </div>
   </div>
 
-  <div class="mt-8 border-t border-text/10 pt-4 md:mt-10 md:pt-6">
-    <p class="text-center text-sm tracking-wide text-muted/80">
+  <div class="mt-8 border-t border-[var(--card-border)] pt-4 md:mt-10 md:pt-6">
+    <p class="text-center text-sm font-medium tracking-wide text-[var(--text-secondary)]">
       © {new Date().getFullYear()}
-      <span class="font-semibold text-text"> · {t("footer.copyright")}</span>
+      <span class="font-semibold text-[var(--text-primary)]"> · {t("footer.copyright")}</span>
     </p>
   </div>
 </footer>

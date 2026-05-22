@@ -31,7 +31,7 @@ export default function LangPicker({ currentLang }) {
         aria-haspopup="true"
         aria-expanded={open}
         type="button"
-        className="inline-flex items-center px-4 py-2 bg-[var(--color-card-bg)] backdrop-blur-xl text-[var(--color-text)] text-sm font-medium rounded-full shadow-sm border border-[var(--color-card-border)] hover:scale-105 hover:border-orange-400 hover:text-orange-400 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50"
+        className="inline-flex items-center px-4 py-2 bg-[var(--card-bg)] backdrop-blur-xl text-[var(--text-primary)] text-sm font-medium rounded-full shadow-sm border border-[var(--card-border)] hover:scale-105 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-opacity-50"
       >
         {languages[currentLang]}
         <svg
@@ -49,11 +49,11 @@ export default function LangPicker({ currentLang }) {
       {/* Dropdown */}
       <div
         className={clsx(
-          'absolute right-0 mt-2 w-36 sm:w-40 md:w-48 rounded-xl shadow-2xl bg-[var(--color-card-bg)] backdrop-blur-xl border border-[var(--color-card-border)] ring-1 ring-orange-400/20 transition-all duration-500 overflow-hidden z-50',
+          'absolute right-0 mt-2 w-36 sm:w-40 md:w-48 rounded-xl shadow-2xl bg-[var(--card-bg)] backdrop-blur-xl border border-[var(--card-border)] ring-1 ring-[var(--primary-soft)] transition-all duration-500 overflow-hidden z-50',
           open ? 'max-h-80 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'
         )}
       >
-        <ul className="flex flex-col gap-1 text-[var(--color-text)] text-sm">
+        <ul className="flex flex-col gap-1 text-[var(--text-primary)] text-sm">
           {Object.entries(languages).map(([lang, label], index) => (
             <li
               key={lang}
@@ -65,7 +65,7 @@ export default function LangPicker({ currentLang }) {
             >
               <button
                 onClick={() => changeLanguage(lang)}
-                className="w-full text-left px-4 py-2 rounded-lg hover:bg-orange-500/10 hover:text-orange-400 transition-all duration-300 ease-in-out"
+                className="w-full text-left px-4 py-2 rounded-lg hover:bg-[var(--primary-soft)] hover:text-[var(--primary)] transition-all duration-300 ease-in-out"
                 type="button"
               >
                 {label}

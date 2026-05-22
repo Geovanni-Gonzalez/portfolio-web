@@ -11,19 +11,19 @@ const {
   underline = true,
 } = Astro.props;
 
-const baseColor = color1 ? `text-${color1}` : "text-text";
-const underlineColor = color2 ? `bg-${color2}-500` : "bg-orange-500";
+const baseColor = color1 ? (String(color1).startsWith("text-") ? color1 : `text-${color1}`) : "text-[var(--text-primary)]";
+const underlineColor = color2 ? (String(color2).startsWith("bg-") ? color2 : `bg-${color2}-500`) : "bg-[var(--primary)]";
 const alignment = centered ? "text-center mx-auto justify-center" : "text-left";
 ---
 
 <div class={`w-fit mb-6 relative flex items-center gap-2 ${alignment}`}>
   {
     icon && (
-      <Icon name={icon} class={`w-6 h-6 ${color1 ? baseColor : "text-[var(--color-text)]"}`} />
+      <Icon name={icon} class={`w-6 h-6 ${color1 ? baseColor : "text-[var(--text-primary)]"}`} />
     )
   }
   <h2
-    class={`text-3xl md:text-4xl font-bold tracking-tight ${icon ? baseColor : "text-[var(--color-text)]"}`}
+    class={`text-3xl md:text-4xl font-bold tracking-tight ${icon ? baseColor : "text-[var(--text-primary)]"}`}
   >
     {title}
   </h2>

@@ -51,7 +51,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <article
-      className="spotlight-card group/card flex h-full w-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:border-orange-500/30 hover:shadow-orange-500/10"
+      className="spotlight-card group/card flex h-full w-full flex-col overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:border-[var(--primary)]"
       style={style}
     >
       {image ? (
@@ -65,15 +65,15 @@ export default function ProjectCard({
             height="176"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
       ) : (
-        <div className="relative flex h-44 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-950 via-orange-950 to-zinc-950">
+        <div className="relative flex h-44 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--background-secondary)] via-[var(--surface)] to-[var(--secondary)]">
           <div
             className="absolute inset-0 opacity-30"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 30% 20%, rgba(251,146,60,.65), transparent 28%), linear-gradient(135deg, rgba(255,255,255,.08) 1px, transparent 1px)",
+                "radial-gradient(circle at 30% 20%, var(--primary-soft), transparent 30%), linear-gradient(135deg, rgba(255,255,255,.08) 1px, transparent 1px)",
               backgroundSize: "100% 100%, 22px 22px",
             }}
           />
@@ -84,11 +84,11 @@ export default function ProjectCard({
       )}
 
       <div className="flex flex-grow flex-col p-5 sm:p-6">
-        <h3 className="text-xl font-black tracking-tight text-[var(--color-text)] transition-colors duration-500 group-hover/card:text-orange-500">
+        <h3 className="text-xl font-black tracking-tight text-[var(--text-primary)] transition-colors duration-500 group-hover/card:text-[var(--primary)]">
           {title}
         </h3>
 
-        <p className="mt-3 line-clamp-4 flex-grow border-l-2 border-orange-500/30 pl-4 text-pretty text-sm leading-relaxed text-[var(--color-muted)] transition-all duration-500 group-hover/card:border-orange-500/60">
+        <p className="mt-3 line-clamp-4 flex-grow border-l-2 border-[var(--primary)] pl-4 text-pretty text-sm font-medium leading-7 text-[var(--text-secondary)] transition-all duration-500 group-hover/card:border-[var(--secondary)]">
           {description}
         </p>
 
@@ -97,7 +97,7 @@ export default function ProjectCard({
             {tech.slice(0, 4).map((item) => (
               <span
                 key={item}
-                className="rounded-lg border border-orange-500/20 bg-orange-500/5 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-orange-500/90 transition-all duration-500 group-hover/card:bg-orange-500/10 group-hover/card:text-orange-400"
+                className="badge-primary rounded-lg border px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] transition-all duration-500 group-hover/card:bg-[var(--secondary-soft)] group-hover/card:text-[var(--secondary)]"
               >
                 {item}
               </span>
@@ -108,7 +108,7 @@ export default function ProjectCard({
         <div className="mt-auto flex gap-3 pt-6">
           <button
             onClick={onOpen}
-            className="inline-flex min-h-11 flex-1 items-center justify-center rounded-xl border border-[var(--color-border)] bg-transparent px-4 py-3 text-xs font-bold uppercase tracking-widest text-[var(--color-text)] transition-all duration-300 hover:border-[var(--color-accent)] hover:bg-zinc-100/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 dark:hover:bg-zinc-800/50"
+            className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center rounded-xl px-4 py-3 text-xs font-black uppercase tracking-[0.12em] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--secondary)]"
           >
             {detailsLabel}
           </button>
@@ -116,7 +116,7 @@ export default function ProjectCard({
             href={repo}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn relative inline-flex min-h-11 flex-1 items-center justify-center overflow-hidden rounded-xl bg-[var(--color-accent)] px-4 py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[var(--color-accent)]/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+            className="btn-primary group/btn relative inline-flex min-h-11 flex-1 items-center justify-center overflow-hidden rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] shadow-lg transition-all duration-500 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             aria-label={`${repoLabel}: ${title}`}
           >
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-1000 group-hover/btn:translate-x-full" />

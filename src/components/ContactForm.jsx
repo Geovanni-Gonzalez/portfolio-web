@@ -49,21 +49,21 @@ export default function ContactForm({ translations, formId }) {
   const isFloating = (name) => formData[name] || focused[name];
 
   return (
-    <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-card-bg)] backdrop-blur-2xl shadow-2xl flex flex-col gap-8 relative overflow-hidden group/form transition-all duration-500 hover:border-orange-500/20" aria-live="polite" aria-busy={status === 'submitting'}>
+    <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-2xl shadow-[var(--shadow-card)] flex flex-col gap-8 relative overflow-hidden group/form transition-all duration-500 hover:border-[var(--primary)]" aria-live="polite" aria-busy={status === 'submitting'}>
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none group-hover/form:bg-orange-500/10 transition-colors" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--secondary-soft)] rounded-full blur-[110px] opacity-60 pointer-events-none transition-colors" />
 
       {/* Success/Error overlays for better feedback */}
       {status === 'success' && (
-        <div role="status" className="absolute inset-0 bg-[var(--color-bg)]/95 backdrop-blur-xl z-20 flex flex-col items-center justify-center p-8 text-center animate-modalEnter">
-          <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/30">
-            <CheckCircle className="w-10 h-10 text-green-500 animate-bounce" />
+        <div role="status" className="absolute inset-0 bg-[var(--background)]/95 backdrop-blur-xl z-20 flex flex-col items-center justify-center p-8 text-center animate-modalEnter">
+          <div className="w-20 h-20 rounded-full bg-[var(--success-soft)] flex items-center justify-center mb-6 border border-[var(--success)]/30">
+            <CheckCircle className="w-10 h-10 text-[var(--success)] animate-bounce" />
           </div>
-          <h4 className="text-2xl font-black tracking-tighter mb-2 text-[var(--color-text)]">{translations.sent}</h4>
-          <p className="text-[var(--color-muted)] text-sm font-light">{translations.success || 'Gracias por tu mensaje. Responderé pronto.'}</p>
+          <h4 className="text-2xl font-black tracking-tighter mb-2 text-[var(--text-primary)]">{translations.sent}</h4>
+          <p className="text-[var(--text-secondary)] text-sm font-medium">{translations.success || 'Gracias por tu mensaje. Responderé pronto.'}</p>
           <button
             onClick={() => setStatus('idle')}
-            className="mt-8 px-8 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-white/5 transition-colors text-sm font-bold uppercase tracking-widest text-[var(--color-text)]"
+            className="btn-secondary mt-8 px-8 py-2.5 rounded-xl transition-colors text-sm font-bold uppercase tracking-widest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             type="button"
           >
             OK
@@ -72,7 +72,7 @@ export default function ContactForm({ translations, formId }) {
       )}
 
       <div className="relative group/input">
-        <label htmlFor="name" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('name') ? '-top-3 text-[10px] text-orange-500 bg-[var(--color-card-bg)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--color-muted)] text-sm'}`}>
+        <label htmlFor="name" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('name') ? '-top-3 text-[10px] text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
           {translations.name}
         </label>
         <input
@@ -85,13 +85,13 @@ export default function ContactForm({ translations, formId }) {
           onBlur={handleBlur}
           required
           placeholder={focused.name ? translations.namePlaceholder : ""}
-          className="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-[var(--color-text)] placeholder-[var(--color-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/10 transition-all duration-300 font-medium pt-5"
+          className="w-full rounded-2xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-soft)] transition-all duration-300 font-medium pt-5"
           aria-required="true"
         />
       </div>
 
       <div className="relative group/input">
-        <label htmlFor="email" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('email') ? '-top-3 text-[10px] text-orange-500 bg-[var(--color-card-bg)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--color-muted)] text-sm'}`}>
+        <label htmlFor="email" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('email') ? '-top-3 text-[10px] text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
           {translations.email}
         </label>
         <input
@@ -104,12 +104,12 @@ export default function ContactForm({ translations, formId }) {
           onBlur={handleBlur}
           required
           placeholder={focused.email ? translations.emailPlaceholder : ""}
-          className="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-[var(--color-text)] placeholder-[var(--color-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/10 transition-all duration-300 font-medium pt-5"
+          className="w-full rounded-2xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-soft)] transition-all duration-300 font-medium pt-5"
         />
       </div>
 
       <div className="relative group/input">
-        <label htmlFor="message" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('message') ? '-top-3 text-[10px] text-orange-500 bg-[var(--color-card-bg)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--color-muted)] text-sm'}`}>
+        <label htmlFor="message" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('message') ? '-top-3 text-[10px] text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
           {translations.message}
         </label>
         <textarea
@@ -122,14 +122,14 @@ export default function ContactForm({ translations, formId }) {
           onBlur={handleBlur}
           required
           placeholder={focused.message ? translations.messagePlaceholder : ""}
-          className="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-[var(--color-text)] placeholder-[var(--color-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/10 resize-none transition-all duration-300 font-medium pt-5 min-h-[160px]"
+          className="w-full rounded-2xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-soft)] resize-none transition-all duration-300 font-medium pt-5 min-h-[160px]"
         ></textarea>
       </div>
 
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="group/btn relative w-full py-5 rounded-2xl font-black text-white bg-orange-600 shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-1 active:translate-y-0"
+        className="btn-primary group/btn relative w-full py-5 rounded-xl font-black transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-1 active:translate-y-0"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
 

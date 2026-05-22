@@ -27,16 +27,16 @@ export default function ScrollToTop() {
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg backdrop-blur-md transition-all duration-300 transform border border-orange-400/20 group
+            className={`fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg backdrop-blur-md transition-all duration-300 transform border border-[var(--card-border)] group
         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}
-        bg-white/80 dark:bg-black/50 text-orange-600 dark:text-orange-400 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:scale-110 hover:shadow-orange-500/30
+        bg-[var(--card-bg)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--button-primary-text)] hover:scale-110
       `}
             aria-label="Volver arriba"
         >
             <ArrowUp className="w-6 h-6 stroke-[3px]" />
 
             {/* Ripple effect or glow */}
-            <span className="absolute inset-0 rounded-full bg-orange-400/20 opacity-0 group-hover:opacity-100 animate-pulse -z-10"></span>
+            <span className="absolute inset-0 rounded-full bg-[var(--primary-soft)] opacity-0 group-hover:opacity-100 animate-pulse -z-10"></span>
         </button>
     );
 }

@@ -187,29 +187,29 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
         aria-label={lang === "es" ? "Cerrar paleta de comandos" : "Close command palette"}
       />
 
-      <div className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/90 shadow-2xl backdrop-blur-xl">
-        <div className="flex items-center border-b border-white/5 px-4 py-4">
-          <Search className="mr-3 h-5 w-5 text-zinc-400" aria-hidden="true" />
+      <div className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--background)] shadow-2xl backdrop-blur-xl">
+        <div className="flex items-center border-b border-[var(--card-border)] px-4 py-4">
+          <Search className="mr-3 h-5 w-5 text-[var(--text-secondary)]" aria-hidden="true" />
           <input
             type="text"
             placeholder={t.placeholder}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            className="flex-grow border-none bg-transparent text-lg text-zinc-100 outline-none placeholder-zinc-500"
+            className="flex-grow border-none bg-transparent text-lg text-[var(--text-primary)] outline-none placeholder:text-[var(--text-muted)]"
             autoFocus
           />
-          <kbd className="hidden rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs font-semibold text-zinc-500 sm:block">
+          <kbd className="hidden rounded-md border border-[var(--card-border)] bg-[var(--surface-elevated)] px-2 py-1 text-xs font-bold text-[var(--text-secondary)] sm:block">
             Esc
           </kbd>
         </div>
 
         <div className="custom-scrollbar max-h-[60vh] overflow-y-auto p-2">
           {filteredActions.length === 0 ? (
-            <div className="py-8 text-center text-sm text-zinc-500">{t.noResults}</div>
+            <div className="py-8 text-center text-sm font-medium text-[var(--text-secondary)]">{t.noResults}</div>
           ) : (
             Object.entries(groupedActions).map(([group, groupActions]) => (
               <div key={group} className="mb-2">
-                <h4 className="px-2 py-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                <h4 className="px-2 py-1.5 text-xs font-black uppercase tracking-wider text-[var(--text-secondary)]">
                   {t.groups[group as keyof typeof t.groups]}
                 </h4>
                 {groupActions.map((action) => {
@@ -227,15 +227,15 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
                       onMouseEnter={() => setSelectedIndex(absoluteIndex)}
                       className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-all duration-200 ${
                         isSelected
-                          ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                          : "text-zinc-300 hover:bg-white/5"
+                          ? "bg-[var(--primary)] text-[var(--button-primary-text)] shadow-lg"
+                          : "text-[var(--text-secondary)] hover:bg-[var(--surface-elevated)] hover:text-[var(--text-primary)]"
                       }`}
                     >
                       <span className="flex items-center gap-3">
-                        <span className={`rounded-lg p-2 ${isSelected ? "bg-white/20" : "bg-white/5 text-zinc-400"}`}>
+                        <span className={`rounded-lg border border-[var(--card-border)] p-2 ${isSelected ? "bg-white/20 text-[var(--button-primary-text)]" : "bg-[var(--surface-elevated)] text-[var(--text-secondary)]"}`}>
                           {action.icon}
                         </span>
-                        <span className={`font-medium ${isSelected ? "text-white" : "text-zinc-200"}`}>
+                        <span className={`font-semibold ${isSelected ? "text-[var(--button-primary-text)]" : "text-[var(--text-primary)]"}`}>
                           {action.label}
                         </span>
                       </span>
@@ -248,13 +248,13 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-white/5 bg-white/[0.02] px-4 py-2 text-[10px] text-zinc-500">
+        <div className="flex items-center justify-between border-t border-[var(--card-border)] bg-[var(--surface-elevated)] px-4 py-2 text-[10px] font-medium text-[var(--text-secondary)]">
           <div className="flex gap-2">
             <span>
-              <strong className="text-zinc-400">↑↓</strong> navigate
+              <strong className="text-[var(--text-primary)]">↑↓</strong> navigate
             </span>
             <span>
-              <strong className="text-zinc-400">Enter</strong> select
+              <strong className="text-[var(--text-primary)]">Enter</strong> select
             </span>
           </div>
           <div>Portfolio Command v1.0</div>

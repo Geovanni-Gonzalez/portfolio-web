@@ -10,8 +10,8 @@ const t = useTranslations(lang);
   <div
     class="min-h-screen flex flex-col items-center justify-center text-center px-6"
   >
-    <h1 class="text-9xl font-black text-orange-500 mb-4 animate-pulse">404</h1>
-    <h2 class="text-3xl md:text-5xl font-bold text-[var(--color-text)] mb-8">
+    <h1 class="text-9xl font-black text-[var(--primary)] mb-4 animate-pulse">404</h1>
+    <h2 class="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-8">
       {lang === "es" ? "Página no encontrada" : "Page Not Found"}
     </h2>
     <p class="text-xl text-muted max-w-lg mb-12">
@@ -23,7 +23,7 @@ const t = useTranslations(lang);
     </p>
     <a
       href="/"
-      class="px-8 py-4 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50"
+      class="btn-primary px-8 py-4 rounded-full font-bold transition-all shadow-lg"
     >
       {lang === "es" ? "Volver al inicio" : "Go back home"}
     </a>

@@ -69,7 +69,7 @@ export default function ProjectCarousel({ projects, lang, detailsLabel }: Projec
     return (
         <>
             <div
-                className="relative w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto bg-gradient-to-br from-bg/70 via-muted/10 to-bg/70 backdrop-blur-lg rounded-2xl p-6 shadow-lg overflow-hidden border border-text/10"
+                className="relative w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto bg-[var(--card-bg)] backdrop-blur-lg rounded-2xl p-6 shadow-lg overflow-hidden border border-[var(--card-border)]"
                 role="region"
                 aria-label="Carrusel de proyectos"
                 tabIndex={0}
@@ -98,7 +98,7 @@ export default function ProjectCarousel({ projects, lang, detailsLabel }: Projec
                     {/* Flecha Izquierda */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-600/80 hover:scale-110 transition-all text-white rounded-full p-3 shadow-md backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-[var(--primary)] hover:scale-110 transition-all text-white rounded-full p-3 shadow-md backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                         aria-label="Anterior"
                         tabIndex={0}
                     >
@@ -108,7 +108,7 @@ export default function ProjectCarousel({ projects, lang, detailsLabel }: Projec
                     {/* Flecha Derecha */}
                     <button
                         onClick={nextSlide}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-600/80 hover:scale-110 transition-all text-white rounded-full p-3 shadow-md backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-[var(--primary)] hover:scale-110 transition-all text-white rounded-full p-3 shadow-md backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                         aria-label="Siguiente"
                         tabIndex={0}
                     >
@@ -122,8 +122,8 @@ export default function ProjectCarousel({ projects, lang, detailsLabel }: Projec
                         <button
                             key={idx}
                             onClick={() => setCurrent(idx)}
-                            className={`w-3 h-3 rounded-full ${idx === current ? "bg-orange-500 ring-2 ring-orange-400" : "bg-text/20"
-                                } transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400`}
+                            className={`w-3 h-3 rounded-full ${idx === current ? "bg-[var(--primary)] ring-2 ring-[var(--primary)]" : "bg-[var(--text-muted)]"
+                                } transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]`}
                             aria-label={`Ir al proyecto ${idx + 1}`}
                             aria-current={idx === current ? "true" : undefined}
                             tabIndex={0}

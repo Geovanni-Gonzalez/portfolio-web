@@ -7,6 +7,12 @@ export const theme = {
             accent: 'var(--color-accent)',
             accentLight: 'var(--color-accent-light)',
             muted: 'var(--color-muted)',
+            background: 'var(--background)',
+            surface: 'var(--surface)',
+            primary: 'var(--primary)',
+            secondary: 'var(--secondary)',
+            link: 'var(--link)',
+            border: 'var(--border)',
         }
     }
 };

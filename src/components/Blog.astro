@@ -20,9 +20,9 @@ const posts = (await getCollection("blog"))
       posts.map((post) => (
         <a
           href={`/blog/${post.slug}`}
-          class="spotlight-card group block p-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] backdrop-blur-2xl hover:border-orange-500/30 transition-all duration-300 blog-card"
+          class="spotlight-card group block p-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-2xl hover:border-[var(--primary)] transition-all duration-300"
         >
-          <div class="flex items-center gap-2 text-xs text-orange-400 font-bold mb-3 uppercase tracking-widest">
+          <div class="flex items-center gap-2 text-xs text-[var(--secondary)] font-bold mb-3 uppercase tracking-widest">
             <Icon name="mdi:calendar" class="w-4 h-4" />
             {post.data.date
               ? post.data.date.toLocaleDateString(lang === "es" ? "es-ES" : "en-US", {
@@ -32,11 +32,11 @@ const posts = (await getCollection("blog"))
                 })
               : ""}
           </div>
-          <h3 class="text-xl font-bold mb-2 group-hover:text-accent transition-colors blog-title">
+          <h3 class="text-xl font-bold mb-2 text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
             {post.data.title}
           </h3>
-          <p class="text-sm line-clamp-2 leading-relaxed blog-desc">{post.data.description}</p>
-          <div class="mt-4 flex items-center gap-2 text-accent text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-sm line-clamp-2 leading-relaxed text-[var(--text-secondary)]">{post.data.description}</p>
+          <div class="mt-4 flex items-center gap-2 text-[var(--link)] text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
             {lang === "es" ? "Leer más" : "Read more"}
             <Icon name="mdi:arrow-right" class="w-4 h-4" />
           </div>
@@ -46,40 +46,7 @@ const posts = (await getCollection("blog"))
   </div>
 
   <div class="mt-12 text-center">
-    <p class="text-muted italic text-sm">Próximamente más artículos...</p>
+    <p class="text-[var(--text-secondary)] italic text-sm">Próximamente más artículos...</p>
   </div>
 </section>
 
-<style>
-  /* Blog Card Styling */
-  /* Blog Card Styling */
-  /* Rely on standard classes + variable for consistency */
-  /* .blog-card override removed to use --color-card-bg */
-
-  /* Blog Title */
-  .blog-title {
-    color: #9a3412;
-  }
-
-  :global([data-theme="light"]) .blog-title {
-    color: #ff9165 !important; /* Soft Orange (Matching Education) */
-  }
-
-  :global([data-theme="dark"]) .blog-title {
-    color: #f4f4f5 !important; /* White */
-  }
-
-  /* Blog Description */
-  .blog-desc {
-    color: #52525b;
-  }
-
-  :global([data-theme="light"]) .blog-desc {
-    color: #431407 !important; /* Very Dark Brown for readability */
-    opacity: 0.8;
-  }
-
-  :global([data-theme="dark"]) .blog-desc {
-    color: #a1a1aa !important; /* Zinc-400 */
-  }
-</style>

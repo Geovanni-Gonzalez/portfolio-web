@@ -24,25 +24,25 @@ const menuItems = [
 ---
 
 <nav
-  class="fixed left-1/2 top-4 z-50 flex w-[95%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-5 py-3 shadow-lg backdrop-blur-xl transition-all duration-500 sm:px-6"
+  class="fixed left-1/2 top-4 z-50 flex w-[95%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-2xl border border-[var(--card-border)] bg-[var(--navbar-bg)] px-5 py-3 shadow-lg backdrop-blur-xl transition-all duration-500 sm:px-6"
   role="navigation"
   aria-label={lang === "es" ? "Navegación principal" : "Main navigation"}
 >
   <a
     href={isHome ? "#home" : `${homePath}#home`}
-    class="group rounded-lg transition-transform duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
+    class="group rounded-lg transition-transform duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
     aria-label={lang === "es" ? "Ir al inicio" : "Go to home"}
   >
     <Logo class="h-10 w-auto -my-4 relative z-10 logo-custom" />
   </a>
 
-  <ul class="hidden gap-6 text-sm font-semibold text-zinc-600 dark:text-zinc-300 md:flex" role="list">
+  <ul class="hidden gap-6 text-sm font-bold text-[var(--text-secondary)] md:flex" role="list">
     {
       menuItems.map((item) => (
         <li>
           <a
             href={item.href}
-            class="nav-link relative rounded-md py-1 hover:text-[var(--color-text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 transition-colors duration-300"
+            class="nav-link relative rounded-md py-1 hover:text-[var(--text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)] transition-colors duration-300"
             data-target={item.href.includes("#") ? item.href.split("#")[1] : ""}
           >
             {item.label}
@@ -66,12 +66,12 @@ const menuItems = [
 
 <style>
   .logo-custom {
-    color: #f97316;
+    color: var(--primary);
     transition: color 0.3s ease;
   }
 
   .group:hover .logo-custom {
-    color: white;
+    color: var(--text-primary);
   }
 
   :global(.dark) .logo-custom,
@@ -81,7 +81,7 @@ const menuItems = [
 
   :global(.dark) .group:hover .logo-custom,
   :global([data-theme="dark"]) .group:hover .logo-custom {
-    color: #f97316;
+    color: var(--primary);
   }
 </style>
 
@@ -96,10 +96,10 @@ const menuItems = [
         const currentId = entry.target.getAttribute("id");
 
         navLinks.forEach((link) => {
-          link.classList.remove("text-orange-500", "font-bold");
+          link.classList.remove("active-nav-link", "font-bold");
 
           if (link.getAttribute("data-target") === currentId) {
-            link.classList.add("text-orange-500", "font-bold");
+            link.classList.add("active-nav-link", "font-bold");
           }
         });
       });
@@ -109,3 +109,9 @@ const menuItems = [
 
   sections.forEach((section) => observer.observe(section));
 </script>
+
+<style is:global>
+  .active-nav-link {
+    color: var(--primary);
+  }
+</style>

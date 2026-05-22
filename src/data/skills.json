@@ -13,7 +13,7 @@
           { "name": "TypeScript", "level": "Intermedio", "icon": "logos:typescript-icon" },
           { "name": "Haskell", "level": "Intermedio", "icon": "logos:haskell-icon" },
           { "name": "Assembly ARM/x86", "level": "Intermedio", "icon": "mdi:cpu-64-bit" },
-          { "name": "Prolog", "level": "Intermedio", "icon": "mdi:brain" },
+          { "name": "Prolog", "level": "Intermedio", "icon": "mdi:head-cog-outline" },
           { "name": "SQL", "level": "Intermedio", "icon": "logos:mysql" },
           { "name": "C#", "level": "Básico", "icon": "logos:c-sharp" }
         ]
@@ -74,7 +74,7 @@
           { "name": "TypeScript", "level": "Intermediate", "icon": "logos:typescript-icon" },
           { "name": "Haskell", "level": "Intermediate", "icon": "logos:haskell-icon" },
           { "name": "Assembly ARM/x86", "level": "Intermediate", "icon": "mdi:cpu-64-bit" },
-          { "name": "Prolog", "level": "Intermediate", "icon": "mdi:brain" },
+          { "name": "Prolog", "level": "Intermediate", "icon": "mdi:head-cog-outline" },
           { "name": "SQL", "level": "Intermediate", "icon": "logos:mysql" },
           { "name": "C#", "level": "Basic", "icon": "logos:c-sharp" }
         ]

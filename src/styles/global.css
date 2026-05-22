@@ -1,11 +1,128 @@
-/* Force rebuild */
 @import "tailwindcss";
-@import 'aos/dist/aos.css';
-@plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/forms';
+@import "aos/dist/aos.css";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
 
 @theme inline {
   --font-sans: var(--font-geist);
+}
+
+:root {
+  --background: #0b1020;
+  --background-secondary: #111827;
+  --surface: #151c2e;
+  --surface-elevated: #1b2437;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.24);
+  --border-strong: rgba(203, 213, 225, 0.36);
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+  --primary-soft: rgba(249, 115, 22, 0.14);
+  --secondary: #2dd4bf;
+  --secondary-soft: rgba(45, 212, 191, 0.12);
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.14);
+  --warning: #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.14);
+  --error: #ef4444;
+  --error-soft: rgba(239, 68, 68, 0.14);
+  --link: #38bdf8;
+  --link-hover: #7dd3fc;
+  --button-primary-bg: var(--primary);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: var(--surface);
+  --button-secondary-text: var(--text-primary);
+  --card-bg: rgba(21, 28, 46, 0.92);
+  --card-border: rgba(148, 163, 184, 0.22);
+  --navbar-bg: rgba(11, 16, 32, 0.82);
+  --footer-bg: rgba(15, 23, 42, 0.92);
+  --glow: rgba(249, 115, 22, 0.18);
+  --glow-secondary: rgba(45, 212, 191, 0.12);
+  --color-bg: var(--background);
+  --color-bg-alt: var(--background-secondary);
+  --color-bg-glow-primary: var(--glow);
+  --color-bg-glow-secondary: var(--glow-secondary);
+  --color-text: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-accent: var(--primary);
+  --color-accent-strong: var(--primary-hover);
+  --color-accent-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-hover-bg: var(--surface-elevated);
+  --color-warp-glow: rgba(249, 115, 22, 0.08);
+  --color-button-text: var(--button-primary-text);
+  --hero-title: var(--text-primary);
+  --hero-muted: var(--text-secondary);
+  --shadow-card: 0 20px 60px -32px rgba(0, 0, 0, 0.75);
+  --shadow-card-hover: 0 24px 70px -34px rgba(249, 115, 22, 0.36);
+  --texture-opacity: 0.16;
+}
+
+[data-theme="light"] {
+  --background: #f8fafc;
+  --background-secondary: #eef2f7;
+  --surface: #ffffff;
+  --surface-elevated: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border: #cbd5e1;
+  --border-strong: #94a3b8;
+  --primary: #c2410c;
+  --primary-hover: #9a3412;
+  --primary-soft: rgba(194, 65, 12, 0.1);
+  --secondary: #0f766e;
+  --secondary-soft: rgba(15, 118, 110, 0.1);
+  --accent: #0369a1;
+  --accent-soft: rgba(3, 105, 161, 0.1);
+  --success: #15803d;
+  --success-soft: rgba(21, 128, 61, 0.12);
+  --warning: #b45309;
+  --warning-soft: rgba(180, 83, 9, 0.12);
+  --error: #b91c1c;
+  --error-soft: rgba(185, 28, 28, 0.12);
+  --link: #0369a1;
+  --link-hover: #075985;
+  --button-primary-bg: var(--primary);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: var(--surface);
+  --button-secondary-text: var(--text-primary);
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-border: rgba(15, 23, 42, 0.14);
+  --navbar-bg: rgba(255, 255, 255, 0.86);
+  --footer-bg: rgba(248, 250, 252, 0.96);
+  --glow: rgba(194, 65, 12, 0.14);
+  --glow-secondary: rgba(15, 118, 110, 0.1);
+  --color-bg: var(--background);
+  --color-bg-alt: var(--background-secondary);
+  --color-bg-glow-primary: var(--glow);
+  --color-bg-glow-secondary: var(--glow-secondary);
+  --color-text: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-accent: var(--primary);
+  --color-accent-strong: var(--primary-hover);
+  --color-accent-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-hover-bg: var(--surface-elevated);
+  --color-warp-glow: rgba(194, 65, 12, 0.08);
+  --color-button-text: var(--button-primary-text);
+  --hero-title: var(--text-primary);
+  --hero-muted: var(--text-secondary);
+  --shadow-card: 0 18px 48px -30px rgba(15, 23, 42, 0.28);
+  --shadow-card-hover: 0 24px 60px -34px rgba(194, 65, 12, 0.32);
+  --texture-opacity: 0.12;
 }
 
 html {
@@ -14,10 +131,17 @@ html {
 }
 
 body {
-  @apply text-zinc-900 bg-white dark:text-zinc-100 dark:bg-black antialiased selection:bg-orange-500/30;
+  @apply antialiased;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, var(--color-bg-glow-primary), transparent 34rem),
+    radial-gradient(circle at 85% 10%, var(--color-bg-glow-secondary), transparent 30rem),
+    var(--color-bg);
+  color: var(--color-text);
+  font-feature-settings: "cv02", "cv03", "cv04", "kern";
+  text-rendering: optimizeLegibility;
 }
 
 .skip-link {
@@ -44,7 +168,6 @@ body {
   outline-color: var(--color-accent);
 }
 
-/* Base Typography Refinements */
 h1,
 h2,
 h3,
@@ -52,106 +175,135 @@ h4,
 h5,
 h6 {
   @apply tracking-tight;
+  color: var(--color-text);
 }
 
 p,
 span,
 li {
-  @apply leading-relaxed;
+  line-height: 1.7;
 }
 
-/* Noise Texture Overlay */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.05;
+  inset: 0;
+  opacity: var(--texture-opacity);
   pointer-events: none;
   z-index: 9999;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  filter: contrast(120%) brightness(120%);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
-[data-theme='dark'] body::before {
-  opacity: 0.03;
-  filter: invert(1);
+.text-muted {
+  color: var(--text-secondary);
 }
 
+.text-text {
+  color: var(--text-primary);
+}
 
-/* Global Text Selection */
+.text-accent {
+  color: var(--primary);
+}
+
+.bg-bg {
+  background-color: var(--color-bg);
+}
+
+.bg-text {
+  background-color: var(--color-text);
+}
+
+.border-text {
+  border-color: color-mix(in srgb, var(--color-text) 18%, transparent);
+}
+
+.surface-readable {
+  background: color-mix(in srgb, var(--surface-elevated) 88%, transparent);
+  border-color: var(--card-border);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-subtle {
+  color: var(--text-muted);
+}
+
+.text-link {
+  color: var(--link);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-surface-elevated {
+  background-color: var(--surface-elevated);
+}
+
+.border-ui {
+  border-color: var(--border);
+}
+
+.border-ui-strong {
+  border-color: var(--border-strong);
+}
+
+.btn-primary {
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  box-shadow: 0 16px 34px -20px var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--button-secondary-bg);
+  border: 1px solid var(--card-border);
+  color: var(--button-secondary-text);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-elevated);
+  border-color: var(--secondary);
+}
+
+.badge-primary {
+  background: var(--primary-soft);
+  border-color: color-mix(in srgb, var(--primary) 34%, transparent);
+  color: var(--primary);
+}
+
+.badge-secondary {
+  background: var(--secondary-soft);
+  border-color: color-mix(in srgb, var(--secondary) 34%, transparent);
+  color: var(--secondary);
+}
+
 ::selection {
   background-color: var(--color-accent);
   color: white;
 }
 
-/* Scrollbar completamente oculta pero funcional (compatible con todos los navegadores modernos) */
-/* tailwind.config.js -> safelist or custom plugin */
 .scrollbar-thin::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
 
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
+.scrollbar-thin::-webkit-scrollbar-thumb,
 .scrollbar-thin::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* Variables de tema */
-:root {
-  /* Dark Mode (Default) - Warm Stone/Bronze Theme */
-  --color-bg: #0c0a09;
-  /* Stone 950 - Warmer Black */
-  --color-text: #fafaf9;
-  /* Stone 50 */
-  --color-accent: #f97316;
-  /* Orange 500 */
-  --color-accent-light: #fb923c;
-  /* Orange 400 */
-  --color-muted: #a8a29e;
-  /* Stone 400 */
-  --color-border: #44403c;
-  /* Stone 700 - Warm Grey */
-  --color-card-bg: rgba(28, 25, 23, 0.7);
-  /* Stone 900 @ 70% */
-  --color-card-border: rgba(255, 255, 255, 0.08);
-  --color-hover-bg: rgba(41, 37, 36, 0.6);
-  /* Stone 800 @ 60% */
-  --color-warp-glow: rgba(251, 146, 60, 0.15);
-  /* Orange ambient glow */
-}
-
-[data-theme='light'] {
-  /* Light Mode - Clean Warm Theme */
-  --color-bg: #ffffff;
-  --color-text: #1c1917;
-  /* Stone 900 */
-  --color-accent: #ea580c;
-  /* Orange 600 */
-  --color-accent-light: #f97316;
-  /* Orange 500 */
-  --color-muted: #78716c;
-  /* Stone 500 */
-  --color-border: #e7e5e4;
-  /* Stone 200 */
-  --color-card-bg: rgba(255, 250, 245, 0.9);
-  /* Warm White Tint */
-  --color-card-border: rgba(234, 88, 12, 0.1);
-  /* Subtle Orange Border */
-  --color-hover-bg: rgba(244, 244, 245, 0.8);
-  /* Zinc 100 @ 80% */
-  --color-warp-glow: rgba(251, 146, 60, 0.2);
-  /* Orange ambient glow light */
-}
-
-/* Transiciones suaves para cambio de tema */
 * {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -169,13 +321,11 @@ body::before {
   }
 }
 
-/* Excluir transiciones de elementos específicos */
 .no-theme-transition,
 .no-theme-transition * {
   transition: none !important;
 }
 
-/* Custom Scrollbar for Modal Content */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
@@ -195,46 +345,32 @@ body::before {
   background-color: var(--color-accent);
 }
 
-/* Mejoras para cards en ambos modos */
 .spotlight-card {
   background: var(--color-card-bg);
   border-color: var(--color-card-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.5s ease;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
 }
 
 .spotlight-card:hover {
-  background: linear-gradient(to bottom right,
-      var(--color-hover-bg),
-      var(--color-warp-glow));
+  background:
+    linear-gradient(135deg, var(--color-hover-bg), var(--color-card-bg)),
+    radial-gradient(circle at top right, var(--color-secondary-soft), transparent 18rem);
   border-color: var(--color-accent);
+  box-shadow: var(--shadow-card-hover);
   transform: translateY(-2px);
 }
 
-/* Modo claro: sombras más sutiles */
-[data-theme='light'] .spotlight-card {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-[data-theme='light'] .spotlight-card:hover {
-  box-shadow: 0 10px 25px -3px rgba(251, 146, 60, 0.2), 0 4px 6px -2px rgba(251, 146, 60, 0.1);
-}
-
-/* Modo oscuro: sombras más dramáticas con ambient glow */
-[data-theme='dark'] .spotlight-card {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme='dark'] .spotlight-card:hover {
-  box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.15), 0 4px 10px -2px rgba(249, 115, 22, 0.1);
-}
-
-/* Modal Animation */
 @keyframes modalEnter {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.96);
   }
 
   to {
@@ -244,5 +380,5 @@ body::before {
 }
 
 .modal-animate-in {
-  animation: modalEnter 0.3s ease-out forwards;
-}/* Rebuild trigger 01/10/2026 02:56:38 */
+  animation: modalEnter 0.26s ease-out forwards;
+}
