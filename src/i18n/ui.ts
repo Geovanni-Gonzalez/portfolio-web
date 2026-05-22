@@ -16,6 +16,7 @@ export const ui = {
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "nav.skills": "Skills",
+    "nav.areas": "Focus",
     "nav.blog": "Blog",
 
     "footer.copyright": "Geovanni González Portfolio. All rights reserved.",
@@ -68,6 +69,22 @@ export const ui = {
     "skills.technologies": "Technologies",
     "skills.tools": "Tools & Methodologies",
 
+    "areas.title": "How I Can Contribute",
+    "areas.subtitle":
+      "Areas where my academic background, projects, and technical interests can create value.",
+    "areas.software.title": "Software Development",
+    "areas.software.description":
+      "Build maintainable web, desktop, and backend solutions with clear structure and practical user flows.",
+    "areas.systems.title": "Systems and Algorithms",
+    "areas.systems.description":
+      "Model problems with data structures, simulations, graph logic, scheduling, and low-level programming fundamentals.",
+    "areas.data.title": "Data and Automation",
+    "areas.data.description":
+      "Process information, automate repetitive workflows, and turn technical data into readable outputs.",
+    "areas.collab.title": "Academic and Team Projects",
+    "areas.collab.description":
+      "Contribute with documentation, technical communication, Git workflows, and disciplined problem solving.",
+
     "education.title": "Education & Certifications",
     "education.subtitle": "Academic Background",
     "education.degree": "Bachelor of Computer Engineering",
@@ -118,6 +135,7 @@ export const ui = {
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
     "nav.skills": "Habilidades",
+    "nav.areas": "Áreas",
     "nav.blog": "Blog",
 
     "footer.copyright": "Portfolio de Geovanni González. Todos los derechos reservados.",
@@ -169,6 +187,22 @@ export const ui = {
     "skills.languages": "Lenguajes",
     "skills.technologies": "Tecnologías",
     "skills.tools": "Herramientas y metodologías",
+
+    "areas.title": "Cómo puedo aportar",
+    "areas.subtitle":
+      "Áreas donde mi formación académica, proyectos e intereses técnicos pueden generar valor.",
+    "areas.software.title": "Desarrollo de software",
+    "areas.software.description":
+      "Construcción de soluciones web, de escritorio y backend mantenibles, con estructura clara y flujos de usuario prácticos.",
+    "areas.systems.title": "Sistemas y algoritmos",
+    "areas.systems.description":
+      "Modelado de problemas con estructuras de datos, simulaciones, grafos, planificación y fundamentos de bajo nivel.",
+    "areas.data.title": "Datos y automatización",
+    "areas.data.description":
+      "Procesamiento de información, automatización de flujos repetitivos y presentación clara de resultados técnicos.",
+    "areas.collab.title": "Proyectos académicos y de equipo",
+    "areas.collab.description":
+      "Aporte en documentación, comunicación técnica, flujos con Git y resolución disciplinada de problemas.",
 
     "education.title": "Educación y certificaciones",
     "education.subtitle": "Formación académica",
