@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://geovanni-portfolio.vercel.app',
+  site: 'https://portfolio-web-beta-sepia.vercel.app',
   integrations: [react(), sitemap()],
 
   vite: {
