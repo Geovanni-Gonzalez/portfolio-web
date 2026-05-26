@@ -2,123 +2,159 @@
   "skills": {
     "es": [
       {
-        "category": "Lenguajes de programación",
-        "summary": "Base fuerte para resolver problemas desde bajo nivel hasta aplicaciones web.",
+        "category": "Lenguajes usados en repositorios",
+        "summary": "Lenguajes presentes en proyectos web, desktop, consola, sistemas, datos, compiladores y bajo nivel.",
         "items": [
-          { "name": "C", "level": "Avanzado", "icon": "logos:c" },
-          { "name": "C++", "level": "Avanzado", "icon": "logos:c-plusplus" },
           { "name": "Python", "level": "Avanzado", "icon": "logos:python" },
+          { "name": "C++", "level": "Avanzado", "icon": "logos:c-plusplus" },
+          { "name": "C", "level": "Avanzado", "icon": "logos:c" },
           { "name": "Java", "level": "Intermedio", "icon": "logos:java" },
-          { "name": "JavaScript", "level": "Intermedio", "icon": "logos:javascript" },
           { "name": "TypeScript", "level": "Intermedio", "icon": "logos:typescript-icon" },
+          { "name": "JavaScript", "level": "Intermedio", "icon": "logos:javascript" },
           { "name": "Haskell", "level": "Intermedio", "icon": "logos:haskell-icon" },
           { "name": "Assembly ARM/x86", "level": "Intermedio", "icon": "mdi:cpu-64-bit" },
           { "name": "Prolog", "level": "Intermedio", "icon": "mdi:head-cog-outline" },
-          { "name": "SQL", "level": "Intermedio", "icon": "logos:mysql" },
-          { "name": "C#", "level": "Básico", "icon": "logos:c-sharp" }
+          { "name": "SQL", "level": "Intermedio", "icon": "mdi:database-search" },
+          { "name": "C#", "level": "Basico", "icon": "logos:c-sharp" },
+          { "name": "HTML/CSS", "level": "Intermedio", "icon": "logos:html-5" }
         ]
       },
       {
-        "category": "Frontend y backend",
-        "summary": "Construcción de interfaces, APIs y experiencias interactivas.",
+        "category": "Web, frontend y backend",
+        "summary": "Stack aplicado en portfolio, juegos web, apps multijugador y aplicaciones Flask.",
         "items": [
+          { "name": "Astro", "level": "Intermedio", "icon": "logos:astro-icon" },
           { "name": "React", "level": "Intermedio", "icon": "logos:react" },
-          { "name": "Node.js", "level": "Intermedio", "icon": "logos:nodejs-icon" },
-          { "name": "Express.js", "level": "Intermedio", "icon": "simple-icons:express" },
-          { "name": "Flask", "level": "Intermedio", "icon": "file-icons:flask" },
           { "name": "Tailwind CSS", "level": "Intermedio", "icon": "logos:tailwindcss-icon" },
+          { "name": "Vite", "level": "Intermedio", "icon": "logos:vitejs" },
+          { "name": "Node.js", "level": "Intermedio", "icon": "logos:nodejs-icon" },
+          { "name": "WebSocket", "level": "Intermedio", "icon": "mdi:access-point-network" },
           { "name": "Socket.IO", "level": "Intermedio", "icon": "logos:socket-io" },
-          { "name": "Electron", "level": "Intermedio", "icon": "logos:electron" },
-          { "name": "Tkinter", "level": "Avanzado", "icon": "mdi:application-cog" },
-          { "name": "Three.js", "level": "Básico", "icon": "logos:threejs" }
+          { "name": "Flask", "level": "Intermedio", "icon": "file-icons:flask" },
+          { "name": "Vercel", "level": "Intermedio", "icon": "logos:vercel-icon" },
+          { "name": "Responsive UI", "level": "Intermedio", "icon": "mdi:responsive" }
         ]
       },
       {
-        "category": "Datos y sistemas",
-        "summary": "Modelado, persistencia y comprensión de sistemas operativos.",
+        "category": "Desktop, consola y sistemas",
+        "summary": "Interfaces graficas, TUIs, CLIs, videojuegos, simuladores y programas cercanos al hardware.",
         "items": [
-          { "name": "SQLite", "level": "Avanzado", "icon": "simple-icons:sqlite" },
-          { "name": "MySQL", "level": "Intermedio", "icon": "logos:mysql" },
-          { "name": "Redis", "level": "Intermedio", "icon": "logos:redis" },
-          { "name": "PostgreSQL", "level": "Básico", "icon": "logos:postgresql" },
-          { "name": "MongoDB", "level": "Básico", "icon": "logos:mongodb-icon" },
-          { "name": "Linux Syscalls", "level": "Intermedio", "icon": "logos:linux-tux" },
-          { "name": "QEMU", "level": "Intermedio", "icon": "mdi:console-line" }
+          { "name": "Tkinter", "level": "Avanzado", "icon": "mdi:application-cog" },
+          { "name": "Java Swing", "level": "Intermedio", "icon": "logos:java" },
+          { "name": "Qt/C++", "level": "Intermedio", "icon": "simple-icons:qt" },
+          { "name": "Electron", "level": "Intermedio", "icon": "logos:electron" },
+          { "name": "CLI/TUI", "level": "Avanzado", "icon": "mdi:console" },
+          { "name": "Linux/QEMU", "level": "Intermedio", "icon": "logos:linux-tux" },
+          { "name": "Sistemas operativos", "level": "Intermedio", "icon": "mdi:cpu-64-bit" },
+          { "name": "Compiladores", "level": "Intermedio", "icon": "mdi:file-code-outline" }
         ]
       },
       {
-        "category": "Herramientas y conceptos",
-        "summary": "Prácticas de ingeniería para entregar software mantenible.",
+        "category": "Datos, algoritmos y estructuras",
+        "summary": "Fundamentos aplicados en grafos, rutas, laberintos, XML, ventas, juegos y procesamiento de informacion.",
+        "items": [
+          { "name": "Estructuras de datos", "level": "Avanzado", "icon": "mdi:graph-outline" },
+          { "name": "Grafos y rutas", "level": "Avanzado", "icon": "mdi:source-branch" },
+          { "name": "Algoritmos de busqueda", "level": "Intermedio", "icon": "mdi:magnify-scan" },
+          { "name": "XML", "level": "Intermedio", "icon": "mdi:xml" },
+          { "name": "JSON", "level": "Intermedio", "icon": "mdi:code-json" },
+          { "name": "CSV", "level": "Intermedio", "icon": "mdi:file-delimited" },
+          { "name": "Procesamiento de datos", "level": "Intermedio", "icon": "mdi:chart-box-outline" },
+          { "name": "Analisis lexico/sintactico", "level": "Intermedio", "icon": "mdi:code-braces" }
+        ]
+      },
+      {
+        "category": "Herramientas y practicas",
+        "summary": "Herramientas recurrentes para construir, versionar, probar y desplegar proyectos academicos.",
         "items": [
           { "name": "Git & GitHub", "level": "Avanzado", "icon": "logos:git-icon" },
-          { "name": "Docker", "level": "Intermedio", "icon": "logos:docker-icon" },
-          { "name": "Vite", "level": "Intermedio", "icon": "logos:vitejs" },
+          { "name": "CMake", "level": "Intermedio", "icon": "simple-icons:cmake" },
+          { "name": "Makefile", "level": "Intermedio", "icon": "mdi:file-cog-outline" },
+          { "name": "Docker", "level": "Basico", "icon": "logos:docker-icon" },
+          { "name": "npm", "level": "Intermedio", "icon": "logos:npm-icon" },
+          { "name": "Pytest", "level": "Basico", "icon": "mdi:test-tube" },
           { "name": "POO", "level": "Avanzado", "icon": "mdi:cube-outline" },
-          { "name": "Estructuras de datos", "level": "Avanzado", "icon": "mdi:graph-outline" },
-          { "name": "Programación funcional", "level": "Intermedio", "icon": "mdi:function" },
-          { "name": "Programación lógica", "level": "Intermedio", "icon": "mdi:head-cog-outline" },
-          { "name": "Algoritmos de IA", "level": "Intermedio", "icon": "mdi:robot" }
+          { "name": "Programacion funcional", "level": "Intermedio", "icon": "mdi:function" },
+          { "name": "Programacion logica", "level": "Intermedio", "icon": "mdi:head-cog-outline" }
         ]
       }
     ],
     "en": [
       {
-        "category": "Programming languages",
-        "summary": "Strong foundation for solving problems from low-level systems to web applications.",
+        "category": "Languages used in repositories",
+        "summary": "Languages found across web, desktop, console, systems, data, compiler, and low-level projects.",
         "items": [
-          { "name": "C", "level": "Advanced", "icon": "logos:c" },
-          { "name": "C++", "level": "Advanced", "icon": "logos:c-plusplus" },
           { "name": "Python", "level": "Advanced", "icon": "logos:python" },
+          { "name": "C++", "level": "Advanced", "icon": "logos:c-plusplus" },
+          { "name": "C", "level": "Advanced", "icon": "logos:c" },
           { "name": "Java", "level": "Intermediate", "icon": "logos:java" },
-          { "name": "JavaScript", "level": "Intermediate", "icon": "logos:javascript" },
           { "name": "TypeScript", "level": "Intermediate", "icon": "logos:typescript-icon" },
+          { "name": "JavaScript", "level": "Intermediate", "icon": "logos:javascript" },
           { "name": "Haskell", "level": "Intermediate", "icon": "logos:haskell-icon" },
           { "name": "Assembly ARM/x86", "level": "Intermediate", "icon": "mdi:cpu-64-bit" },
           { "name": "Prolog", "level": "Intermediate", "icon": "mdi:head-cog-outline" },
-          { "name": "SQL", "level": "Intermediate", "icon": "logos:mysql" },
-          { "name": "C#", "level": "Basic", "icon": "logos:c-sharp" }
+          { "name": "SQL", "level": "Intermediate", "icon": "mdi:database-search" },
+          { "name": "C#", "level": "Basic", "icon": "logos:c-sharp" },
+          { "name": "HTML/CSS", "level": "Intermediate", "icon": "logos:html-5" }
         ]
       },
       {
-        "category": "Frontend and backend",
-        "summary": "Interfaces, APIs, and interactive experiences.",
+        "category": "Web, frontend, and backend",
+        "summary": "Stack applied in the portfolio, web games, multiplayer apps, and Flask applications.",
         "items": [
+          { "name": "Astro", "level": "Intermediate", "icon": "logos:astro-icon" },
           { "name": "React", "level": "Intermediate", "icon": "logos:react" },
-          { "name": "Node.js", "level": "Intermediate", "icon": "logos:nodejs-icon" },
-          { "name": "Express.js", "level": "Intermediate", "icon": "simple-icons:express" },
-          { "name": "Flask", "level": "Intermediate", "icon": "file-icons:flask" },
           { "name": "Tailwind CSS", "level": "Intermediate", "icon": "logos:tailwindcss-icon" },
+          { "name": "Vite", "level": "Intermediate", "icon": "logos:vitejs" },
+          { "name": "Node.js", "level": "Intermediate", "icon": "logos:nodejs-icon" },
+          { "name": "WebSocket", "level": "Intermediate", "icon": "mdi:access-point-network" },
           { "name": "Socket.IO", "level": "Intermediate", "icon": "logos:socket-io" },
-          { "name": "Electron", "level": "Intermediate", "icon": "logos:electron" },
-          { "name": "Tkinter", "level": "Advanced", "icon": "mdi:application-cog" },
-          { "name": "Three.js", "level": "Basic", "icon": "logos:threejs" }
+          { "name": "Flask", "level": "Intermediate", "icon": "file-icons:flask" },
+          { "name": "Vercel", "level": "Intermediate", "icon": "logos:vercel-icon" },
+          { "name": "Responsive UI", "level": "Intermediate", "icon": "mdi:responsive" }
         ]
       },
       {
-        "category": "Data and systems",
-        "summary": "Data modeling, persistence, and operating systems understanding.",
+        "category": "Desktop, console, and systems",
+        "summary": "Graphical interfaces, TUIs, CLIs, games, simulators, and near-hardware programs.",
         "items": [
-          { "name": "SQLite", "level": "Advanced", "icon": "simple-icons:sqlite" },
-          { "name": "MySQL", "level": "Intermediate", "icon": "logos:mysql" },
-          { "name": "Redis", "level": "Intermediate", "icon": "logos:redis" },
-          { "name": "PostgreSQL", "level": "Basic", "icon": "logos:postgresql" },
-          { "name": "MongoDB", "level": "Basic", "icon": "logos:mongodb-icon" },
-          { "name": "Linux Syscalls", "level": "Intermediate", "icon": "logos:linux-tux" },
-          { "name": "QEMU", "level": "Intermediate", "icon": "mdi:console-line" }
+          { "name": "Tkinter", "level": "Advanced", "icon": "mdi:application-cog" },
+          { "name": "Java Swing", "level": "Intermediate", "icon": "logos:java" },
+          { "name": "Qt/C++", "level": "Intermediate", "icon": "simple-icons:qt" },
+          { "name": "Electron", "level": "Intermediate", "icon": "logos:electron" },
+          { "name": "CLI/TUI", "level": "Advanced", "icon": "mdi:console" },
+          { "name": "Linux/QEMU", "level": "Intermediate", "icon": "logos:linux-tux" },
+          { "name": "Operating systems", "level": "Intermediate", "icon": "mdi:cpu-64-bit" },
+          { "name": "Compilers", "level": "Intermediate", "icon": "mdi:file-code-outline" }
         ]
       },
       {
-        "category": "Tools and concepts",
-        "summary": "Engineering practices for maintainable software delivery.",
+        "category": "Data, algorithms, and structures",
+        "summary": "Foundations applied in graphs, routes, mazes, XML, sales analysis, games, and information processing.",
+        "items": [
+          { "name": "Data structures", "level": "Advanced", "icon": "mdi:graph-outline" },
+          { "name": "Graphs and routing", "level": "Advanced", "icon": "mdi:source-branch" },
+          { "name": "Search algorithms", "level": "Intermediate", "icon": "mdi:magnify-scan" },
+          { "name": "XML", "level": "Intermediate", "icon": "mdi:xml" },
+          { "name": "JSON", "level": "Intermediate", "icon": "mdi:code-json" },
+          { "name": "CSV", "level": "Intermediate", "icon": "mdi:file-delimited" },
+          { "name": "Data processing", "level": "Intermediate", "icon": "mdi:chart-box-outline" },
+          { "name": "Lexical/syntactic analysis", "level": "Intermediate", "icon": "mdi:code-braces" }
+        ]
+      },
+      {
+        "category": "Tools and practices",
+        "summary": "Recurring tools for building, versioning, testing, and deploying academic projects.",
         "items": [
           { "name": "Git & GitHub", "level": "Advanced", "icon": "logos:git-icon" },
-          { "name": "Docker", "level": "Intermediate", "icon": "logos:docker-icon" },
-          { "name": "Vite", "level": "Intermediate", "icon": "logos:vitejs" },
+          { "name": "CMake", "level": "Intermediate", "icon": "simple-icons:cmake" },
+          { "name": "Makefile", "level": "Intermediate", "icon": "mdi:file-cog-outline" },
+          { "name": "Docker", "level": "Basic", "icon": "logos:docker-icon" },
+          { "name": "npm", "level": "Intermediate", "icon": "logos:npm-icon" },
+          { "name": "Pytest", "level": "Basic", "icon": "mdi:test-tube" },
           { "name": "OOP", "level": "Advanced", "icon": "mdi:cube-outline" },
-          { "name": "Data structures", "level": "Advanced", "icon": "mdi:graph-outline" },
           { "name": "Functional programming", "level": "Intermediate", "icon": "mdi:function" },
-          { "name": "Logic programming", "level": "Intermediate", "icon": "mdi:head-cog-outline" },
-          { "name": "AI algorithms", "level": "Intermediate", "icon": "mdi:robot" }
+          { "name": "Logic programming", "level": "Intermediate", "icon": "mdi:head-cog-outline" }
         ]
       }
     ]
