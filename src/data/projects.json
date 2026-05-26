@@ -809,48 +809,6 @@
     ]
   },
   {
-    "title": "GramaticaBNF",
-    "repo": "https://github.com/Geovanni-Gonzalez/GramaticaBNF",
-    "description": {
-      "es": "GramaticaBNF es un proyecto de compiladores publicado en GitHub como parte de mi practica academica y tecnica.",
-      "en": "GramaticaBNF is an compiler-related project published on GitHub as part of my academic and technical practice."
-    },
-    "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto de compiladores, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a compiler-related project, applying engineering and programming concepts."
-    },
-    "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
-      "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
-    },
-    "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
-      "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
-    },
-    "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
-      "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
-    },
-    "features": {
-      "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Analisis de lenguaje",
-        "HTML"
-      ],
-      "en": [
-        "Public repository",
-        "Technical documentation",
-        "Language analysis",
-        "HTML"
-      ]
-    },
-    "tech": [
-      "HTML",
-      "Compiladores"
-    ]
-  },
-  {
     "title": "GestionLibreria",
     "repo": "https://github.com/Geovanni-Gonzalez/GestionLibreria",
     "description": {
@@ -1095,48 +1053,6 @@
     },
     "tech": [
       "C#"
-    ]
-  },
-  {
-    "title": "Analizador Sintactico Y Lexico",
-    "repo": "https://github.com/Geovanni-Gonzalez/Analizador-Sintactico-y-Lexico",
-    "description": {
-      "es": "Proyecto del curso Compiladores e Intérpretes, Semestre 1 2026",
-      "en": "Analizador Sintactico Y Lexico is a public GitHub project focused on compiler-related project; its repository description is: Proyecto del curso Compiladores e Intérpretes, Semestre 1 2026"
-    },
-    "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto de compiladores, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a compiler-related project, applying engineering and programming concepts."
-    },
-    "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
-      "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
-    },
-    "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
-      "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
-    },
-    "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
-      "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
-    },
-    "features": {
-      "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Analisis de lenguaje",
-        "Java"
-      ],
-      "en": [
-        "Public repository",
-        "Technical documentation",
-        "Language analysis",
-        "Java"
-      ]
-    },
-    "tech": [
-      "Java",
-      "Compiladores"
     ]
   },
   {
@@ -1386,89 +1302,6 @@
     },
     "tech": [
       "Juego"
-    ]
-  },
-  {
-    "title": "Analisis De Algoritmos",
-    "repo": "https://github.com/Geovanni-Gonzalez/Analisis-De-Algoritmos",
-    "description": {
-      "es": "Analisis De Algoritmos es un proyecto academico publicado en GitHub como parte de mi practica academica y tecnica.",
-      "en": "Analisis De Algoritmos is an academic project published on GitHub as part of my academic and technical practice."
-    },
-    "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
-    },
-    "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
-      "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
-    },
-    "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
-      "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
-    },
-    "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
-      "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
-    },
-    "features": {
-      "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Algoritmos",
-        "Python"
-      ],
-      "en": [
-        "Public repository",
-        "Technical documentation",
-        "Algorithms",
-        "Python"
-      ]
-    },
-    "tech": [
-      "Python"
-    ]
-  },
-  {
-    "title": "Laberinto Proyecto 01",
-    "repo": "https://github.com/Geovanni-Gonzalez/Laberinto-Proyecto-01",
-    "description": {
-      "es": "Laberinto Proyecto 01 es un proyecto academico publicado en GitHub como parte de mi practica academica y tecnica.",
-      "en": "Laberinto Proyecto 01 is an academic project published on GitHub as part of my academic and technical practice."
-    },
-    "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
-    },
-    "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
-      "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
-    },
-    "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
-      "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
-    },
-    "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
-      "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
-    },
-    "features": {
-      "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Algoritmos",
-        "Python"
-      ],
-      "en": [
-        "Public repository",
-        "Technical documentation",
-        "Algorithms",
-        "Python"
-      ]
-    },
-    "tech": [
-      "Python",
-      "Algoritmos"
     ]
   }
 ]
