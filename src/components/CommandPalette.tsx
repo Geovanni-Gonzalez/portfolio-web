@@ -32,7 +32,7 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const homePath = lang === "es" ? "/" : "/en/";
+  const homePath = lang === "es" ? "/es/" : "/en/";
   const blogPath = lang === "es" ? "/blog" : "/en/blog";
 
   const t = {
@@ -47,11 +47,16 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
       home: lang === "es" ? "Ir al inicio" : "Go home",
       skills: lang === "es" ? "Ver habilidades" : "View skills",
       areas: lang === "es" ? "Ver áreas de aporte" : "View focus areas",
+      education: lang === "es" ? "Ver educación y certificaciones" : "View education & certifications",
       projects: lang === "es" ? "Ver proyectos" : "View projects",
       about: lang === "es" ? "Sobre mí" : "About me",
       blog: lang === "es" ? "Ir al blog" : "Go to blog",
       contact: lang === "es" ? "Contactar" : "Contact",
       theme: lang === "es" ? "Alternar tema" : "Toggle theme",
+    },
+    shortcuts: {
+      navigate: lang === "es" ? "navegar" : "navigate",
+      select: lang === "es" ? "seleccionar" : "select",
     },
   };
 
@@ -85,6 +90,13 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
       group: "navigation",
     },
     {
+      id: "education",
+      label: t.actions.education,
+      icon: <GraduationCap className="h-4 w-4" />,
+      perform: () => (window.location.href = `${homePath}#education`),
+      group: "navigation",
+    },
+    {
       id: "projects",
       label: t.actions.projects,
       icon: <Briefcase className="h-4 w-4" />,
@@ -109,7 +121,16 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
       id: "theme",
       label: t.actions.theme,
       icon: <Sun className="h-4 w-4" />,
-      perform: () => document.getElementById("theme-toggle")?.click(),
+      perform: () => {
+        const next =
+          document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try {
+          localStorage.setItem("theme", next);
+        } catch {
+          /* almacenamiento no disponible */
+        }
+      },
       group: "settings",
     },
     {
@@ -209,7 +230,7 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
           ) : (
             Object.entries(groupedActions).map(([group, groupActions]) => (
               <div key={group} className="mb-2">
-                <h4 className="px-2 py-1.5 text-xs font-black uppercase tracking-wider text-[var(--text-secondary)]">
+                <h4 className="px-2 py-1.5 text-xs font-semibold text-[var(--text-secondary)]">
                   {t.groups[group as keyof typeof t.groups]}
                 </h4>
                 {groupActions.map((action) => {
@@ -248,13 +269,13 @@ export default function CommandPalette({ lang }: CommandPaletteProps) {
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-[var(--card-border)] bg-[var(--surface-elevated)] px-4 py-2 text-[10px] font-medium text-[var(--text-secondary)]">
+        <div className="flex items-center justify-between border-t border-[var(--card-border)] bg-[var(--surface-elevated)] px-4 py-2 text-xs font-medium text-[var(--text-secondary)]">
           <div className="flex gap-2">
             <span>
-              <strong className="text-[var(--text-primary)]">↑↓</strong> navigate
+              <strong className="text-[var(--text-primary)]">↑↓</strong> {t.shortcuts.navigate}
             </span>
             <span>
-              <strong className="text-[var(--text-primary)]">Enter</strong> select
+              <strong className="text-[var(--text-primary)]">Enter</strong> {t.shortcuts.select}
             </span>
           </div>
           <div>Portfolio Command v1.0</div>

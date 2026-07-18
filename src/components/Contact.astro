@@ -26,6 +26,10 @@ const formTranslations = {
   sent: t("contact.sent"),
   error: t("contact.error"),
   success: t("contact.success"),
+  validation:
+    lang === "es"
+      ? "Revisa tu nombre, correo y mensaje antes de enviar."
+      : "Check your name, email, and message before sending.",
 };
 
 const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
@@ -55,7 +59,7 @@ const formId = import.meta.env.PUBLIC_FORMSPREE_ID;
         </p>
       </div>
 
-      <ContactInfo client:visible contactInfo={contactInfo} />
+      <ContactInfo client:visible contactInfo={contactInfo} lang={lang} />
     </div>
 
     <div data-aos="fade-left" data-aos-delay="200">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 
-export default function HamburgerMenu({ menuItems }) {
+export default function HamburgerMenu({ menuItems, lang = "es" }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,11 @@ export default function HamburgerMenu({ menuItems }) {
   return (
     <div className="relative flex items-center">
       <button
-        aria-label={open ? "Cerrar menú" : "Abrir menú"}
+        aria-label={
+          open
+            ? lang === "es" ? "Cerrar menú" : "Close menu"
+            : lang === "es" ? "Abrir menú" : "Open menu"
+        }
         aria-expanded={open}
         aria-controls="hamburger-menu"
         onClick={() => setOpen(!open)}

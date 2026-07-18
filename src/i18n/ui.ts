@@ -17,6 +17,7 @@ export const ui = {
     "nav.contact": "Contact",
     "nav.skills": "Skills",
     "nav.areas": "Focus",
+    "nav.education": "Education",
     "nav.blog": "Blog",
 
     "footer.copyright": "Geovanni González Portfolio. All rights reserved.",
@@ -136,6 +137,7 @@ export const ui = {
     "nav.contact": "Contacto",
     "nav.skills": "Habilidades",
     "nav.areas": "Áreas",
+    "nav.education": "Educación",
     "nav.blog": "Blog",
 
     "footer.copyright": "Portfolio de Geovanni González. Todos los derechos reservados.",

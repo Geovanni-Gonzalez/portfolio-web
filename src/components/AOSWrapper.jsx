@@ -4,6 +4,9 @@ import 'aos/dist/aos.css';
 
 export default function AOSWrapper() {
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     AOS.init({
       duration: 800,
       once: true,

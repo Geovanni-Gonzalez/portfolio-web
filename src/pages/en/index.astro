@@ -17,15 +17,13 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t("app.title")} description={t("app.description")}>
-  <main>
-    <Hero />
-    <About />
-    <Skills />
-    <ContributionAreas />
-    <Education />
-    <Projects />
-    <Blog />
-    <Contact />
-  </main>
-  <Footer />
+  <Hero />
+  <About />
+  <Skills />
+  <ContributionAreas />
+  <Education />
+  <Projects />
+  <Blog />
+  <Contact />
+  <Footer slot="footer" />
 </BaseLayout>

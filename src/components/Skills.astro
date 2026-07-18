@@ -1,25 +1,18 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { Icon } from "astro-iconify";
 import skillsData from "../data/skills.json";
 import AOSWrapper from "../components/AOSWrapper.jsx";
 import GradientTitle from "./GradientTitle.astro";
+import SkillsExplorer from "./SkillsExplorer";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const skills = skillsData.skills[lang] || skillsData.skills.en;
 
-const levelRank = (level: string) => {
-  if (level === "Avanzado" || level === "Advanced") return 3;
-  if (level === "Intermedio" || level === "Intermediate") return 2;
-  return 1;
-};
-
-const levelWidth = (level: string) => `${levelRank(level) * 33}%`;
 const subtitle =
   lang === "es"
     ? "Tecnologías organizadas por uso real en repositorios, con niveles pensados para orientar a reclutadores y colaboradores."
-    : "Technologies grouped by real usage, with levels designed to help recruiters and collaborators scan quickly.";
+    : "Technologies grouped by real repository usage, with levels designed to help recruiters and collaborators scan quickly.";
 ---
 
 <section
@@ -37,53 +30,5 @@ const subtitle =
     {subtitle}
   </p>
 
-  <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
-    {
-      skills.map((category, index) => (
-        <section
-          class="spotlight-card group relative overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-2xl backdrop-blur-2xl"
-          aria-labelledby={`skill-category-${index}`}
-          data-aos="zoom-in-up"
-          data-aos-delay={index * 80}
-          data-aos-once="true"
-        >
-          <div class="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[var(--primary-soft)] blur-3xl transition-colors" />
-
-          <div class="relative z-10 mb-5">
-            <h3 id={`skill-category-${index}`} class="text-xl font-black tracking-tight text-[var(--text-primary)]">
-              {category.category}
-            </h3>
-            <p class="mt-2 text-sm font-medium leading-6 text-[var(--text-secondary)]">{category.summary}</p>
-          </div>
-
-          <ul class="relative z-10 grid gap-3 sm:grid-cols-2" role="list">
-            {category.items.map((skill) => (
-              <li class="rounded-xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-3 transition hover:border-[var(--primary)] hover:bg-[var(--surface)]">
-                <div class="flex items-center gap-3">
-                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--primary-soft)] text-[var(--primary)]">
-                    <Icon name={skill.icon} class="h-6 w-6" aria-hidden="true" />
-                  </span>
-                  <div class="min-w-0 flex-1">
-                    <p class="truncate text-sm font-black text-[var(--text-primary)]">{skill.name}</p>
-                    <p class="text-[11px] font-black uppercase tracking-[0.14em] text-[var(--secondary)]">
-                      {skill.level}
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="mt-3 h-1.5 overflow-hidden rounded-full bg-black/20 dark:bg-white/20"
-                  aria-hidden="true"
-                >
-                  <div
-                    class="h-full rounded-full bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"
-                    style={{ width: levelWidth(skill.level) }}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))
-    }
-  </div>
+  <SkillsExplorer client:load skills={skills as any} lang={lang} />
 </section>

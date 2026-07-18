@@ -84,7 +84,7 @@
     "image": ""
   },
   {
-    "title": "Analisis de Ventas",
+    "title": "Análisis de Ventas",
     "repo": "https://github.com/Geovanni-Gonzalez/AnalisisDeVentas",
     "description": {
       "es": "Aplicación para explorar datos de ventas y convertir registros en lectura útil para decisiones.",
@@ -256,30 +256,30 @@
     "repo": "https://github.com/Geovanni-Gonzalez/portfolio-web",
     "demo": "https://portfolio-web-beta-sepia.vercel.app",
     "description": {
-      "es": "Portfolio Web es un aplicacion web publicado en GitHub como parte de mi practica academica y tecnica.",
-      "en": "Portfolio Web is an web application published on GitHub as part of my academic and technical practice."
+      "es": "Portfolio Web es una aplicación web publicada en GitHub como parte de mi práctica académica y técnica.",
+      "en": "Portfolio Web is a web application published on GitHub as part of my academic and technical practice."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion web, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación web, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a web application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Demo publica",
+        "Repositorio público",
+        "Documentación técnica",
+        "Demo pública",
         "Interfaz visual",
         "HTML"
       ],
@@ -304,25 +304,25 @@
       "en": "XMLDocument TreeBuilder is a public GitHub project focused on academic project; its repository description is: Librería en C++ para crear, manipular y guardar estructuras de documentos XML bien formados. Permite insertar nodos, gestionar atributos, estructurar árboles balanceados tipo splay y exportar a archivos XML. Pensada para ser integrada en otros programas como módulo de backend."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "C++"
       ],
       "en": [
@@ -343,25 +343,25 @@
       "en": "Trivia TUIApp is a public GitHub project focused on TUI application; its repository description is: Aplicación TUI desarrollada en C++ que simula el juego de trivia"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion TUI, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación TUI, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a TUI application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Flujo por consola",
         "C++"
       ],
@@ -382,29 +382,29 @@
     "title": "Sudoku GUI App",
     "repo": "https://github.com/Geovanni-Gonzalez/Sudoku-GUI-App",
     "description": {
-      "es": "Aplicación de interfaz grafica de usuario que simula juego de sudoku, se desarrollo con Java y Prolog",
-      "en": "Sudoku GUI App is a public GitHub project focused on desktop application; its repository description is: Aplicación de interfaz grafica de usuario que simula juego de sudoku, se desarrollo con Java y Prolog"
+      "es": "Aplicación de interfaz gráfica de usuario que simula el juego de sudoku; se desarrolló con Java y Prolog",
+      "en": "Sudoku GUI App is a public GitHub project focused on desktop application; its repository description is: Aplicación de interfaz gráfica de usuario que simula el juego de sudoku; se desarrolló con Java y Prolog"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de escritorio, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de escritorio, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a desktop application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "Java"
       ],
@@ -429,27 +429,27 @@
       "en": "SistemaDeVentas GUI App V2 is a public GitHub project focused on desktop application; its repository description is: Aplicación de interfaz gráfica de usuario que simula un sistema de ventas desarrollada en Python"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de escritorio, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de escritorio, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a desktop application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
-        "Gestion de datos",
+        "Gestión de datos",
         "Python"
       ],
       "en": [
@@ -470,31 +470,31 @@
     "title": "SistemaDeVentas GUI App",
     "repo": "https://github.com/Geovanni-Gonzalez/SistemaDeVentas--GUI-App",
     "description": {
-      "es": "Aplicación de interfaz gráfica que simula un Sistema de ventas desarrollado con Python",
-      "en": "SistemaDeVentas GUI App is a public GitHub project focused on desktop application; its repository description is: Aplicación de interfaz gráfica que simula un Sistema de ventas desarrollado con Python"
+      "es": "Aplicación de interfaz gráfica que simula un sistema de ventas desarrollado con Python",
+      "en": "SistemaDeVentas GUI App is a public GitHub project focused on desktop application; its repository description is: Aplicación de interfaz gráfica que simula un sistema de ventas desarrollado con Python"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de escritorio, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de escritorio, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a desktop application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
-        "Gestion de datos",
+        "Gestión de datos",
         "Python"
       ],
       "en": [
@@ -519,27 +519,27 @@
       "en": "SistemaDePuntoDeVenta ConsolApp is a public GitHub project focused on console application; its repository description is: Aplicación CLI que simula un sistema de ventas desarrollado con C y SQL"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de consola, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de consola, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a console application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Flujo por consola",
-        "Gestion de datos",
+        "Gestión de datos",
         "C"
       ],
       "en": [
@@ -560,31 +560,31 @@
     "title": "SistemaDeGestionPulperia ConsolApp",
     "repo": "https://github.com/Geovanni-Gonzalez/SistemaDeGestionPulperia-ConsolApp",
     "description": {
-      "es": "Aplicación CLI que simula un sistema de gestion de una pulperia desarrollado con Python",
-      "en": "SistemaDeGestionPulperia ConsolApp is a public GitHub project focused on console application; its repository description is: Aplicación CLI que simula un sistema de gestion de una pulperia desarrollado con Python"
+      "es": "Aplicación CLI que simula un sistema de gestión de una pulpería desarrollado con Python",
+      "en": "SistemaDeGestionPulperia ConsolApp is a public GitHub project focused on console application; its repository description is: Aplicación CLI que simula un sistema de gestión de una pulpería desarrollado con Python"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de consola, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de consola, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a console application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Flujo por consola",
-        "Gestion de datos",
+        "Gestión de datos",
         "Python"
       ],
       "en": [
@@ -608,25 +608,25 @@
       "en": "RISCMatrixApp is a public GitHub project focused on low-level project; its repository description is: Aplicación en lenguaje ensamblador para arquitectura RISC, diseñada para trabajar con matrices desde consola"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto de bajo nivel, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de proyecto de bajo nivel, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a low-level project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Assembly"
       ],
       "en": [
@@ -643,29 +643,29 @@
     "title": "QuienQuiereSerMillonario ConsolApp",
     "repo": "https://github.com/Geovanni-Gonzalez/QuienQuiereSerMillonario-ConsolApp",
     "description": {
-      "es": "Aplicación CLI que simula el juego Quien Quiere Ser Millonario ",
-      "en": "QuienQuiereSerMillonario ConsolApp is a public GitHub project focused on console application; its repository description is: Aplicación CLI que simula el juego Quien Quiere Ser Millonario "
+      "es": "Aplicación CLI que simula el juego Quién Quiere Ser Millonario ",
+      "en": "QuienQuiereSerMillonario ConsolApp is a public GitHub project focused on console application; its repository description is: Aplicación CLI que simula el juego Quién Quiere Ser Millonario "
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de consola, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de consola, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a console application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Flujo por consola",
         "Python"
       ],
@@ -689,25 +689,25 @@
       "en": "LuikiKart WebApp is a public GitHub project focused on web application; its repository description is: Aplicación web multijugador en tiempo real, con interfaz gráfica desarrollada en React y backend en Node.js, que simula un juego de carreras accesible desde navegador mediante comunicación en tiempo real vía WebSocket."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion web, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación web, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a web application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "TypeScript"
       ],
@@ -732,25 +732,25 @@
       "en": "LibreriaString is a public GitHub project focused on academic project; its repository description is: Clase en el lenguaje C++ que permite el manejo de cadenas de caracteres."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "C++"
       ],
       "en": [
@@ -767,29 +767,29 @@
     "title": "Laberinto WebApp",
     "repo": "https://github.com/Geovanni-Gonzalez/Laberinto-WebApp",
     "description": {
-      "es": "Aplicación con interfaz grafica de usuario que permite generar y resolver laberintos mediante diferentes algoritmos",
-      "en": "Laberinto WebApp is a public GitHub project focused on web application; its repository description is: Aplicación con interfaz grafica de usuario que permite generar y resolver laberintos mediante diferentes algoritmos"
+      "es": "Aplicación con interfaz gráfica de usuario que permite generar y resolver laberintos mediante diferentes algoritmos",
+      "en": "Laberinto WebApp is a public GitHub project focused on web application; its repository description is: Aplicación con interfaz gráfica de usuario que permite generar y resolver laberintos mediante diferentes algoritmos"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion web, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación web, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a web application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "Algoritmos",
         "Python"
@@ -812,30 +812,30 @@
     "title": "GestionLibreria",
     "repo": "https://github.com/Geovanni-Gonzalez/GestionLibreria",
     "description": {
-      "es": "Proyecto académico que simula la gestión de una librería a través de una aplicación TUI (Text-User Interface)  desarrollada en C",
-      "en": "GestionLibreria is a public GitHub project focused on academic project; its repository description is: Proyecto académico que simula la gestión de una librería a través de una aplicación TUI (Text-User Interface)  desarrollada en C"
+      "es": "Proyecto académico que simula la gestión de una librería a través de una aplicación TUI (Text-User Interface) desarrollada en C",
+      "en": "GestionLibreria is a public GitHub project focused on academic project; its repository description is: Proyecto académico que simula la gestión de una librería a través de una aplicación TUI (Text-User Interface) desarrollada en C"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Gestion de datos",
+        "Repositorio público",
+        "Documentación técnica",
+        "Gestión de datos",
         "C"
       ],
       "en": [
@@ -857,27 +857,27 @@
       "en": "GestionDeFincaAgricola TUIApp is a public GitHub project focused on TUI application; its repository description is: Aplicación Text User Interface (TUI) que simula la gestión de una finca agrícola. Desarrollada con Haskell"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion TUI, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación TUI, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a TUI application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Flujo por consola",
-        "Gestion de datos",
+        "Gestión de datos",
         "Haskell"
       ],
       "en": [
@@ -901,25 +901,25 @@
       "en": "CalculadoraMultibase DesktopApp is a public GitHub project focused on desktop application; its repository description is: La aplicación es una calculadora multibase de escritorio desarrollada en Node.js con interfaz gráfica construida en Electron. Permite realizar operaciones aritméticas (suma, resta, multiplicación y división) entre números expresados en bases entre 2 y 16, incluyendo soporte para jerarquía de operaciones y paréntesis anidados."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de escritorio, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de escritorio, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a desktop application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "JavaScript"
       ],
@@ -942,25 +942,25 @@
       "en": "BlackJack WebApp is a public GitHub project focused on web application; its repository description is: Aplicación web desarrollada con Python y Flask que simula el juego de azar BlackJack"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion web, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación web, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a web application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "Python"
       ],
@@ -985,25 +985,25 @@
       "en": "BattleshipARM is a public GitHub project focused on low-level project; its repository description is: Videojuego de consola basado en Batalla Naval (Battleship), desarrollado en lenguaje ensamblador ARM para ejecutarse en Raspberry Pi o QEMU."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto de bajo nivel, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de proyecto de bajo nivel, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a low-level project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Assembly"
       ],
       "en": [
@@ -1020,29 +1020,29 @@
     "title": "Aventura Del Tesoro Perdido",
     "repo": "https://github.com/Geovanni-Gonzalez/Aventura-del-Tesoro-Perdido",
     "description": {
-      "es": "Aplicación que simula juego del tesoro escondido, con enfoque el el paradigma lógico.",
-      "en": "Aventura Del Tesoro Perdido is a public GitHub project focused on academic project; its repository description is: Aplicación que simula juego del tesoro escondido, con enfoque el el paradigma lógico."
+      "es": "Aplicación que simula juego del tesoro escondido, con enfoque en el paradigma lógico.",
+      "en": "Aventura Del Tesoro Perdido is a public GitHub project focused on academic project; its repository description is: Aplicación que simula juego del tesoro escondido, con enfoque en el paradigma lógico."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "C#"
       ],
       "en": [
@@ -1063,25 +1063,25 @@
       "en": "Ahorcado GUI App POO is a public GitHub project focused on desktop application; its repository description is: Aplicación con interfaz gráfica de usuario integrada que simula el juego clásico de ahorcado. Esta aplicación está desarrollada con el lenguaje de programación Python y se utiliza la estrategia de desarrollo Programación Orientada a Objetos (POO)"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de escritorio, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de escritorio, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a desktop application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "Python"
       ],
@@ -1106,25 +1106,25 @@
       "en": "Ahorcado GUI App is a public GitHub project focused on desktop application; its repository description is: Aplicación con interfaz gráfica de usuario integrada que simula el juego clásico de ahorcado. Esta aplicación está desarrollada con el lenguaje de programación Python"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de escritorio, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de escritorio, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a desktop application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Interfaz visual",
         "Python"
       ],
@@ -1149,25 +1149,25 @@
       "en": "Ahorcado ConsolApp is a public GitHub project focused on console application; its repository description is: Aplicación CLI del juego de ahorcado"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de aplicacion de consola, aplicando conceptos de ingenieria y programacion.",
+      "es": "Practicar y documentar una solución de software en formato de aplicación de consola, aplicando conceptos de ingeniería y programación.",
       "en": "Practice and document a software solution as a console application, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Flujo por consola",
         "Python"
       ],
@@ -1188,30 +1188,30 @@
     "title": "SistemaPuntoDeVenta",
     "repo": "https://github.com/Geovanni-Gonzalez/SistemaPuntoDeVenta",
     "description": {
-      "es": "Un sistema punto de venta es una versión computarizada de una caja registradora tradicional o de  un cuaderno de llevar las cuentas, que gracias a la tecnología actual, añade muchas  funcionalidades más que antes no existían o dependían de sistemas muy complejos, grandes y  caros",
-      "en": "SistemaPuntoDeVenta is a public GitHub project focused on academic project; its repository description is: Un sistema punto de venta es una versión computarizada de una caja registradora tradicional o de  un cuaderno de llevar las cuentas, que gracias a la tecnología actual, añade muchas  funcionalidades más que antes no existían o dependían de sistemas muy complejos, grandes y  caros"
+      "es": "Un sistema punto de venta es una versión computarizada de una caja registradora tradicional o de un cuaderno de llevar las cuentas, que gracias a la tecnología actual, añade muchas funcionalidades más que antes no existían o dependían de sistemas muy complejos, grandes y caros",
+      "en": "SistemaPuntoDeVenta is a public GitHub project focused on academic project; its repository description is: Un sistema punto de venta es una versión computarizada de una caja registradora tradicional o de un cuaderno de llevar las cuentas, que gracias a la tecnología actual, añade muchas funcionalidades más que antes no existían o dependían de sistemas muy complejos, grandes y caros"
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
-        "Gestion de datos",
+        "Repositorio público",
+        "Documentación técnica",
+        "Gestión de datos",
         "Ventas"
       ],
       "en": [
@@ -1229,29 +1229,29 @@
     "title": "AhorcadoApp",
     "repo": "https://github.com/Geovanni-Gonzalez/AhorcadoApp",
     "description": {
-      "es": "AhorcadoApp es un proyecto academico publicado en GitHub como parte de mi practica academica y tecnica.",
+      "es": "AhorcadoApp es un proyecto académico publicado en GitHub como parte de mi práctica académica y técnica.",
       "en": "AhorcadoApp is an academic project published on GitHub as part of my academic and technical practice."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "JavaScript"
       ],
       "en": [
@@ -1269,29 +1269,29 @@
     "title": "Proyecto Blackjack",
     "repo": "https://github.com/Geovanni-Gonzalez/Proyecto-Blackjack",
     "description": {
-      "es": "Proyecto Blackjack es un proyecto academico publicado en GitHub como parte de mi practica academica y tecnica.",
+      "es": "Proyecto Blackjack es un proyecto académico publicado en GitHub como parte de mi práctica académica y técnica.",
       "en": "Proyecto Blackjack is an academic project published on GitHub as part of my academic and technical practice."
     },
     "problem": {
-      "es": "Practicar y documentar una solucion de software en formato de proyecto academico, aplicando conceptos de ingenieria y programacion.",
-      "en": "Practice and document a software solution as a academic project, applying engineering and programming concepts."
+      "es": "Practicar y documentar una solución de software en formato de proyecto académico, aplicando conceptos de ingeniería y programación.",
+      "en": "Practice and document a software solution as an academic project, applying engineering and programming concepts."
     },
     "solution": {
-      "es": "Repositorio publico con implementacion, estructura de archivos y descripcion tecnica extraida desde GitHub.",
+      "es": "Repositorio público con implementación, estructura de archivos y descripción técnica extraída desde GitHub.",
       "en": "Public repository with implementation, file structure, and technical description extracted from GitHub."
     },
     "role": {
-      "es": "Desarrolle el proyecto como practica academica, integrando logica de dominio, estructura del codigo y documentacion del repositorio.",
+      "es": "Desarrollé el proyecto como práctica académica, integrando lógica de dominio, estructura del código y documentación del repositorio.",
       "en": "Developed the project as academic practice, integrating domain logic, code structure, and repository documentation."
     },
     "impact": {
-      "es": "Amplia el portafolio con evidencia de practica tecnica aplicada y aprendizaje progresivo en distintas tecnologias.",
+      "es": "Amplía el portafolio con evidencia de práctica técnica aplicada y aprendizaje progresivo en distintas tecnologías.",
       "en": "Expands the portfolio with evidence of applied technical practice and progressive learning across different technologies."
     },
     "features": {
       "es": [
-        "Repositorio publico",
-        "Documentacion tecnica",
+        "Repositorio público",
+        "Documentación técnica",
         "Juego"
       ],
       "en": [

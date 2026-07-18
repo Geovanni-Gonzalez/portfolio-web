@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ lang = "es" }) {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export default function ScrollToTop() {
         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}
         bg-[var(--card-bg)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--button-primary-text)] hover:scale-110
       `}
-            aria-label="Volver arriba"
+            aria-label={lang === "es" ? "Volver arriba" : "Back to top"}
         >
             <ArrowUp className="w-6 h-6 stroke-[3px]" />
 

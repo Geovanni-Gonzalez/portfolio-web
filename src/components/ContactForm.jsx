@@ -5,14 +5,27 @@ export default function ContactForm({ translations, formId }) {
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [focused, setFocused] = useState({ name: false, email: false, message: false });
+  const [fieldError, setFieldError] = useState('');
+
+  const isFormReady =
+    formData.name.trim().length >= 2 &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim()) &&
+    formData.message.trim().length >= 10;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formId) {
       console.error("Formspree ID not found");
+      setStatus('error');
       return;
     }
 
+    if (!isFormReady) {
+      setFieldError(translations.validation || 'Revisa tu nombre, correo y mensaje antes de enviar.');
+      return;
+    }
+
+    setFieldError('');
     setStatus('submitting');
 
     try {
@@ -36,6 +49,8 @@ export default function ContactForm({ translations, formId }) {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (status === 'error') setStatus('idle');
+    if (fieldError) setFieldError('');
   };
 
   const handleFocus = (e) => {
@@ -72,7 +87,7 @@ export default function ContactForm({ translations, formId }) {
       )}
 
       <div className="relative group/input">
-        <label htmlFor="name" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('name') ? '-top-3 text-[10px] text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
+        <label htmlFor="name" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('name') ? '-top-3 text-xs text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-semibold' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
           {translations.name}
         </label>
         <input
@@ -87,11 +102,13 @@ export default function ContactForm({ translations, formId }) {
           placeholder={focused.name ? translations.namePlaceholder : ""}
           className="w-full rounded-2xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-soft)] transition-all duration-300 font-medium pt-5"
           aria-required="true"
+          minLength="2"
+          autoComplete="name"
         />
       </div>
 
       <div className="relative group/input">
-        <label htmlFor="email" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('email') ? '-top-3 text-[10px] text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
+        <label htmlFor="email" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('email') ? '-top-3 text-xs text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-semibold' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
           {translations.email}
         </label>
         <input
@@ -103,13 +120,14 @@ export default function ContactForm({ translations, formId }) {
           onFocus={handleFocus}
           onBlur={handleBlur}
           required
+          autoComplete="email"
           placeholder={focused.email ? translations.emailPlaceholder : ""}
           className="w-full rounded-2xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-soft)] transition-all duration-300 font-medium pt-5"
         />
       </div>
 
       <div className="relative group/input">
-        <label htmlFor="message" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('message') ? '-top-3 text-[10px] text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-black tracking-widest' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
+        <label htmlFor="message" className={`absolute left-4 transition-all duration-300 pointer-events-none z-10 ${isFloating('message') ? '-top-3 text-xs text-[var(--primary)] bg-[var(--surface-elevated)] px-2 rounded-md font-semibold' : 'top-4 text-[var(--text-secondary)] text-sm font-semibold'}`}>
           {translations.message}
         </label>
         <textarea
@@ -121,15 +139,23 @@ export default function ContactForm({ translations, formId }) {
           onFocus={handleFocus}
           onBlur={handleBlur}
           required
+          minLength="10"
           placeholder={focused.message ? translations.messagePlaceholder : ""}
           className="w-full rounded-2xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-soft)] resize-none transition-all duration-300 font-medium pt-5 min-h-[160px]"
         ></textarea>
       </div>
 
+      {(fieldError || status === 'error') && (
+        <p id="contact-form-feedback" className="rounded-xl border border-[var(--error)]/30 bg-[var(--error-soft)] px-4 py-3 text-sm font-semibold text-[var(--text-primary)]" role="alert">
+          {fieldError || translations.error}
+        </p>
+      )}
+
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="btn-primary group/btn relative w-full py-5 rounded-xl font-black transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-1 active:translate-y-0"
+        aria-describedby={fieldError || status === 'error' ? 'contact-form-feedback' : undefined}
+        className="btn-primary group/btn relative w-full py-5 rounded-xl font-black transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed hover:-translate-y-1 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
 

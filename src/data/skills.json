@@ -15,7 +15,7 @@
           { "name": "Assembly ARM/x86", "level": "Intermedio", "icon": "mdi:cpu-64-bit" },
           { "name": "Prolog", "level": "Intermedio", "icon": "mdi:head-cog-outline" },
           { "name": "SQL", "level": "Intermedio", "icon": "mdi:database-search" },
-          { "name": "C#", "level": "Basico", "icon": "logos:c-sharp" },
+          { "name": "C#", "level": "Básico", "icon": "logos:c-sharp" },
           { "name": "HTML/CSS", "level": "Intermedio", "icon": "logos:html-5" }
         ]
       },
@@ -37,7 +37,7 @@
       },
       {
         "category": "Desktop, consola y sistemas",
-        "summary": "Interfaces graficas, TUIs, CLIs, videojuegos, simuladores y programas cercanos al hardware.",
+        "summary": "Interfaces gráficas, TUIs, CLIs, videojuegos, simuladores y programas cercanos al hardware.",
         "items": [
           { "name": "Tkinter", "level": "Avanzado", "icon": "mdi:application-cog" },
           { "name": "Java Swing", "level": "Intermedio", "icon": "logos:java" },
@@ -51,31 +51,31 @@
       },
       {
         "category": "Datos, algoritmos y estructuras",
-        "summary": "Fundamentos aplicados en grafos, rutas, laberintos, XML, ventas, juegos y procesamiento de informacion.",
+        "summary": "Fundamentos aplicados en grafos, rutas, laberintos, XML, ventas, juegos y procesamiento de información.",
         "items": [
           { "name": "Estructuras de datos", "level": "Avanzado", "icon": "mdi:graph-outline" },
           { "name": "Grafos y rutas", "level": "Avanzado", "icon": "mdi:source-branch" },
-          { "name": "Algoritmos de busqueda", "level": "Intermedio", "icon": "mdi:magnify-scan" },
+          { "name": "Algoritmos de búsqueda", "level": "Intermedio", "icon": "mdi:magnify-scan" },
           { "name": "XML", "level": "Intermedio", "icon": "mdi:xml" },
           { "name": "JSON", "level": "Intermedio", "icon": "mdi:code-json" },
           { "name": "CSV", "level": "Intermedio", "icon": "mdi:file-delimited" },
           { "name": "Procesamiento de datos", "level": "Intermedio", "icon": "mdi:chart-box-outline" },
-          { "name": "Analisis lexico/sintactico", "level": "Intermedio", "icon": "mdi:code-braces" }
+          { "name": "Análisis léxico/sintáctico", "level": "Intermedio", "icon": "mdi:code-braces" }
         ]
       },
       {
-        "category": "Herramientas y practicas",
-        "summary": "Herramientas recurrentes para construir, versionar, probar y desplegar proyectos academicos.",
+        "category": "Herramientas y prácticas",
+        "summary": "Herramientas recurrentes para construir, versionar, probar y desplegar proyectos académicos.",
         "items": [
           { "name": "Git & GitHub", "level": "Avanzado", "icon": "logos:git-icon" },
           { "name": "CMake", "level": "Intermedio", "icon": "simple-icons:cmake" },
           { "name": "Makefile", "level": "Intermedio", "icon": "mdi:file-cog-outline" },
-          { "name": "Docker", "level": "Basico", "icon": "logos:docker-icon" },
+          { "name": "Docker", "level": "Básico", "icon": "logos:docker-icon" },
           { "name": "npm", "level": "Intermedio", "icon": "logos:npm-icon" },
-          { "name": "Pytest", "level": "Basico", "icon": "mdi:test-tube" },
+          { "name": "Pytest", "level": "Básico", "icon": "mdi:test-tube" },
           { "name": "POO", "level": "Avanzado", "icon": "mdi:cube-outline" },
-          { "name": "Programacion funcional", "level": "Intermedio", "icon": "mdi:function" },
-          { "name": "Programacion logica", "level": "Intermedio", "icon": "mdi:head-cog-outline" }
+          { "name": "Programación funcional", "level": "Intermedio", "icon": "mdi:function" },
+          { "name": "Programación lógica", "level": "Intermedio", "icon": "mdi:head-cog-outline" }
         ]
       }
     ],

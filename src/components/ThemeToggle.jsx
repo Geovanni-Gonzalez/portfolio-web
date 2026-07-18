@@ -6,13 +6,20 @@ export default function ThemeToggle() {
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    const initialTheme = savedTheme || systemTheme;
+    // El script inline de BaseLayout ya aplicó el tema antes del primer paint;
+    // aquí sincronizamos el estado del botón y observamos cambios externos
+    // (command palette u otra instancia del toggle).
+    const syncTheme = () => {
+      setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+    };
+    syncTheme();
 
-    setTheme(initialTheme);
-    document.documentElement.setAttribute('data-theme', initialTheme);
+    const observer = new MutationObserver(syncTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => {

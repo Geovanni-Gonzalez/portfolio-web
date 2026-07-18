@@ -133,6 +133,7 @@ html {
 body {
   @apply antialiased;
   position: relative;
+  isolation: isolate;
   min-height: 100vh;
   overflow-x: hidden;
   background:
@@ -190,7 +191,7 @@ body::before {
   inset: 0;
   opacity: var(--texture-opacity);
   pointer-events: none;
-  z-index: 9999;
+  z-index: -5;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -302,8 +303,22 @@ body::before {
   background-color: transparent;
 }
 
-* {
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+a,
+button,
+input,
+textarea,
+select,
+.spotlight-card,
+.btn-primary,
+.btn-secondary,
+.badge-primary,
+.badge-secondary {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

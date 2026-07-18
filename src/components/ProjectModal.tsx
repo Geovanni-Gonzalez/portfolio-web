@@ -12,27 +12,70 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
   const t = (key: string) => {
     const translations = (ui as any)[lang] || (ui as any).en;
     return translations[key] || key;
   };
 
   useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+    onCloseRef.current = onClose;
+  });
+
+  useEffect(() => {
+    const focusableSelector = [
+      "a[href]",
+      "button:not([disabled])",
+      "textarea:not([disabled])",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "[tabindex]:not([tabindex='-1'])",
+    ].join(",");
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onCloseRef.current();
+        return;
+      }
+
+      if (event.key !== "Tab" || !modalRef.current) return;
+
+      const focusableElements = Array.from(
+        modalRef.current.querySelectorAll<HTMLElement>(focusableSelector),
+      ).filter((element) => !element.hasAttribute("disabled") && element.offsetParent !== null);
+
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     };
 
     if (isOpen) {
+      previousFocusRef.current = document.activeElement as HTMLElement;
       document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleEsc);
+      window.addEventListener("keydown", handleKeyDown);
       window.setTimeout(() => closeButtonRef.current?.focus(), 0);
     }
 
     return () => {
-      window.removeEventListener("keydown", handleEsc);
+      window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
+      previousFocusRef.current?.focus?.();
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   if (!isOpen || !project) return null;
 
@@ -49,26 +92,33 @@ export default function ProjectModal({ isOpen, onClose, project, lang }: Project
         type="button"
         className="absolute inset-0 cursor-default bg-black/85 backdrop-blur-sm"
         onClick={onClose}
-        aria-label="Cerrar"
+        aria-label={lang === "es" ? "Cerrar" : "Close"}
       />
 
-      <div className="modal-animate-in relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-y-auto rounded-2xl border border-[var(--card-border)] bg-[var(--background)] shadow-2xl md:flex-row">
+      <div
+        ref={modalRef}
+        className="modal-animate-in relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-y-auto rounded-2xl border border-[var(--card-border)] bg-[var(--background)] shadow-2xl md:flex-row"
+      >
         <button
           ref={closeButtonRef}
           onClick={onClose}
           className="absolute right-4 top-4 z-10 rounded-full bg-black/55 p-2 text-white transition-colors hover:bg-[var(--primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
-          aria-label="Cerrar detalles del proyecto"
+          aria-label={lang === "es" ? "Cerrar detalles del proyecto" : "Close project details"}
         >
           <X className="h-5 w-5" />
         </button>
 
         <div className="relative flex min-h-56 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--background-secondary)] via-[var(--surface)] to-[var(--secondary)] md:w-2/5">
           {project.image ? (
-            <img src={project.image} alt={`Captura de ${project.title}`} className="h-full w-full object-cover" />
+            <img
+              src={project.image}
+              alt={lang === "es" ? `Captura de ${project.title}` : `Screenshot of ${project.title}`}
+              className="h-full w-full object-cover"
+            />
           ) : (
             <div className="p-8 text-center">
               <p className="text-5xl font-black tracking-tight text-white">{project.title}</p>
-              <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-[var(--secondary)]">
+              <p className="mt-4 text-xs font-semibold text-[var(--secondary)]">
                 {project.tech?.slice(0, 3).join(" · ")}
               </p>
             </div>
@@ -86,7 +136,7 @@ export default function ProjectModal({ isOpen, onClose, project, lang }: Project
           {project.tech?.length > 0 && (
             <div className="mt-5 flex flex-wrap gap-2">
               {project.tech.map((item) => (
-                <span key={item} className="badge-primary rounded-full border px-3 py-1 text-xs font-black">
+                <span key={item} className="badge-primary rounded-full border px-3 py-1 text-xs font-semibold">
                   {item}
                 </span>
               ))}
@@ -96,7 +146,7 @@ export default function ProjectModal({ isOpen, onClose, project, lang }: Project
           <div className="mt-6 grid gap-3">
             {detailBlocks.map((item) => (
               <section key={item.label} className="rounded-xl border border-[var(--card-border)] bg-[var(--surface-elevated)] p-4">
-                <h3 className="text-xs font-black uppercase tracking-[0.18em] text-[var(--primary)]">{item.label}</h3>
+                <h3 className="text-xs font-semibold text-[var(--primary)]">{item.label}</h3>
                 <p className="mt-2 text-sm font-medium leading-7 text-[var(--text-secondary)]">{item.value}</p>
               </section>
             ))}
@@ -104,7 +154,7 @@ export default function ProjectModal({ isOpen, onClose, project, lang }: Project
 
           {project.features && project.features.length > 0 && (
             <section className="mt-6">
-              <h3 className="text-xs font-black uppercase tracking-[0.18em] text-[var(--primary)]">
+              <h3 className="text-xs font-semibold text-[var(--primary)]">
                 {t("projects.keyFeatures")}
               </h3>
               <ul className="mt-3 grid gap-2 text-sm font-medium text-[var(--text-secondary)] sm:grid-cols-2">

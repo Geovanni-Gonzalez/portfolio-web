@@ -17,6 +17,7 @@ const menuItems = [
   { href: isHome ? "#about" : `${homePath}#about`, label: t("nav.aboutMe") },
   { href: isHome ? "#skills" : `${homePath}#skills`, label: t("nav.skills") },
   { href: isHome ? "#areas" : `${homePath}#areas`, label: t("nav.areas") },
+  { href: isHome ? "#education" : `${homePath}#education`, label: t("nav.education") },
   { href: isHome ? "#projects" : `${homePath}#projects`, label: t("nav.projects") },
   { href: `/${lang === "es" ? "" : "en/"}blog`, label: t("nav.blog") },
   { href: isHome ? "#contact" : `${homePath}#contact`, label: t("nav.contact") },
@@ -24,6 +25,7 @@ const menuItems = [
 ---
 
 <nav
+  id="site-navbar"
   class="fixed left-1/2 top-4 z-50 flex w-[95%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-2xl border border-[var(--card-border)] bg-[var(--navbar-bg)] px-5 py-3 shadow-lg backdrop-blur-xl transition-all duration-500 sm:px-6"
   role="navigation"
   aria-label={lang === "es" ? "Navegación principal" : "Main navigation"}
@@ -54,7 +56,7 @@ const menuItems = [
 
   <div class="md:hidden flex items-center gap-3 relative">
     <ThemeToggle client:load />
-    <HamburgerMenu menuItems={menuItems} client:load />
+    <HamburgerMenu menuItems={menuItems} lang={lang} client:load />
     <LangPicker currentLang={lang} client:load />
   </div>
 
@@ -86,22 +88,75 @@ const menuItems = [
 </style>
 
 <script>
+  const navbar = document.getElementById("site-navbar");
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
+  const targetIds = new Set(
+    Array.from(navLinks)
+      .map((link) => link.getAttribute("data-target"))
+      .filter(Boolean),
+  );
+  let ticking = false;
+
+  const setNavbarState = () => {
+    navbar?.classList.toggle("nav-scrolled", window.scrollY > 12);
+  };
+
+  const setActiveLink = (currentId) => {
+    navLinks.forEach((link) => {
+      link.classList.remove("active-nav-link", "font-bold");
+      link.removeAttribute("aria-current");
+
+      if (link.getAttribute("data-target") === currentId) {
+        link.classList.add("active-nav-link", "font-bold");
+        link.setAttribute("aria-current", "location");
+      }
+    });
+  };
+
+  const syncActiveSection = () => {
+    const referenceY = window.scrollY + window.innerHeight * 0.35;
+    let currentId = "";
+
+    sections.forEach((section) => {
+      const sectionId = section.getAttribute("id") || "";
+      if (!targetIds.has(sectionId)) return;
+      const top = section.getBoundingClientRect().top + window.scrollY;
+      const bottom = top + section.getBoundingClientRect().height;
+      if (referenceY >= top && referenceY < bottom) {
+        currentId = sectionId;
+      }
+    });
+
+    if (currentId) setActiveLink(currentId);
+  };
+
+  const onScroll = () => {
+    setNavbarState();
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      syncActiveSection();
+      ticking = false;
+    });
+  };
+
+  setNavbarState();
+  syncActiveSection();
+  window.requestAnimationFrame(syncActiveSection);
+  window.setTimeout(syncActiveSection, 250);
+  window.setTimeout(syncActiveSection, 900);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("hashchange", syncActiveSection);
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const currentId = entry.target.getAttribute("id");
+        if (!targetIds.has(currentId)) return;
 
-        navLinks.forEach((link) => {
-          link.classList.remove("active-nav-link", "font-bold");
-
-          if (link.getAttribute("data-target") === currentId) {
-            link.classList.add("active-nav-link", "font-bold");
-          }
-        });
+        setActiveLink(currentId);
       });
     },
     { threshold: 0.2, rootMargin: "-20% 0px -50% 0px" },
@@ -113,5 +168,33 @@ const menuItems = [
 <style is:global>
   .active-nav-link {
     color: var(--primary);
+  }
+
+  .nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: -0.35rem;
+    left: 0;
+    height: 2px;
+    content: "";
+    border-radius: 999px;
+    background: var(--primary);
+    opacity: 0;
+    transform: scaleX(0.3);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .active-nav-link::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  #site-navbar.nav-scrolled {
+    top: 0.75rem;
+    width: min(92%, 68rem);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-card-hover);
   }
 </style>
